@@ -1,0 +1,8 @@
+2020/06/11 09:27:32:293  INFO com.crm.qa.base.TestBase:57 - start InternetExplorerDriver
+2020/06/11 09:29:39:740  INFO com.crm.qa.base.TestBase:57 - start InternetExplorerDriver
+2020/06/11 09:33:26:005  INFO com.crm.qa.base.TestBase:57 - start InternetExplorerDriver
+2020/06/11 09:37:22:246  INFO com.crm.qa.base.TestBase:57 - start InternetExplorerDriver
+2020/06/11 09:43:14:380  INFO com.crm.qa.base.TestBase:57 - start InternetExplorerDriver
+2020/06/11 09:43:21:192  INFO com.crm.qa.base.TestBase:54 - 重复登录，发现继续登录按钮，强制登录
+2020/06/11 09:52:39:829  INFO com.crm.qa.base.TestBase:57 - start InternetExplorerDriver
+2020/06/11 09:52:44:988  INFO com.crm.qa.base.TestBase:54 - 重复登录，发现继续登录按钮，强制登录

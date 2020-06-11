@@ -2,18 +2,18 @@
 	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
 	<modelVersion>4.0.0</modelVersion>
 
-	<groupId>FreeCRMTestAutomation</groupId>
-	<artifactId>FreeCRMTest</artifactId>
+	<groupId>com.sinsoft</groupId>
+	<artifactId>YPICTest</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
-	<packaging>jar</packaging>
+	<packaging>jar</packaging> 
 
-	<name>FreeCRMTest</name>
-	<url>http://maven.apache.org</url>
-
+	<name>YPICAutomationTest</name>
+	<url>www.sinosoft.com.cn</url>
+ 
 	<properties>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-		 <maven.compiler.source>1.6</maven.compiler.source>
-                  <maven.compiler.target>1.6</maven.compiler.target>
+		<maven.compiler.source>1.8</maven.compiler.source>
+        <maven.compiler.target>1.8</maven.compiler.target>
 	</properties>
 
 	<dependencies>
@@ -35,10 +35,8 @@
 		<dependency>
 			<groupId>org.apache.poi</groupId>
 			<artifactId>poi</artifactId>
-			<version>3.16-beta2</version>
+			<version>3.9</version>
 		</dependency>
-
-
 		<dependency>
 			<groupId>org.apache.poi</groupId>
 			<artifactId>poi-ooxml</artifactId>
@@ -56,47 +54,21 @@
 		</dependency>
 		<dependency>
 			<groupId>org.apache.poi</groupId>
-			<artifactId>ooxml-schemas</artifactId>
-			<version>1.1</version>
-		</dependency>
-
-		<dependency>
-			<groupId>org.apache.poi</groupId>
 			<artifactId>openxml4j</artifactId>
 			<version>1.0-beta</version>
 		</dependency>
+		<!-- 
 		<dependency>
 			<groupId>org.apache.poi</groupId>
 			<artifactId>poi</artifactId>
 			<version>3.9</version>
 		</dependency>
+		-->
 		<dependency>
-			<groupId>org.apache.poi</groupId>
-			<artifactId>poi-ooxml</artifactId>
-			<version>3.9</version>
+		    <groupId>org.apache.xmlbeans</groupId>
+		    <artifactId>xmlbeans</artifactId> 
+			<version>2.6.0</version>
 		</dependency>
-		<dependency>
-			<groupId>org.apache.poi</groupId>
-			<artifactId>poi-ooxml-schemas</artifactId>
-			<version>3.9</version>
-		</dependency>
-		<dependency>
-			<groupId>org.apache.poi</groupId>
-			<artifactId>poi-scratchpad</artifactId>
-			<version>3.9</version>
-		</dependency>
-		<dependency>
-			<groupId>org.apache.poi</groupId>
-			<artifactId>ooxml-schemas</artifactId>
-			<version>1.1</version>
-		</dependency>
-
-		<dependency>
-			<groupId>org.apache.poi</groupId>
-			<artifactId>openxml4j</artifactId>
-			<version>1.0-beta</version>
-		</dependency>
-
 		<!-- https://mvnrepository.com/artifact/com.relevantcodes/extentreports -->
 		<dependency>
 			<groupId>com.relevantcodes</groupId>
@@ -110,7 +82,22 @@
 			<artifactId>commons-io</artifactId>
 			<version>2.6</version>
 		</dependency>
-
-
 	</dependencies>
+	<build>
+    <plugins>
+        <plugin>
+            <groupId>org.apache.maven.plugins</groupId>
+            <artifactId>maven-surefire-plugin</artifactId>
+            <version>2.22.2</version>
+            <configuration>   
+        <!--<testFailureIgnore>true</testFailureIgnore>-->   
+        	<suiteXmlFiles>  
+	            <suiteXmlFile>src\main\resources\testng_sanity.xml</suiteXmlFile>
+	            <!--<suiteXmlFile>somketwoTestng.xml</suiteXmlFile>--> 
+          	</suiteXmlFiles>  
+    		</configuration>  
+    		
+        </plugin>
+    </plugins>
+</build>
 </project>

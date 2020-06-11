@@ -23,6 +23,7 @@ public class LoginPageTest extends TestBase{
 		loginPage = new LoginPage();	
 	}
 	
+	
 	@Test(priority=1)
 	public void loginPageTitleTest(){
 		String title = loginPage.validateLoginPageTitle();
