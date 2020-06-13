@@ -6,7 +6,7 @@ import org.openqa.selenium.support.CacheLookup;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
-import com.crm.qa.base.TestBase;
+import com.sinosoft.test.base.TestBase;
 
 public class HomePage extends TestBase {
 

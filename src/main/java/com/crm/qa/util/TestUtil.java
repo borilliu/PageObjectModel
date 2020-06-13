@@ -14,7 +14,7 @@ import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.OutputType;
 import org.openqa.selenium.TakesScreenshot;
 
-import com.crm.qa.base.TestBase;
+import com.sinosoft.test.base.TestBase;
 
 public class TestUtil extends TestBase {
 

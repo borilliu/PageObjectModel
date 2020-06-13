@@ -1,14 +1,1 @@
-com\sinosoft\test\fccp\tbcl\RiskSelectPage.class
-com\crm\qa\pages\ContactsPage.class
-com\crm\qa\pages\DealsPage.class
-com\crm\qa\pages\HomePage.class
-com\crm\qa\pages\TasksPage.class
-com\crm\qa\base\TestBase$1.class
-com\crm\qa\pages\LoginPage.class
-com\sinosoft\test\fccp\common\LoginPage.class
-com\crm\qa\base\TestBase.class
-com\crm\qa\util\TestUtil.class
-com\sinosoft\test\fccp\common\HomePage.class
-com\crm\qa\pages\SignUpPage.class
-com\crm\qa\util\WebEventListener.class
 com\qa\ExtentReportListener\ExtentReporterNG.class
