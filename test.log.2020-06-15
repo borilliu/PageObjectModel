@@ -1,0 +1,396 @@
+2020/06/15 09:07:02:565  INFO com.sinosoft.test.base.TestBase:69 - start InternetExplorerDriver
+2020/06/15 09:07:05:288 DEBUG com.sinosoft.test.base.TestBase:88 - ÈçîÁä∫ÊµáIEÊ§πÂçûÂß©ÈñøÊ¨íÓá§Èîõ?
+org.openqa.selenium.SessionNotCreatedException: Unexpected error launching Internet Explorer. Browser zoom level was set to 80%. It should be set to 100%
+Build info: version: '3.14.0', revision: 'aacccce0', time: '2018-08-02T20:19:58.91Z'
+System info: host: 'DESKTOP-I9S3ABE', ip: '10.2.66.116', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '1.8.0_101'
+Driver info: driver.version: InternetExplorerDriver
+remote stacktrace: 
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:62)
+	at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+	at java.lang.reflect.Constructor.newInstance(Constructor.java:423)
+	at org.openqa.selenium.remote.W3CHandshakeResponse.lambda$new$0(W3CHandshakeResponse.java:57)
+	at org.openqa.selenium.remote.W3CHandshakeResponse.lambda$getResponseFunction$2(W3CHandshakeResponse.java:104)
+	at org.openqa.selenium.remote.ProtocolHandshake.lambda$createSession$0(ProtocolHandshake.java:122)
+	at java.util.stream.ReferencePipeline$3$1.accept(ReferencePipeline.java:193)
+	at java.util.Spliterators$ArraySpliterator.tryAdvance(Spliterators.java:958)
+	at java.util.stream.ReferencePipeline.forEachWithCancel(ReferencePipeline.java:126)
+	at java.util.stream.AbstractPipeline.copyIntoWithCancel(AbstractPipeline.java:498)
+	at java.util.stream.AbstractPipeline.copyInto(AbstractPipeline.java:485)
+	at java.util.stream.AbstractPipeline.wrapAndCopyInto(AbstractPipeline.java:471)
+	at java.util.stream.FindOps$FindOp.evaluateSequential(FindOps.java:152)
+	at java.util.stream.AbstractPipeline.evaluate(AbstractPipeline.java:234)
+	at java.util.stream.ReferencePipeline.findFirst(ReferencePipeline.java:464)
+	at org.openqa.selenium.remote.ProtocolHandshake.createSession(ProtocolHandshake.java:125)
+	at org.openqa.selenium.remote.ProtocolHandshake.createSession(ProtocolHandshake.java:73)
+	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:136)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:83)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:548)
+	at org.openqa.selenium.remote.RemoteWebDriver.startSession(RemoteWebDriver.java:212)
+	at org.openqa.selenium.ie.InternetExplorerDriver.run(InternetExplorerDriver.java:221)
+	at org.openqa.selenium.ie.InternetExplorerDriver.<init>(InternetExplorerDriver.java:213)
+	at org.openqa.selenium.ie.InternetExplorerDriver.<init>(InternetExplorerDriver.java:190)
+	at org.openqa.selenium.ie.InternetExplorerDriver.<init>(InternetExplorerDriver.java:162)
+	at com.sinosoft.test.base.TestBase.initialization(TestBase.java:80)
+	at com.sinosoft.testcases.fccb.LoginPageTest.setUp(LoginPageTest.java:28)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:108)
+	at org.testng.internal.Invoker.invokeConfigurationMethod(Invoker.java:523)
+	at org.testng.internal.Invoker.invokeConfigurations(Invoker.java:224)
+	at org.testng.internal.Invoker.invokeMethod(Invoker.java:599)
+	at org.testng.internal.Invoker.invokeTestMethod(Invoker.java:869)
+	at org.testng.internal.Invoker.invokeTestMethods(Invoker.java:1193)
+	at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:126)
+	at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:109)
+	at org.testng.TestRunner.privateRun(TestRunner.java:744)
+	at org.testng.TestRunner.run(TestRunner.java:602)
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:380)
+	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:375)
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:340)
+	at org.testng.SuiteRunner.run(SuiteRunner.java:289)
+	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:86)
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1301)
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1226)
+	at org.testng.TestNG.runSuites(TestNG.java:1144)
+	at org.testng.TestNG.run(TestNG.java:1115)
+	at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
+	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
+	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
+2020/06/15 09:20:24:054  INFO com.sinosoft.test.base.TestBase:69 - start InternetExplorerDriver
+2020/06/15 09:20:25:652 DEBUG com.sinosoft.test.base.TestBase:88 - ÈçîÁä∫ÊµáIEÊ§πÂçûÂß©ÈñøÊ¨íÓá§Èîõ?
+org.openqa.selenium.SessionNotCreatedException: Unexpected error launching Internet Explorer. Browser zoom level was set to 80%. It should be set to 100%
+Build info: version: '3.14.0', revision: 'aacccce0', time: '2018-08-02T20:19:58.91Z'
+System info: host: 'DESKTOP-I9S3ABE', ip: '10.2.66.116', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '1.8.0_101'
+Driver info: driver.version: InternetExplorerDriver
+remote stacktrace: 
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:62)
+	at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+	at java.lang.reflect.Constructor.newInstance(Constructor.java:423)
+	at org.openqa.selenium.remote.W3CHandshakeResponse.lambda$new$0(W3CHandshakeResponse.java:57)
+	at org.openqa.selenium.remote.W3CHandshakeResponse.lambda$getResponseFunction$2(W3CHandshakeResponse.java:104)
+	at org.openqa.selenium.remote.ProtocolHandshake.lambda$createSession$0(ProtocolHandshake.java:122)
+	at java.util.stream.ReferencePipeline$3$1.accept(ReferencePipeline.java:193)
+	at java.util.Spliterators$ArraySpliterator.tryAdvance(Spliterators.java:958)
+	at java.util.stream.ReferencePipeline.forEachWithCancel(ReferencePipeline.java:126)
+	at java.util.stream.AbstractPipeline.copyIntoWithCancel(AbstractPipeline.java:498)
+	at java.util.stream.AbstractPipeline.copyInto(AbstractPipeline.java:485)
+	at java.util.stream.AbstractPipeline.wrapAndCopyInto(AbstractPipeline.java:471)
+	at java.util.stream.FindOps$FindOp.evaluateSequential(FindOps.java:152)
+	at java.util.stream.AbstractPipeline.evaluate(AbstractPipeline.java:234)
+	at java.util.stream.ReferencePipeline.findFirst(ReferencePipeline.java:464)
+	at org.openqa.selenium.remote.ProtocolHandshake.createSession(ProtocolHandshake.java:125)
+	at org.openqa.selenium.remote.ProtocolHandshake.createSession(ProtocolHandshake.java:73)
+	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:136)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:83)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:548)
+	at org.openqa.selenium.remote.RemoteWebDriver.startSession(RemoteWebDriver.java:212)
+	at org.openqa.selenium.ie.InternetExplorerDriver.run(InternetExplorerDriver.java:221)
+	at org.openqa.selenium.ie.InternetExplorerDriver.<init>(InternetExplorerDriver.java:213)
+	at org.openqa.selenium.ie.InternetExplorerDriver.<init>(InternetExplorerDriver.java:190)
+	at org.openqa.selenium.ie.InternetExplorerDriver.<init>(InternetExplorerDriver.java:162)
+	at com.sinosoft.test.base.TestBase.initialization(TestBase.java:80)
+	at com.sinosoft.testcases.fccb.LoginPageTest.setUp(LoginPageTest.java:28)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:108)
+	at org.testng.internal.Invoker.invokeConfigurationMethod(Invoker.java:523)
+	at org.testng.internal.Invoker.invokeConfigurations(Invoker.java:224)
+	at org.testng.internal.Invoker.invokeMethod(Invoker.java:599)
+	at org.testng.internal.Invoker.invokeTestMethod(Invoker.java:869)
+	at org.testng.internal.Invoker.invokeTestMethods(Invoker.java:1193)
+	at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:126)
+	at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:109)
+	at org.testng.TestRunner.privateRun(TestRunner.java:744)
+	at org.testng.TestRunner.run(TestRunner.java:602)
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:380)
+	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:375)
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:340)
+	at org.testng.SuiteRunner.run(SuiteRunner.java:289)
+	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:86)
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1301)
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1226)
+	at org.testng.TestNG.runSuites(TestNG.java:1144)
+	at org.testng.TestNG.run(TestNG.java:1115)
+	at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
+	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
+	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
+2020/06/15 09:21:41:941  INFO com.sinosoft.test.base.TestBase:69 - start InternetExplorerDriver
+2020/06/15 09:24:07:656  INFO com.sinosoft.test.base.TestBase:69 - start InternetExplorerDriver
+2020/06/15 09:25:33:919  INFO com.sinosoft.test.base.TestBase:69 - start InternetExplorerDriver
+2020/06/15 09:36:05:768  INFO com.sinosoft.test.base.TestBase:69 - start InternetExplorerDriver
+2020/06/15 09:36:07:368  INFO com.sinosoft.test.base.TestBase:48 - ÂØÆ‚Ç¨ÊøÆÂ¨≠ÁπçÁêõÂ±æÁ•¥ÁíáÊõ°ÂâºÈèàÓÑäÁ¥ùÈëæÂ≥∞ÂΩáÈçíÊâÆÊÆëÂ®¥Â¨≠ÁòØÈèÅÁâàÂµÅÊø°ÂÇôÁ¨Ö
+2020/06/15 09:36:07:368  INFO com.sinosoft.test.base.TestBase:49 - fbbs=1-ÈçòÁÜ∂ÁπöÈóÑ‚ïÄÁπöÈçó?ywgs=1620189.0,qdlx=4.0
+2020/06/15 09:36:10:388  INFO com.sinosoft.test.base.TestBase:102 - Èñ≤Â∂ÖÓò≤ÈêßËØ≤Á∂çÈîõÂ±ΩÂΩÇÈêúÊâÆÊà∑ÁºÅÓÖ†Ê´•Ë§∞ÊõüÂØúÈñΩÓáÜÁ¥ùÂØÆÂìÑÂüóÈêßËØ≤Á∂ç
+2020/06/15 10:08:28:358  INFO com.sinosoft.test.base.TestBase:69 - start InternetExplorerDriver
+2020/06/15 10:08:30:439  INFO com.sinosoft.test.base.TestBase:48 - ÂØÆ‚Ç¨ÊøÆÂ¨≠ÁπçÁêõÂ±æÁ•¥ÁíáÊõ°ÂâºÈèàÓÑäÁ¥ùÈëæÂ≥∞ÂΩáÈçíÊâÆÊÆëÂ®¥Â¨≠ÁòØÈèÅÁâàÂµÅÊø°ÂÇôÁ¨Ö
+2020/06/15 10:08:30:439  INFO com.sinosoft.test.base.TestBase:49 - fbbs=1-ÈçòÁÜ∂ÁπöÈóÑ‚ïÄÁπöÈçó?ywgs=1620189.0,qdlx=4.0
+2020/06/15 10:08:32:962  INFO com.sinosoft.test.base.TestBase:102 - Èñ≤Â∂ÖÓò≤ÈêßËØ≤Á∂çÈîõÂ±ΩÂΩÇÈêúÊâÆÊà∑ÁºÅÓÖ†Ê´•Ë§∞ÊõüÂØúÈñΩÓáÜÁ¥ùÂØÆÂìÑÂüóÈêßËØ≤Á∂ç
+2020/06/15 10:13:42:465  INFO com.sinosoft.test.base.TestBase:69 - start InternetExplorerDriver
+2020/06/15 10:13:44:184  INFO com.sinosoft.test.base.TestBase:48 - ÂØÆ‚Ç¨ÊøÆÂ¨≠ÁπçÁêõÂ±æÁ•¥ÁíáÊõ°ÂâºÈèàÓÑäÁ¥ùÈëæÂ≥∞ÂΩáÈçíÊâÆÊÆëÂ®¥Â¨≠ÁòØÈèÅÁâàÂµÅÊø°ÂÇôÁ¨Ö
+2020/06/15 10:13:44:185  INFO com.sinosoft.test.base.TestBase:49 - fbbs=1-ÈçòÁÜ∂ÁπöÈóÑ‚ïÄÁπöÈçó?ywgs=1620189.0,qdlx=4.0
+2020/06/15 10:13:47:329  INFO com.sinosoft.test.base.TestBase:102 - Èñ≤Â∂ÖÓò≤ÈêßËØ≤Á∂çÈîõÂ±ΩÂΩÇÈêúÊâÆÊà∑ÁºÅÓÖ†Ê´•Ë§∞ÊõüÂØúÈñΩÓáÜÁ¥ùÂØÆÂìÑÂüóÈêßËØ≤Á∂ç
+2020/06/15 10:27:38:979  INFO com.sinosoft.test.base.TestBase:69 - start InternetExplorerDriver
+2020/06/15 10:27:40:729  INFO com.sinosoft.test.base.TestBase:48 - ÂØÆ‚Ç¨ÊøÆÂ¨≠ÁπçÁêõÂ±æÁ•¥ÁíáÊõ°ÂâºÈèàÓÑäÁ¥ùÈëæÂ≥∞ÂΩáÈçíÊâÆÊÆëÂ®¥Â¨≠ÁòØÈèÅÁâàÂµÅÊø°ÂÇôÁ¨Ö
+2020/06/15 10:27:40:729  INFO com.sinosoft.test.base.TestBase:49 - fbbs=1-ÈçòÁÜ∂ÁπöÈóÑ‚ïÄÁπöÈçó?ywgs=1620189.0,qdlx=4.0
+2020/06/15 10:33:14:494  INFO com.sinosoft.test.base.TestBase:69 - start InternetExplorerDriver
+2020/06/15 10:33:16:300  INFO com.sinosoft.test.base.TestBase:48 - ÂºÄÂßãËøêË°åÊµãËØïËÑöÊú¨ÔºåËé∑ÂèñÂà∞ÁöÑÊµãËØïÊï∞ÊçÆÂ¶Ç‰∏ã
+2020/06/15 10:33:16:301  INFO com.sinosoft.test.base.TestBase:49 - fbbs=1-Âéü‰øùÈô©‰øùÂçï,ywgs=1620189.0,qdlx=4.0
+2020/06/15 10:34:49:171  INFO com.sinosoft.test.base.TestBase:69 - start InternetExplorerDriver
+2020/06/15 10:34:50:715  INFO com.sinosoft.test.base.TestBase:48 - ÂºÄÂßãËøêË°åÊµãËØïËÑöÊú¨ÔºåËé∑ÂèñÂà∞ÁöÑÊµãËØïÊï∞ÊçÆÂ¶Ç‰∏ã
+2020/06/15 10:34:50:716  INFO com.sinosoft.test.base.TestBase:49 - fbbs=1-Âéü‰øùÈô©‰øùÂçï,ywgs=1620189.0,qdlx=4.0
+2020/06/15 10:39:44:847  INFO com.sinosoft.test.base.TestBase:69 - start InternetExplorerDriver
+2020/06/15 10:39:46:640  INFO com.sinosoft.test.base.TestBase:48 - ÂºÄÂßãËøêË°åÊµãËØïËÑöÊú¨ÔºåËé∑ÂèñÂà∞ÁöÑÊµãËØïÊï∞ÊçÆÂ¶Ç‰∏ã
+2020/06/15 10:39:46:641  INFO com.sinosoft.test.base.TestBase:49 - fbbs=1-Âéü‰øùÈô©‰øùÂçï,ywgs=1620189.0,qdlx=4.0
+2020/06/15 10:44:53:043  INFO com.sinosoft.test.base.TestBase:69 - start InternetExplorerDriver
+2020/06/15 10:44:54:774  INFO com.sinosoft.test.base.TestBase:48 - ÂºÄÂßãËøêË°åÊµãËØïËÑöÊú¨ÔºåËé∑ÂèñÂà∞ÁöÑÊµãËØïÊï∞ÊçÆÂ¶Ç‰∏ã
+2020/06/15 10:44:54:775  INFO com.sinosoft.test.base.TestBase:49 - fbbs=1-Âéü‰øùÈô©‰øùÂçï,ywgs=1620189.0,qdlx=4.0
+2020/06/15 10:45:11:313 ERROR com.sinosoft.test.base.TestBase:153 - Can not find element:Expected condition failed: waiting for com.sinosoft.test.base.TestBase$1@3a393455 (tried for 1 second(s) with 500 milliseconds interval)
+2020/06/15 10:45:11:313  INFO com.sinosoft.test.base.TestBase:109 - Â∏∏ËßÑÁôªÂΩïÔºåÊ≤°ÊúâÁªßÁª≠ÁôªÂΩïÊåâÈíÆ
+2020/06/15 10:49:59:643  INFO com.sinosoft.test.base.TestBase:69 - start InternetExplorerDriver
+2020/06/15 10:50:01:413  INFO com.sinosoft.test.base.TestBase:48 - ÂºÄÂßãËøêË°åÊµãËØïËÑöÊú¨ÔºåËé∑ÂèñÂà∞ÁöÑÊµãËØïÊï∞ÊçÆÂ¶Ç‰∏ã
+2020/06/15 10:50:01:413  INFO com.sinosoft.test.base.TestBase:49 - fbbs=1-Âéü‰øùÈô©‰øùÂçï,ywgs=1620189.0,qdlx=4.0
+2020/06/15 10:50:11:019 ERROR com.sinosoft.test.base.TestBase:153 - Can not find element:Expected condition failed: waiting for com.sinosoft.test.base.TestBase$1@3a393455 (tried for 1 second(s) with 500 milliseconds interval)
+2020/06/15 10:50:11:019  INFO com.sinosoft.test.base.TestBase:109 - Â∏∏ËßÑÁôªÂΩïÔºåÊ≤°ÊúâÁªßÁª≠ÁôªÂΩïÊåâÈíÆ
+2020/06/15 10:56:45:333  INFO com.sinosoft.test.base.TestBase:69 - start InternetExplorerDriver
+2020/06/15 10:56:47:190  INFO com.sinosoft.test.base.TestBase:48 - ÂºÄÂßãËøêË°åÊµãËØïËÑöÊú¨ÔºåËé∑ÂèñÂà∞ÁöÑÊµãËØïÊï∞ÊçÆÂ¶Ç‰∏ã
+2020/06/15 10:56:47:190  INFO com.sinosoft.test.base.TestBase:49 - fbbs=1-Âéü‰øùÈô©‰øùÂçï,ywgs=1620189.0,qdlx=4.0
+2020/06/15 10:56:56:275 ERROR com.sinosoft.test.base.TestBase:153 - Can not find element:Expected condition failed: waiting for com.sinosoft.test.base.TestBase$1@6f152006 (tried for 1 second(s) with 500 milliseconds interval)
+2020/06/15 10:56:56:275  INFO com.sinosoft.test.base.TestBase:109 - Â∏∏ËßÑÁôªÂΩïÔºåÊ≤°ÊúâÁªßÁª≠ÁôªÂΩïÊåâÈíÆ
+2020/06/15 10:57:52:670  INFO com.sinosoft.test.base.TestBase:69 - start InternetExplorerDriver
+2020/06/15 10:57:54:467  INFO com.sinosoft.test.base.TestBase:48 - ÂºÄÂßãËøêË°åÊµãËØïËÑöÊú¨ÔºåËé∑ÂèñÂà∞ÁöÑÊµãËØïÊï∞ÊçÆÂ¶Ç‰∏ã
+2020/06/15 10:57:54:467  INFO com.sinosoft.test.base.TestBase:49 - fbbs=1-Âéü‰øùÈô©‰øùÂçï,ywgs=1620189.0,qdlx=4.0
+2020/06/15 10:58:03:916 ERROR com.sinosoft.test.base.TestBase:153 - Can not find element:Expected condition failed: waiting for com.sinosoft.test.base.TestBase$1@6f152006 (tried for 1 second(s) with 500 milliseconds interval)
+2020/06/15 10:58:03:916  INFO com.sinosoft.test.base.TestBase:109 - Â∏∏ËßÑÁôªÂΩïÔºåÊ≤°ÊúâÁªßÁª≠ÁôªÂΩïÊåâÈíÆ
+2020/06/15 11:00:27:496  INFO com.sinosoft.test.base.TestBase:65 - start InternetExplorerDriver
+2020/06/15 11:00:29:260  INFO com.sinosoft.test.base.TestBase:48 - ÂºÄÂßãËøêË°åÊµãËØïËÑöÊú¨ÔºåËé∑ÂèñÂà∞ÁöÑÊµãËØïÊï∞ÊçÆÂ¶Ç‰∏ã
+2020/06/15 11:00:29:260  INFO com.sinosoft.test.base.TestBase:49 - fbbs=1-Âéü‰øùÈô©‰øùÂçï,ywgs=1620189.0,qdlx=4.0
+2020/06/15 11:00:37:110 ERROR com.sinosoft.test.base.TestBase:149 - Can not find element:Expected condition failed: waiting for com.sinosoft.test.base.TestBase$1@3a393455 (tried for 1 second(s) with 500 milliseconds interval)
+2020/06/15 11:00:37:110  INFO com.sinosoft.test.base.TestBase:109 - Â∏∏ËßÑÁôªÂΩïÔºåÊ≤°ÊúâÁªßÁª≠ÁôªÂΩïÊåâÈíÆ
+2020/06/15 11:10:56:692  INFO com.sinosoft.test.base.TestBase:65 - start InternetExplorerDriver
+2020/06/15 11:10:58:477  INFO com.sinosoft.test.base.TestBase:48 - ÂºÄÂßãËøêË°åÊµãËØïËÑöÊú¨ÔºåËé∑ÂèñÂà∞ÁöÑÊµãËØïÊï∞ÊçÆÂ¶Ç‰∏ã
+2020/06/15 11:10:58:477  INFO com.sinosoft.test.base.TestBase:49 - fbbs=1-Âéü‰øùÈô©‰øùÂçï,ywgs=1620189.0,qdlx=4.0
+2020/06/15 11:11:06:491 ERROR com.sinosoft.test.base.TestBase:151 - Can not find element:Expected condition failed: waiting for com.sinosoft.test.base.TestBase$1@3a393455 (tried for 1 second(s) with 500 milliseconds interval)
+2020/06/15 11:11:06:491  INFO com.sinosoft.test.base.TestBase:109 - Â∏∏ËßÑÁôªÂΩïÔºåÊ≤°ÊúâÁªßÁª≠ÁôªÂΩïÊåâÈíÆ
+2020/06/15 13:55:15:257  INFO com.sinosoft.test.base.TestBase:65 - start InternetExplorerDriver
+2020/06/15 13:55:17:035  INFO com.sinosoft.test.base.TestBase:48 - ÂºÄÂßãËøêË°åÊµãËØïËÑöÊú¨ÔºåËé∑ÂèñÂà∞ÁöÑÊµãËØïÊï∞ÊçÆÂ¶Ç‰∏ã
+2020/06/15 13:55:17:035  INFO com.sinosoft.test.base.TestBase:49 - fbbs=1-Âéü‰øùÈô©‰øùÂçï,ywgs=1620189.0,qdlx=4.0
+2020/06/15 13:55:25:185  INFO com.sinosoft.test.base.TestBase:148 - Ê≤°ÊúâÊâæÂà∞È°µÈù¢ÂÖÉÁ¥†:By.xpath: //input[@value='ÁªßÁª≠ÁôªÂΩï'] - ÈîôËØØ‰ø°ÊÅØExpected condition failed: waiting for com.sinosoft.test.base.TestBase$1@3a393455 (tried for 1 second(s) with 500 milliseconds interval)
+2020/06/15 13:55:25:185  INFO com.sinosoft.test.base.TestBase:109 - Â∏∏ËßÑÁôªÂΩïÔºåÊ≤°ÊúâÁªßÁª≠ÁôªÂΩïÊåâÈíÆ
+2020/06/15 14:05:31:706  INFO com.sinosoft.test.base.TestBase:65 - start InternetExplorerDriver
+2020/06/15 14:05:33:826  INFO com.sinosoft.test.base.TestBase:48 - ÂºÄÂßãËøêË°åÊµãËØïËÑöÊú¨ÔºåËé∑ÂèñÂà∞ÁöÑÊµãËØïÊï∞ÊçÆÂ¶Ç‰∏ã
+2020/06/15 14:05:33:826  INFO com.sinosoft.test.base.TestBase:49 - fbbs=1-Âéü‰øùÈô©‰øùÂçï,ywgs=1620189.0,qdlx=4.0
+2020/06/15 14:05:42:952  INFO com.sinosoft.test.base.TestBase:148 - Ê≤°ÊúâÊâæÂà∞È°µÈù¢ÂÖÉÁ¥†:By.xpath: //input[@value='ÁªßÁª≠ÁôªÂΩï'] - ÈîôËØØ‰ø°ÊÅØExpected condition failed: waiting for com.sinosoft.test.base.TestBase$1@3a393455 (tried for 1 second(s) with 500 milliseconds interval)
+2020/06/15 14:05:42:952  INFO com.sinosoft.test.base.TestBase:109 - Â∏∏ËßÑÁôªÂΩïÔºåÊ≤°ÊúâÁªßÁª≠ÁôªÂΩïÊåâÈíÆ
+2020/06/15 14:30:12:312  INFO com.sinosoft.test.base.TestBase:65 - start InternetExplorerDriver
+2020/06/15 14:30:14:099  INFO com.sinosoft.test.base.TestBase:48 - ÂºÄÂßãËøêË°åÊµãËØïËÑöÊú¨ÔºåËé∑ÂèñÂà∞ÁöÑÊµãËØïÊï∞ÊçÆÂ¶Ç‰∏ã
+2020/06/15 14:30:14:099  INFO com.sinosoft.test.base.TestBase:49 - fbbs=1-Âéü‰øùÈô©‰øùÂçï,ywgs=1620189,qdlx=4
+2020/06/15 14:30:22:280  INFO com.sinosoft.test.base.TestBase:148 - Ê≤°ÊúâÊâæÂà∞È°µÈù¢ÂÖÉÁ¥†:By.xpath: //input[@value='ÁªßÁª≠ÁôªÂΩï'] - ÈîôËØØ‰ø°ÊÅØExpected condition failed: waiting for com.sinosoft.test.base.TestBase$1@23fb172e (tried for 1 second(s) with 500 milliseconds interval)
+2020/06/15 14:30:22:280  INFO com.sinosoft.test.base.TestBase:109 - Â∏∏ËßÑÁôªÂΩïÔºåÊ≤°ÊúâÁªßÁª≠ÁôªÂΩïÊåâÈíÆ
+2020/06/15 14:30:46:945 DEBUG com.sinosoft.test.base.TestBase:168 - ÈªÑÊ≤≥Ë¥¢Èô©‰∏öÂä°Á≥ªÁªü with Handles f2ef6bbd-a927-4539-a6de-7ab4e2ffbe61
+2020/06/15 14:58:44:059  INFO com.sinosoft.test.base.TestBase:65 - start InternetExplorerDriver
+2020/06/15 14:58:45:848  INFO com.sinosoft.test.base.TestBase:48 - ÂºÄÂßãËøêË°åÊµãËØïËÑöÊú¨ÔºåËé∑ÂèñÂà∞ÁöÑÊµãËØïÊï∞ÊçÆÂ¶Ç‰∏ã
+2020/06/15 14:58:45:848  INFO com.sinosoft.test.base.TestBase:49 - fbbs=1-Âéü‰øùÈô©‰øùÂçï,ywgs=01620189,qdlx=4
+2020/06/15 14:58:53:819  INFO com.sinosoft.test.base.TestBase:148 - Ê≤°ÊúâÊâæÂà∞È°µÈù¢ÂÖÉÁ¥†:By.xpath: //input[@value='ÁªßÁª≠ÁôªÂΩï'] - ÈîôËØØ‰ø°ÊÅØExpected condition failed: waiting for com.sinosoft.test.base.TestBase$1@158a3b2e (tried for 1 second(s) with 500 milliseconds interval)
+2020/06/15 14:58:53:819  INFO com.sinosoft.test.base.TestBase:109 - Â∏∏ËßÑÁôªÂΩïÔºåÊ≤°ÊúâÁªßÁª≠ÁôªÂΩïÊåâÈíÆ
+2020/06/15 14:59:18:280 DEBUG com.sinosoft.test.base.TestBase:168 - ÈªÑÊ≤≥Ë¥¢Èô©‰∏öÂä°Á≥ªÁªü with Handles 66b03feb-7d20-4a0a-a122-cde9722e1311
+2020/06/15 15:07:48:651  INFO com.sinosoft.test.base.TestBase:65 - start InternetExplorerDriver
+2020/06/15 15:07:50:473  INFO com.sinosoft.test.base.TestBase:48 - ÂºÄÂßãËøêË°åÊµãËØïËÑöÊú¨ÔºåËé∑ÂèñÂà∞ÁöÑÊµãËØïÊï∞ÊçÆÂ¶Ç‰∏ã
+2020/06/15 15:07:50:473  INFO com.sinosoft.test.base.TestBase:49 - fbbs=1-Âéü‰øùÈô©‰øùÂçï,ywgs=01620189,qdlx=4
+2020/06/15 15:07:58:621  INFO com.sinosoft.test.base.TestBase:148 - Ê≤°ÊúâÊâæÂà∞È°µÈù¢ÂÖÉÁ¥†:By.xpath: //input[@value='ÁªßÁª≠ÁôªÂΩï'] - ÈîôËØØ‰ø°ÊÅØExpected condition failed: waiting for com.sinosoft.test.base.TestBase$1@158a3b2e (tried for 1 second(s) with 500 milliseconds interval)
+2020/06/15 15:07:58:621  INFO com.sinosoft.test.base.TestBase:109 - Â∏∏ËßÑÁôªÂΩïÔºåÊ≤°ÊúâÁªßÁª≠ÁôªÂΩïÊåâÈíÆ
+2020/06/15 15:08:22:873 DEBUG com.sinosoft.test.base.TestBase:168 - ÈªÑÊ≤≥Ë¥¢Èô©‰∏öÂä°Á≥ªÁªü with Handles b47239b2-b18a-4441-9d64-45d5e831fe4e
+2020/06/15 15:14:45:601  INFO com.sinosoft.test.base.TestBase:65 - start InternetExplorerDriver
+2020/06/15 15:14:47:659  INFO com.sinosoft.test.base.TestBase:48 - ÂºÄÂßãËøêË°åÊµãËØïËÑöÊú¨ÔºåËé∑ÂèñÂà∞ÁöÑÊµãËØïÊï∞ÊçÆÂ¶Ç‰∏ã
+2020/06/15 15:14:47:659  INFO com.sinosoft.test.base.TestBase:49 - fbbs=1-Âéü‰øùÈô©‰øùÂçï,ywgs=01620189,qdlx=4
+2020/06/15 15:14:55:908  INFO com.sinosoft.test.base.TestBase:148 - Ê≤°ÊúâÊâæÂà∞È°µÈù¢ÂÖÉÁ¥†:By.xpath: //input[@value='ÁªßÁª≠ÁôªÂΩï'] - ÈîôËØØ‰ø°ÊÅØExpected condition failed: waiting for com.sinosoft.test.base.TestBase$1@158a3b2e (tried for 1 second(s) with 500 milliseconds interval)
+2020/06/15 15:14:55:908  INFO com.sinosoft.test.base.TestBase:109 - Â∏∏ËßÑÁôªÂΩïÔºåÊ≤°ÊúâÁªßÁª≠ÁôªÂΩïÊåâÈíÆ
+2020/06/15 15:15:20:457 DEBUG com.sinosoft.test.base.TestBase:168 - ÈªÑÊ≤≥Ë¥¢Èô©‰∏öÂä°Á≥ªÁªü with Handles 02d0f4b8-43a2-4b4f-88e7-76534e4653cb
+2020/06/15 15:16:43:102  INFO com.sinosoft.test.base.TestBase:65 - start InternetExplorerDriver
+2020/06/15 15:16:44:905  INFO com.sinosoft.test.base.TestBase:48 - ÂºÄÂßãËøêË°åÊµãËØïËÑöÊú¨ÔºåËé∑ÂèñÂà∞ÁöÑÊµãËØïÊï∞ÊçÆÂ¶Ç‰∏ã
+2020/06/15 15:16:44:905  INFO com.sinosoft.test.base.TestBase:49 - fbbs=1-Âéü‰øùÈô©‰øùÂçï,ywgs=01620189,qdlx=4
+2020/06/15 15:16:52:790  INFO com.sinosoft.test.base.TestBase:148 - Ê≤°ÊúâÊâæÂà∞È°µÈù¢ÂÖÉÁ¥†:By.xpath: //input[@value='ÁªßÁª≠ÁôªÂΩï'] - ÈîôËØØ‰ø°ÊÅØExpected condition failed: waiting for com.sinosoft.test.base.TestBase$1@25a6944c (tried for 1 second(s) with 500 milliseconds interval)
+2020/06/15 15:16:52:790  INFO com.sinosoft.test.base.TestBase:109 - Â∏∏ËßÑÁôªÂΩïÔºåÊ≤°ÊúâÁªßÁª≠ÁôªÂΩïÊåâÈíÆ
+2020/06/15 15:17:17:171 DEBUG com.sinosoft.test.base.TestBase:168 - ÈªÑÊ≤≥Ë¥¢Èô©‰∏öÂä°Á≥ªÁªü with Handles fc47b25c-e788-4e2d-af8e-1d6109b9f832
+2020/06/15 15:20:51:570  INFO com.sinosoft.test.base.TestBase:65 - start InternetExplorerDriver
+2020/06/15 15:20:53:343  INFO com.sinosoft.test.base.TestBase:48 - ÂºÄÂßãËøêË°åÊµãËØïËÑöÊú¨ÔºåËé∑ÂèñÂà∞ÁöÑÊµãËØïÊï∞ÊçÆÂ¶Ç‰∏ã
+2020/06/15 15:20:53:343  INFO com.sinosoft.test.base.TestBase:49 - fbbs=1-Âéü‰øùÈô©‰øùÂçï,ywgs=01620189,qdlx=4
+2020/06/15 15:21:01:363  INFO com.sinosoft.test.base.TestBase:148 - Ê≤°ÊúâÊâæÂà∞È°µÈù¢ÂÖÉÁ¥†:By.xpath: //input[@value='ÁªßÁª≠ÁôªÂΩï'] - ÈîôËØØ‰ø°ÊÅØExpected condition failed: waiting for com.sinosoft.test.base.TestBase$1@64ba3208 (tried for 1 second(s) with 500 milliseconds interval)
+2020/06/15 15:21:01:363  INFO com.sinosoft.test.base.TestBase:109 - Â∏∏ËßÑÁôªÂΩïÔºåÊ≤°ÊúâÁªßÁª≠ÁôªÂΩïÊåâÈíÆ
+2020/06/15 15:21:46:241 ERROR com.sinosoft.test.base.TestBase:285 - Ê≤°ÊúâÊâæÂà∞‰ª•„Äê01620189„Äë‰∏∫Ëµ∑ÂßãÁöÑÈÄâÈ°πÔºÅ
+2020/06/15 15:26:00:233  INFO com.sinosoft.test.base.TestBase:65 - start InternetExplorerDriver
+2020/06/15 15:26:02:021  INFO com.sinosoft.test.base.TestBase:48 - ÂºÄÂßãËøêË°åÊµãËØïËÑöÊú¨ÔºåËé∑ÂèñÂà∞ÁöÑÊµãËØïÊï∞ÊçÆÂ¶Ç‰∏ã
+2020/06/15 15:26:02:021  INFO com.sinosoft.test.base.TestBase:49 - fbbs=1-Âéü‰øùÈô©‰øùÂçï,ywgs=01620189,qdlx=4
+2020/06/15 15:26:10:058  INFO com.sinosoft.test.base.TestBase:148 - Ê≤°ÊúâÊâæÂà∞È°µÈù¢ÂÖÉÁ¥†:By.xpath: //input[@value='ÁªßÁª≠ÁôªÂΩï'] - ÈîôËØØ‰ø°ÊÅØExpected condition failed: waiting for com.sinosoft.test.base.TestBase$1@158a3b2e (tried for 1 second(s) with 500 milliseconds interval)
+2020/06/15 15:26:10:058  INFO com.sinosoft.test.base.TestBase:109 - Â∏∏ËßÑÁôªÂΩïÔºåÊ≤°ÊúâÁªßÁª≠ÁôªÂΩïÊåâÈíÆ
+2020/06/15 15:26:55:447 ERROR com.sinosoft.test.base.TestBase:286 - Ê≤°ÊúâÊâæÂà∞‰ª•„Äê01620189„Äë‰∏∫Ëµ∑ÂßãÁöÑÈÄâÈ°πÔºÅ
+2020/06/15 15:27:44:742  INFO com.sinosoft.test.base.TestBase:65 - start InternetExplorerDriver
+2020/06/15 15:27:46:545  INFO com.sinosoft.test.base.TestBase:48 - ÂºÄÂßãËøêË°åÊµãËØïËÑöÊú¨ÔºåËé∑ÂèñÂà∞ÁöÑÊµãËØïÊï∞ÊçÆÂ¶Ç‰∏ã
+2020/06/15 15:27:46:545  INFO com.sinosoft.test.base.TestBase:49 - fbbs=1-Âéü‰øùÈô©‰øùÂçï,ywgs=01620189,qdlx=4
+2020/06/15 15:27:54:564  INFO com.sinosoft.test.base.TestBase:148 - Ê≤°ÊúâÊâæÂà∞È°µÈù¢ÂÖÉÁ¥†:By.xpath: //input[@value='ÁªßÁª≠ÁôªÂΩï'] - ÈîôËØØ‰ø°ÊÅØExpected condition failed: waiting for com.sinosoft.test.base.TestBase$1@158a3b2e (tried for 1 second(s) with 500 milliseconds interval)
+2020/06/15 15:27:54:580  INFO com.sinosoft.test.base.TestBase:109 - Â∏∏ËßÑÁôªÂΩïÔºåÊ≤°ÊúâÁªßÁª≠ÁôªÂΩïÊåâÈíÆ
+2020/06/15 15:28:39:806 ERROR com.sinosoft.test.base.TestBase:286 - Ê≤°ÊúâÊâæÂà∞‰ª•„Äê01620189„Äë‰∏∫Ëµ∑ÂßãÁöÑÈÄâÈ°πÔºÅ
+2020/06/15 15:34:12:402  INFO com.sinosoft.test.base.TestBase:65 - start InternetExplorerDriver
+2020/06/15 15:34:14:221  INFO com.sinosoft.test.base.TestBase:48 - ø™ º‘À––≤‚ ‘Ω≈±æ£¨ªÒ»°µΩµƒ≤‚ ‘ ˝æ›»Áœ¬
+2020/06/15 15:34:14:221  INFO com.sinosoft.test.base.TestBase:49 - fbbs=1-‘≠±£œ’±£µ•,ywgs=01620189,qdlx=4
+2020/06/15 15:34:22:302  INFO com.sinosoft.test.base.TestBase:148 - √ª”–’“µΩ“≥√Ê‘™Àÿ:By.xpath: //input[@value='ºÃ–¯µ«¬º'] - ¥ÌŒÛ–≈œ¢Expected condition failed: waiting for com.sinosoft.test.base.TestBase$1@158a3b2e (tried for 1 second(s) with 500 milliseconds interval)
+2020/06/15 15:34:22:302  INFO com.sinosoft.test.base.TestBase:109 - ≥£πÊµ«¬º£¨√ª”–ºÃ–¯µ«¬º∞¥≈•
+2020/06/15 15:34:53:996 ERROR com.sinosoft.test.base.TestBase:286 - √ª”–’“µΩ“‘°æ01620189°øŒ™∆ ºµƒ—°œÓ£°
+2020/06/15 15:42:30:091  INFO com.sinosoft.test.base.TestBase:65 - start InternetExplorerDriver
+2020/06/15 15:42:31:840  INFO com.sinosoft.test.base.TestBase:48 - ø™ º‘À––≤‚ ‘Ω≈±æ£¨ªÒ»°µΩµƒ≤‚ ‘ ˝æ›»Áœ¬
+2020/06/15 15:42:31:840  INFO com.sinosoft.test.base.TestBase:49 - fbbs=1-‘≠±£œ’±£µ•,ywgs=01620189,qdlx=4
+2020/06/15 15:42:39:910  INFO com.sinosoft.test.base.TestBase:148 - √ª”–’“µΩ“≥√Ê‘™Àÿ:By.xpath: //input[@value='ºÃ–¯µ«¬º'] - ¥ÌŒÛ–≈œ¢Expected condition failed: waiting for com.sinosoft.test.base.TestBase$1@158a3b2e (tried for 1 second(s) with 500 milliseconds interval)
+2020/06/15 15:42:39:910  INFO com.sinosoft.test.base.TestBase:109 - ≥£πÊµ«¬º£¨√ª”–ºÃ–¯µ«¬º∞¥≈•
+2020/06/15 15:43:10:611 ERROR com.sinosoft.test.base.TestBase:286 - √ª”–’“µΩ“‘°æ01620189°øŒ™∆ ºµƒ—°œÓ£°
+2020/06/15 15:45:14:573  INFO com.sinosoft.test.base.TestBase:65 - start InternetExplorerDriver
+2020/06/15 15:45:16:365  INFO com.sinosoft.test.base.TestBase:48 - ø™ º‘À––≤‚ ‘Ω≈±æ£¨ªÒ»°µΩµƒ≤‚ ‘ ˝æ›»Áœ¬
+2020/06/15 15:45:16:366  INFO com.sinosoft.test.base.TestBase:49 - fbbs=1-‘≠±£œ’±£µ•,ywgs=01620189,qdlx=4
+2020/06/15 15:45:24:315  INFO com.sinosoft.test.base.TestBase:148 - √ª”–’“µΩ“≥√Ê‘™Àÿ:By.xpath: //input[@value='ºÃ–¯µ«¬º'] - ¥ÌŒÛ–≈œ¢Expected condition failed: waiting for com.sinosoft.test.base.TestBase$1@64ba3208 (tried for 1 second(s) with 500 milliseconds interval)
+2020/06/15 15:45:24:315  INFO com.sinosoft.test.base.TestBase:109 - ≥£πÊµ«¬º£¨√ª”–ºÃ–¯µ«¬º∞¥≈•
+2020/06/15 15:45:55:109 ERROR com.sinosoft.test.base.TestBase:286 - √ª”–’“µΩ“‘°æ01620189°øŒ™∆ ºµƒ—°œÓ£°
+2020/06/15 15:50:58:550  INFO com.sinosoft.test.base.TestBase:65 - start InternetExplorerDriver
+2020/06/15 15:51:00:308  INFO com.sinosoft.test.base.TestBase:48 - ø™ º‘À––≤‚ ‘Ω≈±æ£¨ªÒ»°µΩµƒ≤‚ ‘ ˝æ›»Áœ¬
+2020/06/15 15:51:00:308  INFO com.sinosoft.test.base.TestBase:49 - fbbs=1-‘≠±£œ’±£µ•,ywgs=01620189,qdlx=4
+2020/06/15 15:51:08:347  INFO com.sinosoft.test.base.TestBase:148 - √ª”–’“µΩ“≥√Ê‘™Àÿ:By.xpath: //input[@value='ºÃ–¯µ«¬º'] - ¥ÌŒÛ–≈œ¢Expected condition failed: waiting for com.sinosoft.test.base.TestBase$1@64ba3208 (tried for 1 second(s) with 500 milliseconds interval)
+2020/06/15 15:51:08:348  INFO com.sinosoft.test.base.TestBase:109 - ≥£πÊµ«¬º£¨√ª”–ºÃ–¯µ«¬º∞¥≈•
+2020/06/15 15:56:23:056  INFO com.sinosoft.test.base.TestBase:65 - start InternetExplorerDriver
+2020/06/15 15:56:25:059  INFO com.sinosoft.test.base.TestBase:48 - ø™ º‘À––≤‚ ‘Ω≈±æ£¨ªÒ»°µΩµƒ≤‚ ‘ ˝æ›»Áœ¬
+2020/06/15 15:56:25:059  INFO com.sinosoft.test.base.TestBase:49 - fbbs=1-‘≠±£œ’±£µ•,ywgs=01620189,qdlx=4
+2020/06/15 15:56:32:922  INFO com.sinosoft.test.base.TestBase:148 - √ª”–’“µΩ“≥√Ê‘™Àÿ:By.xpath: //input[@value='ºÃ–¯µ«¬º'] - ¥ÌŒÛ–≈œ¢Expected condition failed: waiting for com.sinosoft.test.base.TestBase$1@158a3b2e (tried for 1 second(s) with 500 milliseconds interval)
+2020/06/15 15:56:32:922  INFO com.sinosoft.test.base.TestBase:109 - ≥£πÊµ«¬º£¨√ª”–ºÃ–¯µ«¬º∞¥≈•
+2020/06/15 15:57:03:377 DEBUG com.sinosoft.test.base.TestBase:277 - —°œÓ¡–±Ì÷–µƒ÷µ «£∫01620189--ª∆∫”≤∆≤˙±£œ’π…∑›”–œﬁπ´Àæ¿º÷› –÷––ƒ÷ßπ´Àæ÷± Ù“µŒÒ≤ø
+2020/06/15 15:57:03:378 DEBUG com.sinosoft.test.base.TestBase:278 - ∆•≈‰÷µ «£∫01620189
+2020/06/15 16:00:22:894  INFO com.sinosoft.test.base.TestBase:65 - start InternetExplorerDriver
+2020/06/15 16:00:24:675  INFO com.sinosoft.test.base.TestBase:48 - ø™ º‘À––≤‚ ‘Ω≈±æ£¨ªÒ»°µΩµƒ≤‚ ‘ ˝æ›»Áœ¬
+2020/06/15 16:00:24:676  INFO com.sinosoft.test.base.TestBase:49 - fbbs=1-‘≠±£œ’±£µ•,ywgs=01620189,qdlx=4
+2020/06/15 16:00:32:655  INFO com.sinosoft.test.base.TestBase:148 - √ª”–’“µΩ“≥√Ê‘™Àÿ:By.xpath: //input[@value='ºÃ–¯µ«¬º'] - ¥ÌŒÛ–≈œ¢Expected condition failed: waiting for com.sinosoft.test.base.TestBase$1@158a3b2e (tried for 1 second(s) with 500 milliseconds interval)
+2020/06/15 16:00:32:656  INFO com.sinosoft.test.base.TestBase:109 - ≥£πÊµ«¬º£¨√ª”–ºÃ–¯µ«¬º∞¥≈•
+2020/06/15 16:06:11:073  INFO com.sinosoft.test.base.TestBase:65 - start InternetExplorerDriver
+2020/06/15 16:06:12:818  INFO com.sinosoft.test.base.TestBase:48 - ø™ º‘À––≤‚ ‘Ω≈±æ£¨ªÒ»°µΩµƒ≤‚ ‘ ˝æ›»Áœ¬
+2020/06/15 16:06:12:819  INFO com.sinosoft.test.base.TestBase:49 - fbbs=1-‘≠±£œ’±£µ•,ywgs=01620189,qdlx=4
+2020/06/15 16:06:15:305  INFO com.sinosoft.test.base.TestBase:105 - ÷ÿ∏¥µ«¬º£¨∑¢œ÷ºÃ–¯µ«¬º∞¥≈•£¨«ø÷∆µ«¬ºButtonName:[[InternetExplorerDriver: internet explorer on WINDOWS (5ba38dfd-3a99-46b3-9c4d-6e25a5383568)] -> xpath: //input[@value='ºÃ–¯µ«¬º']];Displayed£∫+true;Enabled=true
+2020/06/15 16:12:06:138  INFO com.sinosoft.test.base.TestBase:65 - start InternetExplorerDriver
+2020/06/15 16:12:07:906  INFO com.sinosoft.test.base.TestBase:48 - ø™ º‘À––≤‚ ‘Ω≈±æ£¨ªÒ»°µΩµƒ≤‚ ‘ ˝æ›»Áœ¬
+2020/06/15 16:12:07:906  INFO com.sinosoft.test.base.TestBase:49 - fbbs=1-‘≠±£œ’±£µ•,ywgs=01620189,qdlx=4
+2020/06/15 16:12:10:487  INFO com.sinosoft.test.base.TestBase:105 - ÷ÿ∏¥µ«¬º£¨∑¢œ÷ºÃ–¯µ«¬º∞¥≈•£¨«ø÷∆µ«¬ºButtonName:[[InternetExplorerDriver: internet explorer on WINDOWS (4de2b292-0c38-476c-9328-f938227e0eca)] -> xpath: //input[@value='ºÃ–¯µ«¬º']];Displayed£∫+true;Enabled=true
+2020/06/15 16:16:11:723  INFO com.sinosoft.test.base.TestBase:65 - start InternetExplorerDriver
+2020/06/15 16:16:13:508  INFO com.sinosoft.test.base.TestBase:48 - ø™ º‘À––≤‚ ‘Ω≈±æ£¨ªÒ»°µΩµƒ≤‚ ‘ ˝æ›»Áœ¬
+2020/06/15 16:16:13:508  INFO com.sinosoft.test.base.TestBase:49 - fbbs=1-‘≠±£œ’±£µ•,ywgs=01620189,qdlx=4
+2020/06/15 16:16:16:101  INFO com.sinosoft.test.base.TestBase:105 - ÷ÿ∏¥µ«¬º£¨∑¢œ÷ºÃ–¯µ«¬º∞¥≈•£¨«ø÷∆µ«¬ºButtonName:[[InternetExplorerDriver: internet explorer on WINDOWS (70b95d4f-34fe-41d7-afa8-2c3c41d06190)] -> xpath: //input[@value='ºÃ–¯µ«¬º']];Displayed£∫+true;Enabled=true
+2020/06/15 16:20:51:699  INFO com.sinosoft.test.base.TestBase:65 - start InternetExplorerDriver
+2020/06/15 16:20:53:604  INFO com.sinosoft.test.base.TestBase:48 - ø™ º‘À––≤‚ ‘Ω≈±æ£¨ªÒ»°µΩµƒ≤‚ ‘ ˝æ›»Áœ¬
+2020/06/15 16:20:53:604  INFO com.sinosoft.test.base.TestBase:49 - fbbs=1-‘≠±£œ’±£µ•,ywgs=01620189,qdlx=4
+2020/06/15 16:20:56:450  INFO com.sinosoft.test.base.TestBase:105 - ÷ÿ∏¥µ«¬º£¨∑¢œ÷ºÃ–¯µ«¬º∞¥≈•£¨«ø÷∆µ«¬ºButtonName:[[InternetExplorerDriver: internet explorer on WINDOWS (808c4069-5ea2-4292-a22b-58deb0937afb)] -> xpath: //input[@value='ºÃ–¯µ«¬º']];Displayed£∫+true;Enabled=true
+2020/06/15 16:32:47:360  INFO com.sinosoft.test.base.TestBase:65 - start InternetExplorerDriver
+2020/06/15 16:32:49:248  INFO com.sinosoft.test.base.TestBase:48 - ø™ º‘À––≤‚ ‘Ω≈±æ£¨ªÒ»°µΩµƒ≤‚ ‘ ˝æ›»Áœ¬
+2020/06/15 16:32:49:248  INFO com.sinosoft.test.base.TestBase:49 - fbbs=1-‘≠±£œ’±£µ•,ywgs=01620189,qdlx=4
+2020/06/15 16:32:52:020  INFO com.sinosoft.test.base.TestBase:105 - ÷ÿ∏¥µ«¬º£¨∑¢œ÷ºÃ–¯µ«¬º∞¥≈•£¨«ø÷∆µ«¬ºButtonName:[[InternetExplorerDriver: internet explorer on WINDOWS (fb527f01-9898-4f2b-a395-1b82920eb868)] -> xpath: //input[@value='ºÃ–¯µ«¬º']];Displayed£∫+true;Enabled=true
+2020/06/15 16:33:17:605 DEBUG com.sinosoft.test.base.TestBase:170 - «–ªªµΩ¥∞ø⁄°æª∆∫”≤∆œ’“µŒÒœµÕ≥°øwith handle -200436f0-1a79-4cc5-bc6e-4077ccb6562b
+2020/06/15 16:33:18:326 DEBUG com.sinosoft.test.base.TestBase:170 - «–ªªµΩ¥∞ø⁄°æª∆∫”≤∆œ’“µŒÒœµÕ≥°øwith handle -200436f0-1a79-4cc5-bc6e-4077ccb6562b
+2020/06/15 16:33:19:096 DEBUG com.sinosoft.test.base.TestBase:170 - «–ªªµΩ¥∞ø⁄°æCode Select°øwith handle -4b2d2f8b-eba6-4252-b0bd-8f7667c11d51
+2020/06/15 16:33:24:831  INFO com.sinosoft.test.base.TestBase:277 - ’“µΩ∆•≈‰°æ01620189°øµƒ—°œÓ£∫01620189--ª∆∫”≤∆≤˙±£œ’π…∑›”–œﬁπ´Àæ¿º÷› –÷––ƒ÷ßπ´Àæ÷± Ù“µŒÒ≤ø
+2020/06/15 16:33:27:268 DEBUG com.sinosoft.test.base.TestBase:170 - «–ªªµΩ¥∞ø⁄°æª∆∫”≤∆œ’“µŒÒœµÕ≥°øwith handle -200436f0-1a79-4cc5-bc6e-4077ccb6562b
+2020/06/15 16:35:05:413  INFO com.sinosoft.test.base.TestBase:65 - start InternetExplorerDriver
+2020/06/15 16:35:07:266  INFO com.sinosoft.test.base.TestBase:48 - ø™ º‘À––≤‚ ‘Ω≈±æ£¨ªÒ»°µΩµƒ≤‚ ‘ ˝æ›»Áœ¬
+2020/06/15 16:35:07:266  INFO com.sinosoft.test.base.TestBase:49 - fbbs=1-‘≠±£œ’±£µ•,ywgs=01620189,qdlx=4
+2020/06/15 16:35:15:391  INFO com.sinosoft.test.base.TestBase:148 - √ª”–’“µΩ“≥√Ê‘™Àÿ:By.xpath: //input[@value='ºÃ–¯µ«¬º'] - ¥ÌŒÛ–≈œ¢Expected condition failed: waiting for com.sinosoft.test.base.TestBase$1@158a3b2e (tried for 1 second(s) with 500 milliseconds interval)
+2020/06/15 16:35:15:391  INFO com.sinosoft.test.base.TestBase:109 - ≥£πÊµ«¬º£¨√ª”–ºÃ–¯µ«¬º∞¥≈•
+2020/06/15 16:35:47:039  INFO com.sinosoft.test.base.TestBase:277 - ’“µΩ∆•≈‰°æ01620189°øµƒ—°œÓ£∫01620189--ª∆∫”≤∆≤˙±£œ’π…∑›”–œﬁπ´Àæ¿º÷› –÷––ƒ÷ßπ´Àæ÷± Ù“µŒÒ≤ø
+2020/06/15 17:17:31:228  INFO com.sinosoft.test.base.TestBase:65 - start InternetExplorerDriver
+2020/06/15 17:17:33:056  INFO com.sinosoft.test.base.TestBase:48 - ø™ º‘À––≤‚ ‘Ω≈±æ£¨ªÒ»°µΩµƒ≤‚ ‘ ˝æ›»Áœ¬
+2020/06/15 17:17:33:056  INFO com.sinosoft.test.base.TestBase:49 - fbbs=1-‘≠±£œ’±£µ•,ywgs=01620189,qdlx=4
+2020/06/15 17:17:41:448  INFO com.sinosoft.test.base.TestBase:148 - √ª”–’“µΩ“≥√Ê‘™Àÿ:By.xpath: //input[@value='ºÃ–¯µ«¬º'] - ¥ÌŒÛ–≈œ¢Expected condition failed: waiting for com.sinosoft.test.base.TestBase$1@158a3b2e (tried for 1 second(s) with 500 milliseconds interval)
+2020/06/15 17:17:41:448  INFO com.sinosoft.test.base.TestBase:109 - ≥£πÊµ«¬º£¨√ª”–ºÃ–¯µ«¬º∞¥≈•
+2020/06/15 17:18:12:476  INFO com.sinosoft.test.base.TestBase:247 - ’“µΩ∆•≈‰°æ01620189°øµƒ—°œÓ£∫01620189--ª∆∫”≤∆≤˙±£œ’π…∑›”–œﬁπ´Àæ¿º÷› –÷––ƒ÷ßπ´Àæ÷± Ù“µŒÒ≤ø
+2020/06/15 17:21:53:586  INFO com.sinosoft.test.base.TestBase:65 - start InternetExplorerDriver
+2020/06/15 17:21:55:422  INFO com.sinosoft.test.base.TestBase:48 - ø™ º‘À––≤‚ ‘Ω≈±æ£¨ªÒ»°µΩµƒ≤‚ ‘ ˝æ›»Áœ¬
+2020/06/15 17:21:55:437  INFO com.sinosoft.test.base.TestBase:49 - fbbs=1-‘≠±£œ’±£µ•,ywgs=01620189,qdlx=4
+2020/06/15 17:22:03:782  INFO com.sinosoft.test.base.TestBase:148 - √ª”–’“µΩ“≥√Ê‘™Àÿ:By.xpath: //input[@value='ºÃ–¯µ«¬º'] - ¥ÌŒÛ–≈œ¢Expected condition failed: waiting for com.sinosoft.test.base.TestBase$1@64ba3208 (tried for 1 second(s) with 500 milliseconds interval)
+2020/06/15 17:22:03:797  INFO com.sinosoft.test.base.TestBase:109 - ≥£πÊµ«¬º£¨√ª”–ºÃ–¯µ«¬º∞¥≈•
+2020/06/15 17:22:40:093  INFO com.sinosoft.test.base.TestBase:247 - ’“µΩ∆•≈‰°æ01620189°øµƒ—°œÓ£∫01620189--ª∆∫”≤∆≤˙±£œ’π…∑›”–œﬁπ´Àæ¿º÷› –÷––ƒ÷ßπ´Àæ÷± Ù“µŒÒ≤ø
+2020/06/15 17:23:01:044  INFO com.sinosoft.test.base.TestBase:247 - ’“µΩ∆•≈‰°æ0°øµƒ—°œÓ£∫0--∑«π…∂´
+2020/06/15 17:28:12:339  INFO com.sinosoft.test.base.TestBase:65 - start InternetExplorerDriver
+2020/06/15 17:28:14:139  INFO com.sinosoft.test.base.TestBase:48 - ø™ º‘À––≤‚ ‘Ω≈±æ£¨ªÒ»°µΩµƒ≤‚ ‘ ˝æ›»Áœ¬
+2020/06/15 17:28:14:139  INFO com.sinosoft.test.base.TestBase:49 - fbbs=1-‘≠±£œ’±£µ•,ywgs=01620189,qdlx=4
+2020/06/15 17:28:22:335  INFO com.sinosoft.test.base.TestBase:148 - √ª”–’“µΩ“≥√Ê‘™Àÿ:By.xpath: //input[@value='ºÃ–¯µ«¬º'] - ¥ÌŒÛ–≈œ¢Expected condition failed: waiting for com.sinosoft.test.base.TestBase$1@64ba3208 (tried for 1 second(s) with 500 milliseconds interval)
+2020/06/15 17:28:22:335  INFO com.sinosoft.test.base.TestBase:109 - ≥£πÊµ«¬º£¨√ª”–ºÃ–¯µ«¬º∞¥≈•
+2020/06/15 17:28:58:559  INFO com.sinosoft.test.base.TestBase:247 - ’“µΩ∆•≈‰°æ01620189°øµƒ—°œÓ£∫01620189--ª∆∫”≤∆≤˙±£œ’π…∑›”–œﬁπ´Àæ¿º÷› –÷––ƒ÷ßπ´Àæ÷± Ù“µŒÒ≤ø
+2020/06/15 17:29:19:252  INFO com.sinosoft.test.base.TestBase:247 - ’“µΩ∆•≈‰°æ0°øµƒ—°œÓ£∫0--∑«π…∂´
+2020/06/15 17:29:36:581 ERROR com.sinosoft.test.base.TestBase:254 - √ª”–’“µΩ“‘°æ4°øŒ™∆ ºµƒ—°œÓ£°
+2020/06/15 17:31:53:732  INFO com.sinosoft.test.base.TestBase:65 - start InternetExplorerDriver
+2020/06/15 17:31:55:553  INFO com.sinosoft.test.base.TestBase:48 - ø™ º‘À––≤‚ ‘Ω≈±æ£¨ªÒ»°µΩµƒ≤‚ ‘ ˝æ›»Áœ¬
+2020/06/15 17:31:55:553  INFO com.sinosoft.test.base.TestBase:49 - fbbs=1-‘≠±£œ’±£µ•,ywgs=01620189,qdlx=4
+2020/06/15 17:32:03:572  INFO com.sinosoft.test.base.TestBase:148 - √ª”–’“µΩ“≥√Ê‘™Àÿ:By.xpath: //input[@value='ºÃ–¯µ«¬º'] - ¥ÌŒÛ–≈œ¢Expected condition failed: waiting for com.sinosoft.test.base.TestBase$1@158a3b2e (tried for 1 second(s) with 500 milliseconds interval)
+2020/06/15 17:32:03:572  INFO com.sinosoft.test.base.TestBase:109 - ≥£πÊµ«¬º£¨√ª”–ºÃ–¯µ«¬º∞¥≈•
+2020/06/15 17:32:39:514  INFO com.sinosoft.test.base.TestBase:247 - ’“µΩ∆•≈‰°æ01620189°øµƒ—°œÓ£∫01620189--ª∆∫”≤∆≤˙±£œ’π…∑›”–œﬁπ´Àæ¿º÷› –÷––ƒ÷ßπ´Àæ÷± Ù“µŒÒ≤ø
+2020/06/15 17:33:00:473  INFO com.sinosoft.test.base.TestBase:247 - ’“µΩ∆•≈‰°æ0°øµƒ—°œÓ£∫0--∑«π…∂´
+2020/06/15 17:33:17:752 ERROR com.sinosoft.test.base.TestBase:254 - √ª”–’“µΩ“‘°æ4°øŒ™∆ ºµƒ—°œÓ£°
+2020/06/15 17:33:45:946 ERROR com.sinosoft.test.base.TestBase:254 - √ª”–’“µΩ“‘°æT6209880101°øŒ™∆ ºµƒ—°œÓ£°
+2020/06/15 17:36:30:153  INFO com.sinosoft.test.base.TestBase:65 - start InternetExplorerDriver
+2020/06/15 17:36:32:019  INFO com.sinosoft.test.base.TestBase:48 - ø™ º‘À––≤‚ ‘Ω≈±æ£¨ªÒ»°µΩµƒ≤‚ ‘ ˝æ›»Áœ¬
+2020/06/15 17:36:32:019  INFO com.sinosoft.test.base.TestBase:49 - fbbs=1-‘≠±£œ’±£µ•,ywgs=01620189,qdlx=4
+2020/06/15 17:36:40:371  INFO com.sinosoft.test.base.TestBase:148 - √ª”–’“µΩ“≥√Ê‘™Àÿ:By.xpath: //input[@value='ºÃ–¯µ«¬º'] - ¥ÌŒÛ–≈œ¢Expected condition failed: waiting for com.sinosoft.test.base.TestBase$1@158a3b2e (tried for 1 second(s) with 500 milliseconds interval)
+2020/06/15 17:36:40:371  INFO com.sinosoft.test.base.TestBase:109 - ≥£πÊµ«¬º£¨√ª”–ºÃ–¯µ«¬º∞¥≈•
+2020/06/15 17:37:16:067  INFO com.sinosoft.test.base.TestBase:247 - ’“µΩ∆•≈‰°æ01620189°øµƒ—°œÓ£∫01620189--ª∆∫”≤∆≤˙±£œ’π…∑›”–œﬁπ´Àæ¿º÷› –÷––ƒ÷ßπ´Àæ÷± Ù“µŒÒ≤ø
+2020/06/15 17:37:36:552  INFO com.sinosoft.test.base.TestBase:247 - ’“µΩ∆•≈‰°æ0°øµƒ—°œÓ£∫0--∑«π…∂´
+2020/06/15 17:37:54:509 ERROR com.sinosoft.test.base.TestBase:254 - √ª”–’“µΩ“‘°æ4°øŒ™∆ ºµƒ—°œÓ£°
+2020/06/15 17:39:40:921  INFO com.sinosoft.test.base.TestBase:65 - start InternetExplorerDriver
+2020/06/15 17:39:42:726  INFO com.sinosoft.test.base.TestBase:48 - ø™ º‘À––≤‚ ‘Ω≈±æ£¨ªÒ»°µΩµƒ≤‚ ‘ ˝æ›»Áœ¬
+2020/06/15 17:39:42:726  INFO com.sinosoft.test.base.TestBase:49 - fbbs=1-‘≠±£œ’±£µ•,ywgs=01620189,qdlx=04
+2020/06/15 17:39:45:361  INFO com.sinosoft.test.base.TestBase:105 - ÷ÿ∏¥µ«¬º£¨∑¢œ÷ºÃ–¯µ«¬º∞¥≈•£¨«ø÷∆µ«¬ºButtonName:[[InternetExplorerDriver: internet explorer on WINDOWS (6f6332ce-cff9-4c82-90fa-0daa0755b718)] -> xpath: //input[@value='ºÃ–¯µ«¬º']];Displayed£∫+true;Enabled=true
+2020/06/15 17:40:22:701  INFO com.sinosoft.test.base.TestBase:247 - ’“µΩ∆•≈‰°æ01620189°øµƒ—°œÓ£∫01620189--ª∆∫”≤∆≤˙±£œ’π…∑›”–œﬁπ´Àæ¿º÷› –÷––ƒ÷ßπ´Àæ÷± Ù“µŒÒ≤ø
+2020/06/15 17:40:43:679  INFO com.sinosoft.test.base.TestBase:247 - ’“µΩ∆•≈‰°æ0°øµƒ—°œÓ£∫0--∑«π…∂´
+2020/06/15 17:41:01:429  INFO com.sinosoft.test.base.TestBase:247 - ’“µΩ∆•≈‰°æ04°øµƒ—°œÓ£∫04--≥µ––«˛µ¿
+2020/06/15 17:41:19:385  INFO com.sinosoft.test.base.TestBase:247 - ’“µΩ∆•≈‰°æT6209880101°øµƒ—°œÓ£∫T6209880101--÷ÿøÕ“µŒÒ»˝≤ø
+2020/06/15 17:41:37:312  INFO com.sinosoft.test.base.TestBase:247 - ’“µΩ∆•≈‰°æS000000029°øµƒ—°œÓ£∫S000000029--”⁄≥¨
+2020/06/15 17:41:54:947  INFO com.sinosoft.test.base.TestBase:247 - ’“µΩ∆•≈‰°æ01010101°øµƒ—°œÓ£∫01010101--πÒ√Ê÷±œ˙
+2020/06/15 17:47:02:318  INFO com.sinosoft.test.base.TestBase:65 - start InternetExplorerDriver
+2020/06/15 17:47:04:153  INFO com.sinosoft.test.base.TestBase:48 - ø™ º‘À––≤‚ ‘Ω≈±æ£¨ªÒ»°µΩµƒ≤‚ ‘ ˝æ›»Áœ¬
+2020/06/15 17:47:04:153  INFO com.sinosoft.test.base.TestBase:49 - fbbs=1-‘≠±£œ’±£µ•,ywgs=01620189,qdlx=04
+2020/06/15 17:47:06:878  INFO com.sinosoft.test.base.TestBase:105 - ÷ÿ∏¥µ«¬º£¨∑¢œ÷ºÃ–¯µ«¬º∞¥≈•£¨«ø÷∆µ«¬ºButtonName:[[InternetExplorerDriver: internet explorer on WINDOWS (213adc3c-3dc8-4da6-9b1b-d113ad8e1826)] -> xpath: //input[@value='ºÃ–¯µ«¬º']];Displayed£∫+true;Enabled=true
+2020/06/15 17:47:28:777  INFO com.sinosoft.test.base.TestBase:12 - ø™ º…Ë÷√[[InternetExplorerDriver: internet explorer on WINDOWS (213adc3c-3dc8-4da6-9b1b-d113ad8e1826)] -> name: GuMainCompanyCode] & Code=01620189
+2020/06/15 17:47:44:051  INFO com.sinosoft.test.base.TestBase:247 - ’“µΩ∆•≈‰°æ01620189°øµƒ—°œÓ£∫01620189--ª∆∫”≤∆≤˙±£œ’π…∑›”–œﬁπ´Àæ¿º÷› –÷––ƒ÷ßπ´Àæ÷± Ù“µŒÒ≤ø
+2020/06/15 17:47:52:032  INFO com.sinosoft.test.base.TestBase:21 - …Ë÷√ÕÍ±œ[[InternetExplorerDriver: internet explorer on WINDOWS (213adc3c-3dc8-4da6-9b1b-d113ad8e1826)] -> name: GuMainCompanyCode] & Code=01620189
+2020/06/15 17:47:52:095  INFO com.sinosoft.test.base.TestBase:12 - ø™ º…Ë÷√[[InternetExplorerDriver: internet explorer on WINDOWS (213adc3c-3dc8-4da6-9b1b-d113ad8e1826)] -> name: GuMainShareHolderFlag] & Code=0
+2020/06/15 17:48:10:295  INFO com.sinosoft.test.base.TestBase:247 - ’“µΩ∆•≈‰°æ0°øµƒ—°œÓ£∫0--∑«π…∂´
+2020/06/15 17:48:18:306  INFO com.sinosoft.test.base.TestBase:21 - …Ë÷√ÕÍ±œ[[InternetExplorerDriver: internet explorer on WINDOWS (213adc3c-3dc8-4da6-9b1b-d113ad8e1826)] -> name: GuMainShareHolderFlag] & Code=0
+2020/06/15 17:48:18:369  INFO com.sinosoft.test.base.TestBase:12 - ø™ º…Ë÷√[[InternetExplorerDriver: internet explorer on WINDOWS (213adc3c-3dc8-4da6-9b1b-d113ad8e1826)] -> name: GuMainChannelDetailCode] & Code=04
+2020/06/15 17:48:33:839  INFO com.sinosoft.test.base.TestBase:247 - ’“µΩ∆•≈‰°æ04°øµƒ—°œÓ£∫04--≥µ––«˛µ¿
+2020/06/15 17:48:41:764  INFO com.sinosoft.test.base.TestBase:21 - …Ë÷√ÕÍ±œ[[InternetExplorerDriver: internet explorer on WINDOWS (213adc3c-3dc8-4da6-9b1b-d113ad8e1826)] -> name: GuMainChannelDetailCode] & Code=04
+2020/06/15 17:48:41:811  INFO com.sinosoft.test.base.TestBase:12 - ø™ º…Ë÷√[[InternetExplorerDriver: internet explorer on WINDOWS (213adc3c-3dc8-4da6-9b1b-d113ad8e1826)] -> name: GuMainSalesTeamCode] & Code=T6209880101
+2020/06/15 17:48:56:952  INFO com.sinosoft.test.base.TestBase:247 - ’“µΩ∆•≈‰°æT6209880101°øµƒ—°œÓ£∫T6209880101--÷ÿøÕ“µŒÒ»˝≤ø
+2020/06/15 17:49:04:965  INFO com.sinosoft.test.base.TestBase:21 - …Ë÷√ÕÍ±œ[[InternetExplorerDriver: internet explorer on WINDOWS (213adc3c-3dc8-4da6-9b1b-d113ad8e1826)] -> name: GuMainSalesTeamCode] & Code=T6209880101
+2020/06/15 17:49:05:027  INFO com.sinosoft.test.base.TestBase:12 - ø™ º…Ë÷√[[InternetExplorerDriver: internet explorer on WINDOWS (213adc3c-3dc8-4da6-9b1b-d113ad8e1826)] -> name: GuMainSalesmanCode] & Code=S000000029
+2020/06/15 17:49:20:370  INFO com.sinosoft.test.base.TestBase:247 - ’“µΩ∆•≈‰°æS000000029°øµƒ—°œÓ£∫S000000029--”⁄≥¨
+2020/06/15 17:49:28:355  INFO com.sinosoft.test.base.TestBase:21 - …Ë÷√ÕÍ±œ[[InternetExplorerDriver: internet explorer on WINDOWS (213adc3c-3dc8-4da6-9b1b-d113ad8e1826)] -> name: GuMainSalesmanCode] & Code=S000000029
+2020/06/15 17:49:28:419  INFO com.sinosoft.test.base.TestBase:12 - ø™ º…Ë÷√[[InternetExplorerDriver: internet explorer on WINDOWS (213adc3c-3dc8-4da6-9b1b-d113ad8e1826)] -> name: GuMainBusinessSource] & Code=01010101
+2020/06/15 17:49:43:597  INFO com.sinosoft.test.base.TestBase:247 - ’“µΩ∆•≈‰°æ01010101°øµƒ—°œÓ£∫01010101--πÒ√Ê÷±œ˙
+2020/06/15 17:49:51:404  INFO com.sinosoft.test.base.TestBase:21 - …Ë÷√ÕÍ±œ[[InternetExplorerDriver: internet explorer on WINDOWS (213adc3c-3dc8-4da6-9b1b-d113ad8e1826)] -> name: GuMainBusinessSource] & Code=01010101
+2020/06/15 17:49:51:424  INFO com.sinosoft.test.base.TestBase:12 - ø™ º…Ë÷√[[InternetExplorerDriver: internet explorer on WINDOWS (213adc3c-3dc8-4da6-9b1b-d113ad8e1826)] -> name: GuMainSurveyInd] & Code=HXXT-∫À–ƒ
+2020/06/15 17:52:23:984  INFO com.sinosoft.test.base.TestBase:65 - start InternetExplorerDriver
+2020/06/15 17:52:25:788  INFO com.sinosoft.test.base.TestBase:48 - ø™ º‘À––≤‚ ‘Ω≈±æ£¨ªÒ»°µΩµƒ≤‚ ‘ ˝æ›»Áœ¬
+2020/06/15 17:52:25:788  INFO com.sinosoft.test.base.TestBase:49 - fbbs=1-‘≠±£œ’±£µ•,ywgs=01620189,qdlx=04
+2020/06/15 17:52:28:726  INFO com.sinosoft.test.base.TestBase:105 - ÷ÿ∏¥µ«¬º£¨∑¢œ÷ºÃ–¯µ«¬º∞¥≈•£¨«ø÷∆µ«¬ºButtonName:[[InternetExplorerDriver: internet explorer on WINDOWS (208eb073-3503-4193-8b3d-9566cdcd0725)] -> xpath: //input[@value='ºÃ–¯µ«¬º']];Displayed£∫+true;Enabled=true
+2020/06/15 17:53:06:220  INFO com.sinosoft.test.base.TestBase:247 - ’“µΩ∆•≈‰°æ01620189°øµƒ—°œÓ£∫01620189--ª∆∫”≤∆≤˙±£œ’π…∑›”–œﬁπ´Àæ¿º÷› –÷––ƒ÷ßπ´Àæ÷± Ù“µŒÒ≤ø
+2020/06/15 17:53:32:699  INFO com.sinosoft.test.base.TestBase:247 - ’“µΩ∆•≈‰°æ0°øµƒ—°œÓ£∫0--∑«π…∂´
+2020/06/15 17:53:56:088  INFO com.sinosoft.test.base.TestBase:247 - ’“µΩ∆•≈‰°æ04°øµƒ—°œÓ£∫04--≥µ––«˛µ¿
+2020/06/15 17:54:19:451  INFO com.sinosoft.test.base.TestBase:247 - ’“µΩ∆•≈‰°æT6209880101°øµƒ—°œÓ£∫T6209880101--÷ÿøÕ“µŒÒ»˝≤ø
+2020/06/15 17:54:42:535  INFO com.sinosoft.test.base.TestBase:247 - ’“µΩ∆•≈‰°æS000000029°øµƒ—°œÓ£∫S000000029--”⁄≥¨
+2020/06/15 17:55:06:066  INFO com.sinosoft.test.base.TestBase:247 - ’“µΩ∆•≈‰°æ01010101°øµƒ—°œÓ£∫01010101--πÒ√Ê÷±œ˙
+2020/06/15 18:03:18:393  INFO com.sinosoft.test.base.TestBase:65 - start InternetExplorerDriver
+2020/06/15 18:03:20:244  INFO com.sinosoft.test.base.TestBase:48 - ø™ º‘À––≤‚ ‘Ω≈±æ£¨ªÒ»°µΩµƒ≤‚ ‘ ˝æ›»Áœ¬
+2020/06/15 18:03:20:244  INFO com.sinosoft.test.base.TestBase:49 - fbbs=1-‘≠±£œ’±£µ•,ywgs=01620189,qdlx=04
+2020/06/15 18:03:22:882  INFO com.sinosoft.test.base.TestBase:105 - ÷ÿ∏¥µ«¬º£¨∑¢œ÷ºÃ–¯µ«¬º∞¥≈•£¨«ø÷∆µ«¬ºButtonName:[[InternetExplorerDriver: internet explorer on WINDOWS (50692695-61cf-4b3a-b745-c521bb2e2041)] -> xpath: //input[@value='ºÃ–¯µ«¬º']];Displayed£∫+true;Enabled=true
+2020/06/15 18:03:59:971  INFO com.sinosoft.test.base.TestBase:247 - ’“µΩ∆•≈‰°æ01620189°øµƒ—°œÓ£∫01620189--ª∆∫”≤∆≤˙±£œ’π…∑›”–œﬁπ´Àæ¿º÷› –÷––ƒ÷ßπ´Àæ÷± Ù“µŒÒ≤ø
+2020/06/15 18:04:26:200  INFO com.sinosoft.test.base.TestBase:247 - ’“µΩ∆•≈‰°æ0°øµƒ—°œÓ£∫0--∑«π…∂´
+2020/06/15 18:04:49:626  INFO com.sinosoft.test.base.TestBase:247 - ’“µΩ∆•≈‰°æ04°øµƒ—°œÓ£∫04--≥µ––«˛µ¿
+2020/06/15 18:05:12:929  INFO com.sinosoft.test.base.TestBase:247 - ’“µΩ∆•≈‰°æT6209880101°øµƒ—°œÓ£∫T6209880101--÷ÿøÕ“µŒÒ»˝≤ø
+2020/06/15 18:05:36:478  INFO com.sinosoft.test.base.TestBase:247 - ’“µΩ∆•≈‰°æS000000029°øµƒ—°œÓ£∫S000000029--”⁄≥¨
+2020/06/15 18:05:59:811  INFO com.sinosoft.test.base.TestBase:247 - ’“µΩ∆•≈‰°æ01010101°øµƒ—°œÓ£∫01010101--πÒ√Ê÷±œ˙

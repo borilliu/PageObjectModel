@@ -3,12 +3,13 @@
 <suite guice-stage="DEVELOPMENT" name="Failed suite [Default suite]">
   <test name="Default test(failed)">
     <classes>
-      <class name="com.crm.qa.testcases.FreeCrmTest">
+      <class name="com.sinosoft.testcases.fccb.LoginPageTest">
         <methods>
           <include name="setUp"/>
-          <include name="freeCrmTitleTest"/>
+          <include name="tearDown"/>
+          <include name="tbclTest" invocation-numbers="0"/>
         </methods>
-      </class> <!-- com.crm.qa.testcases.FreeCrmTest -->
+      </class> <!-- com.sinosoft.testcases.fccb.LoginPageTest -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->

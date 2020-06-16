@@ -32,13 +32,13 @@ public class LoginPage extends TestBase{
 	@FindBy(how = How.ID, using  ="bt_submit")
 	WebElement btn_login;
 	
-	/**
-	 * 继续登录按钮-使用时生成
-	 */
+
 	/**
 	 * @Fields btn_forceLogin : 继续登录
 	 */
 	WebElement  btn_forceLogin;
+	
+	
 	/**
 	 * @Fields txt_login : 会员登录
 	 */
@@ -59,15 +59,50 @@ public class LoginPage extends TestBase{
 	public String validateLoginPageTitle(){
 		return driver.getTitle();
 	}
+	public void test(){
+		String URI="http://localhost:8080/examples/test.html";
+		super.goToURL(URI);	
+		System.out.println("开始双击按钮");
+		WebElement dblClick = this.waitAndGetElement(By.id("dblbtn"), 5);
+		//this.highlight(dblClick);
+		actionDoubleClick(dblClick);
+		pause(3000);
+		//resetHighlight(dblClick);
+		System.out.println("双击按钮结束");
+		
+		WebElement cleanClick = this.waitAndGetElement(By.id("sglbtn"), 5);
+		cleanClick.click();
+		pause(3000);
+		
+		WebElement simClick = this.waitAndGetElement(By.id("simDBL"), 5);
+		//this.highlight(simClick);
+		System.out.println("点击了模拟双击按钮");
+		//super.runJS("arguments[0].click();", simClick);
+		//this.clickButton(simClick);
+		simClick.click();
+		pause(3000);
+		//resetHighlight(simClick);
+	
+		//this.highlight(cleanClick);
+		//super.runJS("arguments[0].click();", cleanClick);
+		//this.clickButton(cleanClick);
+		cleanClick.click();
+		pause(3000);
+		//resetHighlight(cleanClick);
+
+	}
 	
 	public HomePage login(String un, String pwd){
 		super.goToURL(prop.getProperty("url"));
 		super.setEditboxValue(edt_username, un);
 		super.setEditboxValue(edt_password, pwd);
 		super.clickButton(btn_login);
-		//btn_forceLogin = waitAndGetElement(By.xpath("//input[@value='继续登录']"),1);
+		btn_forceLogin = waitAndGetElement(By.xpath("//input[@value='继续登录']"),1);
 		if(null != btn_forceLogin) {
-			logger.info("重复登录，发现继续登录按钮，强制登录");
+			String BtnName=btn_forceLogin.toString();
+			boolean dsp =btn_forceLogin.isDisplayed();
+			boolean enabled = btn_forceLogin.isEnabled();
+			logger.info("重复登录，发现继续登录按钮，强制登录ButtonName:"+BtnName+";Displayed：+"+dsp+";Enabled="+enabled);
 			super.clickButton(btn_forceLogin);
 			//super.runJS("arguments[0].click();", btn_forceLogin);
 		}else{
@@ -75,5 +110,6 @@ public class LoginPage extends TestBase{
 		}
 		return new HomePage();
 	}
+
 	
 }

@@ -29,12 +29,12 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 import com.crm.qa.util.TestUtil;
 import com.crm.qa.util.WebEventListener;
 
+
 /**
- * @author liu-b
+ * @author liubenchao@sinsoft.com.cn
  *
  */
-public class TestBase {
-	
+public class TestBase { 
 	public static WebDriver driver;
 	public static Properties prop; 
 	public static EventFiringWebDriver e_driver;
@@ -69,6 +69,9 @@ public class TestBase {
 				options.setCapability(CapabilityType.ACCEPT_SSL_CERTS, true);
 				options.setCapability(InternetExplorerDriver.NATIVE_EVENTS, true);
 				options.setCapability(InternetExplorerDriver.INTRODUCE_FLAKINESS_BY_IGNORING_SECURITY_DOMAINS, true);
+				options.setCapability(InternetExplorerDriver.LOG_LEVEL, "TRACE");
+				options.setCapability(InternetExplorerDriver.LOG_FILE, "IE_LOG.log");
+
 				
 				driver = new InternetExplorerDriver(options);
 				driver.manage().deleteAllCookies();
@@ -93,24 +96,27 @@ public class TestBase {
 		
 	}
 	
+
 	/**
-	 * run the nominated js code
-	 * 
-	 * @param js
-	 * @param element
+	 *<p>runJS</p>
+	 *<p>在当前元素上运行脚本</p>
+	 * @param js javascript 脚本
+	 * @param element 选中的元素
+	 * @param args JavaScript 参数
 	 */
-	public void runJS(String js, WebElement element) {
+	public void runJS(String js, WebElement element,Object... args) {
 		try {
-			((JavascriptExecutor) driver).executeScript(js, element);
+			((JavascriptExecutor) driver).executeScript(js, element,args);
 		} catch (Exception e) {
-			//screenshotToLocal(testCaseName);
 			logger.error(e);
 		}
 	}
 
+
 	/**
-	 * @param millisecond
-	 *            time to wait, in millisecond
+	 *<p>pause</p>
+	 *<p>等待，停止执行</p>
+	 * @param millisecond 毫秒 1000毫秒=1秒
 	 */
 	public void pause(long millisecond) {
 		try {
@@ -122,14 +128,11 @@ public class TestBase {
 	}	
 	
 	/**
-	 * rewrite the WebDriverWait method
-	 *
-	 * @param loc
-	 *            the locator of the element to be find
-	 * @param timeout
-	 *            second
-	 * @return the first element accord your locator until it is appeared in the
-	 *         time range
+	 *<p>waitAndGetElement</p>
+	 *<p>通过等待获取页面元素</p>
+	 * @param loc 查找条件
+	 * @param timeout 超时设置 单位 秒
+	 * @return 返回找到的元素，没有找到则返回 null
 	 */
 	public WebElement waitAndGetElement(final By loc, long timeout) {
 		WebElement element = null;
@@ -142,8 +145,7 @@ public class TestBase {
 				}
 			});
 		} catch (Exception e) {
-			//screenshotToLocal(testCaseName);
-			logger.error("Can not find element:"+e.getMessage());
+			logger.info("没有找到页面元素:"+loc.toString()+" - 错误信息"+e.getMessage());
 		}
 		return element;
 	}	
@@ -153,7 +155,7 @@ public class TestBase {
 		 new Actions(driver).doubleClick(element).perform();
 	}
 	public void actionClick(WebElement element) {
-		 new Actions(driver).moveToElement(element, 10, 5).click().perform();
+		 new Actions(driver).click().perform();
 	}
 	public void navigateToWindowByTitle(final String title, long timeout) {
 		WebDriverWait wait = new WebDriverWait(driver, timeout);
@@ -162,10 +164,12 @@ public class TestBase {
 				@Override
 				public String apply(WebDriver d) {
 					for (String windowHandle : d.getWindowHandles()) {
-						System.out.println(windowHandle);
+						//System.out.println(windowHandle);
 						d.switchTo().window(windowHandle);
-						System.out.println(d.getTitle());
+						//System.out.println(d.getTitle());
+						System.out.println("切换到窗口【"+d.getTitle()+"】with handle -"+ windowHandle);
 						if (d.getTitle().contains(title))
+							// d.manage().window().maximize();
 							return d.getWindowHandle();
 					}
 					return null;
@@ -175,22 +179,27 @@ public class TestBase {
 			// logger.error("Can not find element:", e);
 		}
 	}
-	/**
-	 *<p>openMenu</p>
-	 *<p>打开菜单</p>
-	 * @param menuString 使用“#”分割的菜单项目，如 传入"承保子系统#投保管理#投保处理" 将依次打开"承保子系统"->"投保管理" ->"投保处理"
-	 */
-	public void openMenu(String menuString) {
-		this.goToMenuArea();
-		String[] menus = menuString.split("#");
-		for(int i=0;i<menus.length;i++) {
-			WebElement menu = waitAndGetElement(By.linkText(menus[i]), 1);
-			runJS("arguments[0].click();", menu);
-			pause(200);
-		}
-		driver.switchTo().defaultContent();
-		driver.switchTo().frame("mainFrame");
-	}		
+    /**
+     *<p>highlight</p>
+     *<p>高亮显示页面元素:黄色背景，红色边框</p>
+     * @param element
+     */
+    public void highlight(WebElement element){
+        JavascriptExecutor js = (JavascriptExecutor) driver;
+        js.executeScript("arguments[0].setAttribute('style', arguments[1]);", 
+                element,"background: yellow; border: 2px solid red;");
+    }	
+    /**
+     *<p>取消高亮显示</p>
+     *<p>该方法可能会改变原有按钮状态，需在后期改进</p>
+     * @param element
+     */
+    public void resetHighlight(WebElement element){
+        JavascriptExecutor js = (JavascriptExecutor) driver;
+        js.executeScript("arguments[0].setAttribute('style', arguments[1]);", 
+                element,"background: ''; border:'';");
+    }
+
 	/**
 	 *<p>goToURL</p>
 	 *<p>打开链接</p>
@@ -198,23 +207,6 @@ public class TestBase {
 	 */
 	public void goToURL(String url) {
 		driver.get(url);	
-	}
-	/**
-	 *<p>goToWorkArea</p>
-	 *<p>将浏览器工作区域切换到用户录入区域</p>
-	 */
-	public void goToWorkArea() {
-		driver.switchTo().defaultContent();
-		driver.switchTo().frame("mainFrame");
-		driver.switchTo().frame("myFrame");
-	}
-	/**
-	 *<p>goToMenuArea</p>
-	 *<p>将浏览器工作区域切换到带单工作区域</p>
-	 */
-	public void goToMenuArea() {
-		driver.switchTo().defaultContent();
-		driver.switchTo().frame("leftFrame");
 	}
 	/**
 	 *<p>SetRadioValue</p>
@@ -242,10 +234,40 @@ public class TestBase {
 	 * @param text  选中的列表项：使用显示文本。
 	 */
 	public void setSelectText(WebElement slcELe,String text) {
+		this.highlight(slcELe);
+		if("".equals(text)) {
+			return;
+		}
 		Select  select = new Select(slcELe);
 		select.selectByVisibleText(text);
 	}
-	
+	/**
+	 *<p>setSelectWithStartText</p>
+	 *<p>根据起始字符选择列表项</p>
+	 * @param slcELe
+	 * @param startText
+	 */
+	public void setSelectWithStartText(WebElement slcELe,String startText) {
+		this.highlight(slcELe);
+		if("".equals(startText)) {
+			return;
+		}
+		Select select = new Select(slcELe);
+		List<WebElement> Options = select.getOptions();
+		boolean found = false;
+	    for (WebElement selectedOption : Options) {
+	        String txt = selectedOption.getText();
+	        if (null !=txt && txt.startsWith(startText)){
+	        	logger.info("找到匹配【"+ startText+"】的选项："+ txt);
+	        	select.selectByVisibleText(txt);
+	        	found =true;
+	        	break;
+	        }
+	    }
+	    if(!found) {
+	    	logger.error("没有找到以【"+startText+"】为起始的选项！" );
+	    }
+	}
 	/**
 	 * 
 	 *<p>setEditboxValue</p>
@@ -255,6 +277,10 @@ public class TestBase {
 	 */
 	
 	public void setEditboxValue(WebElement edtEle,String text) {
+		this.highlight(edtEle);
+		if("".equals(text)) {
+			return;
+		}
 		edtEle.clear();
 		edtEle.sendKeys(text);
 	}
@@ -266,6 +292,9 @@ public class TestBase {
 	 * @param text 输入值
 	 */
 	public void setEditboxTValue(WebElement edtEle,String text) {
+		if("".equals(text)) {
+			return;
+		}
 		edtEle.clear();
 		edtEle.sendKeys(text,Keys.TAB);
 	}
@@ -276,7 +305,7 @@ public class TestBase {
 	 * @param btnEle 按钮
 	 */
 	public void clickButton(WebElement btnEle) {
-		this.jsClickButton(btnEle);
+		btnEle.click();
 	}
 	/**
 	 * 
@@ -294,7 +323,8 @@ public class TestBase {
 	 * @param btnEle 按钮
 	 */
 	public void dblclickButton(WebElement btnEle) {
-		runJS("arguments[0].ondblclick();", btnEle);
+		//runJS("arguments[0].ondblclick();", btnEle);
+		this.actionDoubleClick(btnEle);
 	}
 
 

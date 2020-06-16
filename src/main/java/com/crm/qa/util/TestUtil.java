@@ -6,6 +6,7 @@ import java.io.FileNotFoundException;
 import java.io.IOException;
 
 import org.apache.commons.io.FileUtils;
+import org.apache.poi.hssf.usermodel.HSSFCell;
 import org.apache.poi.openxml4j.exceptions.InvalidFormatException;
 import org.apache.poi.ss.usermodel.Sheet;
 import org.apache.poi.ss.usermodel.Workbook;
@@ -52,7 +53,9 @@ public class TestUtil extends TestBase {
 		// sheet.getRow(0).getLastCellNum());
 		for (int i = 0; i < sheet.getLastRowNum(); i++) {
 			for (int k = 0; k < sheet.getRow(0).getLastCellNum(); k++) {
-				data[i][k] = sheet.getRow(i + 1).getCell(k).toString();
+				 sheet.getRow(i + 1).getCell(k).setCellType(HSSFCell.CELL_TYPE_STRING);
+				 data[i][k] = sheet.getRow(i + 1).getCell(k).getStringCellValue();
+				//data[i][k] = sheet.getRow(i + 1).getCell(k).toString();
 				// System.out.println(data[i][k]);
 			}
 		}

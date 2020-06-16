@@ -1,293 +1,597 @@
-2020/06/12 08:55:58:968  INFO com.sinosoft.test.base.TestBase:60 - start InternetExplorerDriver
-2020/06/12 09:18:52:690  INFO com.sinosoft.test.base.TestBase:60 - start InternetExplorerDriver
-2020/06/12 09:19:06:828 ERROR com.sinosoft.test.base.TestBase:141 - Can not find element:Expected condition failed: waiting for com.sinosoft.test.base.TestBase$1@7975d1d8 (tried for 1 second(s) with 500 milliseconds interval)
-2020/06/12 09:19:06:828  INFO com.sinosoft.test.base.TestBase:59 - 常规登录，没有继续登录按钮
-2020/06/12 09:22:15:203  INFO com.sinosoft.test.base.TestBase:60 - start InternetExplorerDriver
-2020/06/12 09:22:41:029 ERROR com.sinosoft.test.base.TestBase:141 - Can not find element:Expected condition failed: waiting for com.sinosoft.test.base.TestBase$1@7975d1d8 (tried for 1 second(s) with 500 milliseconds interval)
-2020/06/12 09:22:41:030  INFO com.sinosoft.test.base.TestBase:61 - 常规登录，没有继续登录按钮
-2020/06/12 09:23:41:061  INFO com.sinosoft.test.base.TestBase:60 - start InternetExplorerDriver
-2020/06/12 09:24:05:978 ERROR com.sinosoft.test.base.TestBase:141 - Can not find element:Expected condition failed: waiting for com.sinosoft.test.base.TestBase$1@2438dcd (tried for 1 second(s) with 500 milliseconds interval)
-2020/06/12 09:24:05:978  INFO com.sinosoft.test.base.TestBase:62 - 常规登录，没有继续登录按钮
-2020/06/12 09:25:32:979  INFO com.sinosoft.test.base.TestBase:60 - start InternetExplorerDriver
-2020/06/12 09:25:47:543 ERROR com.sinosoft.test.base.TestBase:141 - Can not find element:Expected condition failed: waiting for com.sinosoft.test.base.TestBase$1@24105dc5 (tried for 1 second(s) with 500 milliseconds interval)
-2020/06/12 09:25:47:543  INFO com.sinosoft.test.base.TestBase:57 - 常规登录，没有继续登录按钮
-2020/06/12 09:29:53:924  INFO com.sinosoft.test.base.TestBase:60 - start InternetExplorerDriver
-2020/06/12 09:30:02:228  INFO com.sinosoft.test.base.TestBase:54 - 重复登录，发现继续登录按钮，强制登录
-2020/06/12 09:33:01:177  INFO com.sinosoft.test.base.TestBase:60 - start InternetExplorerDriver
-2020/06/12 09:33:09:877  INFO com.sinosoft.test.base.TestBase:54 - 重复登录，发现继续登录按钮，强制登录
-2020/06/12 09:36:50:301  INFO com.sinosoft.test.base.TestBase:60 - start InternetExplorerDriver
-2020/06/12 09:36:59:700  INFO com.sinosoft.test.base.TestBase:54 - 重复登录，发现继续登录按钮，强制登录
-2020/06/12 09:39:50:366  INFO com.sinosoft.test.base.TestBase:60 - start InternetExplorerDriver
-2020/06/12 09:39:57:670  INFO com.sinosoft.test.base.TestBase:54 - 重复登录，发现继续登录按钮，强制登录
-2020/06/12 09:41:24:340  INFO com.sinosoft.test.base.TestBase:60 - start InternetExplorerDriver
-2020/06/12 09:41:33:674  INFO com.sinosoft.test.base.TestBase:54 - 重复登录，发现继续登录按钮，强制登录
-2020/06/12 09:52:37:741  INFO com.sinosoft.test.base.TestBase:60 - start InternetExplorerDriver
-2020/06/12 09:52:46:891  INFO com.sinosoft.test.base.TestBase:54 - 重复登录，发现继续登录按钮，强制登录
-2020/06/12 09:53:07:265 ERROR com.sinosoft.test.base.TestBase:102 - org.openqa.selenium.JavascriptException: JavaScript error
-Build info: version: '3.14.0', revision: 'aacccce0', time: '2018-08-02T20:19:58.91Z'
-System info: host: 'DESKTOP-I9S3ABE', ip: '10.2.66.116', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '1.8.0_101'
-Driver info: org.openqa.selenium.ie.InternetExplorerDriver
-Capabilities {acceptInsecureCerts: false, browserName: internet explorer, browserVersion: 11, javascriptEnabled: true, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), se:ieOptions: {browserAttachTimeout: 0, elementScrollBehavior: 0, enablePersistentHover: true, ie.browserCommandLineSwitches: , ie.ensureCleanSession: false, ie.fileUploadDialogTimeout: 3000, ie.forceCreateProcessApi: false, ignoreProtectedModeSettings: true, ignoreZoomSetting: false, initialBrowserUrl: http://localhost:14385/, nativeEvents: true, requireWindowFocus: false}, setWindowRect: true, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}}
-Session ID: 8ad636b1-540f-46bb-96a7-3c15f3724132
-2020/06/12 09:53:45:476  INFO com.sinosoft.test.base.TestBase:60 - start InternetExplorerDriver
-2020/06/12 09:53:56:383  INFO com.sinosoft.test.base.TestBase:54 - 重复登录，发现继续登录按钮，强制登录
-2020/06/12 09:54:03:383 ERROR com.sinosoft.test.base.TestBase:141 - Can not find element:Expected condition failed: waiting for com.sinosoft.test.base.TestBase$1@389b0789 (tried for 5 second(s) with 500 milliseconds interval)
-2020/06/12 09:54:03:384  INFO com.sinosoft.test.base.TestBase:33 - 不在欢迎页面，刷新页面
-2020/06/12 09:54:22:982 ERROR com.sinosoft.test.base.TestBase:102 - org.openqa.selenium.JavascriptException: JavaScript error
-Build info: version: '3.14.0', revision: 'aacccce0', time: '2018-08-02T20:19:58.91Z'
-System info: host: 'DESKTOP-I9S3ABE', ip: '10.2.66.116', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '1.8.0_101'
-Driver info: org.openqa.selenium.ie.InternetExplorerDriver
-Capabilities {acceptInsecureCerts: false, browserName: internet explorer, browserVersion: 11, javascriptEnabled: true, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), se:ieOptions: {browserAttachTimeout: 0, elementScrollBehavior: 0, enablePersistentHover: true, ie.browserCommandLineSwitches: , ie.ensureCleanSession: false, ie.fileUploadDialogTimeout: 3000, ie.forceCreateProcessApi: false, ignoreProtectedModeSettings: true, ignoreZoomSetting: false, initialBrowserUrl: http://localhost:38960/, nativeEvents: true, requireWindowFocus: false}, setWindowRect: true, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}}
-Session ID: 96dc7641-afd0-4622-83e0-093b5f1b8aca
-2020/06/12 10:01:50:030  INFO com.sinosoft.test.base.TestBase:60 - start InternetExplorerDriver
-2020/06/12 10:02:03:868 ERROR com.sinosoft.test.base.TestBase:141 - Can not find element:Expected condition failed: waiting for com.sinosoft.test.base.TestBase$1@24105dc5 (tried for 1 second(s) with 500 milliseconds interval)
-2020/06/12 10:02:03:869  INFO com.sinosoft.test.base.TestBase:57 - 常规登录，没有继续登录按钮
-2020/06/12 10:02:23:372 ERROR com.sinosoft.test.base.TestBase:102 - org.openqa.selenium.JavascriptException: JavaScript error
-Build info: version: '3.14.0', revision: 'aacccce0', time: '2018-08-02T20:19:58.91Z'
-System info: host: 'DESKTOP-I9S3ABE', ip: '10.2.66.116', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '1.8.0_101'
-Driver info: org.openqa.selenium.ie.InternetExplorerDriver
-Capabilities {acceptInsecureCerts: false, browserName: internet explorer, browserVersion: 11, javascriptEnabled: true, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), se:ieOptions: {browserAttachTimeout: 0, elementScrollBehavior: 0, enablePersistentHover: true, ie.browserCommandLineSwitches: , ie.ensureCleanSession: false, ie.fileUploadDialogTimeout: 3000, ie.forceCreateProcessApi: false, ignoreProtectedModeSettings: true, ignoreZoomSetting: false, initialBrowserUrl: http://localhost:13081/, nativeEvents: true, requireWindowFocus: false}, setWindowRect: true, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}}
-Session ID: 01f8e53b-ef9b-4052-ba30-6f1967e61574
-2020/06/12 11:18:28:866  INFO com.sinosoft.test.base.TestBase:60 - start InternetExplorerDriver
-2020/06/12 11:18:41:497 ERROR com.sinosoft.test.base.TestBase:141 - Can not find element:Expected condition failed: waiting for com.sinosoft.test.base.TestBase$1@24105dc5 (tried for 1 second(s) with 500 milliseconds interval)
-2020/06/12 11:18:41:498  INFO com.sinosoft.test.base.TestBase:57 - 常规登录，没有继续登录按钮
-2020/06/12 11:19:00:798 ERROR com.sinosoft.test.base.TestBase:102 - org.openqa.selenium.JavascriptException: JavaScript error
-Build info: version: '3.14.0', revision: 'aacccce0', time: '2018-08-02T20:19:58.91Z'
-System info: host: 'DESKTOP-I9S3ABE', ip: '10.2.66.116', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '1.8.0_101'
-Driver info: org.openqa.selenium.ie.InternetExplorerDriver
-Capabilities {acceptInsecureCerts: false, browserName: internet explorer, browserVersion: 11, javascriptEnabled: true, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), se:ieOptions: {browserAttachTimeout: 0, elementScrollBehavior: 0, enablePersistentHover: true, ie.browserCommandLineSwitches: , ie.ensureCleanSession: false, ie.fileUploadDialogTimeout: 3000, ie.forceCreateProcessApi: false, ignoreProtectedModeSettings: true, ignoreZoomSetting: false, initialBrowserUrl: http://localhost:13231/, nativeEvents: true, requireWindowFocus: false}, setWindowRect: true, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}}
-Session ID: 3fe4e389-48d5-45de-ae8b-0a5e48cdeb59
-2020/06/12 11:24:44:613  INFO com.sinosoft.test.base.TestBase:60 - start InternetExplorerDriver
-2020/06/12 11:24:59:550 ERROR com.sinosoft.test.base.TestBase:141 - Can not find element:Expected condition failed: waiting for com.sinosoft.test.base.TestBase$1@24105dc5 (tried for 1 second(s) with 500 milliseconds interval)
-2020/06/12 11:24:59:550  INFO com.sinosoft.test.base.TestBase:57 - 常规登录，没有继续登录按钮
-2020/06/12 11:25:13:037 ERROR com.sinosoft.test.base.TestBase:102 - org.openqa.selenium.JavascriptException: JavaScript error
-Build info: version: '3.14.0', revision: 'aacccce0', time: '2018-08-02T20:19:58.91Z'
-System info: host: 'DESKTOP-I9S3ABE', ip: '10.2.66.116', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '1.8.0_101'
-Driver info: org.openqa.selenium.ie.InternetExplorerDriver
-Capabilities {acceptInsecureCerts: false, browserName: internet explorer, browserVersion: 11, javascriptEnabled: true, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), se:ieOptions: {browserAttachTimeout: 0, elementScrollBehavior: 0, enablePersistentHover: true, ie.browserCommandLineSwitches: , ie.ensureCleanSession: false, ie.fileUploadDialogTimeout: 3000, ie.forceCreateProcessApi: false, ignoreProtectedModeSettings: true, ignoreZoomSetting: false, initialBrowserUrl: http://localhost:20326/, nativeEvents: true, requireWindowFocus: false}, setWindowRect: true, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}}
-Session ID: 857a5b93-d812-4fc2-ad9e-2058117ac754
-2020/06/12 11:26:56:889  INFO com.sinosoft.test.base.TestBase:60 - start InternetExplorerDriver
-2020/06/12 11:27:10:859 ERROR com.sinosoft.test.base.TestBase:141 - Can not find element:Expected condition failed: waiting for com.sinosoft.test.base.TestBase$1@24105dc5 (tried for 1 second(s) with 500 milliseconds interval)
-2020/06/12 11:27:10:860  INFO com.sinosoft.test.base.TestBase:57 - 常规登录，没有继续登录按钮
-2020/06/12 11:27:25:424 ERROR com.sinosoft.test.base.TestBase:102 - org.openqa.selenium.JavascriptException: JavaScript error
-Build info: version: '3.14.0', revision: 'aacccce0', time: '2018-08-02T20:19:58.91Z'
-System info: host: 'DESKTOP-I9S3ABE', ip: '10.2.66.116', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '1.8.0_101'
-Driver info: org.openqa.selenium.ie.InternetExplorerDriver
-Capabilities {acceptInsecureCerts: false, browserName: internet explorer, browserVersion: 11, javascriptEnabled: true, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), se:ieOptions: {browserAttachTimeout: 0, elementScrollBehavior: 0, enablePersistentHover: true, ie.browserCommandLineSwitches: , ie.ensureCleanSession: false, ie.fileUploadDialogTimeout: 3000, ie.forceCreateProcessApi: false, ignoreProtectedModeSettings: true, ignoreZoomSetting: false, initialBrowserUrl: http://localhost:39136/, nativeEvents: true, requireWindowFocus: false}, setWindowRect: true, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}}
-Session ID: 0704c343-5bee-407f-a54b-9a5c4b164c1b
-2020/06/12 11:28:35:423  INFO com.sinosoft.test.base.TestBase:60 - start InternetExplorerDriver
-2020/06/12 11:28:47:880 ERROR com.sinosoft.test.base.TestBase:141 - Can not find element:Expected condition failed: waiting for com.sinosoft.test.base.TestBase$1@24105dc5 (tried for 1 second(s) with 500 milliseconds interval)
-2020/06/12 11:28:47:880  INFO com.sinosoft.test.base.TestBase:57 - 常规登录，没有继续登录按钮
-2020/06/12 11:29:02:154 ERROR com.sinosoft.test.base.TestBase:102 - org.openqa.selenium.JavascriptException: JavaScript error
-Build info: version: '3.14.0', revision: 'aacccce0', time: '2018-08-02T20:19:58.91Z'
-System info: host: 'DESKTOP-I9S3ABE', ip: '10.2.66.116', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '1.8.0_101'
-Driver info: org.openqa.selenium.ie.InternetExplorerDriver
-Capabilities {acceptInsecureCerts: false, browserName: internet explorer, browserVersion: 11, javascriptEnabled: true, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), se:ieOptions: {browserAttachTimeout: 0, elementScrollBehavior: 0, enablePersistentHover: true, ie.browserCommandLineSwitches: , ie.ensureCleanSession: false, ie.fileUploadDialogTimeout: 3000, ie.forceCreateProcessApi: false, ignoreProtectedModeSettings: true, ignoreZoomSetting: false, initialBrowserUrl: http://localhost:43638/, nativeEvents: true, requireWindowFocus: false}, setWindowRect: true, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}}
-Session ID: a07debc6-2ae8-41ee-bfed-d2a5e0e6a057
-2020/06/12 11:30:14:798  INFO com.sinosoft.test.base.TestBase:60 - start InternetExplorerDriver
-2020/06/12 11:30:29:869 ERROR com.sinosoft.test.base.TestBase:141 - Can not find element:Expected condition failed: waiting for com.sinosoft.test.base.TestBase$1@24105dc5 (tried for 1 second(s) with 500 milliseconds interval)
-2020/06/12 11:30:29:871  INFO com.sinosoft.test.base.TestBase:57 - 常规登录，没有继续登录按钮
-2020/06/12 11:30:59:210 ERROR com.sinosoft.test.base.TestBase:102 - org.openqa.selenium.JavascriptException: JavaScript error
-Build info: version: '3.14.0', revision: 'aacccce0', time: '2018-08-02T20:19:58.91Z'
-System info: host: 'DESKTOP-I9S3ABE', ip: '10.2.66.116', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '1.8.0_101'
-Driver info: org.openqa.selenium.ie.InternetExplorerDriver
-Capabilities {acceptInsecureCerts: false, browserName: internet explorer, browserVersion: 11, javascriptEnabled: true, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), se:ieOptions: {browserAttachTimeout: 0, elementScrollBehavior: 0, enablePersistentHover: true, ie.browserCommandLineSwitches: , ie.ensureCleanSession: false, ie.fileUploadDialogTimeout: 3000, ie.forceCreateProcessApi: false, ignoreProtectedModeSettings: true, ignoreZoomSetting: false, initialBrowserUrl: http://localhost:1216/, nativeEvents: true, requireWindowFocus: false}, setWindowRect: true, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}}
-Session ID: 12c080e7-4dd2-4f96-9846-f698b56bc639
-2020/06/12 11:32:47:969  INFO com.sinosoft.test.base.TestBase:60 - start InternetExplorerDriver
-2020/06/12 11:33:01:806 ERROR com.sinosoft.test.base.TestBase:141 - Can not find element:Expected condition failed: waiting for com.sinosoft.test.base.TestBase$1@24105dc5 (tried for 1 second(s) with 500 milliseconds interval)
-2020/06/12 11:33:01:807  INFO com.sinosoft.test.base.TestBase:57 - 常规登录，没有继续登录按钮
-2020/06/12 11:33:31:097 ERROR com.sinosoft.test.base.TestBase:102 - org.openqa.selenium.JavascriptException: JavaScript error
-Build info: version: '3.14.0', revision: 'aacccce0', time: '2018-08-02T20:19:58.91Z'
-System info: host: 'DESKTOP-I9S3ABE', ip: '10.2.66.116', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '1.8.0_101'
-Driver info: org.openqa.selenium.ie.InternetExplorerDriver
-Capabilities {acceptInsecureCerts: false, browserName: internet explorer, browserVersion: 11, javascriptEnabled: true, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), se:ieOptions: {browserAttachTimeout: 0, elementScrollBehavior: 0, enablePersistentHover: true, ie.browserCommandLineSwitches: , ie.ensureCleanSession: false, ie.fileUploadDialogTimeout: 3000, ie.forceCreateProcessApi: false, ignoreProtectedModeSettings: true, ignoreZoomSetting: false, initialBrowserUrl: http://localhost:14462/, nativeEvents: true, requireWindowFocus: false}, setWindowRect: true, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}}
-Session ID: 98c242ab-7774-4667-84a2-dedcd3a3f4f6
-2020/06/12 11:41:07:220  INFO com.sinosoft.test.base.TestBase:60 - start InternetExplorerDriver
-2020/06/12 11:41:22:199 ERROR com.sinosoft.test.base.TestBase:141 - Can not find element:Expected condition failed: waiting for com.sinosoft.test.base.TestBase$1@24105dc5 (tried for 1 second(s) with 500 milliseconds interval)
-2020/06/12 11:41:22:200  INFO com.sinosoft.test.base.TestBase:57 - 常规登录，没有继续登录按钮
-2020/06/12 11:41:25:566 ERROR com.sinosoft.test.base.TestBase:102 - org.openqa.selenium.JavascriptException: JavaScript error
-Build info: version: '3.14.0', revision: 'aacccce0', time: '2018-08-02T20:19:58.91Z'
-System info: host: 'DESKTOP-I9S3ABE', ip: '10.2.66.116', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '1.8.0_101'
-Driver info: org.openqa.selenium.ie.InternetExplorerDriver
-Capabilities {acceptInsecureCerts: false, browserName: internet explorer, browserVersion: 11, javascriptEnabled: true, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), se:ieOptions: {browserAttachTimeout: 0, elementScrollBehavior: 0, enablePersistentHover: true, ie.browserCommandLineSwitches: , ie.ensureCleanSession: false, ie.fileUploadDialogTimeout: 3000, ie.forceCreateProcessApi: false, ignoreProtectedModeSettings: true, ignoreZoomSetting: false, initialBrowserUrl: http://localhost:45913/, nativeEvents: true, requireWindowFocus: false}, setWindowRect: true, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}}
-Session ID: cdf88c97-74fd-4445-b29d-9ac3b9656275
-2020/06/12 11:41:25:986 ERROR com.sinosoft.test.base.TestBase:102 - org.openqa.selenium.JavascriptException: JavaScript error
-Build info: version: '3.14.0', revision: 'aacccce0', time: '2018-08-02T20:19:58.91Z'
-System info: host: 'DESKTOP-I9S3ABE', ip: '10.2.66.116', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '1.8.0_101'
-Driver info: org.openqa.selenium.ie.InternetExplorerDriver
-Capabilities {acceptInsecureCerts: false, browserName: internet explorer, browserVersion: 11, javascriptEnabled: true, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), se:ieOptions: {browserAttachTimeout: 0, elementScrollBehavior: 0, enablePersistentHover: true, ie.browserCommandLineSwitches: , ie.ensureCleanSession: false, ie.fileUploadDialogTimeout: 3000, ie.forceCreateProcessApi: false, ignoreProtectedModeSettings: true, ignoreZoomSetting: false, initialBrowserUrl: http://localhost:45913/, nativeEvents: true, requireWindowFocus: false}, setWindowRect: true, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}}
-Session ID: cdf88c97-74fd-4445-b29d-9ac3b9656275
-2020/06/12 11:43:07:696  INFO com.sinosoft.test.base.TestBase:60 - start InternetExplorerDriver
-2020/06/12 11:43:24:187 ERROR com.sinosoft.test.base.TestBase:141 - Can not find element:Expected condition failed: waiting for com.sinosoft.test.base.TestBase$1@2438dcd (tried for 1 second(s) with 500 milliseconds interval)
-2020/06/12 11:43:24:187  INFO com.sinosoft.test.base.TestBase:57 - 常规登录，没有继续登录按钮
-2020/06/12 11:43:30:733 ERROR com.sinosoft.test.base.TestBase:102 - org.openqa.selenium.JavascriptException: JavaScript error
-Build info: version: '3.14.0', revision: 'aacccce0', time: '2018-08-02T20:19:58.91Z'
-System info: host: 'DESKTOP-I9S3ABE', ip: '10.2.66.116', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '1.8.0_101'
-Driver info: org.openqa.selenium.ie.InternetExplorerDriver
-Capabilities {acceptInsecureCerts: false, browserName: internet explorer, browserVersion: 11, javascriptEnabled: true, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), se:ieOptions: {browserAttachTimeout: 0, elementScrollBehavior: 0, enablePersistentHover: true, ie.browserCommandLineSwitches: , ie.ensureCleanSession: false, ie.fileUploadDialogTimeout: 3000, ie.forceCreateProcessApi: false, ignoreProtectedModeSettings: true, ignoreZoomSetting: false, initialBrowserUrl: http://localhost:28829/, nativeEvents: true, requireWindowFocus: false}, setWindowRect: true, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}}
-Session ID: c6788564-bb1e-476f-9851-df982fffded2
-2020/06/12 11:43:30:997 ERROR com.sinosoft.test.base.TestBase:102 - org.openqa.selenium.JavascriptException: JavaScript error
-Build info: version: '3.14.0', revision: 'aacccce0', time: '2018-08-02T20:19:58.91Z'
-System info: host: 'DESKTOP-I9S3ABE', ip: '10.2.66.116', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '1.8.0_101'
-Driver info: org.openqa.selenium.ie.InternetExplorerDriver
-Capabilities {acceptInsecureCerts: false, browserName: internet explorer, browserVersion: 11, javascriptEnabled: true, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), se:ieOptions: {browserAttachTimeout: 0, elementScrollBehavior: 0, enablePersistentHover: true, ie.browserCommandLineSwitches: , ie.ensureCleanSession: false, ie.fileUploadDialogTimeout: 3000, ie.forceCreateProcessApi: false, ignoreProtectedModeSettings: true, ignoreZoomSetting: false, initialBrowserUrl: http://localhost:28829/, nativeEvents: true, requireWindowFocus: false}, setWindowRect: true, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}}
-Session ID: c6788564-bb1e-476f-9851-df982fffded2
-2020/06/12 12:05:00:576  INFO com.sinosoft.test.base.TestBase:60 - start InternetExplorerDriver
-2020/06/12 12:05:11:678 ERROR com.sinosoft.test.base.TestBase:141 - Can not find element:Expected condition failed: waiting for com.sinosoft.test.base.TestBase$1@24105dc5 (tried for 1 second(s) with 500 milliseconds interval)
-2020/06/12 12:05:11:678  INFO com.sinosoft.test.base.TestBase:57 - 常规登录，没有继续登录按钮
-2020/06/12 12:05:14:436 ERROR com.sinosoft.test.base.TestBase:102 - org.openqa.selenium.JavascriptException: Error executing JavaScript
-Build info: version: '3.14.0', revision: 'aacccce0', time: '2018-08-02T20:19:58.91Z'
-System info: host: 'DESKTOP-I9S3ABE', ip: '10.2.66.116', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '1.8.0_101'
-Driver info: org.openqa.selenium.ie.InternetExplorerDriver
-Capabilities {acceptInsecureCerts: false, browserName: internet explorer, browserVersion: 11, javascriptEnabled: true, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), se:ieOptions: {browserAttachTimeout: 0, elementScrollBehavior: 0, enablePersistentHover: true, ie.browserCommandLineSwitches: , ie.ensureCleanSession: false, ie.fileUploadDialogTimeout: 3000, ie.forceCreateProcessApi: false, ignoreProtectedModeSettings: true, ignoreZoomSetting: false, initialBrowserUrl: http://localhost:32981/, nativeEvents: true, requireWindowFocus: false}, setWindowRect: true, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}}
-Session ID: 835365a1-58d2-481b-aed8-f387cb75fae5
-2020/06/12 12:05:14:687 ERROR com.sinosoft.test.base.TestBase:102 - org.openqa.selenium.JavascriptException: Error executing JavaScript
-Build info: version: '3.14.0', revision: 'aacccce0', time: '2018-08-02T20:19:58.91Z'
-System info: host: 'DESKTOP-I9S3ABE', ip: '10.2.66.116', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '1.8.0_101'
-Driver info: org.openqa.selenium.ie.InternetExplorerDriver
-Capabilities {acceptInsecureCerts: false, browserName: internet explorer, browserVersion: 11, javascriptEnabled: true, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), se:ieOptions: {browserAttachTimeout: 0, elementScrollBehavior: 0, enablePersistentHover: true, ie.browserCommandLineSwitches: , ie.ensureCleanSession: false, ie.fileUploadDialogTimeout: 3000, ie.forceCreateProcessApi: false, ignoreProtectedModeSettings: true, ignoreZoomSetting: false, initialBrowserUrl: http://localhost:32981/, nativeEvents: true, requireWindowFocus: false}, setWindowRect: true, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}}
-Session ID: 835365a1-58d2-481b-aed8-f387cb75fae5
-2020/06/12 12:11:20:285  INFO com.sinosoft.test.base.TestBase:60 - start InternetExplorerDriver
-2020/06/12 12:11:30:741 ERROR com.sinosoft.test.base.TestBase:141 - Can not find element:Expected condition failed: waiting for com.sinosoft.test.base.TestBase$1@24105dc5 (tried for 1 second(s) with 500 milliseconds interval)
-2020/06/12 12:11:30:742  INFO com.sinosoft.test.base.TestBase:57 - 常规登录，没有继续登录按钮
-2020/06/12 12:13:27:276  INFO com.sinosoft.test.base.TestBase:60 - start InternetExplorerDriver
-2020/06/12 12:13:37:868 ERROR com.sinosoft.test.base.TestBase:141 - Can not find element:Expected condition failed: waiting for com.sinosoft.test.base.TestBase$1@5167f57d (tried for 1 second(s) with 500 milliseconds interval)
-2020/06/12 12:13:37:869  INFO com.sinosoft.test.base.TestBase:57 - 常规登录，没有继续登录按钮
-2020/06/12 12:14:46:549  INFO com.sinosoft.test.base.TestBase:60 - start InternetExplorerDriver
-2020/06/12 12:14:56:876 ERROR com.sinosoft.test.base.TestBase:141 - Can not find element:Expected condition failed: waiting for com.sinosoft.test.base.TestBase$1@24105dc5 (tried for 1 second(s) with 500 milliseconds interval)
-2020/06/12 12:14:56:877  INFO com.sinosoft.test.base.TestBase:57 - 常规登录，没有继续登录按钮
-2020/06/12 12:15:48:843  INFO com.sinosoft.test.base.TestBase:60 - start InternetExplorerDriver
-2020/06/12 12:15:59:280 ERROR com.sinosoft.test.base.TestBase:141 - Can not find element:Expected condition failed: waiting for com.sinosoft.test.base.TestBase$1@24105dc5 (tried for 1 second(s) with 500 milliseconds interval)
-2020/06/12 12:15:59:281  INFO com.sinosoft.test.base.TestBase:57 - 常规登录，没有继续登录按钮
-2020/06/12 12:20:19:109  INFO com.sinosoft.test.base.TestBase:60 - start InternetExplorerDriver
-2020/06/12 12:20:29:532 ERROR com.sinosoft.test.base.TestBase:141 - Can not find element:Expected condition failed: waiting for com.sinosoft.test.base.TestBase$1@24105dc5 (tried for 1 second(s) with 500 milliseconds interval)
-2020/06/12 12:20:29:533  INFO com.sinosoft.test.base.TestBase:57 - 常规登录，没有继续登录按钮
-2020/06/12 12:21:24:454  INFO com.sinosoft.test.base.TestBase:60 - start InternetExplorerDriver
-2020/06/12 12:21:34:932 ERROR com.sinosoft.test.base.TestBase:141 - Can not find element:Expected condition failed: waiting for com.sinosoft.test.base.TestBase$1@730d2164 (tried for 1 second(s) with 500 milliseconds interval)
-2020/06/12 12:21:34:933  INFO com.sinosoft.test.base.TestBase:57 - 常规登录，没有继续登录按钮
-2020/06/12 13:26:10:624  INFO com.sinosoft.test.base.TestBase:60 - start InternetExplorerDriver
-2020/06/12 13:26:24:430 ERROR com.sinosoft.test.base.TestBase:141 - Can not find element:Expected condition failed: waiting for com.sinosoft.test.base.TestBase$1@730d2164 (tried for 1 second(s) with 500 milliseconds interval)
-2020/06/12 13:26:24:431  INFO com.sinosoft.test.base.TestBase:57 - 常规登录，没有继续登录按钮
-2020/06/12 14:06:31:799  INFO com.sinosoft.test.base.TestBase:65 - start InternetExplorerDriver
-2020/06/12 14:06:52:049 ERROR com.sinosoft.test.base.TestBase:146 - Can not find element:Expected condition failed: waiting for com.sinosoft.test.base.TestBase$1@5038d0b5 (tried for 1 second(s) with 500 milliseconds interval)
-2020/06/12 14:06:52:050  INFO com.sinosoft.test.base.TestBase:61 - 常规登录，没有继续登录按钮
-2020/06/12 14:09:05:811  INFO com.sinosoft.test.base.TestBase:65 - start InternetExplorerDriver
-2020/06/12 14:09:23:745 ERROR com.sinosoft.test.base.TestBase:146 - Can not find element:Expected condition failed: waiting for com.sinosoft.test.base.TestBase$1@2ad48653 (tried for 1 second(s) with 500 milliseconds interval)
-2020/06/12 14:09:23:747  INFO com.sinosoft.test.base.TestBase:61 - 常规登录，没有继续登录按钮
-2020/06/12 14:11:45:813  INFO com.sinosoft.test.base.TestBase:65 - start InternetExplorerDriver
-2020/06/12 14:11:57:534  INFO com.sinosoft.test.base.TestBase:55 - 重复登录，发现继续登录按钮，强制登录
-2020/06/12 14:12:08:063 ERROR com.sinosoft.test.base.TestBase:107 - org.openqa.selenium.NoSuchElementException: Unable to find element with css selector == *[name='btn_forceLogin']
-For documentation on this error, please visit: http://seleniumhq.org/exceptions/no_such_element.html
-Build info: version: '3.14.0', revision: 'aacccce0', time: '2018-08-02T20:19:58.91Z'
-System info: host: 'DESKTOP-I9S3ABE', ip: '10.2.66.116', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '1.8.0_101'
-Driver info: org.openqa.selenium.ie.InternetExplorerDriver
-Capabilities {acceptInsecureCerts: false, browserName: internet explorer, browserVersion: 11, javascriptEnabled: true, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), se:ieOptions: {browserAttachTimeout: 0, elementScrollBehavior: 0, enablePersistentHover: true, ie.browserCommandLineSwitches: , ie.ensureCleanSession: false, ie.fileUploadDialogTimeout: 3000, ie.forceCreateProcessApi: false, ignoreProtectedModeSettings: true, ignoreZoomSetting: false, initialBrowserUrl: http://localhost:11336/, nativeEvents: true, requireWindowFocus: false}, setWindowRect: true, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}}
-Session ID: 4aa09b03-da63-4094-9c31-54eb0b1eac67
-*** Element info: {Using=name, value=btn_forceLogin}
-2020/06/12 17:29:50:474  INFO com.sinosoft.test.base.TestBase:65 - start InternetExplorerDriver
-2020/06/12 17:29:54:643  INFO com.sinosoft.test.base.TestBase:70 - 重复登录，发现继续登录按钮，强制登录
-2020/06/12 17:30:05:176 ERROR com.sinosoft.test.base.TestBase:107 - org.openqa.selenium.NoSuchElementException: Unable to find element with css selector == *[name='btn_forceLogin']
-For documentation on this error, please visit: http://seleniumhq.org/exceptions/no_such_element.html
-Build info: version: '3.14.0', revision: 'aacccce0', time: '2018-08-02T20:19:58.91Z'
-System info: host: 'DESKTOP-I9S3ABE', ip: '10.2.66.116', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '1.8.0_101'
-Driver info: org.openqa.selenium.ie.InternetExplorerDriver
-Capabilities {acceptInsecureCerts: false, browserName: internet explorer, browserVersion: 11, javascriptEnabled: true, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), se:ieOptions: {browserAttachTimeout: 0, elementScrollBehavior: 0, enablePersistentHover: true, ie.browserCommandLineSwitches: , ie.ensureCleanSession: false, ie.fileUploadDialogTimeout: 3000, ie.forceCreateProcessApi: false, ignoreProtectedModeSettings: true, ignoreZoomSetting: false, initialBrowserUrl: http://localhost:40044/, nativeEvents: true, requireWindowFocus: false}, setWindowRect: true, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}}
-Session ID: 1ebe14cd-8784-4c33-ac2f-b68299de203f
-*** Element info: {Using=name, value=btn_forceLogin}
-2020/06/12 17:38:16:781  INFO com.sinosoft.test.base.TestBase:65 - start InternetExplorerDriver
-2020/06/12 17:38:18:580 DEBUG com.sinosoft.test.base.TestBase:47 - 开始运行测试脚本，获取到的测试数据如下
-2020/06/12 17:38:18:580 DEBUG com.sinosoft.test.base.TestBase:48 - fbbs=1-原保险保单,ywgs=1620189.0,qdlx=4.0
-2020/06/12 17:38:20:631  INFO com.sinosoft.test.base.TestBase:70 - 重复登录，发现继续登录按钮，强制登录
-2020/06/12 17:38:31:047 ERROR com.sinosoft.test.base.TestBase:107 - org.openqa.selenium.NoSuchElementException: Unable to find element with css selector == *[name='btn_forceLogin']
-For documentation on this error, please visit: http://seleniumhq.org/exceptions/no_such_element.html
-Build info: version: '3.14.0', revision: 'aacccce0', time: '2018-08-02T20:19:58.91Z'
-System info: host: 'DESKTOP-I9S3ABE', ip: '10.2.66.116', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '1.8.0_101'
-Driver info: org.openqa.selenium.ie.InternetExplorerDriver
-Capabilities {acceptInsecureCerts: false, browserName: internet explorer, browserVersion: 11, javascriptEnabled: true, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), se:ieOptions: {browserAttachTimeout: 0, elementScrollBehavior: 0, enablePersistentHover: true, ie.browserCommandLineSwitches: , ie.ensureCleanSession: false, ie.fileUploadDialogTimeout: 3000, ie.forceCreateProcessApi: false, ignoreProtectedModeSettings: true, ignoreZoomSetting: false, initialBrowserUrl: http://localhost:20951/, nativeEvents: true, requireWindowFocus: false}, setWindowRect: true, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}}
-Session ID: dab3ce2f-e196-4438-80b3-e9f477a199af
-*** Element info: {Using=name, value=btn_forceLogin}
-2020/06/12 17:43:33:045  INFO com.sinosoft.test.base.TestBase:65 - start InternetExplorerDriver
-2020/06/12 17:43:34:816 DEBUG com.sinosoft.test.base.TestBase:47 - 开始运行测试脚本，获取到的测试数据如下
-2020/06/12 17:43:34:817 DEBUG com.sinosoft.test.base.TestBase:48 - fbbs=1-原保险保单,ywgs=1620189.0,qdlx=4.0
-2020/06/12 17:43:36:877  INFO com.sinosoft.test.base.TestBase:70 - 重复登录，发现继续登录按钮，强制登录
-2020/06/12 17:43:47:150 ERROR com.sinosoft.test.base.TestBase:107 - org.openqa.selenium.NoSuchElementException: Unable to find element with css selector == *[name='btn_forceLogin']
-For documentation on this error, please visit: http://seleniumhq.org/exceptions/no_such_element.html
-Build info: version: '3.14.0', revision: 'aacccce0', time: '2018-08-02T20:19:58.91Z'
-System info: host: 'DESKTOP-I9S3ABE', ip: '10.2.66.116', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '1.8.0_101'
-Driver info: org.openqa.selenium.ie.InternetExplorerDriver
-Capabilities {acceptInsecureCerts: false, browserName: internet explorer, browserVersion: 11, javascriptEnabled: true, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), se:ieOptions: {browserAttachTimeout: 0, elementScrollBehavior: 0, enablePersistentHover: true, ie.browserCommandLineSwitches: , ie.ensureCleanSession: false, ie.fileUploadDialogTimeout: 3000, ie.forceCreateProcessApi: false, ignoreProtectedModeSettings: true, ignoreZoomSetting: false, initialBrowserUrl: http://localhost:33382/, nativeEvents: true, requireWindowFocus: false}, setWindowRect: true, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}}
-Session ID: 0609cd27-f284-4eb2-8585-e21b2d339ce6
-*** Element info: {Using=name, value=btn_forceLogin}
-2020/06/12 17:45:19:175  INFO com.sinosoft.test.base.TestBase:65 - start InternetExplorerDriver
-2020/06/12 17:45:20:943 DEBUG com.sinosoft.test.base.TestBase:47 - 开始运行测试脚本，获取到的测试数据如下
-2020/06/12 17:45:20:944 DEBUG com.sinosoft.test.base.TestBase:48 - fbbs=1-原保险保单,ywgs=1620189.0,qdlx=4.0
-2020/06/12 17:45:22:808  INFO com.sinosoft.test.base.TestBase:70 - 重复登录，发现继续登录按钮，强制登录
-2020/06/12 17:45:33:328 ERROR com.sinosoft.test.base.TestBase:107 - org.openqa.selenium.NoSuchElementException: Unable to find element with css selector == *[name='btn_forceLogin']
-For documentation on this error, please visit: http://seleniumhq.org/exceptions/no_such_element.html
-Build info: version: '3.14.0', revision: 'aacccce0', time: '2018-08-02T20:19:58.91Z'
-System info: host: 'DESKTOP-I9S3ABE', ip: '10.2.66.116', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '1.8.0_101'
-Driver info: org.openqa.selenium.ie.InternetExplorerDriver
-Capabilities {acceptInsecureCerts: false, browserName: internet explorer, browserVersion: 11, javascriptEnabled: true, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), se:ieOptions: {browserAttachTimeout: 0, elementScrollBehavior: 0, enablePersistentHover: true, ie.browserCommandLineSwitches: , ie.ensureCleanSession: false, ie.fileUploadDialogTimeout: 3000, ie.forceCreateProcessApi: false, ignoreProtectedModeSettings: true, ignoreZoomSetting: false, initialBrowserUrl: http://localhost:46111/, nativeEvents: true, requireWindowFocus: false}, setWindowRect: true, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}}
-Session ID: 058a0780-49f4-4e5c-8107-951b728e2a8f
-*** Element info: {Using=name, value=btn_forceLogin}
-2020/06/12 17:48:35:706  INFO com.sinosoft.test.base.TestBase:65 - start InternetExplorerDriver
-2020/06/12 17:48:38:019 DEBUG com.sinosoft.test.base.TestBase:47 - 开始运行测试脚本，获取到的测试数据如下
-2020/06/12 17:48:38:019 DEBUG com.sinosoft.test.base.TestBase:48 - fbbs=1-原保险保单,ywgs=1620189.0,qdlx=4.0
-2020/06/12 17:48:39:950  INFO com.sinosoft.test.base.TestBase:70 - 重复登录，发现继续登录按钮，强制登录
-2020/06/12 17:48:50:479 ERROR com.sinosoft.test.base.TestBase:107 - org.openqa.selenium.NoSuchElementException: Unable to find element with css selector == *[name='btn_forceLogin']
-For documentation on this error, please visit: http://seleniumhq.org/exceptions/no_such_element.html
-Build info: version: '3.14.0', revision: 'aacccce0', time: '2018-08-02T20:19:58.91Z'
-System info: host: 'DESKTOP-I9S3ABE', ip: '10.2.66.116', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '1.8.0_101'
-Driver info: org.openqa.selenium.ie.InternetExplorerDriver
-Capabilities {acceptInsecureCerts: false, browserName: internet explorer, browserVersion: 11, javascriptEnabled: true, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), se:ieOptions: {browserAttachTimeout: 0, elementScrollBehavior: 0, enablePersistentHover: true, ie.browserCommandLineSwitches: , ie.ensureCleanSession: false, ie.fileUploadDialogTimeout: 3000, ie.forceCreateProcessApi: false, ignoreProtectedModeSettings: true, ignoreZoomSetting: false, initialBrowserUrl: http://localhost:26096/, nativeEvents: true, requireWindowFocus: false}, setWindowRect: true, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}}
-Session ID: 7f9ea424-34cd-4d55-b85a-7b9956ac44f1
-*** Element info: {Using=name, value=btn_forceLogin}
-2020/06/12 17:54:51:069  INFO com.sinosoft.test.base.TestBase:65 - start InternetExplorerDriver
-2020/06/12 17:54:52:872 DEBUG com.sinosoft.test.base.TestBase:47 - 开始运行测试脚本，获取到的测试数据如下
-2020/06/12 17:54:52:872 DEBUG com.sinosoft.test.base.TestBase:48 - fbbs=1-原保险保单,ywgs=1620189.0,qdlx=4.0
-2020/06/12 17:54:54:898  INFO com.sinosoft.test.base.TestBase:70 - 重复登录，发现继续登录按钮，强制登录
-2020/06/12 17:55:05:477 ERROR com.sinosoft.test.base.TestBase:107 - org.openqa.selenium.NoSuchElementException: Unable to find element with css selector == *[name='btn_forceLogin']
-For documentation on this error, please visit: http://seleniumhq.org/exceptions/no_such_element.html
-Build info: version: '3.14.0', revision: 'aacccce0', time: '2018-08-02T20:19:58.91Z'
-System info: host: 'DESKTOP-I9S3ABE', ip: '10.2.66.116', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '1.8.0_101'
-Driver info: org.openqa.selenium.ie.InternetExplorerDriver
-Capabilities {acceptInsecureCerts: false, browserName: internet explorer, browserVersion: 11, javascriptEnabled: true, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), se:ieOptions: {browserAttachTimeout: 0, elementScrollBehavior: 0, enablePersistentHover: true, ie.browserCommandLineSwitches: , ie.ensureCleanSession: false, ie.fileUploadDialogTimeout: 3000, ie.forceCreateProcessApi: false, ignoreProtectedModeSettings: true, ignoreZoomSetting: false, initialBrowserUrl: http://localhost:44854/, nativeEvents: true, requireWindowFocus: false}, setWindowRect: true, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}}
-Session ID: 239a473f-a0d4-43a1-b5aa-13e59aba296d
-*** Element info: {Using=name, value=btn_forceLogin}
-2020/06/12 17:55:40:872 ERROR com.sinosoft.test.base.TestBase:146 - Can not find element:Expected condition failed: waiting for com.sinosoft.test.base.TestBase$1@388ba540 (tried for 20 second(s) with 500 milliseconds interval)
-2020/06/12 18:09:52:555  INFO com.sinosoft.test.base.TestBase:65 - start InternetExplorerDriver
-2020/06/12 18:09:54:317 DEBUG com.sinosoft.test.base.TestBase:47 - 开始运行测试脚本，获取到的测试数据如下
-2020/06/12 18:09:54:318 DEBUG com.sinosoft.test.base.TestBase:48 - fbbs=1-原保险保单,ywgs=1620189.0,qdlx=4.0
-2020/06/12 18:09:56:323  INFO com.sinosoft.test.base.TestBase:70 - 重复登录，发现继续登录按钮，强制登录
-2020/06/12 18:10:06:780 ERROR com.sinosoft.test.base.TestBase:107 - org.openqa.selenium.NoSuchElementException: Unable to find element with css selector == *[name='btn_forceLogin']
-For documentation on this error, please visit: http://seleniumhq.org/exceptions/no_such_element.html
-Build info: version: '3.14.0', revision: 'aacccce0', time: '2018-08-02T20:19:58.91Z'
-System info: host: 'DESKTOP-I9S3ABE', ip: '10.2.66.116', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '1.8.0_101'
-Driver info: org.openqa.selenium.ie.InternetExplorerDriver
-Capabilities {acceptInsecureCerts: false, browserName: internet explorer, browserVersion: 11, javascriptEnabled: true, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), se:ieOptions: {browserAttachTimeout: 0, elementScrollBehavior: 0, enablePersistentHover: true, ie.browserCommandLineSwitches: , ie.ensureCleanSession: false, ie.fileUploadDialogTimeout: 3000, ie.forceCreateProcessApi: false, ignoreProtectedModeSettings: true, ignoreZoomSetting: false, initialBrowserUrl: http://localhost:5415/, nativeEvents: true, requireWindowFocus: false}, setWindowRect: true, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}}
-Session ID: e1beed38-0e04-4243-881c-5fc5c7cf73c7
-*** Element info: {Using=name, value=btn_forceLogin}
-2020/06/12 18:17:07:073  INFO com.sinosoft.test.base.TestBase:65 - start InternetExplorerDriver
-2020/06/12 18:17:07:073  INFO com.sinosoft.test.base.TestBase:65 - start InternetExplorerDriver
-2020/06/12 18:17:08:873 DEBUG com.sinosoft.test.base.TestBase:47 - 开始运行测试脚本，获取到的测试数据如下
-2020/06/12 18:17:08:873 DEBUG com.sinosoft.test.base.TestBase:47 - 开始运行测试脚本，获取到的测试数据如下
-2020/06/12 18:17:08:873 DEBUG com.sinosoft.test.base.TestBase:48 - fbbs=1-原保险保单,ywgs=1620189.0,qdlx=4.0
-2020/06/12 18:17:08:873 DEBUG com.sinosoft.test.base.TestBase:48 - fbbs=1-原保险保单,ywgs=1620189.0,qdlx=4.0
-2020/06/12 18:17:10:990  INFO com.sinosoft.test.base.TestBase:70 - 重复登录，发现继续登录按钮，强制登录
-2020/06/12 18:17:10:990  INFO com.sinosoft.test.base.TestBase:70 - 重复登录，发现继续登录按钮，强制登录
-2020/06/12 18:17:21:257 ERROR com.sinosoft.test.base.TestBase:107 - org.openqa.selenium.NoSuchElementException: Unable to find element with css selector == *[name='btn_forceLogin']
-For documentation on this error, please visit: http://seleniumhq.org/exceptions/no_such_element.html
-Build info: version: '3.14.0', revision: 'aacccce0', time: '2018-08-02T20:19:58.91Z'
-System info: host: 'DESKTOP-I9S3ABE', ip: '10.2.66.116', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '1.8.0_101'
-Driver info: org.openqa.selenium.ie.InternetExplorerDriver
-Capabilities {acceptInsecureCerts: false, browserName: internet explorer, browserVersion: 11, javascriptEnabled: true, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), se:ieOptions: {browserAttachTimeout: 0, elementScrollBehavior: 0, enablePersistentHover: true, ie.browserCommandLineSwitches: , ie.ensureCleanSession: false, ie.fileUploadDialogTimeout: 3000, ie.forceCreateProcessApi: false, ignoreProtectedModeSettings: true, ignoreZoomSetting: false, initialBrowserUrl: http://localhost:23661/, nativeEvents: true, requireWindowFocus: false}, setWindowRect: true, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}}
-Session ID: a543f42e-afbc-47a2-b326-21c7329ca833
-*** Element info: {Using=name, value=btn_forceLogin}
-2020/06/12 18:17:21:257 ERROR com.sinosoft.test.base.TestBase:107 - org.openqa.selenium.NoSuchElementException: Unable to find element with css selector == *[name='btn_forceLogin']
-For documentation on this error, please visit: http://seleniumhq.org/exceptions/no_such_element.html
-Build info: version: '3.14.0', revision: 'aacccce0', time: '2018-08-02T20:19:58.91Z'
-System info: host: 'DESKTOP-I9S3ABE', ip: '10.2.66.116', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '1.8.0_101'
-Driver info: org.openqa.selenium.ie.InternetExplorerDriver
-Capabilities {acceptInsecureCerts: false, browserName: internet explorer, browserVersion: 11, javascriptEnabled: true, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), se:ieOptions: {browserAttachTimeout: 0, elementScrollBehavior: 0, enablePersistentHover: true, ie.browserCommandLineSwitches: , ie.ensureCleanSession: false, ie.fileUploadDialogTimeout: 3000, ie.forceCreateProcessApi: false, ignoreProtectedModeSettings: true, ignoreZoomSetting: false, initialBrowserUrl: http://localhost:23661/, nativeEvents: true, requireWindowFocus: false}, setWindowRect: true, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}}
-Session ID: a543f42e-afbc-47a2-b326-21c7329ca833
-*** Element info: {Using=name, value=btn_forceLogin}
+2020/06/16 09:29:38:762  INFO com.sinosoft.test.base.TestBase:65 - start InternetExplorerDriver
+2020/06/16 09:29:42:309  INFO com.sinosoft.test.base.TestBase:48 - 开始运行测试脚本，获取到的测试数据如下
+2020/06/16 09:29:42:309  INFO com.sinosoft.test.base.TestBase:49 - fbbs=1-原保险保单,ywgs=01620189,qdlx=04
+2020/06/16 09:29:45:967  INFO com.sinosoft.test.base.TestBase:105 - 重复登录，发现继续登录按钮，强制登录ButtonName:[[InternetExplorerDriver: internet explorer on WINDOWS (0ff0d066-3935-49eb-913d-5d111db03c46)] -> xpath: //input[@value='继续登录']];Displayed：+true;Enabled=true
+2020/06/16 09:30:08:463 DEBUG com.sinosoft.test.base.TestBase:12 - 开始设置[[InternetExplorerDriver: internet explorer on WINDOWS (0ff0d066-3935-49eb-913d-5d111db03c46)] -> name: GuMainCompanyCode] & Code=01620189
+2020/06/16 09:30:17:051  INFO com.sinosoft.test.base.TestBase:247 - 找到匹配【01620189】的选项：01620189--黄河财产保险股份有限公司兰州市中心支公司直属业务部
+2020/06/16 09:30:24:970 DEBUG com.sinosoft.test.base.TestBase:20 - 设置完毕[[InternetExplorerDriver: internet explorer on WINDOWS (0ff0d066-3935-49eb-913d-5d111db03c46)] -> name: GuMainCompanyCode] & Code=01620189
+2020/06/16 09:30:25:017 DEBUG com.sinosoft.test.base.TestBase:12 - 开始设置[[InternetExplorerDriver: internet explorer on WINDOWS (0ff0d066-3935-49eb-913d-5d111db03c46)] -> name: GuMainShareHolderFlag] & Code=0
+2020/06/16 09:30:36:420  INFO com.sinosoft.test.base.TestBase:247 - 找到匹配【0】的选项：0--非股东
+2020/06/16 09:30:44:206 DEBUG com.sinosoft.test.base.TestBase:20 - 设置完毕[[InternetExplorerDriver: internet explorer on WINDOWS (0ff0d066-3935-49eb-913d-5d111db03c46)] -> name: GuMainShareHolderFlag] & Code=0
+2020/06/16 09:30:44:253 DEBUG com.sinosoft.test.base.TestBase:12 - 开始设置[[InternetExplorerDriver: internet explorer on WINDOWS (0ff0d066-3935-49eb-913d-5d111db03c46)] -> name: GuMainChannelDetailCode] & Code=04
+2020/06/16 09:30:52:768  INFO com.sinosoft.test.base.TestBase:247 - 找到匹配【04】的选项：04--车行渠道
+2020/06/16 09:31:00:860 DEBUG com.sinosoft.test.base.TestBase:20 - 设置完毕[[InternetExplorerDriver: internet explorer on WINDOWS (0ff0d066-3935-49eb-913d-5d111db03c46)] -> name: GuMainChannelDetailCode] & Code=04
+2020/06/16 09:31:00:891 DEBUG com.sinosoft.test.base.TestBase:12 - 开始设置[[InternetExplorerDriver: internet explorer on WINDOWS (0ff0d066-3935-49eb-913d-5d111db03c46)] -> name: GuMainSalesTeamCode] & Code=T6209880101
+2020/06/16 09:31:09:449  INFO com.sinosoft.test.base.TestBase:247 - 找到匹配【T6209880101】的选项：T6209880101--重客业务三部
+2020/06/16 09:31:17:518 DEBUG com.sinosoft.test.base.TestBase:20 - 设置完毕[[InternetExplorerDriver: internet explorer on WINDOWS (0ff0d066-3935-49eb-913d-5d111db03c46)] -> name: GuMainSalesTeamCode] & Code=T6209880101
+2020/06/16 09:31:17:549 DEBUG com.sinosoft.test.base.TestBase:12 - 开始设置[[InternetExplorerDriver: internet explorer on WINDOWS (0ff0d066-3935-49eb-913d-5d111db03c46)] -> name: GuMainSalesmanCode] & Code=S000000029
+2020/06/16 09:31:25:924  INFO com.sinosoft.test.base.TestBase:247 - 找到匹配【S000000029】的选项：S000000029--于超
+2020/06/16 09:31:35:649 DEBUG com.sinosoft.test.base.TestBase:20 - 设置完毕[[InternetExplorerDriver: internet explorer on WINDOWS (0ff0d066-3935-49eb-913d-5d111db03c46)] -> name: GuMainSalesmanCode] & Code=S000000029
+2020/06/16 09:31:35:683 DEBUG com.sinosoft.test.base.TestBase:12 - 开始设置[[InternetExplorerDriver: internet explorer on WINDOWS (0ff0d066-3935-49eb-913d-5d111db03c46)] -> name: GuMainBusinessSource] & Code=01010101
+2020/06/16 09:31:44:319  INFO com.sinosoft.test.base.TestBase:247 - 找到匹配【01010101】的选项：01010101--柜面直销
+2020/06/16 09:31:52:319 DEBUG com.sinosoft.test.base.TestBase:20 - 设置完毕[[InternetExplorerDriver: internet explorer on WINDOWS (0ff0d066-3935-49eb-913d-5d111db03c46)] -> name: GuMainBusinessSource] & Code=01010101
+2020/06/16 10:01:59:689  INFO com.sinosoft.test.base.TestBase:65 - start InternetExplorerDriver
+2020/06/16 10:02:01:578  INFO com.sinosoft.test.base.TestBase:48 - 开始运行测试脚本，获取到的测试数据如下
+2020/06/16 10:02:01:579  INFO com.sinosoft.test.base.TestBase:49 - fbbs=1-原保险保单,ywgs=01620189,qdlx=04
+2020/06/16 10:02:10:213  INFO com.sinosoft.test.base.TestBase:148 - 没有找到页面元素:By.xpath: //input[@value='继续登录'] - 错误信息Expected condition failed: waiting for com.sinosoft.test.base.TestBase$1@23fb172e (tried for 1 second(s) with 500 milliseconds interval)
+2020/06/16 10:02:10:213  INFO com.sinosoft.test.base.TestBase:109 - 常规登录，没有继续登录按钮
+2020/06/16 10:02:30:849 DEBUG com.sinosoft.test.base.TestBase:12 - 开始设置[[InternetExplorerDriver: internet explorer on WINDOWS (5ab73299-b00e-4fff-b242-96c14036dcee)] -> name: GuMainCompanyCode] & Code=01620189
+2020/06/16 10:02:39:099  INFO com.sinosoft.test.base.TestBase:247 - 找到匹配【01620189】的选项：01620189--黄河财产保险股份有限公司兰州市中心支公司直属业务部
+2020/06/16 10:02:47:021 DEBUG com.sinosoft.test.base.TestBase:20 - 设置完毕[[InternetExplorerDriver: internet explorer on WINDOWS (5ab73299-b00e-4fff-b242-96c14036dcee)] -> name: GuMainCompanyCode] & Code=01620189
+2020/06/16 10:02:47:046 DEBUG com.sinosoft.test.base.TestBase:12 - 开始设置[[InternetExplorerDriver: internet explorer on WINDOWS (5ab73299-b00e-4fff-b242-96c14036dcee)] -> name: GuMainShareHolderFlag] & Code=0
+2020/06/16 10:02:57:997  INFO com.sinosoft.test.base.TestBase:247 - 找到匹配【0】的选项：0--非股东
+2020/06/16 10:03:07:421 DEBUG com.sinosoft.test.base.TestBase:20 - 设置完毕[[InternetExplorerDriver: internet explorer on WINDOWS (5ab73299-b00e-4fff-b242-96c14036dcee)] -> name: GuMainShareHolderFlag] & Code=0
+2020/06/16 10:03:07:455 DEBUG com.sinosoft.test.base.TestBase:12 - 开始设置[[InternetExplorerDriver: internet explorer on WINDOWS (5ab73299-b00e-4fff-b242-96c14036dcee)] -> name: GuMainChannelDetailCode] & Code=04
+2020/06/16 10:03:15:660  INFO com.sinosoft.test.base.TestBase:247 - 找到匹配【04】的选项：04--车行渠道
+2020/06/16 10:03:23:593 DEBUG com.sinosoft.test.base.TestBase:20 - 设置完毕[[InternetExplorerDriver: internet explorer on WINDOWS (5ab73299-b00e-4fff-b242-96c14036dcee)] -> name: GuMainChannelDetailCode] & Code=04
+2020/06/16 10:03:23:628 DEBUG com.sinosoft.test.base.TestBase:12 - 开始设置[[InternetExplorerDriver: internet explorer on WINDOWS (5ab73299-b00e-4fff-b242-96c14036dcee)] -> name: GuMainSalesTeamCode] & Code=T6209880101
+2020/06/16 10:03:31:902  INFO com.sinosoft.test.base.TestBase:247 - 找到匹配【T6209880101】的选项：T6209880101--重客业务三部
+2020/06/16 10:03:39:868 DEBUG com.sinosoft.test.base.TestBase:20 - 设置完毕[[InternetExplorerDriver: internet explorer on WINDOWS (5ab73299-b00e-4fff-b242-96c14036dcee)] -> name: GuMainSalesTeamCode] & Code=T6209880101
+2020/06/16 10:03:39:894 DEBUG com.sinosoft.test.base.TestBase:12 - 开始设置[[InternetExplorerDriver: internet explorer on WINDOWS (5ab73299-b00e-4fff-b242-96c14036dcee)] -> name: GuMainSalesmanCode] & Code=S000000029
+2020/06/16 10:03:47:979  INFO com.sinosoft.test.base.TestBase:247 - 找到匹配【S000000029】的选项：S000000029--于超
+2020/06/16 10:03:57:662 DEBUG com.sinosoft.test.base.TestBase:20 - 设置完毕[[InternetExplorerDriver: internet explorer on WINDOWS (5ab73299-b00e-4fff-b242-96c14036dcee)] -> name: GuMainSalesmanCode] & Code=S000000029
+2020/06/16 10:03:57:709 DEBUG com.sinosoft.test.base.TestBase:12 - 开始设置[[InternetExplorerDriver: internet explorer on WINDOWS (5ab73299-b00e-4fff-b242-96c14036dcee)] -> name: GuMainBusinessSource] & Code=01010101
+2020/06/16 10:04:06:077  INFO com.sinosoft.test.base.TestBase:247 - 找到匹配【01010101】的选项：01010101--柜面直销
+2020/06/16 10:04:14:201 DEBUG com.sinosoft.test.base.TestBase:20 - 设置完毕[[InternetExplorerDriver: internet explorer on WINDOWS (5ab73299-b00e-4fff-b242-96c14036dcee)] -> name: GuMainBusinessSource] & Code=01010101
+2020/06/16 10:20:09:112  INFO com.sinosoft.test.base.TestBase:65 - start InternetExplorerDriver
+2020/06/16 10:20:11:047  INFO com.sinosoft.test.base.TestBase:48 - 开始运行测试脚本，获取到的测试数据如下
+2020/06/16 10:20:11:047  INFO com.sinosoft.test.base.TestBase:49 - fbbs=1-原保险保单,ywgs=01620189,qdlx=04
+2020/06/16 10:20:19:541  INFO com.sinosoft.test.base.TestBase:148 - 没有找到页面元素:By.xpath: //input[@value='继续登录'] - 错误信息Expected condition failed: waiting for com.sinosoft.test.base.TestBase$1@299321e2 (tried for 1 second(s) with 500 milliseconds interval)
+2020/06/16 10:20:19:541  INFO com.sinosoft.test.base.TestBase:109 - 常规登录，没有继续登录按钮
+2020/06/16 10:29:46:751  INFO com.sinosoft.test.base.TestBase:65 - start InternetExplorerDriver
+2020/06/16 10:29:48:589  INFO com.sinosoft.test.base.TestBase:48 - 开始运行测试脚本，获取到的测试数据如下
+2020/06/16 10:29:48:589  INFO com.sinosoft.test.base.TestBase:49 - fbbs=1-原保险保单,ywgs=01620189,qdlx=04
+2020/06/16 10:29:56:799  INFO com.sinosoft.test.base.TestBase:148 - 没有找到页面元素:By.xpath: //input[@value='继续登录'] - 错误信息Expected condition failed: waiting for com.sinosoft.test.base.TestBase$1@23fb172e (tried for 1 second(s) with 500 milliseconds interval)
+2020/06/16 10:29:56:799  INFO com.sinosoft.test.base.TestBase:109 - 常规登录，没有继续登录按钮
+2020/06/16 10:30:04:119  INFO com.sinosoft.test.base.TestBase:148 - 没有找到页面元素:By.xpath: //td[text()='投保处理'] - 错误信息Expected condition failed: waiting for com.sinosoft.test.base.TestBase$1@2a7686a7 (tried for 5 second(s) with 500 milliseconds interval)
+2020/06/16 10:34:21:709  INFO com.sinosoft.test.base.TestBase:65 - start InternetExplorerDriver
+2020/06/16 10:34:24:418  INFO com.sinosoft.test.base.TestBase:48 - 开始运行测试脚本，获取到的测试数据如下
+2020/06/16 10:34:24:420  INFO com.sinosoft.test.base.TestBase:49 - fbbs=1-原保险保单,ywgs=01620189,qdlx=04
+2020/06/16 10:34:33:385  INFO com.sinosoft.test.base.TestBase:148 - 没有找到页面元素:By.xpath: //input[@value='继续登录'] - 错误信息Expected condition failed: waiting for com.sinosoft.test.base.TestBase$1@23fb172e (tried for 1 second(s) with 500 milliseconds interval)
+2020/06/16 10:34:33:385  INFO com.sinosoft.test.base.TestBase:109 - 常规登录，没有继续登录按钮
+2020/06/16 10:34:40:657  INFO com.sinosoft.test.base.TestBase:148 - 没有找到页面元素:By.xpath: //td[text()='投保处理'] - 错误信息Expected condition failed: waiting for com.sinosoft.test.base.TestBase$1@2a7686a7 (tried for 5 second(s) with 500 milliseconds interval)
+2020/06/16 10:35:21:715  INFO com.sinosoft.test.base.TestBase:65 - start InternetExplorerDriver
+2020/06/16 10:35:24:273  INFO com.sinosoft.test.base.TestBase:48 - 开始运行测试脚本，获取到的测试数据如下
+2020/06/16 10:35:24:273  INFO com.sinosoft.test.base.TestBase:49 - fbbs=1-原保险保单,ywgs=01620189,qdlx=04
+2020/06/16 10:35:32:768  INFO com.sinosoft.test.base.TestBase:148 - 没有找到页面元素:By.xpath: //input[@value='继续登录'] - 错误信息Expected condition failed: waiting for com.sinosoft.test.base.TestBase$1@23fb172e (tried for 1 second(s) with 500 milliseconds interval)
+2020/06/16 10:35:32:768  INFO com.sinosoft.test.base.TestBase:109 - 常规登录，没有继续登录按钮
+2020/06/16 10:35:49:419 DEBUG com.sinosoft.test.base.TestBase:12 - 开始设置[[InternetExplorerDriver: internet explorer on WINDOWS (507406c2-af5f-42a1-ba35-a9e6a6c4c403)] -> name: GuMainCompanyCode] & Code=01620189
+2020/06/16 10:35:57:727  INFO com.sinosoft.test.base.TestBase:247 - 找到匹配【01620189】的选项：01620189--黄河财产保险股份有限公司兰州市中心支公司直属业务部
+2020/06/16 10:36:05:337 DEBUG com.sinosoft.test.base.TestBase:20 - 设置完毕[[InternetExplorerDriver: internet explorer on WINDOWS (507406c2-af5f-42a1-ba35-a9e6a6c4c403)] -> name: GuMainCompanyCode] & Code=01620189
+2020/06/16 10:36:05:372 DEBUG com.sinosoft.test.base.TestBase:12 - 开始设置[[InternetExplorerDriver: internet explorer on WINDOWS (507406c2-af5f-42a1-ba35-a9e6a6c4c403)] -> name: GuMainShareHolderFlag] & Code=0
+2020/06/16 10:36:16:480  INFO com.sinosoft.test.base.TestBase:247 - 找到匹配【0】的选项：0--非股东
+2020/06/16 10:36:24:408 DEBUG com.sinosoft.test.base.TestBase:20 - 设置完毕[[InternetExplorerDriver: internet explorer on WINDOWS (507406c2-af5f-42a1-ba35-a9e6a6c4c403)] -> name: GuMainShareHolderFlag] & Code=0
+2020/06/16 10:36:24:442 DEBUG com.sinosoft.test.base.TestBase:12 - 开始设置[[InternetExplorerDriver: internet explorer on WINDOWS (507406c2-af5f-42a1-ba35-a9e6a6c4c403)] -> name: GuMainChannelDetailCode] & Code=04
+2020/06/16 10:36:32:642  INFO com.sinosoft.test.base.TestBase:247 - 找到匹配【04】的选项：04--车行渠道
+2020/06/16 10:36:40:495 DEBUG com.sinosoft.test.base.TestBase:20 - 设置完毕[[InternetExplorerDriver: internet explorer on WINDOWS (507406c2-af5f-42a1-ba35-a9e6a6c4c403)] -> name: GuMainChannelDetailCode] & Code=04
+2020/06/16 10:36:40:529 DEBUG com.sinosoft.test.base.TestBase:12 - 开始设置[[InternetExplorerDriver: internet explorer on WINDOWS (507406c2-af5f-42a1-ba35-a9e6a6c4c403)] -> name: GuMainSalesTeamCode] & Code=T6209880101
+2020/06/16 10:36:48:597  INFO com.sinosoft.test.base.TestBase:247 - 找到匹配【T6209880101】的选项：T6209880101--重客业务三部
+2020/06/16 10:36:58:048 DEBUG com.sinosoft.test.base.TestBase:20 - 设置完毕[[InternetExplorerDriver: internet explorer on WINDOWS (507406c2-af5f-42a1-ba35-a9e6a6c4c403)] -> name: GuMainSalesTeamCode] & Code=T6209880101
+2020/06/16 10:36:58:086 DEBUG com.sinosoft.test.base.TestBase:12 - 开始设置[[InternetExplorerDriver: internet explorer on WINDOWS (507406c2-af5f-42a1-ba35-a9e6a6c4c403)] -> name: GuMainSalesmanCode] & Code=S000000029
+2020/06/16 10:37:06:325  INFO com.sinosoft.test.base.TestBase:247 - 找到匹配【S000000029】的选项：S000000029--于超
+2020/06/16 10:37:14:247 DEBUG com.sinosoft.test.base.TestBase:20 - 设置完毕[[InternetExplorerDriver: internet explorer on WINDOWS (507406c2-af5f-42a1-ba35-a9e6a6c4c403)] -> name: GuMainSalesmanCode] & Code=S000000029
+2020/06/16 10:37:14:281 DEBUG com.sinosoft.test.base.TestBase:12 - 开始设置[[InternetExplorerDriver: internet explorer on WINDOWS (507406c2-af5f-42a1-ba35-a9e6a6c4c403)] -> name: GuMainBusinessSource] & Code=01010101
+2020/06/16 10:37:22:410  INFO com.sinosoft.test.base.TestBase:247 - 找到匹配【01010101】的选项：01010101--柜面直销
+2020/06/16 10:37:30:331 DEBUG com.sinosoft.test.base.TestBase:20 - 设置完毕[[InternetExplorerDriver: internet explorer on WINDOWS (507406c2-af5f-42a1-ba35-a9e6a6c4c403)] -> name: GuMainBusinessSource] & Code=01010101
+2020/06/16 10:39:44:865  INFO com.sinosoft.test.base.TestBase:65 - start InternetExplorerDriver
+2020/06/16 10:39:46:954  INFO com.sinosoft.test.base.TestBase:48 - 开始运行测试脚本，获取到的测试数据如下
+2020/06/16 10:39:46:954  INFO com.sinosoft.test.base.TestBase:49 - fbbs=1-原保险保单,ywgs=01620189,qdlx=04
+2020/06/16 10:39:55:352  INFO com.sinosoft.test.base.TestBase:148 - 没有找到页面元素:By.xpath: //input[@value='继续登录'] - 错误信息Expected condition failed: waiting for com.sinosoft.test.base.TestBase$1@299321e2 (tried for 1 second(s) with 500 milliseconds interval)
+2020/06/16 10:39:55:352  INFO com.sinosoft.test.base.TestBase:109 - 常规登录，没有继续登录按钮
+2020/06/16 10:40:06:847 DEBUG com.sinosoft.test.base.TestBase:12 - 开始设置[[InternetExplorerDriver: internet explorer on WINDOWS (fe3d5436-b548-47db-8c7e-de0814f37a6b)] -> name: GuMainCompanyCode] & Code=01620189
+2020/06/16 10:40:15:094  INFO com.sinosoft.test.base.TestBase:247 - 找到匹配【01620189】的选项：01620189--黄河财产保险股份有限公司兰州市中心支公司直属业务部
+2020/06/16 10:40:22:729 DEBUG com.sinosoft.test.base.TestBase:20 - 设置完毕[[InternetExplorerDriver: internet explorer on WINDOWS (fe3d5436-b548-47db-8c7e-de0814f37a6b)] -> name: GuMainCompanyCode] & Code=01620189
+2020/06/16 10:40:22:774 DEBUG com.sinosoft.test.base.TestBase:12 - 开始设置[[InternetExplorerDriver: internet explorer on WINDOWS (fe3d5436-b548-47db-8c7e-de0814f37a6b)] -> name: GuMainShareHolderFlag] & Code=0
+2020/06/16 10:40:33:905  INFO com.sinosoft.test.base.TestBase:247 - 找到匹配【0】的选项：0--非股东
+2020/06/16 10:40:41:554 DEBUG com.sinosoft.test.base.TestBase:20 - 设置完毕[[InternetExplorerDriver: internet explorer on WINDOWS (fe3d5436-b548-47db-8c7e-de0814f37a6b)] -> name: GuMainShareHolderFlag] & Code=0
+2020/06/16 10:40:41:600 DEBUG com.sinosoft.test.base.TestBase:12 - 开始设置[[InternetExplorerDriver: internet explorer on WINDOWS (fe3d5436-b548-47db-8c7e-de0814f37a6b)] -> name: GuMainChannelDetailCode] & Code=04
+2020/06/16 10:40:49:811  INFO com.sinosoft.test.base.TestBase:247 - 找到匹配【04】的选项：04--车行渠道
+2020/06/16 10:40:57:690 DEBUG com.sinosoft.test.base.TestBase:20 - 设置完毕[[InternetExplorerDriver: internet explorer on WINDOWS (fe3d5436-b548-47db-8c7e-de0814f37a6b)] -> name: GuMainChannelDetailCode] & Code=04
+2020/06/16 10:40:57:726 DEBUG com.sinosoft.test.base.TestBase:12 - 开始设置[[InternetExplorerDriver: internet explorer on WINDOWS (fe3d5436-b548-47db-8c7e-de0814f37a6b)] -> name: GuMainSalesTeamCode] & Code=T6209880101
+2020/06/16 10:41:06:024  INFO com.sinosoft.test.base.TestBase:247 - 找到匹配【T6209880101】的选项：T6209880101--重客业务三部
+2020/06/16 10:41:13:955 DEBUG com.sinosoft.test.base.TestBase:20 - 设置完毕[[InternetExplorerDriver: internet explorer on WINDOWS (fe3d5436-b548-47db-8c7e-de0814f37a6b)] -> name: GuMainSalesTeamCode] & Code=T6209880101
+2020/06/16 10:41:13:994 DEBUG com.sinosoft.test.base.TestBase:12 - 开始设置[[InternetExplorerDriver: internet explorer on WINDOWS (fe3d5436-b548-47db-8c7e-de0814f37a6b)] -> name: GuMainSalesmanCode] & Code=S000000029
+2020/06/16 10:41:22:258  INFO com.sinosoft.test.base.TestBase:247 - 找到匹配【S000000029】的选项：S000000029--于超
+2020/06/16 10:41:30:186 DEBUG com.sinosoft.test.base.TestBase:20 - 设置完毕[[InternetExplorerDriver: internet explorer on WINDOWS (fe3d5436-b548-47db-8c7e-de0814f37a6b)] -> name: GuMainSalesmanCode] & Code=S000000029
+2020/06/16 10:41:30:231 DEBUG com.sinosoft.test.base.TestBase:12 - 开始设置[[InternetExplorerDriver: internet explorer on WINDOWS (fe3d5436-b548-47db-8c7e-de0814f37a6b)] -> name: GuMainBusinessSource] & Code=01010101
+2020/06/16 10:41:38:537  INFO com.sinosoft.test.base.TestBase:247 - 找到匹配【01010101】的选项：01010101--柜面直销
+2020/06/16 10:41:46:488 DEBUG com.sinosoft.test.base.TestBase:20 - 设置完毕[[InternetExplorerDriver: internet explorer on WINDOWS (fe3d5436-b548-47db-8c7e-de0814f37a6b)] -> name: GuMainBusinessSource] & Code=01010101
+2020/06/16 10:59:05:580  INFO com.sinosoft.test.base.TestBase:65 - start InternetExplorerDriver
+2020/06/16 10:59:07:453  INFO com.sinosoft.test.base.TestBase:48 - 开始运行测试脚本，获取到的测试数据如下
+2020/06/16 10:59:07:454  INFO com.sinosoft.test.base.TestBase:49 - fbbs=1-原保险保单,ywgs=01620189,qdlx=04
+2020/06/16 10:59:16:071  INFO com.sinosoft.test.base.TestBase:148 - 没有找到页面元素:By.xpath: //input[@value='继续登录'] - 错误信息Expected condition failed: waiting for com.sinosoft.test.base.TestBase$1@23fb172e (tried for 1 second(s) with 500 milliseconds interval)
+2020/06/16 10:59:16:071  INFO com.sinosoft.test.base.TestBase:109 - 常规登录，没有继续登录按钮
+2020/06/16 11:02:54:914  INFO com.sinosoft.test.base.TestBase:65 - start InternetExplorerDriver
+2020/06/16 11:02:56:765  INFO com.sinosoft.test.base.TestBase:48 - 开始运行测试脚本，获取到的测试数据如下
+2020/06/16 11:02:56:766  INFO com.sinosoft.test.base.TestBase:49 - fbbs=1-原保险保单,ywgs=01620189,qdlx=04
+2020/06/16 11:03:05:331  INFO com.sinosoft.test.base.TestBase:148 - 没有找到页面元素:By.xpath: //input[@value='继续登录'] - 错误信息Expected condition failed: waiting for com.sinosoft.test.base.TestBase$1@299321e2 (tried for 1 second(s) with 500 milliseconds interval)
+2020/06/16 11:03:05:331  INFO com.sinosoft.test.base.TestBase:109 - 常规登录，没有继续登录按钮
+2020/06/16 11:18:15:267  INFO com.sinosoft.test.base.TestBase:65 - start InternetExplorerDriver
+2020/06/16 11:18:17:139  INFO com.sinosoft.test.base.TestBase:48 - 开始运行测试脚本，获取到的测试数据如下
+2020/06/16 11:18:17:140  INFO com.sinosoft.test.base.TestBase:49 - fbbs=1-原保险保单,ywgs=01620189,qdlx=04
+2020/06/16 11:18:25:537  INFO com.sinosoft.test.base.TestBase:148 - 没有找到页面元素:By.xpath: //input[@value='继续登录'] - 错误信息Expected condition failed: waiting for com.sinosoft.test.base.TestBase$1@299321e2 (tried for 1 second(s) with 500 milliseconds interval)
+2020/06/16 11:18:25:537  INFO com.sinosoft.test.base.TestBase:109 - 常规登录，没有继续登录按钮
+2020/06/16 11:21:33:569  INFO com.sinosoft.test.base.TestBase:65 - start InternetExplorerDriver
+2020/06/16 11:21:35:432  INFO com.sinosoft.test.base.TestBase:48 - 开始运行测试脚本，获取到的测试数据如下
+2020/06/16 11:21:35:432  INFO com.sinosoft.test.base.TestBase:49 - fbbs=1-原保险保单,ywgs=01620189,qdlx=04
+2020/06/16 11:21:43:868  INFO com.sinosoft.test.base.TestBase:148 - 没有找到页面元素:By.xpath: //input[@value='继续登录'] - 错误信息Expected condition failed: waiting for com.sinosoft.test.base.TestBase$1@23fb172e (tried for 1 second(s) with 500 milliseconds interval)
+2020/06/16 11:21:43:868  INFO com.sinosoft.test.base.TestBase:109 - 常规登录，没有继续登录按钮
+2020/06/16 11:21:46:709 DEBUG com.sinosoft.test.base.TestBase:66 - 设置完毕[[InternetExplorerDriver: internet explorer on WINDOWS (bc34b2ef-c2da-41b2-9bb7-30a11cc864e8)] -> name: riskClassTemp] & Code=01
+2020/06/16 11:21:47:447 DEBUG com.sinosoft.test.base.TestBase:66 - 设置完毕[[InternetExplorerDriver: internet explorer on WINDOWS (bc34b2ef-c2da-41b2-9bb7-30a11cc864e8)] -> name: riskCode] & Code=0101
+2020/06/16 11:21:55:444 DEBUG com.sinosoft.test.base.TestBase:44 - 开始设置[[InternetExplorerDriver: internet explorer on WINDOWS (bc34b2ef-c2da-41b2-9bb7-30a11cc864e8)] -> name: GuMainCompanyCode] & Code=01620189
+2020/06/16 11:22:03:744  INFO com.sinosoft.test.base.TestBase:247 - 找到匹配【01620189】的选项：01620189--黄河财产保险股份有限公司兰州市中心支公司直属业务部
+2020/06/16 11:22:11:646 DEBUG com.sinosoft.test.base.TestBase:52 - 设置完毕[[InternetExplorerDriver: internet explorer on WINDOWS (bc34b2ef-c2da-41b2-9bb7-30a11cc864e8)] -> name: GuMainCompanyCode] & Code=01620189
+2020/06/16 11:22:11:680 DEBUG com.sinosoft.test.base.TestBase:44 - 开始设置[[InternetExplorerDriver: internet explorer on WINDOWS (bc34b2ef-c2da-41b2-9bb7-30a11cc864e8)] -> name: GuMainShareHolderFlag] & Code=0
+2020/06/16 11:22:22:867  INFO com.sinosoft.test.base.TestBase:247 - 找到匹配【0】的选项：0--非股东
+2020/06/16 11:22:30:796 DEBUG com.sinosoft.test.base.TestBase:52 - 设置完毕[[InternetExplorerDriver: internet explorer on WINDOWS (bc34b2ef-c2da-41b2-9bb7-30a11cc864e8)] -> name: GuMainShareHolderFlag] & Code=0
+2020/06/16 11:22:30:830 DEBUG com.sinosoft.test.base.TestBase:44 - 开始设置[[InternetExplorerDriver: internet explorer on WINDOWS (bc34b2ef-c2da-41b2-9bb7-30a11cc864e8)] -> name: GuMainChannelDetailCode] & Code=04
+2020/06/16 11:22:39:076  INFO com.sinosoft.test.base.TestBase:247 - 找到匹配【04】的选项：04--车行渠道
+2020/06/16 11:22:47:037 DEBUG com.sinosoft.test.base.TestBase:52 - 设置完毕[[InternetExplorerDriver: internet explorer on WINDOWS (bc34b2ef-c2da-41b2-9bb7-30a11cc864e8)] -> name: GuMainChannelDetailCode] & Code=04
+2020/06/16 11:22:47:084 DEBUG com.sinosoft.test.base.TestBase:44 - 开始设置[[InternetExplorerDriver: internet explorer on WINDOWS (bc34b2ef-c2da-41b2-9bb7-30a11cc864e8)] -> name: GuMainSalesTeamCode] & Code=T6209880101
+2020/06/16 11:22:55:412  INFO com.sinosoft.test.base.TestBase:247 - 找到匹配【T6209880101】的选项：T6209880101--重客业务三部
+2020/06/16 11:23:03:352 DEBUG com.sinosoft.test.base.TestBase:52 - 设置完毕[[InternetExplorerDriver: internet explorer on WINDOWS (bc34b2ef-c2da-41b2-9bb7-30a11cc864e8)] -> name: GuMainSalesTeamCode] & Code=T6209880101
+2020/06/16 11:23:03:387 DEBUG com.sinosoft.test.base.TestBase:44 - 开始设置[[InternetExplorerDriver: internet explorer on WINDOWS (bc34b2ef-c2da-41b2-9bb7-30a11cc864e8)] -> name: GuMainSalesmanCode] & Code=S000000029
+2020/06/16 11:23:11:699  INFO com.sinosoft.test.base.TestBase:247 - 找到匹配【S000000029】的选项：S000000029--于超
+2020/06/16 11:23:19:689 DEBUG com.sinosoft.test.base.TestBase:52 - 设置完毕[[InternetExplorerDriver: internet explorer on WINDOWS (bc34b2ef-c2da-41b2-9bb7-30a11cc864e8)] -> name: GuMainSalesmanCode] & Code=S000000029
+2020/06/16 11:23:19:725 DEBUG com.sinosoft.test.base.TestBase:44 - 开始设置[[InternetExplorerDriver: internet explorer on WINDOWS (bc34b2ef-c2da-41b2-9bb7-30a11cc864e8)] -> name: GuMainBusinessSource] & Code=01010101
+2020/06/16 11:23:28:044  INFO com.sinosoft.test.base.TestBase:247 - 找到匹配【01010101】的选项：01010101--柜面直销
+2020/06/16 11:23:36:010 DEBUG com.sinosoft.test.base.TestBase:52 - 设置完毕[[InternetExplorerDriver: internet explorer on WINDOWS (bc34b2ef-c2da-41b2-9bb7-30a11cc864e8)] -> name: GuMainBusinessSource] & Code=01010101
+2020/06/16 11:26:32:386  INFO com.sinosoft.test.base.TestBase:65 - start InternetExplorerDriver
+2020/06/16 11:26:34:261  INFO com.sinosoft.test.base.TestBase:48 - 开始运行测试脚本，获取到的测试数据如下
+2020/06/16 11:26:34:261  INFO com.sinosoft.test.base.TestBase:49 - fbbs=1-原保险保单,ywgs=01620189,qdlx=04
+2020/06/16 11:26:43:062  INFO com.sinosoft.test.base.TestBase:148 - 没有找到页面元素:By.xpath: //input[@value='继续登录'] - 错误信息Expected condition failed: waiting for com.sinosoft.test.base.TestBase$1@299321e2 (tried for 1 second(s) with 500 milliseconds interval)
+2020/06/16 11:26:43:062  INFO com.sinosoft.test.base.TestBase:109 - 常规登录，没有继续登录按钮
+2020/06/16 11:27:23:131  INFO com.sinosoft.test.base.TestBase:65 - start InternetExplorerDriver
+2020/06/16 11:27:25:006  INFO com.sinosoft.test.base.TestBase:48 - 开始运行测试脚本，获取到的测试数据如下
+2020/06/16 11:27:25:007  INFO com.sinosoft.test.base.TestBase:49 - fbbs=1-原保险保单,ywgs=01620189,qdlx=04
+2020/06/16 11:27:33:446  INFO com.sinosoft.test.base.TestBase:148 - 没有找到页面元素:By.xpath: //input[@value='继续登录'] - 错误信息Expected condition failed: waiting for com.sinosoft.test.base.TestBase$1@23fb172e (tried for 1 second(s) with 500 milliseconds interval)
+2020/06/16 11:27:33:447  INFO com.sinosoft.test.base.TestBase:109 - 常规登录，没有继续登录按钮
+2020/06/16 11:27:36:320 DEBUG com.sinosoft.test.base.TestBase:66 - 设置完毕[[InternetExplorerDriver: internet explorer on WINDOWS (d7c92b0b-fe96-4bd4-ac15-c8f528b99896)] -> name: riskClassTemp] & Code=01
+2020/06/16 11:27:37:009 DEBUG com.sinosoft.test.base.TestBase:66 - 设置完毕[[InternetExplorerDriver: internet explorer on WINDOWS (d7c92b0b-fe96-4bd4-ac15-c8f528b99896)] -> name: riskCode] & Code=0101
+2020/06/16 11:27:44:837 DEBUG com.sinosoft.test.base.TestBase:44 - 开始设置[[InternetExplorerDriver: internet explorer on WINDOWS (d7c92b0b-fe96-4bd4-ac15-c8f528b99896)] -> name: GuMainCompanyCode] & Code=01620189
+2020/06/16 11:27:53:138  INFO com.sinosoft.test.base.TestBase:247 - 找到匹配【01620189】的选项：01620189--黄河财产保险股份有限公司兰州市中心支公司直属业务部
+2020/06/16 11:28:44:741  INFO com.sinosoft.test.base.TestBase:65 - start InternetExplorerDriver
+2020/06/16 11:28:46:563  INFO com.sinosoft.test.base.TestBase:48 - 开始运行测试脚本，获取到的测试数据如下
+2020/06/16 11:28:46:563  INFO com.sinosoft.test.base.TestBase:49 - fbbs=1-原保险保单,ywgs=01620189,qdlx=04
+2020/06/16 11:28:54:953  INFO com.sinosoft.test.base.TestBase:148 - 没有找到页面元素:By.xpath: //input[@value='继续登录'] - 错误信息Expected condition failed: waiting for com.sinosoft.test.base.TestBase$1@23fb172e (tried for 1 second(s) with 500 milliseconds interval)
+2020/06/16 11:28:54:953  INFO com.sinosoft.test.base.TestBase:109 - 常规登录，没有继续登录按钮
+2020/06/16 11:57:41:659  INFO com.sinosoft.test.base.TestBase:65 - start InternetExplorerDriver
+2020/06/16 11:57:43:954  INFO com.sinosoft.test.base.TestBase:48 - 开始运行测试脚本，获取到的测试数据如下
+2020/06/16 11:57:43:955  INFO com.sinosoft.test.base.TestBase:49 - fbbs=1-原保险保单,ywgs=01620189,qdlx=04
+2020/06/16 11:57:52:490  INFO com.sinosoft.test.base.TestBase:148 - 没有找到页面元素:By.xpath: //input[@value='继续登录'] - 错误信息Expected condition failed: waiting for com.sinosoft.test.base.TestBase$1@23fb172e (tried for 1 second(s) with 500 milliseconds interval)
+2020/06/16 11:57:52:490  INFO com.sinosoft.test.base.TestBase:109 - 常规登录，没有继续登录按钮
+2020/06/16 11:57:55:505 DEBUG com.sinosoft.test.base.TestBase:73 - 设置完毕[[InternetExplorerDriver: internet explorer on WINDOWS (76451078-9263-4879-83c5-cbcc1572e7aa)] -> name: riskClassTemp] & Code=01
+2020/06/16 11:57:56:356 DEBUG com.sinosoft.test.base.TestBase:73 - 设置完毕[[InternetExplorerDriver: internet explorer on WINDOWS (76451078-9263-4879-83c5-cbcc1572e7aa)] -> name: riskCode] & Code=0101
+2020/06/16 12:00:41:913  INFO com.sinosoft.test.base.TestBase:65 - start InternetExplorerDriver
+2020/06/16 12:00:44:395  INFO com.sinosoft.test.base.TestBase:48 - 开始运行测试脚本，获取到的测试数据如下
+2020/06/16 12:00:44:395  INFO com.sinosoft.test.base.TestBase:49 - fbbs=1-原保险保单,ywgs=01620189,qdlx=04
+2020/06/16 12:00:52:983  INFO com.sinosoft.test.base.TestBase:148 - 没有找到页面元素:By.xpath: //input[@value='继续登录'] - 错误信息Expected condition failed: waiting for com.sinosoft.test.base.TestBase$1@23fb172e (tried for 1 second(s) with 500 milliseconds interval)
+2020/06/16 12:00:52:983  INFO com.sinosoft.test.base.TestBase:109 - 常规登录，没有继续登录按钮
+2020/06/16 12:00:55:942 DEBUG com.sinosoft.test.base.TestBase:75 - 设置完毕[[InternetExplorerDriver: internet explorer on WINDOWS (2d22c4d7-892e-413f-b906-6b5d58a331e2)] -> name: riskClassTemp] & Code=01
+2020/06/16 12:00:56:724 DEBUG com.sinosoft.test.base.TestBase:75 - 设置完毕[[InternetExplorerDriver: internet explorer on WINDOWS (2d22c4d7-892e-413f-b906-6b5d58a331e2)] -> name: riskCode] & Code=0101
+2020/06/16 12:01:05:720 DEBUG com.sinosoft.test.base.TestBase:75 - 设置完毕[[InternetExplorerDriver: internet explorer on WINDOWS (2d22c4d7-892e-413f-b906-6b5d58a331e2)] -> name: GuMainCompanyCode] & Code=01620189
+2020/06/16 12:01:06:670 DEBUG com.sinosoft.test.base.TestBase:75 - 设置完毕[[InternetExplorerDriver: internet explorer on WINDOWS (2d22c4d7-892e-413f-b906-6b5d58a331e2)] -> name: GuMainChannelDetailCode] & Code=04
+2020/06/16 12:01:06:716 DEBUG com.sinosoft.test.base.TestBase:46 - 开始设置[[InternetExplorerDriver: internet explorer on WINDOWS (2d22c4d7-892e-413f-b906-6b5d58a331e2)] -> name: GuMainShareHolderFlag] & Code=0
+2020/06/16 12:01:17:850  INFO com.sinosoft.test.base.TestBase:247 - 找到匹配【0】的选项：0--非股东
+2020/06/16 12:01:25:787 DEBUG com.sinosoft.test.base.TestBase:54 - 设置完毕[[InternetExplorerDriver: internet explorer on WINDOWS (2d22c4d7-892e-413f-b906-6b5d58a331e2)] -> name: GuMainShareHolderFlag] & Code=0
+2020/06/16 12:01:25:821 DEBUG com.sinosoft.test.base.TestBase:46 - 开始设置[[InternetExplorerDriver: internet explorer on WINDOWS (2d22c4d7-892e-413f-b906-6b5d58a331e2)] -> name: GuMainSalesTeamCode] & Code=T6209880101
+2020/06/16 12:01:34:078  INFO com.sinosoft.test.base.TestBase:247 - 找到匹配【T6209880101】的选项：T6209880101--重客业务三部
+2020/06/16 12:01:42:027 DEBUG com.sinosoft.test.base.TestBase:54 - 设置完毕[[InternetExplorerDriver: internet explorer on WINDOWS (2d22c4d7-892e-413f-b906-6b5d58a331e2)] -> name: GuMainSalesTeamCode] & Code=T6209880101
+2020/06/16 12:01:42:097 DEBUG com.sinosoft.test.base.TestBase:46 - 开始设置[[InternetExplorerDriver: internet explorer on WINDOWS (2d22c4d7-892e-413f-b906-6b5d58a331e2)] -> name: GuMainSalesmanCode] & Code=S000000029
+2020/06/16 12:01:50:378  INFO com.sinosoft.test.base.TestBase:247 - 找到匹配【S000000029】的选项：S000000029--于超
+2020/06/16 12:01:58:344 DEBUG com.sinosoft.test.base.TestBase:54 - 设置完毕[[InternetExplorerDriver: internet explorer on WINDOWS (2d22c4d7-892e-413f-b906-6b5d58a331e2)] -> name: GuMainSalesmanCode] & Code=S000000029
+2020/06/16 12:01:58:378 DEBUG com.sinosoft.test.base.TestBase:46 - 开始设置[[InternetExplorerDriver: internet explorer on WINDOWS (2d22c4d7-892e-413f-b906-6b5d58a331e2)] -> name: GuMainBusinessSource] & Code=01010101
+2020/06/16 12:02:06:706  INFO com.sinosoft.test.base.TestBase:247 - 找到匹配【01010101】的选项：01010101--柜面直销
+2020/06/16 12:02:14:683 DEBUG com.sinosoft.test.base.TestBase:54 - 设置完毕[[InternetExplorerDriver: internet explorer on WINDOWS (2d22c4d7-892e-413f-b906-6b5d58a331e2)] -> name: GuMainBusinessSource] & Code=01010101
+2020/06/16 12:05:13:872  INFO com.sinosoft.test.base.TestBase:65 - start InternetExplorerDriver
+2020/06/16 12:05:15:754  INFO com.sinosoft.test.base.TestBase:48 - 开始运行测试脚本，获取到的测试数据如下
+2020/06/16 12:05:15:754  INFO com.sinosoft.test.base.TestBase:49 - fbbs=1-原保险保单,ywgs=01620189,qdlx=04
+2020/06/16 12:05:24:200  INFO com.sinosoft.test.base.TestBase:148 - 没有找到页面元素:By.xpath: //input[@value='继续登录'] - 错误信息Expected condition failed: waiting for com.sinosoft.test.base.TestBase$1@23fb172e (tried for 1 second(s) with 500 milliseconds interval)
+2020/06/16 12:05:24:200  INFO com.sinosoft.test.base.TestBase:109 - 常规登录，没有继续登录按钮
+2020/06/16 12:05:27:080 DEBUG com.sinosoft.test.base.TestBase:56 - 找到了Code对应的文本显示框:riskClassName
+2020/06/16 12:05:27:106 DEBUG com.sinosoft.test.base.TestBase:61 - 设置完毕[[InternetExplorerDriver: internet explorer on WINDOWS (c264ad7a-0701-4836-8316-e4ccd25c5518)] -> name: riskClassTemp] & Code=01
+2020/06/16 12:05:27:870 DEBUG com.sinosoft.test.base.TestBase:56 - 找到了Code对应的文本显示框:riskName
+2020/06/16 12:05:27:884 DEBUG com.sinosoft.test.base.TestBase:61 - 设置完毕[[InternetExplorerDriver: internet explorer on WINDOWS (c264ad7a-0701-4836-8316-e4ccd25c5518)] -> name: riskCode] & Code=0101
+2020/06/16 12:05:36:736 DEBUG com.sinosoft.test.base.TestBase:56 - 找到了Code对应的文本显示框:GuMainCompanyName
+2020/06/16 12:05:36:771 DEBUG com.sinosoft.test.base.TestBase:61 - 设置完毕[[InternetExplorerDriver: internet explorer on WINDOWS (c264ad7a-0701-4836-8316-e4ccd25c5518)] -> name: GuMainCompanyCode] & Code=01620189
+2020/06/16 12:05:37:707 DEBUG com.sinosoft.test.base.TestBase:56 - 找到了Code对应的文本显示框:GuMainChannelDetailName
+2020/06/16 12:05:37:733 DEBUG com.sinosoft.test.base.TestBase:61 - 设置完毕[[InternetExplorerDriver: internet explorer on WINDOWS (c264ad7a-0701-4836-8316-e4ccd25c5518)] -> name: GuMainChannelDetailCode] & Code=04
+2020/06/16 12:05:37:790 DEBUG com.sinosoft.test.base.TestBase:34 - 开始设置[[InternetExplorerDriver: internet explorer on WINDOWS (c264ad7a-0701-4836-8316-e4ccd25c5518)] -> name: GuMainShareHolderFlag] & Code=0
+2020/06/16 12:05:48:922  INFO com.sinosoft.test.base.TestBase:247 - 找到匹配【0】的选项：0--非股东
+2020/06/16 12:05:56:615 DEBUG com.sinosoft.test.base.TestBase:42 - 设置完毕[[InternetExplorerDriver: internet explorer on WINDOWS (c264ad7a-0701-4836-8316-e4ccd25c5518)] -> name: GuMainShareHolderFlag] & Code=0
+2020/06/16 12:05:56:650 DEBUG com.sinosoft.test.base.TestBase:34 - 开始设置[[InternetExplorerDriver: internet explorer on WINDOWS (c264ad7a-0701-4836-8316-e4ccd25c5518)] -> name: GuMainSalesTeamCode] & Code=T6209880101
+2020/06/16 12:06:04:753  INFO com.sinosoft.test.base.TestBase:247 - 找到匹配【T6209880101】的选项：T6209880101--重客业务三部
+2020/06/16 12:06:14:266 DEBUG com.sinosoft.test.base.TestBase:42 - 设置完毕[[InternetExplorerDriver: internet explorer on WINDOWS (c264ad7a-0701-4836-8316-e4ccd25c5518)] -> name: GuMainSalesTeamCode] & Code=T6209880101
+2020/06/16 12:06:14:312 DEBUG com.sinosoft.test.base.TestBase:34 - 开始设置[[InternetExplorerDriver: internet explorer on WINDOWS (c264ad7a-0701-4836-8316-e4ccd25c5518)] -> name: GuMainSalesmanCode] & Code=S000000029
+2020/06/16 12:06:22:633  INFO com.sinosoft.test.base.TestBase:247 - 找到匹配【S000000029】的选项：S000000029--于超
+2020/06/16 12:06:30:612 DEBUG com.sinosoft.test.base.TestBase:42 - 设置完毕[[InternetExplorerDriver: internet explorer on WINDOWS (c264ad7a-0701-4836-8316-e4ccd25c5518)] -> name: GuMainSalesmanCode] & Code=S000000029
+2020/06/16 12:06:30:636 DEBUG com.sinosoft.test.base.TestBase:34 - 开始设置[[InternetExplorerDriver: internet explorer on WINDOWS (c264ad7a-0701-4836-8316-e4ccd25c5518)] -> name: GuMainBusinessSource] & Code=01010101
+2020/06/16 12:06:38:980  INFO com.sinosoft.test.base.TestBase:247 - 找到匹配【01010101】的选项：01010101--柜面直销
+2020/06/16 12:06:46:939 DEBUG com.sinosoft.test.base.TestBase:42 - 设置完毕[[InternetExplorerDriver: internet explorer on WINDOWS (c264ad7a-0701-4836-8316-e4ccd25c5518)] -> name: GuMainBusinessSource] & Code=01010101
+2020/06/16 14:26:52:825  INFO com.sinosoft.test.base.TestBase:65 - start InternetExplorerDriver
+2020/06/16 14:26:54:881  INFO com.sinosoft.test.base.TestBase:48 - 开始运行测试脚本，获取到的测试数据如下
+2020/06/16 14:26:54:881  INFO com.sinosoft.test.base.TestBase:49 - fbbs=1-原保险保单,ywgs=01620189,qdlx=04
+2020/06/16 14:26:58:066  INFO com.sinosoft.test.base.TestBase:105 - 重复登录，发现继续登录按钮，强制登录ButtonName:[[InternetExplorerDriver: internet explorer on WINDOWS (d4d2d17c-3763-4206-87d9-3f6f8670eb5d)] -> xpath: //input[@value='继续登录']];Displayed：+true;Enabled=true
+2020/06/16 14:27:02:438 DEBUG com.sinosoft.test.base.TestBase:56 - 找到了Code对应的文本显示框:riskClassName
+2020/06/16 14:27:02:464 DEBUG com.sinosoft.test.base.TestBase:61 - 设置完毕[[InternetExplorerDriver: internet explorer on WINDOWS (d4d2d17c-3763-4206-87d9-3f6f8670eb5d)] -> name: riskClassTemp] & Code=01
+2020/06/16 14:27:03:300 DEBUG com.sinosoft.test.base.TestBase:56 - 找到了Code对应的文本显示框:riskName
+2020/06/16 14:27:03:324 DEBUG com.sinosoft.test.base.TestBase:61 - 设置完毕[[InternetExplorerDriver: internet explorer on WINDOWS (d4d2d17c-3763-4206-87d9-3f6f8670eb5d)] -> name: riskCode] & Code=0101
+2020/06/16 14:27:12:447 DEBUG com.sinosoft.test.base.TestBase:56 - 找到了Code对应的文本显示框:GuMainCompanyName
+2020/06/16 14:27:12:491 DEBUG com.sinosoft.test.base.TestBase:61 - 设置完毕[[InternetExplorerDriver: internet explorer on WINDOWS (d4d2d17c-3763-4206-87d9-3f6f8670eb5d)] -> name: GuMainCompanyCode] & Code=01620189
+2020/06/16 14:27:13:421 DEBUG com.sinosoft.test.base.TestBase:56 - 找到了Code对应的文本显示框:GuMainChannelDetailName
+2020/06/16 14:27:13:455 DEBUG com.sinosoft.test.base.TestBase:61 - 设置完毕[[InternetExplorerDriver: internet explorer on WINDOWS (d4d2d17c-3763-4206-87d9-3f6f8670eb5d)] -> name: GuMainChannelDetailCode] & Code=04
+2020/06/16 14:27:13:503 DEBUG com.sinosoft.test.base.TestBase:34 - 开始设置[[InternetExplorerDriver: internet explorer on WINDOWS (d4d2d17c-3763-4206-87d9-3f6f8670eb5d)] -> name: GuMainShareHolderFlag] & Code=0
+2020/06/16 14:27:23:746  INFO com.sinosoft.test.base.TestBase:247 - 找到匹配【0】的选项：0--非股东
+2020/06/16 14:27:31:444 DEBUG com.sinosoft.test.base.TestBase:42 - 设置完毕[[InternetExplorerDriver: internet explorer on WINDOWS (d4d2d17c-3763-4206-87d9-3f6f8670eb5d)] -> name: GuMainShareHolderFlag] & Code=0
+2020/06/16 14:27:31:479 DEBUG com.sinosoft.test.base.TestBase:34 - 开始设置[[InternetExplorerDriver: internet explorer on WINDOWS (d4d2d17c-3763-4206-87d9-3f6f8670eb5d)] -> name: GuMainSalesTeamCode] & Code=T6209880101
+2020/06/16 14:27:38:832  INFO com.sinosoft.test.base.TestBase:247 - 找到匹配【T6209880101】的选项：T6209880101--重客业务三部
+2020/06/16 14:27:46:544 DEBUG com.sinosoft.test.base.TestBase:42 - 设置完毕[[InternetExplorerDriver: internet explorer on WINDOWS (d4d2d17c-3763-4206-87d9-3f6f8670eb5d)] -> name: GuMainSalesTeamCode] & Code=T6209880101
+2020/06/16 14:27:46:578 DEBUG com.sinosoft.test.base.TestBase:34 - 开始设置[[InternetExplorerDriver: internet explorer on WINDOWS (d4d2d17c-3763-4206-87d9-3f6f8670eb5d)] -> name: GuMainSalesmanCode] & Code=S000000029
+2020/06/16 14:27:53:968  INFO com.sinosoft.test.base.TestBase:247 - 找到匹配【S000000029】的选项：S000000029--于超
+2020/06/16 14:28:01:715 DEBUG com.sinosoft.test.base.TestBase:42 - 设置完毕[[InternetExplorerDriver: internet explorer on WINDOWS (d4d2d17c-3763-4206-87d9-3f6f8670eb5d)] -> name: GuMainSalesmanCode] & Code=S000000029
+2020/06/16 14:28:01:763 DEBUG com.sinosoft.test.base.TestBase:34 - 开始设置[[InternetExplorerDriver: internet explorer on WINDOWS (d4d2d17c-3763-4206-87d9-3f6f8670eb5d)] -> name: GuMainBusinessSource] & Code=01010101
+2020/06/16 14:28:09:187  INFO com.sinosoft.test.base.TestBase:247 - 找到匹配【01010101】的选项：01010101--柜面直销
+2020/06/16 14:28:16:914 DEBUG com.sinosoft.test.base.TestBase:42 - 设置完毕[[InternetExplorerDriver: internet explorer on WINDOWS (d4d2d17c-3763-4206-87d9-3f6f8670eb5d)] -> name: GuMainBusinessSource] & Code=01010101
+2020/06/16 15:05:29:999  INFO com.sinosoft.test.base.TestBase:65 - start InternetExplorerDriver
+2020/06/16 15:05:32:361  INFO com.sinosoft.test.base.TestBase:48 - 开始运行测试脚本，获取到的测试数据如下
+2020/06/16 15:05:32:361  INFO com.sinosoft.test.base.TestBase:49 - fbbs=1-原保险保单,ywgs=01620189,qdlx=04
+2020/06/16 15:05:35:607  INFO com.sinosoft.test.base.TestBase:105 - 重复登录，发现继续登录按钮，强制登录ButtonName:[[InternetExplorerDriver: internet explorer on WINDOWS (c463de05-57c5-4919-9f1d-26ab1f143b82)] -> xpath: //input[@value='继续登录']];Displayed：+true;Enabled=true
+2020/06/16 15:05:39:928 DEBUG com.sinosoft.test.base.TestBase:56 - 找到了Code对应的文本显示框:riskClassName
+2020/06/16 15:05:39:941 DEBUG com.sinosoft.test.base.TestBase:61 - 设置完毕[[InternetExplorerDriver: internet explorer on WINDOWS (c463de05-57c5-4919-9f1d-26ab1f143b82)] -> name: riskClassTemp] & Code=01
+2020/06/16 15:05:40:744 DEBUG com.sinosoft.test.base.TestBase:56 - 找到了Code对应的文本显示框:riskName
+2020/06/16 15:05:40:757 DEBUG com.sinosoft.test.base.TestBase:61 - 设置完毕[[InternetExplorerDriver: internet explorer on WINDOWS (c463de05-57c5-4919-9f1d-26ab1f143b82)] -> name: riskCode] & Code=0101
+2020/06/16 15:05:50:335 DEBUG com.sinosoft.test.base.TestBase:56 - 找到了Code对应的文本显示框:GuMainCompanyName
+2020/06/16 15:05:50:348 DEBUG com.sinosoft.test.base.TestBase:61 - 设置完毕[[InternetExplorerDriver: internet explorer on WINDOWS (c463de05-57c5-4919-9f1d-26ab1f143b82)] -> name: GuMainCompanyCode] & Code=01620189
+2020/06/16 15:05:51:302 DEBUG com.sinosoft.test.base.TestBase:56 - 找到了Code对应的文本显示框:GuMainChannelDetailName
+2020/06/16 15:05:51:337 DEBUG com.sinosoft.test.base.TestBase:61 - 设置完毕[[InternetExplorerDriver: internet explorer on WINDOWS (c463de05-57c5-4919-9f1d-26ab1f143b82)] -> name: GuMainChannelDetailCode] & Code=04
+2020/06/16 15:05:51:362 DEBUG com.sinosoft.test.base.TestBase:34 - 开始设置[[InternetExplorerDriver: internet explorer on WINDOWS (c463de05-57c5-4919-9f1d-26ab1f143b82)] -> name: GuMainShareHolderFlag] & Code=0
+2020/06/16 15:06:01:607  INFO com.sinosoft.test.base.TestBase:259 - 找到匹配【0】的选项：0--非股东
+2020/06/16 15:06:09:273 DEBUG com.sinosoft.test.base.TestBase:42 - 设置完毕[[InternetExplorerDriver: internet explorer on WINDOWS (c463de05-57c5-4919-9f1d-26ab1f143b82)] -> name: GuMainShareHolderFlag] & Code=0
+2020/06/16 15:06:09:318 DEBUG com.sinosoft.test.base.TestBase:34 - 开始设置[[InternetExplorerDriver: internet explorer on WINDOWS (c463de05-57c5-4919-9f1d-26ab1f143b82)] -> name: GuMainSalesTeamCode] & Code=T6209880101
+2020/06/16 15:06:16:687  INFO com.sinosoft.test.base.TestBase:259 - 找到匹配【T6209880101】的选项：T6209880101--重客业务三部
+2020/06/16 15:06:24:440 DEBUG com.sinosoft.test.base.TestBase:42 - 设置完毕[[InternetExplorerDriver: internet explorer on WINDOWS (c463de05-57c5-4919-9f1d-26ab1f143b82)] -> name: GuMainSalesTeamCode] & Code=T6209880101
+2020/06/16 15:06:24:465 DEBUG com.sinosoft.test.base.TestBase:34 - 开始设置[[InternetExplorerDriver: internet explorer on WINDOWS (c463de05-57c5-4919-9f1d-26ab1f143b82)] -> name: GuMainSalesmanCode] & Code=S000000029
+2020/06/16 15:06:31:854  INFO com.sinosoft.test.base.TestBase:259 - 找到匹配【S000000029】的选项：S000000029--于超
+2020/06/16 15:06:39:605 DEBUG com.sinosoft.test.base.TestBase:42 - 设置完毕[[InternetExplorerDriver: internet explorer on WINDOWS (c463de05-57c5-4919-9f1d-26ab1f143b82)] -> name: GuMainSalesmanCode] & Code=S000000029
+2020/06/16 15:06:39:638 DEBUG com.sinosoft.test.base.TestBase:34 - 开始设置[[InternetExplorerDriver: internet explorer on WINDOWS (c463de05-57c5-4919-9f1d-26ab1f143b82)] -> name: GuMainBusinessSource] & Code=01010101
+2020/06/16 15:06:47:016  INFO com.sinosoft.test.base.TestBase:259 - 找到匹配【01010101】的选项：01010101--柜面直销
+2020/06/16 15:06:54:795 DEBUG com.sinosoft.test.base.TestBase:42 - 设置完毕[[InternetExplorerDriver: internet explorer on WINDOWS (c463de05-57c5-4919-9f1d-26ab1f143b82)] -> name: GuMainBusinessSource] & Code=01010101
+2020/06/16 15:06:56:265 DEBUG com.sinosoft.test.base.TestBase:56 - 找到了Code对应的文本显示框:GuMainIssueCompanyName
+2020/06/16 15:06:56:291 DEBUG com.sinosoft.test.base.TestBase:61 - 设置完毕[[InternetExplorerDriver: internet explorer on WINDOWS (c463de05-57c5-4919-9f1d-26ab1f143b82)] -> name: GuMainIssueCompany] & Code=0100000001
+2020/06/16 15:06:56:564  INFO com.sinosoft.test.base.TestBase:259 - 找到匹配【3】的选项：3-仲裁
+2020/06/16 15:06:57:065  INFO com.sinosoft.test.base.TestBase:259 - 找到匹配【1】的选项：1-境外
+2020/06/16 15:06:58:266 DEBUG com.sinosoft.test.base.TestBase:56 - 找到了Code对应的文本显示框:GuMainAgricultureFlagName
+2020/06/16 15:06:58:304 DEBUG com.sinosoft.test.base.TestBase:61 - 设置完毕[[InternetExplorerDriver: internet explorer on WINDOWS (c463de05-57c5-4919-9f1d-26ab1f143b82)] -> name: GuMainAgricultureFlag] & Code=1111
+2020/06/16 15:06:58:555  INFO com.sinosoft.test.base.TestBase:259 - 找到匹配【0】的选项：0-非统括业务
+2020/06/16 15:06:58:955  INFO com.sinosoft.test.base.TestBase:259 - 找到匹配【0】的选项：0-否
+2020/06/16 15:06:59:296  INFO com.sinosoft.test.base.TestBase:259 - 找到匹配【0】的选项：0-否
+2020/06/16 15:10:45:873  INFO com.sinosoft.test.base.TestBase:65 - start InternetExplorerDriver
+2020/06/16 15:10:47:755  INFO com.sinosoft.test.base.TestBase:48 - 开始运行测试脚本，获取到的测试数据如下
+2020/06/16 15:10:47:756  INFO com.sinosoft.test.base.TestBase:49 - fbbs=1-原保险保单,ywgs=01620189,qdlx=04
+2020/06/16 15:10:51:370  INFO com.sinosoft.test.base.TestBase:105 - 重复登录，发现继续登录按钮，强制登录ButtonName:[[InternetExplorerDriver: internet explorer on WINDOWS (e93355a3-436e-4428-a9df-64f3a27494d9)] -> xpath: //input[@value='继续登录']];Displayed：+true;Enabled=true
+2020/06/16 15:10:56:167 DEBUG com.sinosoft.test.base.TestBase:56 - 找到了Code对应的文本显示框:riskClassName
+2020/06/16 15:10:56:259 DEBUG com.sinosoft.test.base.TestBase:61 - 设置完毕[[InternetExplorerDriver: internet explorer on WINDOWS (e93355a3-436e-4428-a9df-64f3a27494d9)] -> name: riskClassTemp] & Code=01
+2020/06/16 15:10:57:282 DEBUG com.sinosoft.test.base.TestBase:56 - 找到了Code对应的文本显示框:riskName
+2020/06/16 15:10:57:405 DEBUG com.sinosoft.test.base.TestBase:61 - 设置完毕[[InternetExplorerDriver: internet explorer on WINDOWS (e93355a3-436e-4428-a9df-64f3a27494d9)] -> name: riskCode] & Code=0101
+2020/06/16 15:14:13:875  INFO com.sinosoft.test.base.TestBase:65 - start InternetExplorerDriver
+2020/06/16 15:14:15:797  INFO com.sinosoft.test.base.TestBase:48 - 开始运行测试脚本，获取到的测试数据如下
+2020/06/16 15:14:15:797  INFO com.sinosoft.test.base.TestBase:49 - fbbs=1-原保险保单,ywgs=01620189,qdlx=04
+2020/06/16 15:14:19:307  INFO com.sinosoft.test.base.TestBase:105 - 重复登录，发现继续登录按钮，强制登录ButtonName:[[InternetExplorerDriver: internet explorer on WINDOWS (cdd9ec6c-8ea9-4c5b-8fb2-9a6139090585)] -> xpath: //input[@value='继续登录']];Displayed：+true;Enabled=true
+2020/06/16 15:14:24:446 DEBUG com.sinosoft.test.base.TestBase:56 - 找到了Code对应的文本显示框:riskClassName
+2020/06/16 15:14:24:460 DEBUG com.sinosoft.test.base.TestBase:61 - 设置完毕[[InternetExplorerDriver: internet explorer on WINDOWS (cdd9ec6c-8ea9-4c5b-8fb2-9a6139090585)] -> name: riskClassTemp] & Code=01
+2020/06/16 15:14:25:328 DEBUG com.sinosoft.test.base.TestBase:56 - 找到了Code对应的文本显示框:riskName
+2020/06/16 15:14:25:341 DEBUG com.sinosoft.test.base.TestBase:61 - 设置完毕[[InternetExplorerDriver: internet explorer on WINDOWS (cdd9ec6c-8ea9-4c5b-8fb2-9a6139090585)] -> name: riskCode] & Code=0101
+2020/06/16 15:14:34:668 DEBUG com.sinosoft.test.base.TestBase:56 - 找到了Code对应的文本显示框:GuMainCompanyName
+2020/06/16 15:14:34:713 DEBUG com.sinosoft.test.base.TestBase:61 - 设置完毕[[InternetExplorerDriver: internet explorer on WINDOWS (cdd9ec6c-8ea9-4c5b-8fb2-9a6139090585)] -> name: GuMainCompanyCode] & Code=01620189
+2020/06/16 15:14:35:768 DEBUG com.sinosoft.test.base.TestBase:56 - 找到了Code对应的文本显示框:GuMainChannelDetailName
+2020/06/16 15:14:35:792 DEBUG com.sinosoft.test.base.TestBase:61 - 设置完毕[[InternetExplorerDriver: internet explorer on WINDOWS (cdd9ec6c-8ea9-4c5b-8fb2-9a6139090585)] -> name: GuMainChannelDetailCode] & Code=04
+2020/06/16 15:14:35:851 DEBUG com.sinosoft.test.base.TestBase:34 - 开始设置[[InternetExplorerDriver: internet explorer on WINDOWS (cdd9ec6c-8ea9-4c5b-8fb2-9a6139090585)] -> name: GuMainShareHolderFlag] & Code=0
+2020/06/16 15:14:46:715  INFO com.sinosoft.test.base.TestBase:261 - 找到匹配【0】的选项：0--非股东
+2020/06/16 15:14:54:407 DEBUG com.sinosoft.test.base.TestBase:42 - 设置完毕[[InternetExplorerDriver: internet explorer on WINDOWS (cdd9ec6c-8ea9-4c5b-8fb2-9a6139090585)] -> name: GuMainShareHolderFlag] & Code=0
+2020/06/16 15:14:54:453 DEBUG com.sinosoft.test.base.TestBase:34 - 开始设置[[InternetExplorerDriver: internet explorer on WINDOWS (cdd9ec6c-8ea9-4c5b-8fb2-9a6139090585)] -> name: GuMainSalesTeamCode] & Code=T6209880101
+2020/06/16 15:15:02:432  INFO com.sinosoft.test.base.TestBase:261 - 找到匹配【T6209880101】的选项：T6209880101--重客业务三部
+2020/06/16 15:15:10:083 DEBUG com.sinosoft.test.base.TestBase:42 - 设置完毕[[InternetExplorerDriver: internet explorer on WINDOWS (cdd9ec6c-8ea9-4c5b-8fb2-9a6139090585)] -> name: GuMainSalesTeamCode] & Code=T6209880101
+2020/06/16 15:15:10:118 DEBUG com.sinosoft.test.base.TestBase:34 - 开始设置[[InternetExplorerDriver: internet explorer on WINDOWS (cdd9ec6c-8ea9-4c5b-8fb2-9a6139090585)] -> name: GuMainSalesmanCode] & Code=S000000029
+2020/06/16 15:15:18:121  INFO com.sinosoft.test.base.TestBase:261 - 找到匹配【S000000029】的选项：S000000029--于超
+2020/06/16 15:15:25:902 DEBUG com.sinosoft.test.base.TestBase:42 - 设置完毕[[InternetExplorerDriver: internet explorer on WINDOWS (cdd9ec6c-8ea9-4c5b-8fb2-9a6139090585)] -> name: GuMainSalesmanCode] & Code=S000000029
+2020/06/16 15:15:25:937 DEBUG com.sinosoft.test.base.TestBase:34 - 开始设置[[InternetExplorerDriver: internet explorer on WINDOWS (cdd9ec6c-8ea9-4c5b-8fb2-9a6139090585)] -> name: GuMainBusinessSource] & Code=01010101
+2020/06/16 15:15:33:956  INFO com.sinosoft.test.base.TestBase:261 - 找到匹配【01010101】的选项：01010101--柜面直销
+2020/06/16 15:15:41:752 DEBUG com.sinosoft.test.base.TestBase:42 - 设置完毕[[InternetExplorerDriver: internet explorer on WINDOWS (cdd9ec6c-8ea9-4c5b-8fb2-9a6139090585)] -> name: GuMainBusinessSource] & Code=01010101
+2020/06/16 15:15:43:312 DEBUG com.sinosoft.test.base.TestBase:56 - 找到了Code对应的文本显示框:GuMainIssueCompanyName
+2020/06/16 15:15:43:370 DEBUG com.sinosoft.test.base.TestBase:61 - 设置完毕[[InternetExplorerDriver: internet explorer on WINDOWS (cdd9ec6c-8ea9-4c5b-8fb2-9a6139090585)] -> name: GuMainIssueCompany] & Code=0100000001
+2020/06/16 15:15:43:736  INFO com.sinosoft.test.base.TestBase:261 - 找到匹配【1】的选项：1-非诉讼调解
+2020/06/16 15:15:44:313  INFO com.sinosoft.test.base.TestBase:261 - 找到匹配【0】的选项：0-境内
+2020/06/16 15:15:45:525 DEBUG com.sinosoft.test.base.TestBase:56 - 找到了Code对应的文本显示框:GuMainAgricultureFlagName
+2020/06/16 15:15:45:559 DEBUG com.sinosoft.test.base.TestBase:61 - 设置完毕[[InternetExplorerDriver: internet explorer on WINDOWS (cdd9ec6c-8ea9-4c5b-8fb2-9a6139090585)] -> name: GuMainAgricultureFlag] & Code=1111
+2020/06/16 15:15:45:982  INFO com.sinosoft.test.base.TestBase:261 - 找到匹配【0】的选项：0-非统括业务
+2020/06/16 15:15:46:512  INFO com.sinosoft.test.base.TestBase:261 - 找到匹配【0】的选项：0-否
+2020/06/16 15:15:46:966  INFO com.sinosoft.test.base.TestBase:261 - 找到匹配【0】的选项：0-否
+2020/06/16 15:15:48:262 DEBUG com.sinosoft.test.base.TestBase:56 - 找到了Code对应的文本显示框:GuMainMoneySuspiciousIndName
+2020/06/16 15:15:48:320 DEBUG com.sinosoft.test.base.TestBase:61 - 设置完毕[[InternetExplorerDriver: internet explorer on WINDOWS (cdd9ec6c-8ea9-4c5b-8fb2-9a6139090585)] -> name: GuMainMoneySuspiciousInd] & Code=0001
+2020/06/16 15:15:48:717  INFO com.sinosoft.test.base.TestBase:261 - 找到匹配【0】的选项：0-否
+2020/06/16 15:15:49:245  INFO com.sinosoft.test.base.TestBase:261 - 找到匹配【1】的选项：1-是
+2020/06/16 15:35:17:160  INFO com.sinosoft.test.base.TestBase:65 - start InternetExplorerDriver
+2020/06/16 15:35:19:033  INFO com.sinosoft.test.base.TestBase:48 - 开始运行测试脚本，获取到的测试数据如下
+2020/06/16 15:35:19:033  INFO com.sinosoft.test.base.TestBase:49 - fbbs=1-原保险保单,ywgs=01620189,qdlx=04
+2020/06/16 15:35:22:664  INFO com.sinosoft.test.base.TestBase:105 - 重复登录，发现继续登录按钮，强制登录ButtonName:[[InternetExplorerDriver: internet explorer on WINDOWS (4d2c78f4-14e9-4303-aa28-3e8fbd6ac3c0)] -> xpath: //input[@value='继续登录']];Displayed：+true;Enabled=true
+2020/06/16 15:35:26:879 DEBUG com.sinosoft.test.base.TestBase:56 - 找到了Code对应的文本显示框:riskClassName
+2020/06/16 15:35:26:892 DEBUG com.sinosoft.test.base.TestBase:61 - 设置完毕[[InternetExplorerDriver: internet explorer on WINDOWS (4d2c78f4-14e9-4303-aa28-3e8fbd6ac3c0)] -> name: riskClassTemp] & Code=01
+2020/06/16 15:35:27:750 DEBUG com.sinosoft.test.base.TestBase:56 - 找到了Code对应的文本显示框:riskName
+2020/06/16 15:35:27:777 DEBUG com.sinosoft.test.base.TestBase:61 - 设置完毕[[InternetExplorerDriver: internet explorer on WINDOWS (4d2c78f4-14e9-4303-aa28-3e8fbd6ac3c0)] -> name: riskCode] & Code=0101
+2020/06/16 15:35:37:079 DEBUG com.sinosoft.test.base.TestBase:56 - 找到了Code对应的文本显示框:GuMainCompanyName
+2020/06/16 15:35:37:092 DEBUG com.sinosoft.test.base.TestBase:61 - 设置完毕[[InternetExplorerDriver: internet explorer on WINDOWS (4d2c78f4-14e9-4303-aa28-3e8fbd6ac3c0)] -> name: GuMainCompanyCode] & Code=01620189
+2020/06/16 15:35:38:127 DEBUG com.sinosoft.test.base.TestBase:56 - 找到了Code对应的文本显示框:GuMainChannelDetailName
+2020/06/16 15:35:38:173 DEBUG com.sinosoft.test.base.TestBase:61 - 设置完毕[[InternetExplorerDriver: internet explorer on WINDOWS (4d2c78f4-14e9-4303-aa28-3e8fbd6ac3c0)] -> name: GuMainChannelDetailCode] & Code=04
+2020/06/16 15:35:38:231 DEBUG com.sinosoft.test.base.TestBase:34 - 开始设置[[InternetExplorerDriver: internet explorer on WINDOWS (4d2c78f4-14e9-4303-aa28-3e8fbd6ac3c0)] -> name: GuMainShareHolderFlag] & Code=0
+2020/06/16 15:35:49:068  INFO com.sinosoft.test.base.TestBase:261 - 找到匹配【0】的选项：0--非股东
+2020/06/16 15:35:56:751 DEBUG com.sinosoft.test.base.TestBase:42 - 设置完毕[[InternetExplorerDriver: internet explorer on WINDOWS (4d2c78f4-14e9-4303-aa28-3e8fbd6ac3c0)] -> name: GuMainShareHolderFlag] & Code=0
+2020/06/16 15:35:56:799 DEBUG com.sinosoft.test.base.TestBase:34 - 开始设置[[InternetExplorerDriver: internet explorer on WINDOWS (4d2c78f4-14e9-4303-aa28-3e8fbd6ac3c0)] -> name: GuMainSalesTeamCode] & Code=T6209880101
+2020/06/16 15:36:04:798  INFO com.sinosoft.test.base.TestBase:261 - 找到匹配【T6209880101】的选项：T6209880101--重客业务三部
+2020/06/16 15:36:12:610 DEBUG com.sinosoft.test.base.TestBase:42 - 设置完毕[[InternetExplorerDriver: internet explorer on WINDOWS (4d2c78f4-14e9-4303-aa28-3e8fbd6ac3c0)] -> name: GuMainSalesTeamCode] & Code=T6209880101
+2020/06/16 15:36:12:646 DEBUG com.sinosoft.test.base.TestBase:34 - 开始设置[[InternetExplorerDriver: internet explorer on WINDOWS (4d2c78f4-14e9-4303-aa28-3e8fbd6ac3c0)] -> name: GuMainSalesmanCode] & Code=S000000029
+2020/06/16 15:36:20:609  INFO com.sinosoft.test.base.TestBase:261 - 找到匹配【S000000029】的选项：S000000029--于超
+2020/06/16 15:36:28:363 DEBUG com.sinosoft.test.base.TestBase:42 - 设置完毕[[InternetExplorerDriver: internet explorer on WINDOWS (4d2c78f4-14e9-4303-aa28-3e8fbd6ac3c0)] -> name: GuMainSalesmanCode] & Code=S000000029
+2020/06/16 15:36:28:398 DEBUG com.sinosoft.test.base.TestBase:34 - 开始设置[[InternetExplorerDriver: internet explorer on WINDOWS (4d2c78f4-14e9-4303-aa28-3e8fbd6ac3c0)] -> name: GuMainBusinessSource] & Code=01010101
+2020/06/16 15:36:36:402  INFO com.sinosoft.test.base.TestBase:261 - 找到匹配【01010101】的选项：01010101--柜面直销
+2020/06/16 15:36:44:153 DEBUG com.sinosoft.test.base.TestBase:42 - 设置完毕[[InternetExplorerDriver: internet explorer on WINDOWS (4d2c78f4-14e9-4303-aa28-3e8fbd6ac3c0)] -> name: GuMainBusinessSource] & Code=01010101
+2020/06/16 15:36:45:854 DEBUG com.sinosoft.test.base.TestBase:56 - 找到了Code对应的文本显示框:GuMainIssueCompanyName
+2020/06/16 15:36:45:898 DEBUG com.sinosoft.test.base.TestBase:61 - 设置完毕[[InternetExplorerDriver: internet explorer on WINDOWS (4d2c78f4-14e9-4303-aa28-3e8fbd6ac3c0)] -> name: GuMainIssueCompany] & Code=0100000001
+2020/06/16 15:36:46:277  INFO com.sinosoft.test.base.TestBase:261 - 找到匹配【1】的选项：1-非诉讼调解
+2020/06/16 15:36:46:874  INFO com.sinosoft.test.base.TestBase:261 - 找到匹配【1】的选项：1-境外
+2020/06/16 15:36:48:140 DEBUG com.sinosoft.test.base.TestBase:56 - 找到了Code对应的文本显示框:GuMainAgricultureFlagName
+2020/06/16 15:36:48:166 DEBUG com.sinosoft.test.base.TestBase:61 - 设置完毕[[InternetExplorerDriver: internet explorer on WINDOWS (4d2c78f4-14e9-4303-aa28-3e8fbd6ac3c0)] -> name: GuMainAgricultureFlag] & Code=1111
+2020/06/16 15:36:48:610  INFO com.sinosoft.test.base.TestBase:261 - 找到匹配【0】的选项：0-非统括业务
+2020/06/16 15:36:49:038  INFO com.sinosoft.test.base.TestBase:261 - 找到匹配【0】的选项：0-否
+2020/06/16 15:36:49:484  INFO com.sinosoft.test.base.TestBase:261 - 找到匹配【0】的选项：0-否
+2020/06/16 15:36:50:803 DEBUG com.sinosoft.test.base.TestBase:56 - 找到了Code对应的文本显示框:GuMainMoneySuspiciousIndName
+2020/06/16 15:36:50:827 DEBUG com.sinosoft.test.base.TestBase:61 - 设置完毕[[InternetExplorerDriver: internet explorer on WINDOWS (4d2c78f4-14e9-4303-aa28-3e8fbd6ac3c0)] -> name: GuMainMoneySuspiciousInd] & Code=0001
+2020/06/16 15:36:51:200  INFO com.sinosoft.test.base.TestBase:261 - 找到匹配【0】的选项：0-否
+2020/06/16 15:36:51:778  INFO com.sinosoft.test.base.TestBase:261 - 找到匹配【1】的选项：1-是
+2020/06/16 15:38:10:976  INFO com.sinosoft.test.base.TestBase:65 - start InternetExplorerDriver
+2020/06/16 15:38:12:800  INFO com.sinosoft.test.base.TestBase:48 - 开始运行测试脚本，获取到的测试数据如下
+2020/06/16 15:38:12:801  INFO com.sinosoft.test.base.TestBase:49 - fbbs=1-原保险保单,ywgs=01620189,qdlx=04
+2020/06/16 15:38:33:260  INFO com.sinosoft.test.base.TestBase:65 - start InternetExplorerDriver
+2020/06/16 15:38:35:275  INFO com.sinosoft.test.base.TestBase:48 - 开始运行测试脚本，获取到的测试数据如下
+2020/06/16 15:38:35:275  INFO com.sinosoft.test.base.TestBase:49 - fbbs=1-原保险保单,ywgs=01620189,qdlx=04
+2020/06/16 15:38:39:325  INFO com.sinosoft.test.base.TestBase:105 - 重复登录，发现继续登录按钮，强制登录ButtonName:[[InternetExplorerDriver: internet explorer on WINDOWS (3c6728ab-64ed-4c40-b75d-5e382fea2e09)] -> xpath: //input[@value='继续登录']];Displayed：+true;Enabled=true
+2020/06/16 15:38:43:637 DEBUG com.sinosoft.test.base.TestBase:56 - 找到了Code对应的文本显示框:riskClassName
+2020/06/16 15:38:43:662 DEBUG com.sinosoft.test.base.TestBase:61 - 设置完毕[[InternetExplorerDriver: internet explorer on WINDOWS (3c6728ab-64ed-4c40-b75d-5e382fea2e09)] -> name: riskClassTemp] & Code=01
+2020/06/16 15:38:44:571 DEBUG com.sinosoft.test.base.TestBase:56 - 找到了Code对应的文本显示框:riskName
+2020/06/16 15:38:44:599 DEBUG com.sinosoft.test.base.TestBase:61 - 设置完毕[[InternetExplorerDriver: internet explorer on WINDOWS (3c6728ab-64ed-4c40-b75d-5e382fea2e09)] -> name: riskCode] & Code=0101
+2020/06/16 15:38:53:850 DEBUG com.sinosoft.test.base.TestBase:56 - 找到了Code对应的文本显示框:GuMainCompanyName
+2020/06/16 15:38:53:895 DEBUG com.sinosoft.test.base.TestBase:61 - 设置完毕[[InternetExplorerDriver: internet explorer on WINDOWS (3c6728ab-64ed-4c40-b75d-5e382fea2e09)] -> name: GuMainCompanyCode] & Code=01620189
+2020/06/16 15:38:54:953 DEBUG com.sinosoft.test.base.TestBase:56 - 找到了Code对应的文本显示框:GuMainChannelDetailName
+2020/06/16 15:38:54:978 DEBUG com.sinosoft.test.base.TestBase:61 - 设置完毕[[InternetExplorerDriver: internet explorer on WINDOWS (3c6728ab-64ed-4c40-b75d-5e382fea2e09)] -> name: GuMainChannelDetailCode] & Code=04
+2020/06/16 15:38:55:013 DEBUG com.sinosoft.test.base.TestBase:34 - 开始设置[[InternetExplorerDriver: internet explorer on WINDOWS (3c6728ab-64ed-4c40-b75d-5e382fea2e09)] -> name: GuMainShareHolderFlag] & Code=0
+2020/06/16 15:39:05:702  INFO com.sinosoft.test.base.TestBase:261 - 找到匹配【0】的选项：0--非股东
+2020/06/16 15:39:14:941 DEBUG com.sinosoft.test.base.TestBase:42 - 设置完毕[[InternetExplorerDriver: internet explorer on WINDOWS (3c6728ab-64ed-4c40-b75d-5e382fea2e09)] -> name: GuMainShareHolderFlag] & Code=0
+2020/06/16 15:39:14:977 DEBUG com.sinosoft.test.base.TestBase:34 - 开始设置[[InternetExplorerDriver: internet explorer on WINDOWS (3c6728ab-64ed-4c40-b75d-5e382fea2e09)] -> name: GuMainSalesTeamCode] & Code=T6209880101
+2020/06/16 15:39:22:983  INFO com.sinosoft.test.base.TestBase:261 - 找到匹配【T6209880101】的选项：T6209880101--重客业务三部
+2020/06/16 15:39:30:794 DEBUG com.sinosoft.test.base.TestBase:42 - 设置完毕[[InternetExplorerDriver: internet explorer on WINDOWS (3c6728ab-64ed-4c40-b75d-5e382fea2e09)] -> name: GuMainSalesTeamCode] & Code=T6209880101
+2020/06/16 15:39:30:828 DEBUG com.sinosoft.test.base.TestBase:34 - 开始设置[[InternetExplorerDriver: internet explorer on WINDOWS (3c6728ab-64ed-4c40-b75d-5e382fea2e09)] -> name: GuMainSalesmanCode] & Code=S000000029
+2020/06/16 15:39:38:592  INFO com.sinosoft.test.base.TestBase:261 - 找到匹配【S000000029】的选项：S000000029--于超
+2020/06/16 15:39:47:842 DEBUG com.sinosoft.test.base.TestBase:42 - 设置完毕[[InternetExplorerDriver: internet explorer on WINDOWS (3c6728ab-64ed-4c40-b75d-5e382fea2e09)] -> name: GuMainSalesmanCode] & Code=S000000029
+2020/06/16 15:39:47:891 DEBUG com.sinosoft.test.base.TestBase:34 - 开始设置[[InternetExplorerDriver: internet explorer on WINDOWS (3c6728ab-64ed-4c40-b75d-5e382fea2e09)] -> name: GuMainBusinessSource] & Code=01010101
+2020/06/16 15:39:55:952  INFO com.sinosoft.test.base.TestBase:261 - 找到匹配【01010101】的选项：01010101--柜面直销
+2020/06/16 15:40:03:700 DEBUG com.sinosoft.test.base.TestBase:42 - 设置完毕[[InternetExplorerDriver: internet explorer on WINDOWS (3c6728ab-64ed-4c40-b75d-5e382fea2e09)] -> name: GuMainBusinessSource] & Code=01010101
+2020/06/16 15:40:05:257 DEBUG com.sinosoft.test.base.TestBase:56 - 找到了Code对应的文本显示框:GuMainIssueCompanyName
+2020/06/16 15:40:05:280 DEBUG com.sinosoft.test.base.TestBase:61 - 设置完毕[[InternetExplorerDriver: internet explorer on WINDOWS (3c6728ab-64ed-4c40-b75d-5e382fea2e09)] -> name: GuMainIssueCompany] & Code=0100000001
+2020/06/16 15:40:05:650  INFO com.sinosoft.test.base.TestBase:261 - 找到匹配【1】的选项：1-非诉讼调解
+2020/06/16 15:40:06:323  INFO com.sinosoft.test.base.TestBase:261 - 找到匹配【1】的选项：1-境外
+2020/06/16 15:40:07:677 DEBUG com.sinosoft.test.base.TestBase:56 - 找到了Code对应的文本显示框:GuMainCountryCName
+2020/06/16 15:40:07:713 DEBUG com.sinosoft.test.base.TestBase:61 - 设置完毕[[InternetExplorerDriver: internet explorer on WINDOWS (3c6728ab-64ed-4c40-b75d-5e382fea2e09)] -> name: GuMainCountryCode] & Code=USA
+2020/06/16 15:40:09:466 DEBUG com.sinosoft.test.base.TestBase:56 - 找到了Code对应的文本显示框:GuMainAgricultureFlagName
+2020/06/16 15:40:09:510 DEBUG com.sinosoft.test.base.TestBase:61 - 设置完毕[[InternetExplorerDriver: internet explorer on WINDOWS (3c6728ab-64ed-4c40-b75d-5e382fea2e09)] -> name: GuMainAgricultureFlag] & Code=1111
+2020/06/16 15:40:09:918  INFO com.sinosoft.test.base.TestBase:261 - 找到匹配【0】的选项：0-非统括业务
+2020/06/16 15:40:10:407  INFO com.sinosoft.test.base.TestBase:261 - 找到匹配【0】的选项：0-否
+2020/06/16 15:40:10:955  INFO com.sinosoft.test.base.TestBase:261 - 找到匹配【0】的选项：0-否
+2020/06/16 15:40:12:302 DEBUG com.sinosoft.test.base.TestBase:56 - 找到了Code对应的文本显示框:GuMainMoneySuspiciousIndName
+2020/06/16 15:40:12:326 DEBUG com.sinosoft.test.base.TestBase:61 - 设置完毕[[InternetExplorerDriver: internet explorer on WINDOWS (3c6728ab-64ed-4c40-b75d-5e382fea2e09)] -> name: GuMainMoneySuspiciousInd] & Code=0001
+2020/06/16 15:40:12:706  INFO com.sinosoft.test.base.TestBase:261 - 找到匹配【0】的选项：0-否
+2020/06/16 15:40:13:312  INFO com.sinosoft.test.base.TestBase:261 - 找到匹配【1】的选项：1-是
+2020/06/16 15:41:57:522  INFO com.sinosoft.test.base.TestBase:65 - start InternetExplorerDriver
+2020/06/16 15:41:59:390  INFO com.sinosoft.test.base.TestBase:48 - 开始运行测试脚本，获取到的测试数据如下
+2020/06/16 15:41:59:390  INFO com.sinosoft.test.base.TestBase:49 - fbbs=1-原保险保单,ywgs=01620189,qdlx=04
+2020/06/16 15:42:08:305  INFO com.sinosoft.test.base.TestBase:148 - 没有找到页面元素:By.xpath: //input[@value='继续登录'] - 错误信息Expected condition failed: waiting for com.sinosoft.test.base.TestBase$1@53f0a4cb (tried for 1 second(s) with 500 milliseconds interval)
+2020/06/16 15:42:08:305  INFO com.sinosoft.test.base.TestBase:109 - 常规登录，没有继续登录按钮
+2020/06/16 15:42:41:285  INFO com.sinosoft.test.base.TestBase:65 - start InternetExplorerDriver
+2020/06/16 15:42:43:148  INFO com.sinosoft.test.base.TestBase:48 - 开始运行测试脚本，获取到的测试数据如下
+2020/06/16 15:42:43:148  INFO com.sinosoft.test.base.TestBase:49 - fbbs=1-原保险保单,ywgs=01620189,qdlx=04
+2020/06/16 15:42:46:787  INFO com.sinosoft.test.base.TestBase:105 - 重复登录，发现继续登录按钮，强制登录ButtonName:[[InternetExplorerDriver: internet explorer on WINDOWS (4aec3d7a-5d36-4186-8152-5d54f287fc7c)] -> xpath: //input[@value='继续登录']];Displayed：+true;Enabled=true
+2020/06/16 15:42:51:304 DEBUG com.sinosoft.test.base.TestBase:56 - 找到了Code对应的文本显示框:riskClassName
+2020/06/16 15:42:51:330 DEBUG com.sinosoft.test.base.TestBase:61 - 设置完毕[[InternetExplorerDriver: internet explorer on WINDOWS (4aec3d7a-5d36-4186-8152-5d54f287fc7c)] -> name: riskClassTemp] & Code=01
+2020/06/16 15:42:52:218 DEBUG com.sinosoft.test.base.TestBase:56 - 找到了Code对应的文本显示框:riskName
+2020/06/16 15:42:52:244 DEBUG com.sinosoft.test.base.TestBase:61 - 设置完毕[[InternetExplorerDriver: internet explorer on WINDOWS (4aec3d7a-5d36-4186-8152-5d54f287fc7c)] -> name: riskCode] & Code=0101
+2020/06/16 15:43:01:684 DEBUG com.sinosoft.test.base.TestBase:56 - 找到了Code对应的文本显示框:GuMainCompanyName
+2020/06/16 15:43:01:709 DEBUG com.sinosoft.test.base.TestBase:61 - 设置完毕[[InternetExplorerDriver: internet explorer on WINDOWS (4aec3d7a-5d36-4186-8152-5d54f287fc7c)] -> name: GuMainCompanyCode] & Code=01620189
+2020/06/16 15:43:02:810 DEBUG com.sinosoft.test.base.TestBase:56 - 找到了Code对应的文本显示框:GuMainChannelDetailName
+2020/06/16 15:43:02:855 DEBUG com.sinosoft.test.base.TestBase:61 - 设置完毕[[InternetExplorerDriver: internet explorer on WINDOWS (4aec3d7a-5d36-4186-8152-5d54f287fc7c)] -> name: GuMainChannelDetailCode] & Code=04
+2020/06/16 15:43:02:891 DEBUG com.sinosoft.test.base.TestBase:34 - 开始设置[[InternetExplorerDriver: internet explorer on WINDOWS (4aec3d7a-5d36-4186-8152-5d54f287fc7c)] -> name: GuMainShareHolderFlag] & Code=0
+2020/06/16 15:43:13:689  INFO com.sinosoft.test.base.TestBase:261 - 找到匹配【0】的选项：0--非股东
+2020/06/16 15:43:21:420 DEBUG com.sinosoft.test.base.TestBase:42 - 设置完毕[[InternetExplorerDriver: internet explorer on WINDOWS (4aec3d7a-5d36-4186-8152-5d54f287fc7c)] -> name: GuMainShareHolderFlag] & Code=0
+2020/06/16 15:43:21:455 DEBUG com.sinosoft.test.base.TestBase:34 - 开始设置[[InternetExplorerDriver: internet explorer on WINDOWS (4aec3d7a-5d36-4186-8152-5d54f287fc7c)] -> name: GuMainSalesTeamCode] & Code=T6209880101
+2020/06/16 15:43:29:470  INFO com.sinosoft.test.base.TestBase:261 - 找到匹配【T6209880101】的选项：T6209880101--重客业务三部
+2020/06/16 15:43:37:191 DEBUG com.sinosoft.test.base.TestBase:42 - 设置完毕[[InternetExplorerDriver: internet explorer on WINDOWS (4aec3d7a-5d36-4186-8152-5d54f287fc7c)] -> name: GuMainSalesTeamCode] & Code=T6209880101
+2020/06/16 15:43:37:224 DEBUG com.sinosoft.test.base.TestBase:34 - 开始设置[[InternetExplorerDriver: internet explorer on WINDOWS (4aec3d7a-5d36-4186-8152-5d54f287fc7c)] -> name: GuMainSalesmanCode] & Code=S000000029
+2020/06/16 15:43:45:199  INFO com.sinosoft.test.base.TestBase:261 - 找到匹配【S000000029】的选项：S000000029--于超
+2020/06/16 15:43:52:911 DEBUG com.sinosoft.test.base.TestBase:42 - 设置完毕[[InternetExplorerDriver: internet explorer on WINDOWS (4aec3d7a-5d36-4186-8152-5d54f287fc7c)] -> name: GuMainSalesmanCode] & Code=S000000029
+2020/06/16 15:43:52:946 DEBUG com.sinosoft.test.base.TestBase:34 - 开始设置[[InternetExplorerDriver: internet explorer on WINDOWS (4aec3d7a-5d36-4186-8152-5d54f287fc7c)] -> name: GuMainBusinessSource] & Code=01010101
+2020/06/16 15:44:00:794  INFO com.sinosoft.test.base.TestBase:261 - 找到匹配【01010101】的选项：01010101--柜面直销
+2020/06/16 15:44:10:086 DEBUG com.sinosoft.test.base.TestBase:42 - 设置完毕[[InternetExplorerDriver: internet explorer on WINDOWS (4aec3d7a-5d36-4186-8152-5d54f287fc7c)] -> name: GuMainBusinessSource] & Code=01010101
+2020/06/16 15:44:11:688 DEBUG com.sinosoft.test.base.TestBase:56 - 找到了Code对应的文本显示框:GuMainIssueCompanyName
+2020/06/16 15:44:11:722 DEBUG com.sinosoft.test.base.TestBase:61 - 设置完毕[[InternetExplorerDriver: internet explorer on WINDOWS (4aec3d7a-5d36-4186-8152-5d54f287fc7c)] -> name: GuMainIssueCompany] & Code=0100000001
+2020/06/16 15:44:12:039  INFO com.sinosoft.test.base.TestBase:261 - 找到匹配【1】的选项：1-非诉讼调解
+2020/06/16 15:44:12:671  INFO com.sinosoft.test.base.TestBase:261 - 找到匹配【1】的选项：1-境外
+2020/06/16 15:44:13:922 DEBUG com.sinosoft.test.base.TestBase:56 - 找到了Code对应的文本显示框:GuMainCountryCName
+2020/06/16 15:44:13:946 DEBUG com.sinosoft.test.base.TestBase:61 - 设置完毕[[InternetExplorerDriver: internet explorer on WINDOWS (4aec3d7a-5d36-4186-8152-5d54f287fc7c)] -> name: GuMainCountryCode] & Code=USA
+2020/06/16 15:44:15:640 DEBUG com.sinosoft.test.base.TestBase:56 - 找到了Code对应的文本显示框:GuMainAgricultureFlagName
+2020/06/16 15:44:15:666 DEBUG com.sinosoft.test.base.TestBase:61 - 设置完毕[[InternetExplorerDriver: internet explorer on WINDOWS (4aec3d7a-5d36-4186-8152-5d54f287fc7c)] -> name: GuMainAgricultureFlag] & Code=1111
+2020/06/16 15:44:16:102  INFO com.sinosoft.test.base.TestBase:261 - 找到匹配【0】的选项：0-非统括业务
+2020/06/16 15:44:16:585  INFO com.sinosoft.test.base.TestBase:261 - 找到匹配【0】的选项：0-否
+2020/06/16 15:44:17:157  INFO com.sinosoft.test.base.TestBase:261 - 找到匹配【1】的选项：1-是
+2020/06/16 15:44:18:442 DEBUG com.sinosoft.test.base.TestBase:56 - 找到了Code对应的文本显示框:GuMainMoneySuspiciousIndName
+2020/06/16 15:44:18:476 DEBUG com.sinosoft.test.base.TestBase:61 - 设置完毕[[InternetExplorerDriver: internet explorer on WINDOWS (4aec3d7a-5d36-4186-8152-5d54f287fc7c)] -> name: GuMainMoneySuspiciousInd] & Code=0001
+2020/06/16 15:44:18:887  INFO com.sinosoft.test.base.TestBase:261 - 找到匹配【1】的选项：1-是
+2020/06/16 15:44:19:533  INFO com.sinosoft.test.base.TestBase:261 - 找到匹配【1】的选项：1-是
+2020/06/16 16:35:58:399  INFO com.sinosoft.test.base.TestBase:65 - start InternetExplorerDriver
+2020/06/16 16:36:00:352  INFO com.sinosoft.test.base.TestBase:48 - 开始运行测试脚本，获取到的测试数据如下
+2020/06/16 16:36:00:353  INFO com.sinosoft.test.base.TestBase:49 - fbbs=1-原保险保单,ywgs=01620189,qdlx=04
+2020/06/16 16:36:04:344  INFO com.sinosoft.test.base.TestBase:105 - 重复登录，发现继续登录按钮，强制登录ButtonName:[[InternetExplorerDriver: internet explorer on WINDOWS (b54f5afb-4971-43cc-b157-76fda9687459)] -> xpath: //input[@value='继续登录']];Displayed：+true;Enabled=true
+2020/06/16 16:36:08:938 DEBUG com.sinosoft.test.base.TestBase:56 - 找到了Code对应的文本显示框:riskClassName
+2020/06/16 16:36:08:952 DEBUG com.sinosoft.test.base.TestBase:61 - 设置完毕[[InternetExplorerDriver: internet explorer on WINDOWS (b54f5afb-4971-43cc-b157-76fda9687459)] -> name: riskClassTemp] & Code=01
+2020/06/16 16:36:09:803 DEBUG com.sinosoft.test.base.TestBase:56 - 找到了Code对应的文本显示框:riskName
+2020/06/16 16:36:09:875 DEBUG com.sinosoft.test.base.TestBase:61 - 设置完毕[[InternetExplorerDriver: internet explorer on WINDOWS (b54f5afb-4971-43cc-b157-76fda9687459)] -> name: riskCode] & Code=0101
+2020/06/16 16:36:19:382 DEBUG com.sinosoft.test.base.TestBase:56 - 找到了Code对应的文本显示框:GuMainCompanyName
+2020/06/16 16:36:19:418 DEBUG com.sinosoft.test.base.TestBase:61 - 设置完毕[[InternetExplorerDriver: internet explorer on WINDOWS (b54f5afb-4971-43cc-b157-76fda9687459)] -> name: GuMainCompanyCode] & Code=01620189
+2020/06/16 16:36:20:469 DEBUG com.sinosoft.test.base.TestBase:56 - 找到了Code对应的文本显示框:GuMainChannelDetailName
+2020/06/16 16:36:20:504 DEBUG com.sinosoft.test.base.TestBase:61 - 设置完毕[[InternetExplorerDriver: internet explorer on WINDOWS (b54f5afb-4971-43cc-b157-76fda9687459)] -> name: GuMainChannelDetailCode] & Code=04
+2020/06/16 16:36:20:551 DEBUG com.sinosoft.test.base.TestBase:34 - 开始设置[[InternetExplorerDriver: internet explorer on WINDOWS (b54f5afb-4971-43cc-b157-76fda9687459)] -> name: GuMainShareHolderFlag] & Code=0
+2020/06/16 16:36:31:216  INFO com.sinosoft.test.base.TestBase:261 - 找到匹配【0】的选项：0--非股东
+2020/06/16 16:36:40:502 DEBUG com.sinosoft.test.base.TestBase:42 - 设置完毕[[InternetExplorerDriver: internet explorer on WINDOWS (b54f5afb-4971-43cc-b157-76fda9687459)] -> name: GuMainShareHolderFlag] & Code=0
+2020/06/16 16:36:40:548 DEBUG com.sinosoft.test.base.TestBase:34 - 开始设置[[InternetExplorerDriver: internet explorer on WINDOWS (b54f5afb-4971-43cc-b157-76fda9687459)] -> name: GuMainSalesTeamCode] & Code=T6209880101
+2020/06/16 16:36:48:595  INFO com.sinosoft.test.base.TestBase:261 - 找到匹配【T6209880101】的选项：T6209880101--重客业务三部
+2020/06/16 16:36:56:419 DEBUG com.sinosoft.test.base.TestBase:42 - 设置完毕[[InternetExplorerDriver: internet explorer on WINDOWS (b54f5afb-4971-43cc-b157-76fda9687459)] -> name: GuMainSalesTeamCode] & Code=T6209880101
+2020/06/16 16:36:56:454 DEBUG com.sinosoft.test.base.TestBase:34 - 开始设置[[InternetExplorerDriver: internet explorer on WINDOWS (b54f5afb-4971-43cc-b157-76fda9687459)] -> name: GuMainSalesmanCode] & Code=S000000029
+2020/06/16 16:37:04:473  INFO com.sinosoft.test.base.TestBase:261 - 找到匹配【S000000029】的选项：S000000029--于超
+2020/06/16 16:37:12:242 DEBUG com.sinosoft.test.base.TestBase:42 - 设置完毕[[InternetExplorerDriver: internet explorer on WINDOWS (b54f5afb-4971-43cc-b157-76fda9687459)] -> name: GuMainSalesmanCode] & Code=S000000029
+2020/06/16 16:37:12:278 DEBUG com.sinosoft.test.base.TestBase:34 - 开始设置[[InternetExplorerDriver: internet explorer on WINDOWS (b54f5afb-4971-43cc-b157-76fda9687459)] -> name: GuMainBusinessSource] & Code=01010101
+2020/06/16 16:37:20:278  INFO com.sinosoft.test.base.TestBase:261 - 找到匹配【01010101】的选项：01010101--柜面直销
+2020/06/16 16:37:28:084 DEBUG com.sinosoft.test.base.TestBase:42 - 设置完毕[[InternetExplorerDriver: internet explorer on WINDOWS (b54f5afb-4971-43cc-b157-76fda9687459)] -> name: GuMainBusinessSource] & Code=01010101
+2020/06/16 16:37:29:897 DEBUG com.sinosoft.test.base.TestBase:56 - 找到了Code对应的文本显示框:GuMainIssueCompanyName
+2020/06/16 16:37:29:931 DEBUG com.sinosoft.test.base.TestBase:61 - 设置完毕[[InternetExplorerDriver: internet explorer on WINDOWS (b54f5afb-4971-43cc-b157-76fda9687459)] -> name: GuMainIssueCompany] & Code=0100000001
+2020/06/16 16:37:30:295  INFO com.sinosoft.test.base.TestBase:261 - 找到匹配【1】的选项：1-非诉讼调解
+2020/06/16 16:37:30:928  INFO com.sinosoft.test.base.TestBase:261 - 找到匹配【1】的选项：1-境外
+2020/06/16 16:37:32:220 DEBUG com.sinosoft.test.base.TestBase:56 - 找到了Code对应的文本显示框:GuMainCountryCName
+2020/06/16 16:37:32:269 DEBUG com.sinosoft.test.base.TestBase:61 - 设置完毕[[InternetExplorerDriver: internet explorer on WINDOWS (b54f5afb-4971-43cc-b157-76fda9687459)] -> name: GuMainCountryCode] & Code=USA
+2020/06/16 16:37:33:879 DEBUG com.sinosoft.test.base.TestBase:56 - 找到了Code对应的文本显示框:GuMainAgricultureFlagName
+2020/06/16 16:37:33:935 DEBUG com.sinosoft.test.base.TestBase:61 - 设置完毕[[InternetExplorerDriver: internet explorer on WINDOWS (b54f5afb-4971-43cc-b157-76fda9687459)] -> name: GuMainAgricultureFlag] & Code=1111
+2020/06/16 16:37:34:333  INFO com.sinosoft.test.base.TestBase:261 - 找到匹配【0】的选项：0-非统括业务
+2020/06/16 16:37:34:848  INFO com.sinosoft.test.base.TestBase:261 - 找到匹配【0】的选项：0-否
+2020/06/16 16:37:35:346  INFO com.sinosoft.test.base.TestBase:261 - 找到匹配【1】的选项：1-是
+2020/06/16 16:37:36:674 DEBUG com.sinosoft.test.base.TestBase:56 - 找到了Code对应的文本显示框:GuMainMoneySuspiciousIndName
+2020/06/16 16:37:36:708 DEBUG com.sinosoft.test.base.TestBase:61 - 设置完毕[[InternetExplorerDriver: internet explorer on WINDOWS (b54f5afb-4971-43cc-b157-76fda9687459)] -> name: GuMainMoneySuspiciousInd] & Code=0001
+2020/06/16 16:37:37:145  INFO com.sinosoft.test.base.TestBase:261 - 找到匹配【1】的选项：1-是
+2020/06/16 16:37:37:744  INFO com.sinosoft.test.base.TestBase:261 - 找到匹配【1】的选项：1-是
+2020/06/16 16:37:39:480  INFO com.sinosoft.test.base.TestBase:261 - 找到匹配【1】的选项：1-男
+2020/06/16 18:14:53:977  INFO com.sinosoft.test.base.TestBase:65 - start InternetExplorerDriver
+2020/06/16 18:14:55:924  INFO com.sinosoft.test.base.TestBase:48 - 开始运行测试脚本，获取到的测试数据如下
+2020/06/16 18:14:55:925  INFO com.sinosoft.test.base.TestBase:49 - fbbs=1-原保险保单,ywgs=01620189,qdlx=04
+2020/06/16 18:15:05:976  INFO com.sinosoft.test.base.TestBase:148 - 没有找到页面元素:By.xpath: //input[@value='继续登录'] - 错误信息Expected condition failed: waiting for com.sinosoft.test.base.TestBase$1@77a7cf58 (tried for 1 second(s) with 500 milliseconds interval)
+2020/06/16 18:15:05:976  INFO com.sinosoft.test.base.TestBase:109 - 常规登录，没有继续登录按钮
+2020/06/16 18:15:14:793 DEBUG com.sinosoft.test.base.TestBase:56 - 找到了Code对应的文本显示框:riskClassName
+2020/06/16 18:15:14:818 DEBUG com.sinosoft.test.base.TestBase:61 - 设置完毕[[InternetExplorerDriver: internet explorer on WINDOWS (a7aae3f8-5e0f-496b-8876-badf17bb1438)] -> name: riskClassTemp] & Code=01
+2020/06/16 18:15:15:733 DEBUG com.sinosoft.test.base.TestBase:56 - 找到了Code对应的文本显示框:riskName
+2020/06/16 18:15:15:760 DEBUG com.sinosoft.test.base.TestBase:61 - 设置完毕[[InternetExplorerDriver: internet explorer on WINDOWS (a7aae3f8-5e0f-496b-8876-badf17bb1438)] -> name: riskCode] & Code=0101
+2020/06/16 18:16:31:672  INFO com.sinosoft.test.base.TestBase:65 - start InternetExplorerDriver
+2020/06/16 18:16:33:602  INFO com.sinosoft.test.base.TestBase:48 - 开始运行测试脚本，获取到的测试数据如下
+2020/06/16 18:16:33:603  INFO com.sinosoft.test.base.TestBase:49 - fbbs=1-原保险保单,ywgs=01620189,qdlx=04
+2020/06/16 18:16:43:039  INFO com.sinosoft.test.base.TestBase:148 - 没有找到页面元素:By.xpath: //input[@value='继续登录'] - 错误信息Expected condition failed: waiting for com.sinosoft.test.base.TestBase$1@77a7cf58 (tried for 1 second(s) with 500 milliseconds interval)
+2020/06/16 18:16:43:040  INFO com.sinosoft.test.base.TestBase:109 - 常规登录，没有继续登录按钮
+2020/06/16 18:16:46:300 DEBUG com.sinosoft.test.base.TestBase:56 - 找到了Code对应的文本显示框:riskClassName
+2020/06/16 18:16:46:314 DEBUG com.sinosoft.test.base.TestBase:61 - 设置完毕[[InternetExplorerDriver: internet explorer on WINDOWS (888b8515-02a6-45f1-bf23-239123a0f137)] -> name: riskClassTemp] & Code=01
+2020/06/16 18:16:47:191 DEBUG com.sinosoft.test.base.TestBase:56 - 找到了Code对应的文本显示框:riskName
+2020/06/16 18:16:47:203 DEBUG com.sinosoft.test.base.TestBase:61 - 设置完毕[[InternetExplorerDriver: internet explorer on WINDOWS (888b8515-02a6-45f1-bf23-239123a0f137)] -> name: riskCode] & Code=0101
+2020/06/16 18:17:03:873 DEBUG com.sinosoft.test.base.TestBase:56 - 找到了Code对应的文本显示框:GuMainCompanyName
+2020/06/16 18:17:03:896 DEBUG com.sinosoft.test.base.TestBase:61 - 设置完毕[[InternetExplorerDriver: internet explorer on WINDOWS (888b8515-02a6-45f1-bf23-239123a0f137)] -> name: GuMainCompanyCode] & Code=01620189
+2020/06/16 18:17:05:007 DEBUG com.sinosoft.test.base.TestBase:56 - 找到了Code对应的文本显示框:GuMainChannelDetailName
+2020/06/16 18:17:05:032 DEBUG com.sinosoft.test.base.TestBase:61 - 设置完毕[[InternetExplorerDriver: internet explorer on WINDOWS (888b8515-02a6-45f1-bf23-239123a0f137)] -> name: GuMainChannelDetailCode] & Code=04
+2020/06/16 18:17:05:056 DEBUG com.sinosoft.test.base.TestBase:34 - 开始设置[[InternetExplorerDriver: internet explorer on WINDOWS (888b8515-02a6-45f1-bf23-239123a0f137)] -> name: GuMainShareHolderFlag] & Code=0
+2020/06/16 18:17:16:024  INFO com.sinosoft.test.base.TestBase:261 - 找到匹配【0】的选项：0--非股东
+2020/06/16 18:17:23:829 DEBUG com.sinosoft.test.base.TestBase:42 - 设置完毕[[InternetExplorerDriver: internet explorer on WINDOWS (888b8515-02a6-45f1-bf23-239123a0f137)] -> name: GuMainShareHolderFlag] & Code=0
+2020/06/16 18:17:23:897 DEBUG com.sinosoft.test.base.TestBase:34 - 开始设置[[InternetExplorerDriver: internet explorer on WINDOWS (888b8515-02a6-45f1-bf23-239123a0f137)] -> name: GuMainSalesTeamCode] & Code=T6209880101
+2020/06/16 18:17:31:959  INFO com.sinosoft.test.base.TestBase:261 - 找到匹配【T6209880101】的选项：T6209880101--重客业务三部
+2020/06/16 18:17:39:785 DEBUG com.sinosoft.test.base.TestBase:42 - 设置完毕[[InternetExplorerDriver: internet explorer on WINDOWS (888b8515-02a6-45f1-bf23-239123a0f137)] -> name: GuMainSalesTeamCode] & Code=T6209880101
+2020/06/16 18:17:39:819 DEBUG com.sinosoft.test.base.TestBase:34 - 开始设置[[InternetExplorerDriver: internet explorer on WINDOWS (888b8515-02a6-45f1-bf23-239123a0f137)] -> name: GuMainSalesmanCode] & Code=S000000029
+2020/06/16 18:17:47:817  INFO com.sinosoft.test.base.TestBase:261 - 找到匹配【S000000029】的选项：S000000029--于超
+2020/06/16 18:17:55:612 DEBUG com.sinosoft.test.base.TestBase:42 - 设置完毕[[InternetExplorerDriver: internet explorer on WINDOWS (888b8515-02a6-45f1-bf23-239123a0f137)] -> name: GuMainSalesmanCode] & Code=S000000029
+2020/06/16 18:17:55:656 DEBUG com.sinosoft.test.base.TestBase:34 - 开始设置[[InternetExplorerDriver: internet explorer on WINDOWS (888b8515-02a6-45f1-bf23-239123a0f137)] -> name: GuMainBusinessSource] & Code=01010101
+2020/06/16 18:18:03:657  INFO com.sinosoft.test.base.TestBase:261 - 找到匹配【01010101】的选项：01010101--柜面直销
+2020/06/16 18:18:11:420 DEBUG com.sinosoft.test.base.TestBase:42 - 设置完毕[[InternetExplorerDriver: internet explorer on WINDOWS (888b8515-02a6-45f1-bf23-239123a0f137)] -> name: GuMainBusinessSource] & Code=01010101
+2020/06/16 18:19:40:362  INFO com.sinosoft.test.base.TestBase:65 - start InternetExplorerDriver
+2020/06/16 18:19:42:286  INFO com.sinosoft.test.base.TestBase:48 - 开始运行测试脚本，获取到的测试数据如下
+2020/06/16 18:19:42:286  INFO com.sinosoft.test.base.TestBase:49 - fbbs=1-原保险保单,ywgs=01620189,qdlx=04
+2020/06/16 18:19:51:581  INFO com.sinosoft.test.base.TestBase:148 - 没有找到页面元素:By.xpath: //input[@value='继续登录'] - 错误信息Expected condition failed: waiting for com.sinosoft.test.base.TestBase$1@77a7cf58 (tried for 1 second(s) with 500 milliseconds interval)
+2020/06/16 18:19:51:581  INFO com.sinosoft.test.base.TestBase:109 - 常规登录，没有继续登录按钮
+2020/06/16 18:19:54:831 DEBUG com.sinosoft.test.base.TestBase:56 - 找到了Code对应的文本显示框:riskClassName
+2020/06/16 18:19:54:855 DEBUG com.sinosoft.test.base.TestBase:61 - 设置完毕[[InternetExplorerDriver: internet explorer on WINDOWS (b5bab746-0db1-4121-8e0f-bcea98b540bd)] -> name: riskClassTemp] & Code=01
+2020/06/16 18:19:55:771 DEBUG com.sinosoft.test.base.TestBase:56 - 找到了Code对应的文本显示框:riskName
+2020/06/16 18:19:55:783 DEBUG com.sinosoft.test.base.TestBase:61 - 设置完毕[[InternetExplorerDriver: internet explorer on WINDOWS (b5bab746-0db1-4121-8e0f-bcea98b540bd)] -> name: riskCode] & Code=0101
+2020/06/16 18:20:05:040 DEBUG com.sinosoft.test.base.TestBase:56 - 找到了Code对应的文本显示框:GuMainCompanyName
+2020/06/16 18:20:05:073 DEBUG com.sinosoft.test.base.TestBase:61 - 设置完毕[[InternetExplorerDriver: internet explorer on WINDOWS (b5bab746-0db1-4121-8e0f-bcea98b540bd)] -> name: GuMainCompanyCode] & Code=01620189
+2020/06/16 18:20:06:090 DEBUG com.sinosoft.test.base.TestBase:56 - 找到了Code对应的文本显示框:GuMainChannelDetailName
+2020/06/16 18:20:06:125 DEBUG com.sinosoft.test.base.TestBase:61 - 设置完毕[[InternetExplorerDriver: internet explorer on WINDOWS (b5bab746-0db1-4121-8e0f-bcea98b540bd)] -> name: GuMainChannelDetailCode] & Code=04
+2020/06/16 18:20:06:150 DEBUG com.sinosoft.test.base.TestBase:34 - 开始设置[[InternetExplorerDriver: internet explorer on WINDOWS (b5bab746-0db1-4121-8e0f-bcea98b540bd)] -> name: GuMainShareHolderFlag] & Code=0
+2020/06/16 18:20:17:055  INFO com.sinosoft.test.base.TestBase:261 - 找到匹配【0】的选项：0--非股东
+2020/06/16 18:20:24:762 DEBUG com.sinosoft.test.base.TestBase:42 - 设置完毕[[InternetExplorerDriver: internet explorer on WINDOWS (b5bab746-0db1-4121-8e0f-bcea98b540bd)] -> name: GuMainShareHolderFlag] & Code=0
+2020/06/16 18:20:24:797 DEBUG com.sinosoft.test.base.TestBase:34 - 开始设置[[InternetExplorerDriver: internet explorer on WINDOWS (b5bab746-0db1-4121-8e0f-bcea98b540bd)] -> name: GuMainSalesTeamCode] & Code=T6209880101
+2020/06/16 18:20:32:808  INFO com.sinosoft.test.base.TestBase:261 - 找到匹配【T6209880101】的选项：T6209880101--重客业务三部
+2020/06/16 18:20:40:586 DEBUG com.sinosoft.test.base.TestBase:42 - 设置完毕[[InternetExplorerDriver: internet explorer on WINDOWS (b5bab746-0db1-4121-8e0f-bcea98b540bd)] -> name: GuMainSalesTeamCode] & Code=T6209880101
+2020/06/16 18:20:40:612 DEBUG com.sinosoft.test.base.TestBase:34 - 开始设置[[InternetExplorerDriver: internet explorer on WINDOWS (b5bab746-0db1-4121-8e0f-bcea98b540bd)] -> name: GuMainSalesmanCode] & Code=S000000029
+2020/06/16 18:20:48:608  INFO com.sinosoft.test.base.TestBase:261 - 找到匹配【S000000029】的选项：S000000029--于超
+2020/06/16 18:20:56:367 DEBUG com.sinosoft.test.base.TestBase:42 - 设置完毕[[InternetExplorerDriver: internet explorer on WINDOWS (b5bab746-0db1-4121-8e0f-bcea98b540bd)] -> name: GuMainSalesmanCode] & Code=S000000029
+2020/06/16 18:20:56:401 DEBUG com.sinosoft.test.base.TestBase:34 - 开始设置[[InternetExplorerDriver: internet explorer on WINDOWS (b5bab746-0db1-4121-8e0f-bcea98b540bd)] -> name: GuMainBusinessSource] & Code=01010101
+2020/06/16 18:21:04:495  INFO com.sinosoft.test.base.TestBase:261 - 找到匹配【01010101】的选项：01010101--柜面直销
+2020/06/16 18:21:12:304 DEBUG com.sinosoft.test.base.TestBase:42 - 设置完毕[[InternetExplorerDriver: internet explorer on WINDOWS (b5bab746-0db1-4121-8e0f-bcea98b540bd)] -> name: GuMainBusinessSource] & Code=01010101
+2020/06/16 18:21:13:993 DEBUG com.sinosoft.test.base.TestBase:56 - 找到了Code对应的文本显示框:GuMainIssueCompanyName
+2020/06/16 18:21:14:018 DEBUG com.sinosoft.test.base.TestBase:61 - 设置完毕[[InternetExplorerDriver: internet explorer on WINDOWS (b5bab746-0db1-4121-8e0f-bcea98b540bd)] -> name: GuMainIssueCompany] & Code=0100000001
+2020/06/16 18:21:14:385  INFO com.sinosoft.test.base.TestBase:261 - 找到匹配【1】的选项：1-非诉讼调解
+2020/06/16 18:21:14:962  INFO com.sinosoft.test.base.TestBase:261 - 找到匹配【1】的选项：1-境外
+2020/06/16 18:21:16:266 DEBUG com.sinosoft.test.base.TestBase:56 - 找到了Code对应的文本显示框:GuMainCountryCName
+2020/06/16 18:21:16:300 DEBUG com.sinosoft.test.base.TestBase:61 - 设置完毕[[InternetExplorerDriver: internet explorer on WINDOWS (b5bab746-0db1-4121-8e0f-bcea98b540bd)] -> name: GuMainCountryCode] & Code=USA
+2020/06/16 18:21:17:990 DEBUG com.sinosoft.test.base.TestBase:56 - 找到了Code对应的文本显示框:GuMainAgricultureFlagName
+2020/06/16 18:21:18:015 DEBUG com.sinosoft.test.base.TestBase:61 - 设置完毕[[InternetExplorerDriver: internet explorer on WINDOWS (b5bab746-0db1-4121-8e0f-bcea98b540bd)] -> name: GuMainAgricultureFlag] & Code=1111
+2020/06/16 18:21:18:414  INFO com.sinosoft.test.base.TestBase:261 - 找到匹配【0】的选项：0-非统括业务
+2020/06/16 18:21:18:930  INFO com.sinosoft.test.base.TestBase:261 - 找到匹配【0】的选项：0-否
+2020/06/16 18:21:19:447  INFO com.sinosoft.test.base.TestBase:261 - 找到匹配【1】的选项：1-是
+2020/06/16 18:23:49:049  INFO com.sinosoft.test.base.TestBase:65 - start InternetExplorerDriver
+2020/06/16 18:23:50:909  INFO com.sinosoft.test.base.TestBase:48 - 开始运行测试脚本，获取到的测试数据如下
+2020/06/16 18:23:50:909  INFO com.sinosoft.test.base.TestBase:49 - fbbs=1-原保险保单,ywgs=01620189,qdlx=04
+2020/06/16 18:24:00:190  INFO com.sinosoft.test.base.TestBase:148 - 没有找到页面元素:By.xpath: //input[@value='继续登录'] - 错误信息Expected condition failed: waiting for com.sinosoft.test.base.TestBase$1@77a7cf58 (tried for 1 second(s) with 500 milliseconds interval)
+2020/06/16 18:24:00:190  INFO com.sinosoft.test.base.TestBase:109 - 常规登录，没有继续登录按钮
+2020/06/16 18:24:03:528 DEBUG com.sinosoft.test.base.TestBase:56 - 找到了Code对应的文本显示框:riskClassName
+2020/06/16 18:24:03:542 DEBUG com.sinosoft.test.base.TestBase:61 - 设置完毕[[InternetExplorerDriver: internet explorer on WINDOWS (47f1c754-f98f-48b9-9198-54dca4af05fe)] -> name: riskClassTemp] & Code=01
+2020/06/16 18:24:04:380 DEBUG com.sinosoft.test.base.TestBase:56 - 找到了Code对应的文本显示框:riskName
+2020/06/16 18:24:04:395 DEBUG com.sinosoft.test.base.TestBase:61 - 设置完毕[[InternetExplorerDriver: internet explorer on WINDOWS (47f1c754-f98f-48b9-9198-54dca4af05fe)] -> name: riskCode] & Code=0101
+2020/06/16 18:24:13:979 DEBUG com.sinosoft.test.base.TestBase:56 - 找到了Code对应的文本显示框:GuMainCompanyName
+2020/06/16 18:24:14:003 DEBUG com.sinosoft.test.base.TestBase:61 - 设置完毕[[InternetExplorerDriver: internet explorer on WINDOWS (47f1c754-f98f-48b9-9198-54dca4af05fe)] -> name: GuMainCompanyCode] & Code=01620189
+2020/06/16 18:24:15:085 DEBUG com.sinosoft.test.base.TestBase:56 - 找到了Code对应的文本显示框:GuMainChannelDetailName
+2020/06/16 18:24:15:121 DEBUG com.sinosoft.test.base.TestBase:61 - 设置完毕[[InternetExplorerDriver: internet explorer on WINDOWS (47f1c754-f98f-48b9-9198-54dca4af05fe)] -> name: GuMainChannelDetailCode] & Code=04
+2020/06/16 18:24:15:154 DEBUG com.sinosoft.test.base.TestBase:34 - 开始设置[[InternetExplorerDriver: internet explorer on WINDOWS (47f1c754-f98f-48b9-9198-54dca4af05fe)] -> name: GuMainShareHolderFlag] & Code=0
+2020/06/16 18:24:26:005  INFO com.sinosoft.test.base.TestBase:261 - 找到匹配【0】的选项：0--非股东
+2020/06/16 18:24:33:755 DEBUG com.sinosoft.test.base.TestBase:42 - 设置完毕[[InternetExplorerDriver: internet explorer on WINDOWS (47f1c754-f98f-48b9-9198-54dca4af05fe)] -> name: GuMainShareHolderFlag] & Code=0
+2020/06/16 18:24:33:789 DEBUG com.sinosoft.test.base.TestBase:34 - 开始设置[[InternetExplorerDriver: internet explorer on WINDOWS (47f1c754-f98f-48b9-9198-54dca4af05fe)] -> name: GuMainSalesTeamCode] & Code=T6209880101
+2020/06/16 18:24:41:784  INFO com.sinosoft.test.base.TestBase:261 - 找到匹配【T6209880101】的选项：T6209880101--重客业务三部
+2020/06/16 18:24:49:633 DEBUG com.sinosoft.test.base.TestBase:42 - 设置完毕[[InternetExplorerDriver: internet explorer on WINDOWS (47f1c754-f98f-48b9-9198-54dca4af05fe)] -> name: GuMainSalesTeamCode] & Code=T6209880101
+2020/06/16 18:24:49:671 DEBUG com.sinosoft.test.base.TestBase:34 - 开始设置[[InternetExplorerDriver: internet explorer on WINDOWS (47f1c754-f98f-48b9-9198-54dca4af05fe)] -> name: GuMainSalesmanCode] & Code=S000000029
+2020/06/16 18:24:57:634  INFO com.sinosoft.test.base.TestBase:261 - 找到匹配【S000000029】的选项：S000000029--于超
+2020/06/16 18:25:05:464 DEBUG com.sinosoft.test.base.TestBase:42 - 设置完毕[[InternetExplorerDriver: internet explorer on WINDOWS (47f1c754-f98f-48b9-9198-54dca4af05fe)] -> name: GuMainSalesmanCode] & Code=S000000029
+2020/06/16 18:25:05:498 DEBUG com.sinosoft.test.base.TestBase:34 - 开始设置[[InternetExplorerDriver: internet explorer on WINDOWS (47f1c754-f98f-48b9-9198-54dca4af05fe)] -> name: GuMainBusinessSource] & Code=01010101
+2020/06/16 18:25:13:588  INFO com.sinosoft.test.base.TestBase:261 - 找到匹配【01010101】的选项：01010101--柜面直销
+2020/06/16 18:25:21:405 DEBUG com.sinosoft.test.base.TestBase:42 - 设置完毕[[InternetExplorerDriver: internet explorer on WINDOWS (47f1c754-f98f-48b9-9198-54dca4af05fe)] -> name: GuMainBusinessSource] & Code=01010101
+2020/06/16 18:25:23:288 DEBUG com.sinosoft.test.base.TestBase:56 - 找到了Code对应的文本显示框:GuMainIssueCompanyName
+2020/06/16 18:25:23:322 DEBUG com.sinosoft.test.base.TestBase:61 - 设置完毕[[InternetExplorerDriver: internet explorer on WINDOWS (47f1c754-f98f-48b9-9198-54dca4af05fe)] -> name: GuMainIssueCompany] & Code=0100000001
+2020/06/16 18:25:23:668  INFO com.sinosoft.test.base.TestBase:261 - 找到匹配【1】的选项：1-非诉讼调解
+2020/06/16 18:25:24:267  INFO com.sinosoft.test.base.TestBase:261 - 找到匹配【1】的选项：1-境外
+2020/06/16 18:25:25:582 DEBUG com.sinosoft.test.base.TestBase:56 - 找到了Code对应的文本显示框:GuMainCountryCName
+2020/06/16 18:25:25:616 DEBUG com.sinosoft.test.base.TestBase:61 - 设置完毕[[InternetExplorerDriver: internet explorer on WINDOWS (47f1c754-f98f-48b9-9198-54dca4af05fe)] -> name: GuMainCountryCode] & Code=USA
+2020/06/16 18:25:27:243 DEBUG com.sinosoft.test.base.TestBase:56 - 找到了Code对应的文本显示框:GuMainAgricultureFlagName
+2020/06/16 18:25:27:278 DEBUG com.sinosoft.test.base.TestBase:61 - 设置完毕[[InternetExplorerDriver: internet explorer on WINDOWS (47f1c754-f98f-48b9-9198-54dca4af05fe)] -> name: GuMainAgricultureFlag] & Code=1111
+2020/06/16 18:25:27:652  INFO com.sinosoft.test.base.TestBase:261 - 找到匹配【0】的选项：0-非统括业务
+2020/06/16 18:25:28:146  INFO com.sinosoft.test.base.TestBase:261 - 找到匹配【0】的选项：0-否
+2020/06/16 18:25:28:724  INFO com.sinosoft.test.base.TestBase:261 - 找到匹配【1】的选项：1-是
+2020/06/16 18:25:30:130 DEBUG com.sinosoft.test.base.TestBase:56 - 找到了Code对应的文本显示框:GuMainMoneySuspiciousIndName
+2020/06/16 18:25:30:164 DEBUG com.sinosoft.test.base.TestBase:61 - 设置完毕[[InternetExplorerDriver: internet explorer on WINDOWS (47f1c754-f98f-48b9-9198-54dca4af05fe)] -> name: GuMainMoneySuspiciousInd] & Code=0001
+2020/06/16 18:25:30:581  INFO com.sinosoft.test.base.TestBase:261 - 找到匹配【1】的选项：1-是
+2020/06/16 18:25:31:218  INFO com.sinosoft.test.base.TestBase:261 - 找到匹配【1】的选项：1-是
+2020/06/16 18:25:32:473  INFO com.sinosoft.test.base.TestBase:261 - 找到匹配【2】的选项：2-团体
+2020/06/16 18:25:33:052  INFO com.sinosoft.test.base.TestBase:261 - 找到匹配【0】的选项：0-普通客户

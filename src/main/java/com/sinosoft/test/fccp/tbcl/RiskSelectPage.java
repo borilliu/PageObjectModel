@@ -11,9 +11,10 @@ import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.How;
 import org.openqa.selenium.support.PageFactory;
 
-import com.sinosoft.test.base.TestBase; 
+import com.sinosoft.test.base.TestBase;
+import com.sinosoft.test.fccp.common.FccbBase; 
  
-public class RiskSelectPage extends TestBase {
+public class RiskSelectPage extends FccbBase {
 
 	// common widgets
 	/**
@@ -72,7 +73,8 @@ public class RiskSelectPage extends TestBase {
 	 */
 	@FindBy(how = How.NAME, using = "relatePolicyN")
 	WebElement ed_relatedPolicy;
-
+	
+	
 	// Initializing the Page Objects:
 	public RiskSelectPage() {
 		PageFactory.initElements(driver, this);
@@ -87,22 +89,11 @@ public class RiskSelectPage extends TestBase {
 	// Actions:
 
 	public void InputRiskGeneralAction(String riskClass, String riskCode, String renewalInd) {
-		this.setEditboxTValue(edt_riskClass, riskClass);
-		this.setEditboxTValue(edt_riskCode, riskCode);
+		this.SetCodeEditBox(edt_riskClass, riskClass);
+		this.SetCodeEditBox(edt_riskCode, riskCode);
 		this.SetRadioValue(rdo_renewal, renewalInd);
 		this.clickButton(btn_nextStep);
 		this.goToWorkArea();
-//		runJS("arguments[0].onclick();", btn_nextStep);
 
-//		Actions actions = new Actions(driver); 
-//		actions.release();
-//		WebElement nextBtn = this.waitAndGetElement(By.name("buttonNextStep"), 5);
-//		actions.click(nextBtn).perform();
-
-		// actions.contextClick(nextBtn).perform();
-		// runJS("arguments[0].onclick();", btn_nextStep);
-
-//		js2 = "var q=document.getElementById('map-distance').children[3].click()"
-//				browser.execute_script(js2)
 	}
 }
