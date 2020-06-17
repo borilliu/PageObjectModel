@@ -9,6 +9,11 @@ import org.openqa.selenium.support.How;
 import org.openqa.selenium.support.PageFactory;
 import com.sinosoft.test.fccp.common.FccbBase;
 
+/**
+ *com.sinosoft.test.fccp.tbcl.BasicInfoPage.java
+ *<p>承保子系统/投保管理/投保处理：基本信息</p>
+ * @author liubenchao@sinsoft.com.cn
+ */
 public class BasicInfoPage extends FccbBase{
 	/************************************************
 	 * 销售信息
@@ -189,6 +194,12 @@ public class BasicInfoPage extends FccbBase{
 	 */
 	@FindBy(how = How.NAME, using  ="AppliGuRelatedPartyIdentifyNumber")
 	WebElement edt_TBR_ZJHM;
+		
+	/**
+	 * @Fields edt_TBR_CSRQ : 出生日期
+	 */
+	@FindBy(how = How.NAME, using  ="AppliGuRelatedPartyBirthDate")
+	WebElement edt_TBR_CSRQ;
 	/**
 	 * @Fields edt_TBR_LXDZ : 联系地址
 	 */
@@ -276,12 +287,18 @@ public class BasicInfoPage extends FccbBase{
 	 * @Fields btn_saveBasicPage : 保存 - 保存投保处理基本信息
 	 */
 	@FindBy(how = How.ID, using  ="saveButton")
-	WebElement btn_saveBasicPage;
+	WebElement btn_SAVE_BASIC_PAGE;
+	
+	
 	//Initializing the Page Objects:
 	public BasicInfoPage(){
+		goToWorkArea();
 		PageFactory.initElements(driver, this);
 //		PageFactory.initElements(new AjaxElementLocatorFactory(driver, 10) ,this);
+
 	}
+	
+	
 	//Actions:
 
 	/**
@@ -297,14 +314,14 @@ public class BasicInfoPage extends FccbBase{
 	 */
 	public void inputSalesInfoAction(String fbbs, String ywgs,String qdlx,String xstd,String ywy,String ywly,String cxywbs){
 		slc_FBBS = this.waitAndGetElement(By.name("GuMainBusinessType"), 20);
-		super.setSelectText(slc_FBBS, fbbs);
+		super.setSelectWithStartText(slc_FBBS, fbbs);
 		super.SetCodeEditBox(edt_YWGS, ywgs);
 		super.SetCodeEditBox(edt_QDLX, qdlx);
 		super.CodeSelect(edt_GDBS, "0");
 		super.CodeSelect(edt_XSTD, xstd);
 		super.CodeSelect(edt_YWY, ywy);
 		super.CodeSelect(edt_YWLY, ywly);
-		super.setSelectText(slc_CXYWBS, cxywbs);
+		super.setSelectWithStartText(slc_CXYWBS, cxywbs);
 
 	}
 	
@@ -326,7 +343,7 @@ public class BasicInfoPage extends FccbBase{
 	 * @param xbbdh 续保保单号
 	 */
 	public void inputPolicyInfoAction(String cdjg,String htzyjjfs,String jnwbz,String jw_country,String jw_Addr,String snbz,String sftkbd,String sfdzbd,String sfxb,String fxqkyjytz,String sfydyw,String sfsn,String xbbdh) {
-		super.SetCodeEditBox(edt_CDJG, cdjg);
+		super.CodeSelect(edt_CDJG, cdjg);
 		super.setSelectWithStartText(slc_HTZYJJFS,htzyjjfs);
 		super.setSelectWithStartText(slc_JNWBZ, jnwbz);
 		if ("1".equals(jnwbz)) {
@@ -337,11 +354,12 @@ public class BasicInfoPage extends FccbBase{
 		super.setSelectWithStartText(slc_sfTKBD, sftkbd);
 		super.setSelectWithStartText(slc_sfDZBD, sfdzbd);
 		super.setSelectWithStartText(slc_sfXB, sfxb);
-		super.SetCodeEditBox(edt_FXQKYJYTZ, fxqkyjytz);
+		super.CodeSelect(edt_FXQKYJYTZ, fxqkyjytz);
 		super.setSelectWithStartText(slc_sfYDYW, sfxb);
 		super.setSelectWithStartText(slc_sfSN, sfsn);
 		super.setEditboxValue(edt_XBBDH, xbbdh);		
 	}
+
 	/**
 	 *<p>inputOwnerInfoAction</p>
 	 *<p>输入投保人信息</p>
@@ -351,22 +369,48 @@ public class BasicInfoPage extends FccbBase{
 	 * @param tbr_dm 投保人代码
 	 * @param tbr_zjlx 证件类型 
 	 * @param tbr_zjhm 证件号码
+	 * @param tbr_csrq 出生日期
 	 * @param tbr_lxdz 联系地址 
-	 * @param tbr_dwdh_qh 单位电话-区号
-	 * @param tbr_dwdh_hm 单位电话-号码
-	 * @param tbr_dwdh_fj 单位电话-分机
+	 * @param tbr_dwdh 单位电话
+	 * @param lxr_xm 联系人姓名
+	 * @param lxr_xb 联系人性别 
+	 * @param lxr_zw 联系人职务
+	 * @param lxr_sj 联系人手机
+	 * @param lxr_yx 联系人邮箱
 	 */
-	public void inputOwnerInfoAction(String tbr_lx,String tbr_mc,String tbr_vip,String tbr_dm,String tbr_zjlx,String tbr_zjhm,String tbr_lxdz,String tbr_dwdh_qh,String tbr_dwdh_hm,String tbr_dwdh_fj) {
+	public void inputOwnerInfoAction(String tbr_lx,String tbr_mc,String tbr_vip,String tbr_dm,String tbr_zjlx,String tbr_zjhm,String tbr_csrq,String tbr_lxdz,String tbr_dwdh,String lxr_xm,String lxr_xb,String lxr_zw,String lxr_sj,String lxr_yx) {
 		super.setSelectWithStartText(slc_TBR_LX, tbr_lx);
-		super.setSelectWithStartText(slc_TBR_VIP, tbr_vip);
-		super.setEditboxValue(edt_TBR_DM, tbr_dm);
-		super.setEditboxValue(edt_TBR_MC, tbr_mc);
-		super.setSelectWithStartText(slc_TBR_ZJLX, tbr_zjlx);
-		super.setEditboxValue(edt_TBR_ZJHM, tbr_zjhm);
-		super.setEditboxValue(edt_TBR_LXDZ, tbr_lxdz);
-		super.setEditboxValue(edt_TBR_DWDH_QH, tbr_dwdh_qh);
-		super.setEditboxValue(edt_TBR_DWDH_HM, tbr_dwdh_hm);
-		super.setEditboxValue(edt_TBR_DWDH_FJ, tbr_dwdh_fj);
+		if(!"".equals(tbr_dm)) {   //如果投保人代码不为空则直接从系统中获取投保人信息
+			super.setEditboxTValue(edt_TBR_DM, tbr_dm);
+		}else {
+			super.setSelectWithStartText(slc_TBR_VIP, tbr_vip);
+			super.setEditboxValue(edt_TBR_MC, tbr_mc);
+			super.setSelectWithStartText(slc_TBR_ZJLX, tbr_zjlx);
+			super.setEditboxValue(edt_TBR_ZJHM, tbr_zjhm);
+			super.setEditboxValue(edt_TBR_LXDZ, tbr_lxdz);
+			this.btn_TBR_KHSB.click();//识别客户
+			if("1".equals(tbr_lx)) { //个人客户
+				super.setEditboxTValue(edt_TBR_CSRQ,tbr_csrq);
+			}else if("2".equals(tbr_lx)) {//团体客户
+				if(!"".equals(tbr_dwdh)) {
+					String[] telArr= {"","",""};
+					String[] tmpArr=tbr_dwdh.split("-");
+					for(int i=0; i<tmpArr.length || i<3; i++) {
+						telArr[i]=tmpArr[i];
+					}
+					super.setEditboxValue(edt_TBR_DWDH_QH, telArr[0]);
+					super.setEditboxValue(edt_TBR_DWDH_HM, telArr[1]);
+					super.setEditboxValue(edt_TBR_DWDH_FJ, telArr[2]);
+				}
+				super.setEditboxValue(edt_LXR_XM, lxr_xm);
+				super.setSelectWithStartText(slc_LXR_XB, lxr_xb);
+				super.setEditboxValue(edt_LXR_ZW, lxr_zw);
+				super.setEditboxValue(edt_LXR_SJ, lxr_sj);
+				super.setEditboxValue(edt_LXR_YX, lxr_yx);
+			}
+
+
+		}
 		
 	}
 	/**
@@ -388,7 +432,23 @@ public class BasicInfoPage extends FccbBase{
 		super.setEditboxValue(edt_LXR_ZW, lxr_zw);
 	}
 	
-	public void saveBasicInfoAction() {
+	/**
+	 *<p>saveCustomerAction</p>
+	 *<p>保存客户信息，并返回客户的代码</p>
+	 * @return
+	 */
+	private String saveCustomerAction() {
 		btn_TBR_BCKH.click();
+		String title ="客户已经保存，或不需要保存.";
+		waitAndAcceptAlert(title,3);
+		return edt_TBR_DM.getText();
+	}
+	/**
+	 *<p>saveBasicInfoAction</p>
+	 *<p>保存投保处理保单基本信息</p>
+	 */
+	public void saveBasicInfoAction() {
+		saveCustomerAction();
+		btn_SAVE_BASIC_PAGE.click();
 	}
 }

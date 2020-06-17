@@ -8,6 +8,7 @@ import java.util.Properties;
 import java.util.concurrent.TimeUnit;
 
 import org.apache.log4j.Logger;
+import org.openqa.selenium.Alert;
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.Keys;
@@ -69,6 +70,7 @@ public class TestBase {
 				options.setCapability(CapabilityType.ACCEPT_SSL_CERTS, true);
 				options.setCapability(InternetExplorerDriver.NATIVE_EVENTS, true);
 				options.setCapability(InternetExplorerDriver.INTRODUCE_FLAKINESS_BY_IGNORING_SECURITY_DOMAINS, true);
+				options.setCapability(CapabilityType.UNEXPECTED_ALERT_BEHAVIOUR, "ignore");
 				options.setCapability(InternetExplorerDriver.LOG_LEVEL, "TRACE");
 				options.setCapability(InternetExplorerDriver.LOG_FILE, "IE_LOG.log");
 
@@ -104,9 +106,10 @@ public class TestBase {
 	 * @param element 选中的元素
 	 * @param args JavaScript 参数
 	 */
-	public void runJS(String js, WebElement element,Object... args) {
+	public void runJS(String js, WebElement element) {
+		logger.debug("RunJavaScript:"+ element.toString()+"->\r\n"+ js);
 		try {
-			((JavascriptExecutor) driver).executeScript(js, element,args);
+			((JavascriptExecutor) driver).executeScript(js, element);
 		} catch (Exception e) {
 			logger.error(e);
 		}
@@ -150,6 +153,29 @@ public class TestBase {
 		return element;
 	}	
 
+	public boolean waitAndAcceptAlert(String title, long timeout) {
+		boolean found = false;
+		WebDriverWait wait = new WebDriverWait(driver, timeout);
+		try {
+			found = wait.until(new ExpectedCondition<Boolean>() {
+				@Override
+				public Boolean apply(WebDriver d) {
+					Alert alt =d.switchTo().alert();
+					System.out.println("Alert的标题是："+alt.getText());
+					if(alt.getText().contains(title)) {
+						alt.accept();
+						return true;
+					}else {
+						return false;
+					}
+				}
+			});
+		} catch (Exception e) {
+			System.out.println("没有找到标题为:"+title+" 的对话框");
+			e.printStackTrace();
+		}
+		return found;
+	}	
 	
 	public void actionDoubleClick(WebElement element) {
 		 new Actions(driver).doubleClick(element).perform();
@@ -215,6 +241,8 @@ public class TestBase {
 	 * @param value 选中的值，对应Radio的Value
 	 */
 	public void SetRadioValue(List<WebElement> radioList,String value) {
+		if("".equals(value)) return;
+		logger.debug("setEditboxTValue:"+ radioList.toString()+"->"+ value);
 		 for(WebElement radio:radioList) {
 			 	String tmpVal = radio.getAttribute("value");
 			 	if(value.equals(tmpVal)){
@@ -234,6 +262,7 @@ public class TestBase {
 	 * @param text  选中的列表项：使用显示文本。
 	 */
 	public void setSelectText(WebElement slcELe,String text) {
+		logger.debug("setEditboxTValue:"+ slcELe.toString()+"->"+ text);
 		this.highlight(slcELe);
 		if("".equals(text)) {
 			return;
@@ -248,6 +277,7 @@ public class TestBase {
 	 * @param startText
 	 */
 	public void setSelectWithStartText(WebElement slcELe,String startText) {
+		logger.debug("setSelectWithStartText:"+ slcELe.toString()+"->"+ startText);
 		this.highlight(slcELe);
 		if("".equals(startText)) {
 			return;
@@ -277,6 +307,7 @@ public class TestBase {
 	 */
 	
 	public void setEditboxValue(WebElement edtEle,String text) {
+		logger.debug("setEditboxValue:"+ edtEle.toString()+"->"+ text);
 		this.highlight(edtEle);
 		if("".equals(text)) {
 			return;
@@ -292,6 +323,7 @@ public class TestBase {
 	 * @param text 输入值
 	 */
 	public void setEditboxTValue(WebElement edtEle,String text) {
+		logger.debug("setEditboxTValue:"+ edtEle.toString()+"->"+ text);
 		if("".equals(text)) {
 			return;
 		}
@@ -305,6 +337,7 @@ public class TestBase {
 	 * @param btnEle 按钮
 	 */
 	public void clickButton(WebElement btnEle) {
+		logger.debug("clickButton:"+ btnEle.toString());
 		btnEle.click();
 	}
 	/**
@@ -323,7 +356,7 @@ public class TestBase {
 	 * @param btnEle 按钮
 	 */
 	public void dblclickButton(WebElement btnEle) {
-		//runJS("arguments[0].ondblclick();", btnEle);
+		logger.debug("dblclickButton:"+ btnEle.toString());
 		this.actionDoubleClick(btnEle);
 	}
 

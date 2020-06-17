@@ -50,13 +50,13 @@ public class LoginPageTest extends TestBase{
 		homePage = loginPage.login(prop.getProperty("username"), prop.getProperty("password"));
 		homePage.enterMenuTBCL();
 		riskSelected= new RiskSelectPage();
-		riskSelected.InputRiskGeneralAction("01", "0101", "0");
+		riskSelected.InputRiskGeneralAction("01", "0101", "0", "", "", "", "", "", "");
 		basicInfoPage = new BasicInfoPage();
 		//basicInfoPage.inputSalesInfoAction("1-原保险保单", "01620189", "04", "T6209880101", "S000000029", "01010101", "HXXT-核心");
 		basicInfoPage.inputSalesInfoAction(fbbs,ywgs, qdlx,xstd, ywy, ywly, cxywbs);
-		basicInfoPage.inputPolicyInfoAction("0100000001", "1", "1","USA","美国黄河治理委员会", "1111", "0", "0", "1", "0001", "1", "1", "XBBDH000101");
-		basicInfoPage.inputOwnerInfoAction("2", "测试团体", "0", "11112234", "4", "98767848", "投保人联系地址-新发地", "010", "65625058", "5058");
-		basicInfoPage.inputContactInfoAction("测试联系人", "1", "测试部门", "13587654325", "abd@d234.com", "局长");
+		basicInfoPage.inputPolicyInfoAction("0100000001", "1", "1","USA","美国黄河治理委员会", "1111", "0", "0", "0", "0001", "1", "1", "");
+		basicInfoPage.inputOwnerInfoAction("2", "测试团体", "0", "G6200019603", "4", "98767848", "1901-01-01", "投保人联系地址-新发地", "010-65625058-5058", "测试联系人", "1", "局长", "13587654325", "abd@d234.com");
+		basicInfoPage.saveBasicInfoAction();
 	}
 	
 	@AfterMethod

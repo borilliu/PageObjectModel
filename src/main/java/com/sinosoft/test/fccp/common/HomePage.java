@@ -30,8 +30,6 @@ public class HomePage extends FccbBase {
 				driver.navigate().refresh();
 			}
 			this.openMenu("承保子系统#投保管理#投保处理");
-			driver.switchTo().defaultContent();
-			driver.switchTo().frame("mainFrame"); 
 	}
 	private boolean isWelcomePage(){
 		driver.switchTo().defaultContent();

@@ -6,6 +6,7 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.How;
+import org.openqa.selenium.support.PageFactory;
 
 import com.sinosoft.test.base.TestBase;
 
@@ -23,7 +24,9 @@ public abstract class FccbBase extends TestBase {
 	 */
 	static String WINDOW_CODESELECT_TITLE ="Code Select";
 	
-	
+	public FccbBase() {
+		PageFactory.initElements(driver, this);
+	}
 	/**
 	 *<p>CodeSelect</p>
 	 *<p>双击Code选择框，在弹出的窗口选中相关Code.该方法较慢，尽量使用SetCodeSelect方法</p>
@@ -31,15 +34,14 @@ public abstract class FccbBase extends TestBase {
 	 * @param code
 	 */
 	public void CodeSelect(WebElement codeEditBox,String code) {
-		logger.debug("开始设置"+ codeEditBox.toString()+" & Code=" +code);
+		logger.debug("CodeSelect:开始设置"+ codeEditBox.toString()+" & Code=" +code);
 		super.actionDoubleClick(codeEditBox);
-		pause(1000);
 		super.navigateToWindowByTitle(WINDOW_CODESELECT_TITLE, 5);
 		CodeSelectPage CSP =new CodeSelectPage();
 		CSP.selectByCodes(code);
 		super.navigateToWindowByTitle(WINDOW_MAIN_TITLE, 5);
 		goToWorkArea();
-		logger.debug("设置完毕"+ codeEditBox.toString()+" & Code=" +code);
+		logger.debug("CodeSelect:设置完毕"+ codeEditBox.toString()+" & Code=" +code);
 	}
 	
 	/**
@@ -49,16 +51,19 @@ public abstract class FccbBase extends TestBase {
 	 * @param code
 	 */
 	public void SetCodeEditBox(WebElement codeEditBox,String code) {
+		logger.debug("SetCodeEditBox:开始设置:"+ codeEditBox.toString()+" & Code=" +code);
+		codeEditBox.click();
 		setEditboxValue(codeEditBox,code);
 		try {
 			WebElement folText=codeEditBox.findElement(By.xpath("../input[last()]"));
 			folText.click();
-			logger.debug("找到了Code对应的文本显示框:"+folText.getAttribute("name"));
+			pause(500);
+			logger.debug("SetCodeEditBox:找到了Code对应的文本显示框:"+folText.getAttribute("name"));
 		}catch(NoSuchElementException nse) {
 			//logger.error("使用SetCodeEditBox必须要指定一个鼠标点击位置BlankWidget",nse);
-			logger.error("虚拟点击错误！",nse);
+			logger.error("SetCodeEditBox:虚拟点击错误！",nse);
 		}
-		logger.debug("设置完毕"+ codeEditBox.toString()+" & Code=" +code);
+		logger.debug("SetCodeEditBox:设置完毕"+ codeEditBox.toString()+",设置值 Code=" +code);
 	}
 	/**
 	 *<p>goToWorkArea</p>
@@ -68,6 +73,10 @@ public abstract class FccbBase extends TestBase {
 		driver.switchTo().defaultContent();
 		driver.switchTo().frame("mainFrame");
 		driver.switchTo().frame("myFrame");
+	}
+	public void goToMainArea() {
+		driver.switchTo().defaultContent();
+		driver.switchTo().frame("mainFrame"); 
 	}
 	/**
 	 *<p>goToMenuArea</p>
