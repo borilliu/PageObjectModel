@@ -16,6 +16,9 @@ import org.testng.annotations.Test;
 
 import com.sinosoft.test.fccp.common.LoginPage;
 import com.sinosoft.test.fccp.tbcl.BasicInfoPage;
+import com.sinosoft.test.fccp.tbcl.RiskDetailPage;
+import com.sinosoft.test.fccp.tbcl.RiskDetail_TypePage;
+import com.sinosoft.test.fccp.tbcl.RiskDetail_insuredObjPage;
 import com.sinosoft.test.fccp.tbcl.RiskSelectPage;
 import com.sinosoft.test.util.ExcelDataProvider;
 import com.crm.qa.util.TestUtil;
@@ -27,7 +30,9 @@ public class LoginPageTest extends TestBase {
 	HomePage homePage;
 	RiskSelectPage riskSelected;
 	BasicInfoPage basicInfoPage;
-
+	RiskDetailPage riskDetail;
+	RiskDetail_TypePage riskDetail_Type;
+	RiskDetail_insuredObjPage riskDetail_insrdObj;
 	public LoginPageTest() {
 		super();
 	}
@@ -94,7 +99,9 @@ public class LoginPageTest extends TestBase {
 
 	@Test(priority = 1, enabled = false)
 	public void loginTest() {
-		loginPage.test();
+		for (String windowHandle : driver.getWindowHandles()) {
+			System.out.println("当前的共工作窗口：【"+driver.getTitle()+"】with handle -"+ windowHandle);
+		}
 	}
 
 	@Test(priority = 2, dataProvider = "getCRMTestData",enabled = false)
@@ -130,12 +137,17 @@ public class LoginPageTest extends TestBase {
 		basicInfoPage.inputOwnerInfoAction(map);
 		//basicInfoPage.inputOwnerInfoAction("2", "测试团体", "0", "G6200019603", "4", "98767848", "1901-01-01","投保人联系地址-新发地", "010-65625058-5058", "测试联系人", "1", "局长", "13587654325", "abd@d234.com");
 		basicInfoPage.saveBasicInfoAction();
-		
+		riskDetail = new RiskDetailPage();
+		//riskDetail.InputRiskClassInfoAction(map);
+		riskDetail_Type = riskDetail.goToRiskTypePage(map);
+		riskDetail_Type.InputRiskClassInfoAction(map);
+		riskDetail_insrdObj = riskDetail.goToInsuredObjectPage();
+		riskDetail_insrdObj.InputInsuredObjectAction();
 	}
 
 	@AfterMethod
 	public void tearDown() {
-		 driver.quit();
+		// driver.quit();
 		System.out.println("执行了退出事件：tearDown");
 	}
 

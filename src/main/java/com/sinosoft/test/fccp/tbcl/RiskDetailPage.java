@@ -1,5 +1,8 @@
 package com.sinosoft.test.fccp.tbcl;
 
+import java.util.Map;
+
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.CacheLookup;
 import org.openqa.selenium.support.FindBy;
@@ -22,82 +25,14 @@ public class RiskDetailPage extends FccbBase {
 	WebElement tbl_RiskItems;
 	
 	/*****************************************
-	 * Tab 标签元素
+	 * Tab 标签元素 动态获取
 	 *****************************************/
-	/**
-	 * @Fields tab_XZXX : 险种信息
-	 */
-	@FindBy(how = How.XPATH, using  ="//td[text()='险种信息']")
-	WebElement tab_XZXX;
-	/**
-	 * @Fields tab_BDXX : 标的信息
-	 */
-	@FindBy(how = How.XPATH, using  ="//td[text()='标的信息']")
-	WebElement tab_BDXX;
-	/**
-	 * @Fields tab_TKXX : 条款信息
-	 */
-	@FindBy(how = How.XPATH, using  ="//td[text()='条款信息']")
-	WebElement tab_TKXX;
-	/**
-	 * @Fields tab_LGBXX : 联共保信息
-	 */
-	@FindBy(how = How.XPATH, using  ="//td[text()='联共保信息']")
-	WebElement tab_LGBXX;
+	WebElement tab_SubRiskDetail;
 	
-	/*****************************************
-	 * 险种信息
-	 *****************************************/
-	/**
-	 * @Fields btn_DRTBRXX : 带入投保人信息
-	 */
-	@FindBy(how = How.ID, using  ="buttonRelatedRisk")
-	WebElement btn_DRTBRXX;
 	
-	/**
-	 * @Fields edt_XZSYFW : 险种适用范围
-	 */
-	@FindBy(how = How.NAME,using = "GuRiskRiskApplyType")
-	WebElement edt_XZSYFW;
-	
-	/**
-	 * @Fields edt_QBRQ : 起保日期
-	 */
-	@FindBy(how = How.NAME,using = "GuRiskStartDate")
-	WebElement edt_QBRQ;
-	
-	/**
-	 * @Fields edt_ZBRQ : 终保日期
-	 */
-	@FindBy(how = How.NAME,using = "GuRiskEndDate")
-	WebElement edt_ZBRQ;
-	
-	/**
-	 * @Fields edt_LGBBZ : 联共保标志
-	 */
-	@FindBy(how = How.NAME,using = "GuRiskCoinsInd")
-	WebElement edt_LGBBZ;
-	
-	/**
-	 * @Fields edt_YYZDBZ : 营业中断险标志
-	 */
-	@FindBy(how = How.NAME,using = "GuRiskBusinessFlag")
-	WebElement edt_YYZDBZ;
-	
-	/**
-	 * @Fields edt_SFGXDM : 司法管辖代码
-	 */
-	@FindBy(how = How.NAME,using = "GuRiskJudicalCode")
-	WebElement edt_SFGXDM;
-	
-	/**
-	 * @Fields edt_CBDQ : 承保地区
-	 */
-	@FindBy(how = How.NAME,using = "GuRiskGeographicalArea")
-	WebElement edt_CBDQ;
 	public RiskDetailPage(){
-		super();
-		goToWorkArea();
+		//super();
+		//goToWorkArea();
 	}
 	
 	public void goToWorkArea() {
@@ -106,5 +41,35 @@ public class RiskDetailPage extends FccbBase {
 		driver.switchTo().frame("myFrame");
 		driver.switchTo().frame("RiskFrame");
 		driver.switchTo().frame("myFrame");
+	}
+	public void goToRiskFrame() {
+		driver.switchTo().defaultContent();
+		driver.switchTo().frame("mainFrame");
+		driver.switchTo().frame("myFrame");
+		driver.switchTo().frame("RiskFrame");
+	}
+	/**
+	 *<p>goToRiskTypePage</p>
+	 *<p>跳转到投保处理/险种信息/险种信息页面</p>
+	 * @param map
+	 * @return
+	 */
+	public RiskDetail_TypePage goToRiskTypePage(Map<String, String> map) {
+		goToRiskDetailTable("险种信息");
+		return new RiskDetail_TypePage();
+	}
+	public RiskDetail_insuredObjPage goToInsuredObjectPage() {
+		goToRiskDetailTable("标的信息"); 
+		return new RiskDetail_insuredObjPage();
+//		goToRiskDetailTable("条款信息");
+//		goToRiskDetailTable("联共保信息");
+//		goToRiskDetailTable("险种信息");
+	}
+	public void goToRiskDetailTable(String TabName) {
+		System.out.println("准备进入标签页:"+TabName);
+		goToRiskFrame();
+		tab_SubRiskDetail = waitAndGetElement(By.xpath("//td[text()='"+TabName+"']"), 5);
+		this.clickButton(tab_SubRiskDetail);
+		goToWorkArea();
 	}
 }

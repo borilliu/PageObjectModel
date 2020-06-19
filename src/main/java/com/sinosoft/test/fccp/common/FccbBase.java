@@ -34,6 +34,7 @@ public abstract class FccbBase extends TestBase {
 	 * @param code
 	 */
 	public void CodeSelect(WebElement codeEditBox,String code) {
+		if("".equals(code)) return;
 		logger.debug("CodeSelect:开始设置"+ codeEditBox.toString()+" & Code=" +code);
 		super.actionDoubleClick(codeEditBox);
 		super.navigateToWindowByTitle(WINDOW_CODESELECT_TITLE, 5);
@@ -51,6 +52,7 @@ public abstract class FccbBase extends TestBase {
 	 * @param code
 	 */
 	public void SetCodeEditBox(WebElement codeEditBox,String code) {
+		if("".equals(code)) return;
 		logger.debug("SetCodeEditBox:开始设置:"+ codeEditBox.toString()+" & Code=" +code);
 		codeEditBox.click();
 		setEditboxValue(codeEditBox,code);
