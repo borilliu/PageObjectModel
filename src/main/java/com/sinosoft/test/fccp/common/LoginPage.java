@@ -11,7 +11,7 @@ import org.openqa.selenium.support.pagefactory.AjaxElementLocatorFactory;
 
 import com.sinosoft.test.base.TestBase;
 
-public class LoginPage extends TestBase{
+public class LoginPage extends FccbBase{
 	
 	//Page Factory - OR:
 	/**
@@ -93,7 +93,7 @@ public class LoginPage extends TestBase{
 	}
 	
 	public HomePage login(String un, String pwd){
-		super.goToURL(prop.getProperty("url"));
+		super.goToURL(prop.getProperty("system.url"));
 		super.setEditboxValue(edt_username, un);
 		super.setEditboxValue(edt_password, pwd);
 		super.clickButton(btn_login);
@@ -110,6 +110,28 @@ public class LoginPage extends TestBase{
 		}
 		return new HomePage();
 	}
-
-	
+	/**
+	 *<p>login_normal</p>
+	 *<p>使用普通账户登录</p>
+	 * @return
+	 */
+	public HomePage login_normal() {
+		return login(prop.getProperty("login.username.normal"), prop.getProperty("login.password.normal"));
+	}
+	/**
+	 *<p>login_underWriter</p>
+	 *<p>核保员登录</p>
+	 * @return
+	 */
+	public HomePage login_underWriter() {
+		return login(prop.getProperty("login.username.underWriter"), prop.getProperty("login.password.underWriter"));
+	}
+	/**
+	 *<p>login</p>
+	 *<p>默认登录方式(普通用户)</p>
+	 * @return
+	 */
+	public HomePage login() {
+		return login_normal();
+	}	
 }

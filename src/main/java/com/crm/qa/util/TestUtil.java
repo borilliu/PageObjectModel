@@ -4,6 +4,7 @@ import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.IOException;
+import java.util.Map;
 
 import org.apache.commons.io.FileUtils;
 import org.apache.poi.hssf.usermodel.HSSFCell;
@@ -67,7 +68,14 @@ public class TestUtil extends TestBase {
 		String currentDir = System.getProperty("user.dir");
 		FileUtils.copyFile(scrFile, new File(currentDir + "/screenshots/" + System.currentTimeMillis() + ".png"));
 	}
-
+	public static String getMapString(Map<String, String> map) {
+		StringBuffer sb= new StringBuffer();
+		for (Map.Entry<String, String> entry : map.entrySet()) {
+			sb.append(entry.getKey().toString() + "=" + entry.getValue().toString());
+			sb.append("\r\n");
+		}
+		return sb.toString();
+	};
 	public static void runTimeInfo(String messageType, String message) throws InterruptedException {
 		js = (JavascriptExecutor) driver;
 		// Check for jQuery on the page, add it if need be

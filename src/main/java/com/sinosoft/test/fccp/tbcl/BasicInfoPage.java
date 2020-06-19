@@ -1,6 +1,8 @@
 package com.sinosoft.test.fccp.tbcl;
 
 
+import java.util.Map;
+
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.CacheLookup;
@@ -324,6 +326,9 @@ public class BasicInfoPage extends FccbBase{
 		super.setSelectWithStartText(slc_CXYWBS, cxywbs);
 
 	}
+	public void inputSalesInfoAction(Map<String, String> map) {
+		this.inputSalesInfoAction(map.get("fbbs"), map.get("ywgs"), map.get("qdlx"), map.get("xstd"), map.get("ywy"), map.get("ywly"), map.get("cxywbs"));
+	}
 	
 	/**
 	 *<p>inputPolicyInofAction</p>
@@ -359,7 +364,14 @@ public class BasicInfoPage extends FccbBase{
 		super.setSelectWithStartText(slc_sfSN, sfsn);
 		super.setEditboxValue(edt_XBBDH, xbbdh);		
 	}
-
+	public void inputPolicyInfoAction(Map<String, String> map) {
+		this.inputPolicyInfoAction(map.get("cdjg"),map.get("htzyjjfs"),map.get("jnwbz"),
+								   map.get("jw_country"),map.get("jw_Addr"),map.get("snbz"),
+								   map.get("sftkbd"),map.get("sfdzbd"),map.get("sfxb"),
+								   map.get("fxqkyjytz"),map.get("sfydyw"),map.get("sfsn"),
+								   map.get("xbbdh")
+								  );
+	}
 	/**
 	 *<p>inputOwnerInfoAction</p>
 	 *<p>输入投保人信息</p>
@@ -408,10 +420,16 @@ public class BasicInfoPage extends FccbBase{
 				super.setEditboxValue(edt_LXR_SJ, lxr_sj);
 				super.setEditboxValue(edt_LXR_YX, lxr_yx);
 			}
-
-
 		}
-		
+	}
+	public void inputOwnerInfoAction(Map<String, String> map) {
+		this.inputOwnerInfoAction(map.get("tbr_lx"),map.get("tbr_mc"),map.get("tbr_vip"),
+								  map.get("tbr_dm"),map.get("tbr_zjlx"),map.get("tbr_zjhm"),
+								  map.get("tbr_csrq"),map.get("tbr_lxdz"),map.get("tbr_dwdh"),
+								  map.get("lxr_xm"),map.get("lxr_xb"),map.get("lxr_zw"),
+								  map.get("lxr_sj"),map.get("lxr_yx")
+								);
+	
 	}
 	/**
 	 *<p>inputContactInfoAction</p>

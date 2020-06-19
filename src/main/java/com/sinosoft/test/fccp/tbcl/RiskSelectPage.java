@@ -1,19 +1,15 @@
 package com.sinosoft.test.fccp.tbcl;
 
 import java.util.List;
-
-import org.openqa.selenium.By;
-import org.openqa.selenium.JavascriptExecutor;
-import org.openqa.selenium.Keys;
+import java.util.Map;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.CacheLookup;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.How;
 import org.openqa.selenium.support.PageFactory;
 
-import com.sinosoft.test.base.TestBase;
-import com.sinosoft.test.fccp.common.FccbBase; 
- 
+import com.sinosoft.test.fccp.common.FccbBase;
+
 public class RiskSelectPage extends FccbBase {
 
 	// common widgets
@@ -47,7 +43,7 @@ public class RiskSelectPage extends FccbBase {
 	 */
 	@FindBy(how = How.NAME, using = "renewInd")
 	List<WebElement> rdo_renewal;
-	
+
 	/**
 	 * @Fields ed_renewalNoIn : 续保保单号
 	 */
@@ -64,7 +60,7 @@ public class RiskSelectPage extends FccbBase {
 	 */
 	@FindBy(how = How.NAME, using = "carryOverInd")
 	List<WebElement> rdo_carrayOver;
-	
+
 	/**
 	 * @Fields ed_transferPolicyNo : 关联结转保单号
 	 */
@@ -77,14 +73,13 @@ public class RiskSelectPage extends FccbBase {
 	 */
 	@FindBy(how = How.NAME, using = "relatedInd")
 	List<WebElement> rdo_related;
-	
+
 	/**
 	 * @Fields ed_relatedPolicy : 关联保单号码
 	 */
 	@FindBy(how = How.NAME, using = "relatePolicyN")
 	WebElement edt_relatedPolicy;
-	
-	
+
 	// Initializing the Page Objects:
 	public RiskSelectPage() {
 		goToMainArea();
@@ -95,26 +90,35 @@ public class RiskSelectPage extends FccbBase {
 //		}
 //		PageFactory.initElements(new AjaxElementLocatorFactory(driver, 1) ,this);
 	}
-	
-	
+
 	// Actions:
 
-	public void InputRiskGeneralAction(String riskClass, String riskCode, String renewalInd,String renewalPolicy,String prePay,String carrayOver,String carrayOverPolicy,String relatedInd,String relatedPolicy) {
+	public void InputRiskGeneralAction(String riskClass, String riskCode, String renewalInd, 
+										String renewalPolicy,String prePay, String carrayOver,
+										String carrayOverPolicy, String relatedInd, String relatedPolicy
+									  ) {
 		this.SetCodeEditBox(edt_riskClass, riskClass);
 		this.SetCodeEditBox(edt_riskCode, riskCode);
 		this.SetRadioValue(rdo_renewal, renewalInd);
-		if("1".equals(renewalInd)) {//如果是续保保单，可以录入续保保单号
-			this.setEditboxValue(edt_renewalNoIn,renewalPolicy);
+		if ("1".equals(renewalInd)) {// 如果是续保保单，可以录入续保保单号
+			this.setEditboxValue(edt_renewalNoIn, renewalPolicy);
 		}
 		this.SetRadioValue(rdo_prePayFee, prePay);
 		this.SetRadioValue(rdo_carrayOver, carrayOver);
-		if("1".equals(carrayOver)) {//如果是续保保单，可以录入续保保单号
-			this.setEditboxValue(edt_transferPolicyNo,carrayOverPolicy);
+		if ("1".equals(carrayOver)) {// 如果是续保保单，可以录入续保保单号
+			this.setEditboxValue(edt_transferPolicyNo, carrayOverPolicy);
 		}
 		this.SetRadioValue(rdo_related, relatedInd);
-		if("1".equals(relatedInd)) {
+		if ("1".equals(relatedInd)) {
 			this.setEditboxValue(edt_relatedPolicy, relatedPolicy);
 		}
 		this.clickButton(btn_nextStep);
+	}
+
+	public void InputRiskGeneralAction(Map<String, String> map) {
+		this.InputRiskGeneralAction(map.get("riskClass"), map.get("riskCode"), map.get("renewalInd"),
+							  map.get("renewalPolicy"), map.get("prePay"), map.get("carrayOver"), 
+							  map.get("carrayOverPolicy"),map.get("relatedInd"), map.get("relatedPolicy")
+							  );
 	}
 }

@@ -28,7 +28,7 @@ import org.openqa.selenium.support.ui.Select;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
 import com.crm.qa.util.TestUtil;
-import com.crm.qa.util.WebEventListener;
+import com.sinosoft.test.util.WebEventListener;
 
 
 /**
@@ -44,8 +44,10 @@ public class TestBase {
 	public TestBase(){
 		try {
 			prop = new Properties();
-			FileInputStream ip = new FileInputStream(System.getProperty("user.dir")+ "/src/main/java/com/crm"
-					+ "/qa/config/config.properties");
+			//FileInputStream ip = new FileInputStream(System.getProperty("user.dir")+ "/src/main/java/com/crm/qa/config/config.properties");
+			String path=System.getProperty("user.dir")+ "\\src\\main\\resources\\config.properties";
+			System.out.println("配置文件路径："+path);
+			FileInputStream ip = new FileInputStream(path);
 			prop.load(ip);
 		} catch (FileNotFoundException e) {
 			e.printStackTrace();
@@ -56,7 +58,7 @@ public class TestBase {
 	
 	
 	public static void initialization(){
-		String browserName = prop.getProperty("browser");
+		String browserName = prop.getProperty("system.browser");
 		
 		if(browserName.equals("chrome")){
 			System.setProperty("webdriver.chrome.driver", "D:\\Development\\driver\\chromedriver.exe");	
