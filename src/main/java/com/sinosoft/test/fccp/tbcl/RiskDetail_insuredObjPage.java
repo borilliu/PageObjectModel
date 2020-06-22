@@ -66,10 +66,9 @@ public class RiskDetail_insuredObjPage extends RiskDetailPage {
 		this.SetCodeEditBox(edt_BBDM, "CNY");
 		this.SetCodeEditBox(edt_SF, "130000");
 		this.SetCodeEditBox(edt_CS, "130300");
-		this.setSelectWithStartText(edt_QX, "130302");
+		this.CodeSelect(edt_QX, "130302");
 		this.setEditboxValue(edt_YB, "065201");
 		this.SetCodeEditBox(edt_JZDJ, "01");
-		this.SetCodeEditBox(edt_CS, "130300");
 		this.setEditboxValue(edt_BXCS, "北戴河公园");
 	}
 }

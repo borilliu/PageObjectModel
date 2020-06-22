@@ -70,9 +70,9 @@ public class RiskDetail_TypePage extends RiskDetailPage {
 	public void InputRiskClassInfoAction(String xzsyfw,String tqmc,String qbrq,String zbrq,String lgbbz,String yyzdbz,String sfgxdm,String cbdq) {
 		super.setSelectWithStartText(slc_XZSYFW, xzsyfw);
 		super.setEditboxValue(edt_QBRQ, qbrq);
-		super.actionClick(edt_BXQX);
+		super.clickButton(edt_BXQX);
 		super.setEditboxValue(edt_ZBRQ, zbrq);
-		super.actionClick(edt_BXQX);
+		super.clickButton(edt_BXQX);
 		super.setSelectWithStartText(slc_LGBBZ, lgbbz);
 		super.setSelectWithStartText(slc_YYZDBZ, yyzdbz);
 		super.setSelectWithStartText(slc_SFGXDM, sfgxdm);

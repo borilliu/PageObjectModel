@@ -54,8 +54,8 @@ public abstract class FccbBase extends TestBase {
 	public void SetCodeEditBox(WebElement codeEditBox,String code) {
 		if("".equals(code)) return;
 		logger.debug("SetCodeEditBox:开始设置:"+ codeEditBox.toString()+" & Code=" +code);
-		codeEditBox.click();
 		setEditboxValue(codeEditBox,code);
+		pause(500);
 		try {
 			WebElement folText=codeEditBox.findElement(By.xpath("../input[last()]"));
 			folText.click();
