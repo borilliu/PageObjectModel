@@ -16,7 +16,9 @@ import org.testng.annotations.Test;
 
 import com.sinosoft.test.fccp.common.LoginPage;
 import com.sinosoft.test.fccp.tbcl.BasicInfoPage;
+import com.sinosoft.test.fccp.tbcl.PolicyFeePage;
 import com.sinosoft.test.fccp.tbcl.RiskDetailPage;
+import com.sinosoft.test.fccp.tbcl.RiskDetail_TermsPage;
 import com.sinosoft.test.fccp.tbcl.RiskDetail_TypePage;
 import com.sinosoft.test.fccp.tbcl.RiskDetail_insuredObjPage;
 import com.sinosoft.test.fccp.tbcl.RiskSelectPage;
@@ -33,6 +35,8 @@ public class LoginPageTest extends TestBase {
 	RiskDetailPage riskDetail;
 	RiskDetail_TypePage riskDetail_Type;
 	RiskDetail_insuredObjPage riskDetail_insrdObj;
+	RiskDetail_TermsPage riskDetail_termsPage;
+	PolicyFeePage policyFeePage;
 	public LoginPageTest() {
 		super();
 	}
@@ -104,25 +108,6 @@ public class LoginPageTest extends TestBase {
 		}
 	}
 
-	@Test(priority = 2, dataProvider = "getCRMTestData",enabled = false)
-	public void tbclTest(String fbbs, String ywgs, String qdlx, String xstd, String ywy, String ywly, String cxywbs) {
-		logger.info("开始运行测试脚本，获取到的测试数据如下");
-		logger.info("fbbs=" + fbbs + ",ywgs=" + ywgs + ",qdlx=" + qdlx);
-		homePage = loginPage.login_normal();
-		homePage.enterMenuTBCL();
-		riskSelected = new RiskSelectPage();
-		riskSelected.InputRiskGeneralAction("01", "0101", "0", "", "", "", "", "", "");
-		basicInfoPage = new BasicInfoPage();
-		// basicInfoPage.inputSalesInfoAction("1-原保险保单", "01620189", "04",
-		// "T6209880101", "S000000029", "01010101", "HXXT-核心");
-		basicInfoPage.inputSalesInfoAction(fbbs, ywgs, qdlx, xstd, ywy, ywly, cxywbs);
-		basicInfoPage.inputPolicyInfoAction("0100000001", "1", "1", "USA", "美国黄河治理委员会", "1111", "0", "0", "0", "0001",
-				"1", "1", "");
-		basicInfoPage.inputOwnerInfoAction("2", "测试团体", "0", "G6200019603", "4", "98767848", "1901-01-01",
-				"投保人联系地址-新发地", "010-65625058-5058", "测试联系人", "1", "局长", "13587654325", "abd@d234.com");
-		basicInfoPage.saveBasicInfoAction();
-	}
-
 	@Test(priority = 3, dataProvider = "getTBCLTestData")
 	public void FCCB_TBCL(Map<String, String> map) {
 		logger.info("开始运行测试脚本，获取到的测试数据《getTBCLTestData》如下:");
@@ -135,14 +120,19 @@ public class LoginPageTest extends TestBase {
 		basicInfoPage.inputSalesInfoAction(map);
 		basicInfoPage.inputPolicyInfoAction(map);
 		basicInfoPage.inputOwnerInfoAction(map);
-		//basicInfoPage.inputOwnerInfoAction("2", "测试团体", "0", "G6200019603", "4", "98767848", "1901-01-01","投保人联系地址-新发地", "010-65625058-5058", "测试联系人", "1", "局长", "13587654325", "abd@d234.com");
-		basicInfoPage.saveBasicInfoAction();
-		riskDetail = new RiskDetailPage();
-		//riskDetail.InputRiskClassInfoAction(map);
-		riskDetail_Type = riskDetail.goToRiskTypePage(map);
-		riskDetail_Type.InputRiskClassInfoAction(map);
-		riskDetail_insrdObj = riskDetail.goToInsuredObjectPage();
-		riskDetail_insrdObj.InputInsuredObjectAction();
+		riskDetail_Type = basicInfoPage.saveBasicInfoAction(); 
+		riskDetail_Type.InputRiskTypeInfoAction(map);
+		riskDetail_insrdObj = riskDetail_Type.saveRiskDetailTypePage();
+		riskDetail_insrdObj.inputInsuredObjectAction(map);
+		riskDetail_insrdObj.inputRiskCodeAction(map);
+		riskDetail_insrdObj.saveInsredObjectPage();
+		riskDetail_termsPage = riskDetail_insrdObj.goToRiskTermsPage(map);
+		riskDetail_termsPage.saveTermsPage();
+		riskDetail_termsPage.goToUnionPage(map);
+		policyFeePage = riskDetail_termsPage.goToMainFrame_policyfee();
+		policyFeePage.inputPolicyFeeAction(map);
+		policyFeePage.savePolicyFee();
+		policyFeePage.submitForReview();
 	}
 
 	@AfterMethod

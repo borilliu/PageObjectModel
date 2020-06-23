@@ -1,12 +1,14 @@
 package com.sinosoft.test.fccp.common;
 
+import java.text.SimpleDateFormat;
+import java.util.Date;
+import java.util.List;
 import java.util.NoSuchElementException;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
-import org.openqa.selenium.support.FindBy;
-import org.openqa.selenium.support.How;
 import org.openqa.selenium.support.PageFactory;
+import org.openqa.selenium.support.ui.Select;
 
 import com.sinosoft.test.base.TestBase;
 
@@ -34,7 +36,8 @@ public abstract class FccbBase extends TestBase {
 	 * @param code
 	 */
 	public void CodeSelect(WebElement codeEditBox,String code) {
-		if("".equals(code)) return;
+		if(null == code || "".equals(code)) return;
+		if(code.equals(codeEditBox.getAttribute("value"))) return;
 		logger.debug("CodeSelect:开始设置"+ codeEditBox.toString()+" & Code=" +code);
 		super.actionDoubleClick(codeEditBox);
 		super.navigateToWindowByTitle(WINDOW_CODESELECT_TITLE, 5);
@@ -52,20 +55,87 @@ public abstract class FccbBase extends TestBase {
 	 * @param code
 	 */
 	public void SetCodeEditBox(WebElement codeEditBox,String code) {
-		if("".equals(code)) return;
+		if(null == code || "".equals(code)) return;
+		if(code.equals(codeEditBox.getAttribute("value").trim())) {
+			return;
+		}
 		logger.debug("SetCodeEditBox:开始设置:"+ codeEditBox.toString()+" & Code=" +code);
 		setEditboxValue(codeEditBox,code);
-		pause(500);
+		pause(WAIT_SHORTEST);
 		try {
-			WebElement folText=codeEditBox.findElement(By.xpath("../input[last()]"));
-			folText.click();
-			pause(500);
-			logger.debug("SetCodeEditBox:找到了Code对应的文本显示框:"+folText.getAttribute("name"));
-		}catch(NoSuchElementException nse) {
+			WebElement folText;
+			folText=codeEditBox.findElement(By.xpath("../input[last()]"));
+			if(folText.isEnabled()&&folText.isDisplayed()) {
+				logger.info("SetCodeEditBox:找到了Code对应的文本显示框并点击触发显示:"+folText.getAttribute("name"));
+			}else {
+				//再次查找
+				folText=codeEditBox.findElement(By.xpath("../input[last-1()]"));
+				if(folText.isEnabled()&&folText.isDisplayed()) {
+					logger.info("SetCodeEditBox:重新找到了Code对应的文本显示框并点击触发显示:"+folText.getAttribute("name"));
+				}	
+			}
+			if(folText!=null) {	
+				folText.click();
+				pause(WAIT_SHORTER);
+			}
+		}catch(Exception e) {
 			//logger.error("使用SetCodeEditBox必须要指定一个鼠标点击位置BlankWidget",nse);
-			logger.error("SetCodeEditBox:虚拟点击错误！",nse);
+			logger.error("SetCodeEditBox:虚拟点击错误！",e);
 		}
 		logger.debug("SetCodeEditBox:设置完毕"+ codeEditBox.toString()+",设置值 Code=" +code);
+	}
+	/**
+	 *<p>setSelectWithStartText</p>
+	 *<p>根据起始字符选择列表项</p>
+	 * @param slcELe
+	 * @param startText
+	 */
+	public void setSelectWithStartText(WebElement slcELe,String startText) {
+		logger.info("setSelectWithStartText:"+ slcELe.toString()+"->"+ startText);
+		if("".equals(startText)) {
+			return;
+		}
+		Select select = new Select(slcELe);
+		try {
+			WebElement slctedOption = select.getFirstSelectedOption();
+			if(null != slctedOption && slctedOption.getText().startsWith(startText)) {
+				logger.info(slcELe.toString()+"使用了默认选中的选项："+slctedOption.getText());
+				return;
+			}
+		}catch(Exception e) {
+		}	
+		List<WebElement> Options = select.getOptions();
+		boolean found = false;
+	    for (WebElement selectedOption : Options) {
+	        String txt = selectedOption.getText();
+	        if (null !=txt && txt.startsWith(startText)){
+	        	logger.info("找到匹配【"+ startText+"】的选项："+ txt);
+	        	select.selectByVisibleText(txt);
+	        	found =true;
+	        	break;
+	        }
+	    }
+	    if(!found) {
+	    	logger.error("没有找到以【"+startText+"】为起始的选项！" );
+	    }
+	}	
+	/**
+	 *<p>SetDateEditBox</p>
+	 *<p>设置日期框的值</p>
+	 * @param dateEditBox
+	 * @param date
+	 */
+	public void SetDateEditBox(WebElement dateEditBox,String date) {
+		if("".equals(date)) return;
+		String val = dateEditBox.getAttribute("value");
+		if(this.fmtDateString(date).equals(val)) {
+			logger.debug("设置的日期值"+date+"和系统值"+val+"一致,不再设置！");
+			return;
+		}else {
+			logger.debug("设置日期值 由"+val+" 设置为"+ fmtDateString(date));
+		}
+		logger.debug("SetDateEditBox:开始设置:"+ dateEditBox.toString()+" & date=" +date);
+		setEditboxValue(dateEditBox,date);
 	}
 	/**
 	 *<p>goToWorkArea</p>
@@ -75,6 +145,7 @@ public abstract class FccbBase extends TestBase {
 		driver.switchTo().defaultContent();
 		driver.switchTo().frame("mainFrame");
 		driver.switchTo().frame("myFrame");
+		System.out.println("进入了MyFrame");
 	}
 	public void goToMainArea() {
 		driver.switchTo().defaultContent();
@@ -102,4 +173,14 @@ public abstract class FccbBase extends TestBase {
 			pause(200);
 		}
 	}		
+	public String fmtDateString(String dateString) {
+		String dateStringFmt= dateString.replaceAll("\\/|-", "");
+		try {
+			Date date = new SimpleDateFormat("yyyyMMdd").parse(dateStringFmt);
+			return new SimpleDateFormat(prop.getProperty("system.app.dateformat", "yyyyMMdd")).format(date);
+		}catch(Exception e) {
+			return dateStringFmt;
+		}
+		
+	}
 }

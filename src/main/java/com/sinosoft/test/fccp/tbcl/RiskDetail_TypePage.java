@@ -5,6 +5,7 @@ import java.util.Map;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.How;
+import org.openqa.selenium.support.PageFactory;
 
 public class RiskDetail_TypePage extends RiskDetailPage {
 	/*****************************************
@@ -66,25 +67,37 @@ public class RiskDetail_TypePage extends RiskDetailPage {
 	 */
 	@FindBy(how = How.NAME,using = "GuRiskGeographicalArea")
 	WebElement edt_CBDQ;
-	
-	public void InputRiskClassInfoAction(String xzsyfw,String tqmc,String qbrq,String zbrq,String lgbbz,String yyzdbz,String sfgxdm,String cbdq) {
+	public RiskDetail_TypePage() {
+		goToWorkArea();
+		PageFactory.initElements(driver, this);
+	}
+	public void InputRiskTypeInfoAction(String xzsyfw,String tqmc,String qbrq,String zbrq,String lgbbz,String yyzdbz,String sfgxdm,String cbdq) {
 		super.setSelectWithStartText(slc_XZSYFW, xzsyfw);
-		super.setEditboxValue(edt_QBRQ, qbrq);
-		super.clickButton(edt_BXQX);
-		super.setEditboxValue(edt_ZBRQ, zbrq);
-		super.clickButton(edt_BXQX);
+		super.SetDateEditBox(edt_QBRQ, qbrq);
+		super.clickElement(edt_BXQX);
+		super.SetDateEditBox(edt_ZBRQ, zbrq);
+		super.clickElement(edt_BXQX);
 		super.setSelectWithStartText(slc_LGBBZ, lgbbz);
 		super.setSelectWithStartText(slc_YYZDBZ, yyzdbz);
 		super.setSelectWithStartText(slc_SFGXDM, sfgxdm);
-		super.SetCodeEditBox(edt_CBDQ, cbdq);
-		super.clickButton(btn_saveButton);
+		super.CodeSelect(edt_CBDQ, cbdq);
 	}
 	/**
 	 *<p>InputRiskClassInfoAction</p>
 	 *<p>录入险种信息</p>
 	 */
-	public void InputRiskClassInfoAction(Map<String, String> map) {
+	public void InputRiskTypeInfoAction(Map<String, String> map) {
 		logger.info("开始处理风险类别信息");
-		this.InputRiskClassInfoAction(map.get("xzsyfw"),map.get("tqmc"),map.get("qbrq"),map.get("zbrq"),map.get("lgbbz"),map.get("yyzdbz"),map.get("sfgxdm"),map.get("cbdq"));
+		this.InputRiskTypeInfoAction(map.get("xzsyfw"),map.get("tqmc"),map.get("qbrq"),map.get("zbrq"),map.get("lgbbz"),map.get("yyzdbz"),map.get("sfgxdm"),map.get("cbdq"));
 	}	
+	/**
+	 *<p>saveRiskDetailTypePage</p>
+	 *<p>保存险种信息</p>
+	 * @return
+	 */
+	public RiskDetail_insuredObjPage saveRiskDetailTypePage() {
+		logger.info("保存险种基本信息");
+		super.jsClickButton(btn_saveButton);
+		return new RiskDetail_insuredObjPage();
+	}
 }

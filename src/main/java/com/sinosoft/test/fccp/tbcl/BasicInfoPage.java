@@ -16,7 +16,7 @@ import com.sinosoft.test.fccp.common.FccbBase;
  *<p>承保子系统/投保管理/投保处理：基本信息</p>
  * @author liubenchao@sinsoft.com.cn
  */
-public class BasicInfoPage extends FccbBase{
+public class BasicInfoPage extends TbclMainFramePage{
 	/************************************************
 	 * 销售信息
 	 ************************************************/		
@@ -314,12 +314,12 @@ public class BasicInfoPage extends FccbBase{
 	 * @param ywly 业务来源 
 	 * @param cxywbs 创新业务标识
 	 */
-	public void inputSalesInfoAction(String fbbs, String ywgs,String qdlx,String xstd,String ywy,String ywly,String cxywbs){
+	public void inputSalesInfoAction(String fbbs, String ywgs,String qdlx,String gdbs,String xstd,String ywy,String ywly,String cxywbs){
 		slc_FBBS = this.waitAndGetElement(By.name("GuMainBusinessType"), 20);
 		super.setSelectWithStartText(slc_FBBS, fbbs);
 		super.SetCodeEditBox(edt_YWGS, ywgs);
 		super.SetCodeEditBox(edt_QDLX, qdlx);
-		super.CodeSelect(edt_GDBS, "0");
+		super.CodeSelect(edt_GDBS, gdbs);
 		super.CodeSelect(edt_XSTD, xstd);
 		super.CodeSelect(edt_YWY, ywy);
 		super.CodeSelect(edt_YWLY, ywly);
@@ -327,7 +327,7 @@ public class BasicInfoPage extends FccbBase{
 
 	}
 	public void inputSalesInfoAction(Map<String, String> map) {
-		this.inputSalesInfoAction(map.get("fbbs"), map.get("ywgs"), map.get("qdlx"), map.get("xstd"), map.get("ywy"), map.get("ywly"), map.get("cxywbs"));
+		this.inputSalesInfoAction(map.get("fbbs"), map.get("ywgs"), map.get("qdlx"), map.get("gdbs"),map.get("xstd"), map.get("ywy"), map.get("ywly"), map.get("cxywbs"));
 	}
 	
 	/**
@@ -465,8 +465,9 @@ public class BasicInfoPage extends FccbBase{
 	 *<p>saveBasicInfoAction</p>
 	 *<p>保存投保处理保单基本信息</p>
 	 */
-	public void saveBasicInfoAction() {
+	public RiskDetail_TypePage saveBasicInfoAction() {
 		saveCustomerAction();
 		btn_SAVE_BASIC_PAGE.click();
+		return new RiskDetail_TypePage();
 	}
 }

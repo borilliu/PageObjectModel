@@ -5,9 +5,10 @@
     <classes>
       <class name="com.sinosoft.testcases.fccb.LoginPageTest">
         <methods>
-          <include name="setUp"/>
+          <include name="setup"/>
+          <include name="FCCB_TBCL" invocation-numbers="0"/>
           <include name="tearDown"/>
-          <include name="tbclTest" invocation-numbers="0"/>
+          <include name="Init"/>
         </methods>
       </class> <!-- com.sinosoft.testcases.fccb.LoginPageTest -->
     </classes>

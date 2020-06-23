@@ -16,7 +16,7 @@ import com.sinosoft.test.fccp.common.FccbBase;
  *<p>description</p>
  * @author liubenchao@sinsoft.com.cn
  */
-public class RiskDetailPage extends FccbBase {
+public class RiskDetailPage extends TbclMainFramePage {
 
 	/**
 	 * @Fields tbl_RiskItems : 险种信息表 RiskItem
@@ -50,7 +50,7 @@ public class RiskDetailPage extends FccbBase {
 	}
 	/**
 	 *<p>goToRiskTypePage</p>
-	 *<p>跳转到投保处理/险种信息/险种信息页面</p>
+	 *<p>跳转到 投保处理/险种信息/险种信息页面</p>
 	 * @param map
 	 * @return
 	 */
@@ -58,14 +58,32 @@ public class RiskDetailPage extends FccbBase {
 		goToRiskDetailTable("险种信息");
 		return new RiskDetail_TypePage();
 	}
-	public RiskDetail_insuredObjPage goToInsuredObjectPage() {
+	
+	/**
+	 *<p>goToRiskTermsPage</p>
+	 *<p>跳转到 投保处理/险种信息/保险条款标签页面</p>
+	 * @param map
+	 * @return
+	 */
+	public RiskDetail_TermsPage goToRiskTermsPage(Map<String, String> map) {
+		goToRiskDetailTable("条款信息");
+		return new RiskDetail_TermsPage();
+	}
+	/**
+	 *<p>goToInsuredObjectPage</p>
+	 *<p>跳转到 投保处理/险种信息/标的信息标签页面</p>
+	 * @return
+	 */
+	public RiskDetail_insuredObjPage goToInsuredObjectPage(Map<String, String> map) {
 		goToRiskDetailTable("标的信息"); 
 		return new RiskDetail_insuredObjPage();
-//		goToRiskDetailTable("条款信息");
-//		goToRiskDetailTable("联共保信息");
-//		goToRiskDetailTable("险种信息");
+
 	}
-	public void goToRiskDetailTable(String TabName) {
+	public RiskDetail_UnionPage goToUnionPage(Map<String, String> map) {
+		goToRiskDetailTable("联共保信息");
+		return new RiskDetail_UnionPage();
+	}
+	private void goToRiskDetailTable(String TabName) {
 		System.out.println("准备进入标签页:"+TabName);
 		goToRiskFrame();
 		tab_SubRiskDetail = waitAndGetElement(By.xpath("//td[text()='"+TabName+"']"), 5);

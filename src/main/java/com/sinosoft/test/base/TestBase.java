@@ -40,15 +40,21 @@ public class TestBase {
 	public static Properties prop; 
 	public static EventFiringWebDriver e_driver;
 	public static WebEventListener eventListener;
+	public static int WAIT_SHORTEST = 200;
+	public static int WAIT_SHORTER = 500;
+	public static int WAIT_SECOND = 1000;
+	public static int WAIT_LONGGER = 2000;
+	public static int WAIT_LONGGEST = 5000;
 	public static Logger logger = Logger.getLogger(TestBase.class);
 	public TestBase(){
 		try {
 			prop = new Properties();
 			//FileInputStream ip = new FileInputStream(System.getProperty("user.dir")+ "/src/main/java/com/crm/qa/config/config.properties");
 			String path=System.getProperty("user.dir")+ "\\src\\main\\resources\\config.properties";
-			System.out.println("配置文件路径："+path);
+			logger.info("配置文件路径："+path);
 			FileInputStream ip = new FileInputStream(path);
 			prop.load(ip);
+			
 		} catch (FileNotFoundException e) {
 			e.printStackTrace();
 		} catch (IOException e) {
@@ -58,8 +64,17 @@ public class TestBase {
 	
 	
 	public static void initialization(){
+		try {
+			WAIT_SHORTEST =  Integer.valueOf(prop.getProperty("system.wait.shorttest"));
+			WAIT_SHORTER =  Integer.valueOf(prop.getProperty("system.wait.shorter"));
+			WAIT_SECOND =  Integer.valueOf(prop.getProperty("system.wait.second"));
+			WAIT_LONGGER =  Integer.valueOf(prop.getProperty("system.wait.longer"));
+			WAIT_LONGGEST =  Integer.valueOf(prop.getProperty("system.wait.loggest"));
+		}catch(Exception e) {
+			e.printStackTrace();
+		}
+		prop.getProperty("system.browser");
 		String browserName = prop.getProperty("system.browser");
-		
 		if(browserName.equals("chrome")){
 			System.setProperty("webdriver.chrome.driver", "D:\\Development\\driver\\chromedriver.exe");	
 			driver = new ChromeDriver(); 
@@ -109,14 +124,27 @@ public class TestBase {
 	 * @param args JavaScript 参数
 	 */
 	public void runJS(String js, WebElement element) {
-		logger.debug("RunJavaScript:"+ element.toString()+"->\r\n"+ js);
+		logger.info("RunJavaScript:"+ element.toString()+"\r\n"+ js);
 		try {
 			((JavascriptExecutor) driver).executeScript(js, element);
 		} catch (Exception e) {
 			logger.error(e);
 		}
 	}
-
+	  /**
+	 *<p>jsInputValue</p>
+	 *<p>使用JavaScript为元素赋值</p>
+	 * @param value
+	 * @param element
+	 */
+	public void jsInputValue(String value, WebElement element) {
+		logger.info("RunJavaScript:"+ element.toString()+"："+ value);
+          try{
+                  ((JavascriptExecutor) driver).executeScript("arguments[0].value=arguments[1]", element, value);
+          } catch(Exception e) {
+              logger.error(e);
+          }
+  }
 
 	/**
 	 *<p>pause</p>
@@ -163,7 +191,7 @@ public class TestBase {
 				@Override
 				public Boolean apply(WebDriver d) {
 					Alert alt =d.switchTo().alert();
-					System.out.println("Alert的标题是："+alt.getText());
+					logger.debug("Alert的标题是："+alt.getText());
 					if(alt.getText().contains(title)) {
 						alt.accept();
 						return true;
@@ -173,7 +201,7 @@ public class TestBase {
 				}
 			});
 		} catch (Exception e) {
-			System.out.println("没有找到标题为:"+title+" 的对话框");
+			logger.debug("没有找到标题为:"+title+" 的对话框");
 			e.printStackTrace();
 		}
 		return found;
@@ -192,10 +220,10 @@ public class TestBase {
 				@Override
 				public String apply(WebDriver d) {
 					for (String windowHandle : d.getWindowHandles()) {
-						//System.out.println(windowHandle);
+						//logger.debug(windowHandle);
 						d.switchTo().window(windowHandle);
-						//System.out.println(d.getTitle());
-						System.out.println("切换到窗口【"+d.getTitle()+"】with handle -"+ windowHandle);
+						//logger.debug(d.getTitle());
+						logger.debug("切换到窗口【"+d.getTitle()+"】with handle -"+ windowHandle);
 						if (d.getTitle().contains(title))
 							// d.manage().window().maximize();
 							return d.getWindowHandle();
@@ -244,7 +272,7 @@ public class TestBase {
 	 */
 	public void SetRadioValue(List<WebElement> radioList,String value) {
 		if("".equals(value)) return;
-		logger.debug("setEditboxTValue:"+ radioList.toString()+"->"+ value);
+		logger.info("setEditboxTValue:"+ radioList.toString()+"："+ value);
 		 for(WebElement radio:radioList) {
 			 	String tmpVal = radio.getAttribute("value");
 			 	if(value.equals(tmpVal)){
@@ -264,42 +292,13 @@ public class TestBase {
 	 * @param text  选中的列表项：使用显示文本。
 	 */
 	public void setSelectText(WebElement slcELe,String text) {
-		logger.debug("setEditboxTValue:"+ slcELe.toString()+"->"+ text);
-		this.highlight(slcELe);
 		if("".equals(text)) {
 			return;
 		}
 		Select  select = new Select(slcELe);
 		select.selectByVisibleText(text);
 	}
-	/**
-	 *<p>setSelectWithStartText</p>
-	 *<p>根据起始字符选择列表项</p>
-	 * @param slcELe
-	 * @param startText
-	 */
-	public void setSelectWithStartText(WebElement slcELe,String startText) {
-		logger.debug("setSelectWithStartText:"+ slcELe.toString()+"->"+ startText);
-		this.highlight(slcELe);
-		if("".equals(startText)) {
-			return;
-		}
-		Select select = new Select(slcELe);
-		List<WebElement> Options = select.getOptions();
-		boolean found = false;
-	    for (WebElement selectedOption : Options) {
-	        String txt = selectedOption.getText();
-	        if (null !=txt && txt.startsWith(startText)){
-	        	logger.info("找到匹配【"+ startText+"】的选项："+ txt);
-	        	select.selectByVisibleText(txt);
-	        	found =true;
-	        	break;
-	        }
-	    }
-	    if(!found) {
-	    	logger.error("没有找到以【"+startText+"】为起始的选项！" );
-	    }
-	}
+
 	/**
 	 * 
 	 *<p>setEditboxValue</p>
@@ -309,11 +308,10 @@ public class TestBase {
 	 */
 	
 	public void setEditboxValue(WebElement edtEle,String text) {
-		logger.debug("setEditboxValue:"+ edtEle.toString()+"->"+ text);
-		this.highlight(edtEle);
 		if("".equals(text)) {
 			return;
-		}
+		}		
+		logger.info("setEditboxValue:"+ edtEle.toString()+"："+ text);
 		edtEle.clear();
 		edtEle.sendKeys(text);
 	}
@@ -325,7 +323,7 @@ public class TestBase {
 	 * @param text 输入值
 	 */
 	public void setEditboxTValue(WebElement edtEle,String text) {
-		logger.debug("setEditboxTValue:"+ edtEle.toString()+"->"+ text);
+		logger.info("setEditboxTValue:"+ edtEle.toString()+"->"+ text);
 		if("".equals(text)) {
 			return;
 		}
@@ -339,7 +337,11 @@ public class TestBase {
 	 * @param btnEle 按钮
 	 */
 	public void clickButton(WebElement btnEle) {
-		logger.debug("clickButton:"+ btnEle.toString());
+		logger.info("clickButton:"+ btnEle.toString());
+		btnEle.click();
+	}
+	public void clickElement(WebElement btnEle) {
+		logger.info("clickElement:"+ btnEle.toString());
 		btnEle.click();
 	}
 	/**
@@ -349,6 +351,7 @@ public class TestBase {
 	 * @param btnEle
 	 */
 	public void jsClickButton(WebElement btnEle) {
+		logger.info("jsClickButton:"+ btnEle.toString());
 		runJS("arguments[0].click();", btnEle);
 	}
 	/**
@@ -358,7 +361,7 @@ public class TestBase {
 	 * @param btnEle 按钮
 	 */
 	public void dblclickButton(WebElement btnEle) {
-		logger.debug("dblclickButton:"+ btnEle.toString());
+		logger.info("dblclickButton:"+ btnEle.toString());
 		this.actionDoubleClick(btnEle);
 	}
 
