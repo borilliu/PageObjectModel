@@ -9,6 +9,8 @@ import org.openqa.selenium.support.CacheLookup;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.How;
 import org.openqa.selenium.support.PageFactory;
+
+import com.crm.qa.util.TestUtil;
 import com.sinosoft.test.fccp.common.FccbBase;
 
 /**
@@ -326,6 +328,11 @@ public class BasicInfoPage extends TbclMainFramePage{
 		super.setSelectWithStartText(slc_CXYWBS, cxywbs);
 
 	}
+	/**
+	 *<p>inputSalesInfoAction</p>
+	 *<p>录入销售信息</p>
+	 * @param map
+	 */
 	public void inputSalesInfoAction(Map<String, String> map) {
 		this.inputSalesInfoAction(map.get("fbbs"), map.get("ywgs"), map.get("qdlx"), map.get("gdbs"),map.get("xstd"), map.get("ywy"), map.get("ywly"), map.get("cxywbs"));
 	}
@@ -364,6 +371,11 @@ public class BasicInfoPage extends TbclMainFramePage{
 		super.setSelectWithStartText(slc_sfSN, sfsn);
 		super.setEditboxValue(edt_XBBDH, xbbdh);		
 	}
+	/**
+	 *<p>inputPolicyInfoAction</p>
+	 *<p>录入保单信息</p>
+	 * @param map
+	 */
 	public void inputPolicyInfoAction(Map<String, String> map) {
 		this.inputPolicyInfoAction(map.get("cdjg"),map.get("htzyjjfs"),map.get("jnwbz"),
 								   map.get("jw_country"),map.get("jw_Addr"),map.get("snbz"),
@@ -422,6 +434,11 @@ public class BasicInfoPage extends TbclMainFramePage{
 			}
 		}
 	}
+	/**
+	 *<p>inputOwnerInfoAction</p>
+	 *<p>录入投保人信息</p>
+	 * @param map
+	 */
 	public void inputOwnerInfoAction(Map<String, String> map) {
 		this.inputOwnerInfoAction(map.get("tbr_lx"),map.get("tbr_mc"),map.get("tbr_vip"),
 								  map.get("tbr_dm"),map.get("tbr_zjlx"),map.get("tbr_zjhm"),
@@ -457,6 +474,8 @@ public class BasicInfoPage extends TbclMainFramePage{
 	 */
 	private String saveCustomerAction() {
 		btn_TBR_BCKH.click();
+		String msg1="客户信息被修改，是否同时保存客户";
+		waitAndAcceptAlert(msg1,3);
 		String title ="客户已经保存，或不需要保存.";
 		waitAndAcceptAlert(title,3);
 		return edt_TBR_DM.getText();
@@ -465,9 +484,10 @@ public class BasicInfoPage extends TbclMainFramePage{
 	 *<p>saveBasicInfoAction</p>
 	 *<p>保存投保处理保单基本信息</p>
 	 */
-	public RiskDetail_TypePage saveBasicInfoAction() {
+	public RiskDetail_TypePage saveBasicInfoAction(Map<String, String> map) {
 		saveCustomerAction();
 		btn_SAVE_BASIC_PAGE.click();
+		TestUtil.takeScreenshot(getTestCaseId(map)+"保存基本信息");
 		return new RiskDetail_TypePage();
 	}
 }

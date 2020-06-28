@@ -4,6 +4,8 @@ import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.IOException;
+import java.text.SimpleDateFormat;
+import java.util.Date;
 import java.util.Map;
 
 import org.apache.commons.io.FileUtils;
@@ -66,7 +68,21 @@ public class TestUtil extends TestBase {
 	public static void takeScreenshotAtEndOfTest() throws IOException {
 		File scrFile = ((TakesScreenshot) driver).getScreenshotAs(OutputType.FILE);
 		String currentDir = System.getProperty("user.dir");
-		FileUtils.copyFile(scrFile, new File(currentDir + "/screenshots/" + System.currentTimeMillis() + ".png"));
+		FileUtils.copyFile(scrFile, new File(currentDir + "/screenshots/test/" + System.currentTimeMillis() + ".png"));
+	}
+	public static String takeScreenshot(String fileName)  {
+		try {
+			logger.debug("截屏文件名字是："+fileName);
+			File scrFile = ((TakesScreenshot) driver).getScreenshotAs(OutputType.FILE);
+			String currentDir = System.getProperty("user.dir");
+			String dateStr= new SimpleDateFormat("yyyyMMddhhmmssSSS").format(new Date());
+			File file =new File(currentDir + "/screenshots/test/"+fileName+"_" +dateStr+".png");
+			FileUtils.copyFile(scrFile, file);
+			return file.getAbsolutePath();
+		}catch(IOException e) {
+			e.printStackTrace();
+			return "";
+		}	
 	}
 	public static String getMapString(Map<String, String> map) {
 		StringBuffer sb= new StringBuffer();

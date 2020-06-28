@@ -64,10 +64,11 @@ public class WebEventListener extends TestBase implements WebDriverEventListener
 	}
 
 	public void onException(Throwable error, WebDriver driver) {
-		logger.debug("Exception occured: " + error);
+		logger.debug("系统自动捕获异常：Exception occured: " + error);
 		try {
-			TestUtil.takeScreenshotAtEndOfTest();
-		} catch (IOException e) {
+			logger.info("异常的message 是："+error.getMessage());
+			//TestUtil.takeScreenshot("unExceptedException");
+		} catch (Exception e) {
 			e.printStackTrace();
 		}
 	}

@@ -8,6 +8,7 @@ import java.util.LinkedHashMap;
 import java.util.List;
 import java.util.Map;
 
+import org.testng.Assert;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.BeforeMethod;
@@ -22,6 +23,7 @@ import com.sinosoft.test.fccp.tbcl.RiskDetail_TermsPage;
 import com.sinosoft.test.fccp.tbcl.RiskDetail_TypePage;
 import com.sinosoft.test.fccp.tbcl.RiskDetail_insuredObjPage;
 import com.sinosoft.test.fccp.tbcl.RiskSelectPage;
+import com.sinosoft.test.fccp.tbcl.SubmitReviewResult;
 import com.sinosoft.test.util.ExcelDataProvider;
 import com.crm.qa.util.TestUtil;
 import com.sinosoft.test.base.TestBase;
@@ -31,12 +33,12 @@ public class LoginPageTest extends TestBase {
 	LoginPage loginPage;
 	HomePage homePage;
 	RiskSelectPage riskSelected;
-	BasicInfoPage basicInfoPage;
+	BasicInfoPage basicInfo;
 	RiskDetailPage riskDetail;
-	RiskDetail_TypePage riskDetail_Type;
+	RiskDetail_TypePage riskDetail_type;
 	RiskDetail_insuredObjPage riskDetail_insrdObj;
-	RiskDetail_TermsPage riskDetail_termsPage;
-	PolicyFeePage policyFeePage;
+	RiskDetail_TermsPage riskDetail_terms;
+	PolicyFeePage policyFee;
 	public LoginPageTest() {
 		super();
 	}
@@ -44,12 +46,12 @@ public class LoginPageTest extends TestBase {
 	@BeforeClass 
 	public void Init() {
 		System.out.println("执行了BeforeClass事件：Init");
-		initialization();
 		
 	}
 	@BeforeMethod
 	public void setup() {
 		System.out.println("执行了BoforeMethod事件：Setup");
+		initialization();
 		loginPage = new LoginPage();
 	}
 
@@ -108,37 +110,48 @@ public class LoginPageTest extends TestBase {
 		}
 	}
 
-	@Test(priority = 3, dataProvider = "getTBCLTestData")
+	@Test(priority = 3, dataProvider = "getTBCLTestData",expectedExceptions=Exception.class)
 	public void FCCB_TBCL(Map<String, String> map) {
 		logger.info("开始运行测试脚本，获取到的测试数据《getTBCLTestData》如下:");
 		logger.info(TestUtil.getMapString(map));
-		homePage = loginPage.login_normal();
-		homePage.enterMenuTBCL();
-		riskSelected = new RiskSelectPage();
-		riskSelected.InputRiskGeneralAction(map);
-		basicInfoPage = new BasicInfoPage();
-		basicInfoPage.inputSalesInfoAction(map);
-		basicInfoPage.inputPolicyInfoAction(map);
-		basicInfoPage.inputOwnerInfoAction(map);
-		riskDetail_Type = basicInfoPage.saveBasicInfoAction(); 
-		riskDetail_Type.InputRiskTypeInfoAction(map);
-		riskDetail_insrdObj = riskDetail_Type.saveRiskDetailTypePage();
-		riskDetail_insrdObj.inputInsuredObjectAction(map);
-		riskDetail_insrdObj.inputRiskCodeAction(map);
-		riskDetail_insrdObj.saveInsredObjectPage();
-		riskDetail_termsPage = riskDetail_insrdObj.goToRiskTermsPage(map);
-		riskDetail_termsPage.saveTermsPage();
-		riskDetail_termsPage.goToUnionPage(map);
-		policyFeePage = riskDetail_termsPage.goToMainFrame_policyfee();
-		policyFeePage.inputPolicyFeeAction(map);
-		policyFeePage.savePolicyFee();
-		policyFeePage.submitForReview();
+		try {
+			homePage = loginPage.login_normal();
+			homePage.enterMenuTBCL();
+			riskSelected = new RiskSelectPage();
+			riskSelected.InputRiskGeneralAction(map);
+			basicInfo = riskSelected.saveForNext();
+			basicInfo.inputSalesInfoAction(map);
+			basicInfo.inputPolicyInfoAction(map);
+			basicInfo.inputOwnerInfoAction(map);
+			riskDetail_type = basicInfo.saveBasicInfoAction(map); 
+			riskDetail_type.getProposalNumbes();
+			riskDetail_type.InputRiskTypeInfoAction(map);
+			riskDetail_type.inputInusredInfoAction(map);
+			riskDetail_insrdObj = riskDetail_type.saveRiskDetailTypePage();
+			riskDetail_insrdObj.inputInsuredObjectAction(map);
+			riskDetail_insrdObj.inputRiskCodeAction(map);
+			riskDetail_insrdObj.saveInsredObjectPage();
+			riskDetail_terms = riskDetail_insrdObj.goToRiskTermsPage(map);
+			riskDetail_terms.saveTermsPage();
+			//riskDetail_terms.goToUnionPage(map);
+			policyFee = riskDetail_terms.goToMainFrame_policyfee();
+			policyFee.inputPolicyFeeAction(map);
+			policyFee.savePolicyFee();
+			SubmitReviewResult srr= policyFee.submitForReview(map);
+			String fullText =srr.getFullResultText();
+			Assert.assertTrue(fullText.contains("待双核审核"));
+			logger.info("提交结果:"+"_"+fullText);
+		}catch(Exception e) {
+			logger.info("执行测试用例发生了异常，开始截屏",e);
+			TestUtil.takeScreenshot(getTestCaseId(map)+"_异常截屏");
+			logger.info("执行测试用例发生了异常，截屏结束！",e);
+		}
 	}
 
 	@AfterMethod
 	public void tearDown() {
-		// driver.quit();
 		System.out.println("执行了退出事件：tearDown");
+		driver.quit();
 	}
 
 }

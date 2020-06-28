@@ -53,6 +53,7 @@ public class PolicyFeePage extends TbclMainFramePage {
 	 *<p>保存保单费用信息</p>
 	 */
 	public void savePolicyFee() {
+		pause(WAIT_SHORTER);
 		this.clickButton(btn_saveFeePage);
 	}
 }

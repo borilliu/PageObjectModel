@@ -4,6 +4,7 @@ import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.util.List;
+import java.util.Map;
 import java.util.Properties;
 import java.util.concurrent.TimeUnit;
 
@@ -12,6 +13,7 @@ import org.openqa.selenium.Alert;
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.Keys;
+import org.openqa.selenium.UnexpectedAlertBehaviour;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
@@ -87,7 +89,8 @@ public class TestBase {
 				options.setCapability(CapabilityType.ACCEPT_SSL_CERTS, true);
 				options.setCapability(InternetExplorerDriver.NATIVE_EVENTS, true);
 				options.setCapability(InternetExplorerDriver.INTRODUCE_FLAKINESS_BY_IGNORING_SECURITY_DOMAINS, true);
-				options.setCapability(CapabilityType.UNEXPECTED_ALERT_BEHAVIOUR, "ignore");
+				//options.setCapability(CapabilityType.UNEXPECTED_ALERT_BEHAVIOUR, "ignore");
+				options.setCapability(CapabilityType.UNEXPECTED_ALERT_BEHAVIOUR, UnexpectedAlertBehaviour.IGNORE);
 				options.setCapability(InternetExplorerDriver.LOG_LEVEL, "TRACE");
 				options.setCapability(InternetExplorerDriver.LOG_FILE, "IE_LOG.log");
 
@@ -114,7 +117,15 @@ public class TestBase {
 		//driver.get(prop.getProperty("url"));
 		
 	}
-	
+	/**
+	 *<p>getTestCaseId</p>
+	 *<p>获取当前测试用例的标识号</p>
+	 * @param map
+	 * @return
+	 */
+	public String getTestCaseId(Map<String, String> map) {
+		return map.get("TestCaseName")+"_"+map.get("TestCaseSeq");
+	}	
 
 	/**
 	 *<p>runJS</p>
@@ -169,8 +180,8 @@ public class TestBase {
 	 */
 	public WebElement waitAndGetElement(final By loc, long timeout) {
 		WebElement element = null;
-		WebDriverWait wait = new WebDriverWait(driver, timeout);
 		try {
+			WebDriverWait wait = new WebDriverWait(driver, timeout);
 			element = wait.until(new ExpectedCondition<WebElement>() {
 				@Override
 				public WebElement apply(WebDriver d) {
@@ -178,11 +189,18 @@ public class TestBase {
 				}
 			});
 		} catch (Exception e) {
-			logger.info("没有找到页面元素:"+loc.toString()+" - 错误信息"+e.getMessage());
+			//logger.info("没有找到页面元素:"+loc.toString()+" - 错误信息"+e.getMessage());
 		}
 		return element;
 	}	
 
+	/**
+	 *<p>waitAndAcceptAlert</p>
+	 *<p>等待预期的弹出窗口并点击确认</p>
+	 * @param title
+	 * @param timeout
+	 * @return
+	 */
 	public boolean waitAndAcceptAlert(String title, long timeout) {
 		boolean found = false;
 		WebDriverWait wait = new WebDriverWait(driver, timeout);
@@ -206,7 +224,24 @@ public class TestBase {
 		}
 		return found;
 	}	
-	
+
+	public String catchUnexpectedAlert(long timeout) {
+		WebDriverWait wait = new WebDriverWait(driver, timeout);
+		String title="";
+		try {
+			title = wait.until(new ExpectedCondition<String>() {
+				@Override
+				public String apply(WebDriver d) {
+					Alert alt =d.switchTo().alert();
+						String ttl = alt.getText();
+						alt.accept();
+						return ttl; 
+				}
+			});
+		} catch (Exception e) {
+		}
+		return title;
+	}	
 	public void actionDoubleClick(WebElement element) {
 		 new Actions(driver).doubleClick(element).perform();
 	}

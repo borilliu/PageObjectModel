@@ -2,6 +2,7 @@ package com.sinosoft.test.fccp.tbcl;
 
 import java.util.Map;
 
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.How;
@@ -67,6 +68,35 @@ public class RiskDetail_TypePage extends RiskDetailPage {
 	 */
 	@FindBy(how = How.NAME,using = "GuRiskGeographicalArea")
 	WebElement edt_CBDQ;
+	
+	
+	
+	
+	/**
+	 * @Fields edt_HYDL : 被保人信息
+	 */
+	@FindBy(how = How.ID,using = "InsuredRelatedParty")
+	WebElement tbl_InsuredInfo;
+	
+	
+	/**
+	 * @Fields edt_CBDQ : 增值服务类型
+	 */
+	//@FindBy(how = How.NAME,using = "InsuredGuRelatedPartyStarLevel")
+	WebElement slc_ZZFWLX;
+	/**
+	 * @Fields edt_HYDL : 行业大类
+	 */
+	//@FindBy(how = How.NAME,using = "InsuredGuRelatedPartyIndustryMainCode")
+	WebElement edt_HYDL;
+	
+	/**
+	 * @Fields edt_HYXL : 行业小类
+	 */
+	//@FindBy(how = How.NAME,using = "InsuredGuRelatedPartyIndustryKindCode")
+	WebElement edt_HYXL;
+	
+	
 	public RiskDetail_TypePage() {
 		goToWorkArea();
 		PageFactory.initElements(driver, this);
@@ -90,6 +120,29 @@ public class RiskDetail_TypePage extends RiskDetailPage {
 		logger.info("开始处理风险类别信息");
 		this.InputRiskTypeInfoAction(map.get("xzsyfw"),map.get("tqmc"),map.get("qbrq"),map.get("zbrq"),map.get("lgbbz"),map.get("yyzdbz"),map.get("sfgxdm"),map.get("cbdq"));
 	}	
+	/**
+	 *<p>inputInusredInfoAction</p>
+	 *<p>description</p>
+	 * @param hydl 行业大类
+	 * @param hyxl 行业小类
+	 */
+	private void inputInusredInfoAction(String zzfwlx,String hydl,String hyxl) {
+		slc_ZZFWLX = tbl_InsuredInfo.findElement(By.name("InsuredGuRelatedPartyStarLevel"));
+		edt_HYDL = tbl_InsuredInfo.findElement(By.name("InsuredGuRelatedPartyIndustryMainCode"));
+		edt_HYXL = tbl_InsuredInfo.findElement(By.name("InsuredGuRelatedPartyIndustryKindCode"));
+		super.setSelectWithStartText(slc_ZZFWLX, zzfwlx);
+		super.CodeSelect(edt_HYDL, hydl);
+		super.SetCodeEditBox(edt_HYXL, hyxl);
+	}
+	
+	/**
+	 *<p>inputInusredInfoAction</p>
+	 *<p>录入被保人信息</p>
+	 * @param map
+	 */
+	public void inputInusredInfoAction(Map<String, String> map) {
+		this.inputInusredInfoAction(map.get("zzfwlx"),map.get("hydl"),map.get("hyxl"));
+	}
 	/**
 	 *<p>saveRiskDetailTypePage</p>
 	 *<p>保存险种信息</p>

@@ -93,7 +93,7 @@ public class RiskSelectPage extends FccbBase {
 
 	// Actions:
 
-	public void InputRiskGeneralAction(String riskClass, String riskCode, String renewalInd, 
+	private void InputRiskGeneralAction(String riskClass, String riskCode, String renewalInd, 
 										String renewalPolicy,String prePay, String carrayOver,
 										String carrayOverPolicy, String relatedInd, String relatedPolicy
 									  ) {
@@ -112,13 +112,27 @@ public class RiskSelectPage extends FccbBase {
 		if ("1".equals(relatedInd)) {
 			this.setEditboxValue(edt_relatedPolicy, relatedPolicy);
 		}
-		this.clickButton(btn_nextStep);
+		
 	}
 
+	/**
+	 *<p>InputRiskGeneralAction</p>
+	 *<p>录入险种基本信息</p>
+	 * @param map
+	 */
 	public void InputRiskGeneralAction(Map<String, String> map) {
 		this.InputRiskGeneralAction(map.get("riskClass"), map.get("riskCode"), map.get("renewalInd"),
 							  map.get("renewalPolicy"), map.get("prePay"), map.get("carrayOver"), 
 							  map.get("carrayOverPolicy"),map.get("relatedInd"), map.get("relatedPolicy")
 							  );
+	}
+	/**
+	 *<p>saveForNext</p>
+	 *<p>点击下一步按钮</p>
+	 * @return
+	 */
+	public BasicInfoPage saveForNext() {
+		this.clickButton(btn_nextStep);
+		return new BasicInfoPage();
 	}
 }

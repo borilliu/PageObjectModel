@@ -1,11 +1,16 @@
 package com.sinosoft.test.fccp.tbcl;
 
+import java.util.Map;
+
 import org.openqa.selenium.By;
+import org.openqa.selenium.UnhandledAlertException;
+import org.openqa.selenium.WebDriverException;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.How;
 import org.openqa.selenium.support.PageFactory;
 
+import com.crm.qa.util.TestUtil;
 import com.sinosoft.test.fccp.common.FccbBase;
 
 public class TbclMainFramePage extends FccbBase {
@@ -38,8 +43,20 @@ public class TbclMainFramePage extends FccbBase {
 	/**
 	 *<p>submitForReview</p>
 	 *<p>提交复核</p>
+	 * @return 
 	 */
-	public void submitForReview() {
-		this.clickButton(btn_submitForReview);
+	public SubmitReviewResult submitForReview(Map<String, String> map){
+		goToMainArea();
+		logger.info("开始点击提交复核按钮");
+		this.jsClickButton(btn_submitForReview);
+		TestUtil.takeScreenshot(getTestCaseId(map)+"_提交复核结果");
+		logger.info("点击复核完毕！");
+		String str =this.catchUnexpectedAlert(5);
+		logger.info("返回的窗口标题："+str);
+		if(!"".equals(str)) {
+			throw new UnhandledAlertException("unExpectedAlertExpection");
+		}
+
+		return new SubmitReviewResult();
 	}
 }

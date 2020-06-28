@@ -1,6 +1,8 @@
 package com.sinosoft.test.fccp.tbcl;
 
+import java.util.List;
 import java.util.Map;
+import java.util.NoSuchElementException;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
@@ -89,5 +91,46 @@ public class RiskDetailPage extends TbclMainFramePage {
 		tab_SubRiskDetail = waitAndGetElement(By.xpath("//td[text()='"+TabName+"']"), 5);
 		this.clickButton(tab_SubRiskDetail);
 		goToWorkArea();
+	}
+	public String getProposalNumbes() {
+		super.goToWorkArea();
+		
+		List<WebElement> numLst =tbl_RiskItems.findElements(By.name("summarySubBusinessNo"));
+		StringBuffer numSB=new StringBuffer();
+		for(int i=0;i<numLst.size();i++) {
+			String num=numLst.get(i).getAttribute("value");
+			logger.info("投保单号："+num);
+			if(i==0) {
+				numSB.append(num);
+			}else {
+				numSB.append(",").append(num);
+			}
+		}
+	     goToWorkArea();
+		return numSB.toString();
+/*		List<WebElement> trs =tbl_RiskItems.findElements(By.tagName("tr"));
+		int table_rows = trs.size();
+		List<WebElement> tds = trs.get(0).findElements(By.tagName("td"));
+		int table_cols= tds.size();
+		logger.info("表格一共有："+table_rows+"行，"+table_cols+"列");
+		for(int i=0;i<=trs.size();i++) {
+			WebElement  tr =trs.get(i);
+			for(int j=0;j<=tds.size();j++) {
+				List<WebElement> trtds =tr.findElements(By.tagName("td"));
+				String cellValue;
+				if(i==0) {
+					cellValue= trtds.get(j).getText();
+				}else {
+					try {
+						cellValue =trtds.get(j).findElement(By.xpath("./input[last()]")).getAttribute("value");
+					}catch (NoSuchElementException nse) {
+						cellValue="";
+						nse.printStackTrace();
+					}
+				}
+	
+				logger.info("Row:"+i+"Col:"+j+"is:"+cellValue);
+			}
+		}*/
 	}
 }
