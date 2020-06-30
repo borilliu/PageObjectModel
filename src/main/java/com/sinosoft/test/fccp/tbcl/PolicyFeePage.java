@@ -2,6 +2,7 @@ package com.sinosoft.test.fccp.tbcl;
 
 import java.util.Map;
 
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.How;
@@ -32,7 +33,7 @@ public class PolicyFeePage extends TbclMainFramePage {
 	WebElement btn_saveFeePage;
 	
 	public PolicyFeePage() {
-		System.out.println("初始化PolicyFeePage：");
+		logger.debug("初始化PolicyFeePage：");
 		driver.switchTo().defaultContent();
 		driver.switchTo().frame("mainFrame");
 		driver.switchTo().frame("myFrame");
@@ -44,6 +45,7 @@ public class PolicyFeePage extends TbclMainFramePage {
 	 *<p>录入保单费用信息</p>
 	 */
 	public void inputPolicyFeeAction(Map<String, String> map) {
+		edt_XSFDJ = super.waitAndGetElement(By.name("GuMainXsfInd"), 5);
 		this.CodeSelect(edt_XSFDJ, "A");
 		this.setEditboxTValue(edt_FSH, "5");
 		this.setEditboxTValue(edt_XSFXS, "2");

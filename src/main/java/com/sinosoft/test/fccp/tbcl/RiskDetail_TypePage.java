@@ -1,12 +1,15 @@
 package com.sinosoft.test.fccp.tbcl;
 
 import java.util.Map;
+import java.util.concurrent.TimeUnit;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.How;
 import org.openqa.selenium.support.PageFactory;
+
+import com.crm.qa.util.TestUtil;
 
 public class RiskDetail_TypePage extends RiskDetailPage {
 	/*****************************************
@@ -99,6 +102,8 @@ public class RiskDetail_TypePage extends RiskDetailPage {
 	
 	public RiskDetail_TypePage() {
 		goToWorkArea();
+		driver.manage().timeouts().pageLoadTimeout(TestUtil.PAGE_LOAD_TIMEOUT, TimeUnit.SECONDS);
+		driver.manage().timeouts().implicitlyWait(TestUtil.IMPLICIT_WAIT, TimeUnit.SECONDS);
 		PageFactory.initElements(driver, this);
 	}
 	public void InputRiskTypeInfoAction(String xzsyfw,String tqmc,String qbrq,String zbrq,String lgbbz,String yyzdbz,String sfgxdm,String cbdq) {

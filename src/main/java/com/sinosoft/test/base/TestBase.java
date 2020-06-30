@@ -13,6 +13,7 @@ import org.openqa.selenium.Alert;
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.Keys;
+import org.openqa.selenium.NoAlertPresentException;
 import org.openqa.selenium.UnexpectedAlertBehaviour;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -135,7 +136,7 @@ public class TestBase {
 	 * @param args JavaScript 参数
 	 */
 	public void runJS(String js, WebElement element) {
-		logger.info("RunJavaScript:"+ element.toString()+"\r\n"+ js);
+		logger.info("RunJavaScript:"+ element.toString()+"\t"+ js);
 		try {
 			((JavascriptExecutor) driver).executeScript(js, element);
 		} catch (Exception e) {
@@ -220,11 +221,16 @@ public class TestBase {
 			});
 		} catch (Exception e) {
 			logger.debug("没有找到标题为:"+title+" 的对话框");
-			e.printStackTrace();
 		}
 		return found;
 	}	
 
+	/**
+	 *<p>catchUnexpectedAlert</p>
+	 *<p>返回Alert框，如果存在返回弹出框内容，不存在则返回空字符串</p>
+	 * @param timeout
+	 * @return
+	 */
 	public String catchUnexpectedAlert(long timeout) {
 		WebDriverWait wait = new WebDriverWait(driver, timeout);
 		String title="";
@@ -234,7 +240,7 @@ public class TestBase {
 				public String apply(WebDriver d) {
 					Alert alt =d.switchTo().alert();
 						String ttl = alt.getText();
-						alt.accept();
+						//alt.accept();
 						return ttl; 
 				}
 			});

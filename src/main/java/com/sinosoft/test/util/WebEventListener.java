@@ -70,7 +70,7 @@ public class WebEventListener extends TestBase implements WebDriverEventListener
 			//TestUtil.takeScreenshot("unExceptedException");
 		} catch (Exception e) {
 			e.printStackTrace();
-		}
+	}
 	}
 
 	public void beforeFindBy(By by, WebElement element, WebDriver driver) {

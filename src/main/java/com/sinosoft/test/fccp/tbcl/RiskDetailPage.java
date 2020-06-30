@@ -92,7 +92,7 @@ public class RiskDetailPage extends TbclMainFramePage {
 		this.clickButton(tab_SubRiskDetail);
 		goToWorkArea();
 	}
-	public String getProposalNumbes() {
+	public String saveProposalNumbes(Map<String, String> map) {
 		super.goToWorkArea();
 		
 		List<WebElement> numLst =tbl_RiskItems.findElements(By.name("summarySubBusinessNo"));
@@ -106,6 +106,7 @@ public class RiskDetailPage extends TbclMainFramePage {
 				numSB.append(",").append(num);
 			}
 		}
+		 map.put("proposalNumber", numSB.toString());
 	     goToWorkArea();
 		return numSB.toString();
 /*		List<WebElement> trs =tbl_RiskItems.findElements(By.tagName("tr"));

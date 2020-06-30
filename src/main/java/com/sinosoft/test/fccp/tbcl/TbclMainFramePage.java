@@ -37,8 +37,9 @@ public class TbclMainFramePage extends FccbBase {
 	private void goToMainFramePage(String TabName) {
 		goToMainArea();
 		tbl_mainframe = waitAndGetElement(By.xpath("//td[text()='"+TabName+"']"), 5);
-		this.clickButton(tbl_mainframe);
-		pause(WAIT_SECOND);
+		//this.clickButton(tbl_mainframe);
+		this.jsClickButton(tbl_mainframe);
+		pause(WAIT_LONGGER);
 	}
 	/**
 	 *<p>submitForReview</p>
@@ -49,14 +50,14 @@ public class TbclMainFramePage extends FccbBase {
 		goToMainArea();
 		logger.info("开始点击提交复核按钮");
 		this.jsClickButton(btn_submitForReview);
-		TestUtil.takeScreenshot(getTestCaseId(map)+"_提交复核结果");
 		logger.info("点击复核完毕！");
-		String str =this.catchUnexpectedAlert(5);
-		logger.info("返回的窗口标题："+str);
-		if(!"".equals(str)) {
-			throw new UnhandledAlertException("unExpectedAlertExpection");
+		String title =this.catchUnexpectedAlert(5);
+		logger.info("返回的窗口标题："+title);
+		if(!"".equals(title)) {
+			waitAndAcceptAlert(title, 1);
+			throw new UnhandledAlertException("Dliu7_unExpectedAlertExpection",title);
 		}
-
+		TestUtil.takeScreenshot(getTestCaseId(map)+"_提交复核结果");
 		return new SubmitReviewResult();
 	}
 }
