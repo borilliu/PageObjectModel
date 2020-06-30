@@ -1,5 +1,10 @@
 package com.crm.qa.util;
 
+import java.awt.Dimension;
+import java.awt.Rectangle;
+import java.awt.Robot;
+import java.awt.Toolkit;
+import java.awt.image.BufferedImage;
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
@@ -7,6 +12,8 @@ import java.io.IOException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.Map;
+
+import javax.imageio.ImageIO;
 
 import org.apache.commons.io.FileUtils;
 import org.apache.poi.hssf.usermodel.HSSFCell;
@@ -70,19 +77,46 @@ public class TestUtil extends TestBase {
 		String currentDir = System.getProperty("user.dir");
 		FileUtils.copyFile(scrFile, new File(currentDir + "/screenshots/test/" + System.currentTimeMillis() + ".png"));
 	}
+	/**
+	 *<p>takeScreenshot</p>
+	 *<p>description</p>
+	 * @param fileName
+	 * @return
+	 */
 	public static String takeScreenshot(String fileName)  {
 		try {
 			logger.debug("截屏文件名字是："+fileName);
 			File scrFile = ((TakesScreenshot) driver).getScreenshotAs(OutputType.FILE);
 			String currentDir = System.getProperty("user.dir");
-			String dateStr= new SimpleDateFormat("yyyyMMddhhmmssSSS").format(new Date());
-			File file =new File(currentDir + "/screenshots/test/"+fileName+"_" +dateStr+".png");
+			File file =new File(currentDir + "/screenshots/test/"+fileName+"_" +getFileDateStr()+".png");
 			FileUtils.copyFile(scrFile, file);
 			return file.getAbsolutePath();
-		}catch(IOException e) {
-			e.printStackTrace();
+		}catch(Exception e) {
+			logger.error("浏览截屏失败：", e);
 			return "";
 		}	
+	}
+	/**
+	 *<p>takeDesktopScreenShot</p>
+	 *<p>桌面截屏，在浏览器截屏不工作时使用</p>
+	 * @param fileName
+	 * @return
+	 */
+	public static String takeDesktopScreenShot(String fileName) {
+		try {
+			Dimension d = Toolkit.getDefaultToolkit().getScreenSize();
+			BufferedImage screenshot = (new Robot())
+					.createScreenCapture(new Rectangle(0, 0, (int) d.getWidth(), (int) d.getHeight()));
+			File scrFile = new File(fileName);
+			ImageIO.write(screenshot, "png", scrFile);
+			String currentDir = System.getProperty("user.dir");
+			File file =new File(currentDir + "/screenshots/test/"+fileName+"_" +getFileDateStr()+".png");
+			FileUtils.copyFile(scrFile, file);
+			return file.getAbsolutePath();
+		} catch (Exception e) {
+			logger.error("桌面截屏失败：", e);
+			return "";
+		}
 	}
 	public static String getMapString(Map<String, String> map) {
 		StringBuffer sb= new StringBuffer();
@@ -92,6 +126,9 @@ public class TestUtil extends TestBase {
 		}
 		return sb.toString();
 	};
+	public static String getFileDateStr() {
+		return new SimpleDateFormat("yyyyMMddhhmmssSSS").format(new Date());
+	}
 	public static void runTimeInfo(String messageType, String message) throws InterruptedException {
 		js = (JavascriptExecutor) driver;
 		// Check for jQuery on the page, add it if need be

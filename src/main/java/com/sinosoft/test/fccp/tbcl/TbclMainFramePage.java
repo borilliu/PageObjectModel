@@ -54,7 +54,7 @@ public class TbclMainFramePage extends FccbBase {
 		String title =this.catchUnexpectedAlert(5);
 		logger.info("返回的窗口标题："+title);
 		if(!"".equals(title)) {
-			waitAndAcceptAlert(title, 1);
+			//waitAndAcceptAlert(title, 1);
 			throw new UnhandledAlertException("Dliu7_unExpectedAlertExpection",title);
 		}
 		TestUtil.takeScreenshot(getTestCaseId(map)+"_提交复核结果");

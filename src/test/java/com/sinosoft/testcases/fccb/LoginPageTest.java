@@ -3,6 +3,7 @@ package com.sinosoft.testcases.fccb;
 import java.io.FileNotFoundException;
 import java.lang.reflect.Method;
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.Iterator;
 import java.util.LinkedHashMap;
 import java.util.List;
@@ -144,21 +145,29 @@ public class LoginPageTest extends TestBase {
 			Assert.assertTrue(fullText.contains("待双核审核"));
 
 		}catch(UnhandledAlertException uae) {
-			String scrn=TestUtil.takeScreenshot(getTestCaseId(map)+"_未知弹窗");
+			String scrn=TestUtil.takeDesktopScreenShot(getTestCaseId(map)+"_未知弹窗");
 			map.put("message","未知弹窗_"+ uae.getAlertText());
 			map.put("screenshot",scrn);
-			//waitAndAcceptAlert(uae.getAlertText(), 1);
+			waitAndAcceptAlert(uae.getAlertText(), 1);
+			Assert.assertTrue(false);
 		}catch(Exception e) {
 			logger.info("执行测试用例发生了异常，开始截屏",e);
 			String scrn=TestUtil.takeScreenshot(getTestCaseId(map)+"_异常截屏");
 			map.put("message","未知异常"+ e.getMessage());
 			map.put("screenshot",scrn);
 			logger.info("执行测试用例发生了异常，截屏结束！");
+			Assert.assertTrue(false);
 		}finally {
 			logger.info("进入Finally事件:RowID:"+map.get("ROW_ID"));
+			logger.info("进入Finally事件:testCaseName:"+map.get("testCaseName"));
 			logger.info("进入Finally事件:proposalNumber:"+map.get("proposalNumber"));
 			logger.info("进入Finally事件:message:"+map.get("message"));
 			logger.info("进入Finally事件:screenshot:"+map.get("screenshot"));
+			Map<String,String> resMap= new HashMap<String,String>();
+			resMap.put("proposalNumber", map.get("proposalNumber"));
+			resMap.put("message", map.get("message"));
+			resMap.put("screenshot", map.get("screenshot"));
+			ExcelDataProvider.updateExcelCellValues(map.get("testCaseName"), map.get("ROW_ID"), resMap);
 		}
 	}
 

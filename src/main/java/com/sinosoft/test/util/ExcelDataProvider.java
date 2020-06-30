@@ -1,5 +1,6 @@
 package com.sinosoft.test.util;
 
+import java.util.HashMap;
 import java.util.Iterator;
 import org.apache.poi.xssf.usermodel.XSSFCell;
 import org.apache.poi.xssf.usermodel.XSSFRow;
@@ -8,12 +9,15 @@ import org.apache.poi.xssf.usermodel.XSSFWorkbook;
 
 import com.sinosoft.test.base.TestBase;
 
+import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
+import java.io.FileOutputStream;
 import java.io.IOException;
 import java.util.LinkedHashMap;
 import java.util.Map;
 public class ExcelDataProvider extends TestBase implements Iterator<Object[]>  {
+		private  String testCaseName;
 		private XSSFSheet xssfSheet;
 	    /**
 	     * @Fields colCount : 列的数量
@@ -40,11 +44,13 @@ public class ExcelDataProvider extends TestBase implements Iterator<Object[]>  {
 	    * 构造方法
 	    * */
 	    public ExcelDataProvider(String testCaseName) throws FileNotFoundException {
-	        intputStream = new FileInputStream(this.getFullFileName(testCaseName));
+	    	this.testCaseName=testCaseName;
+	        intputStream = new FileInputStream(getFullFileName(testCaseName));
 	        try {
 	            XSSFWorkbook xssfWorkbook = new XSSFWorkbook(intputStream);
 	            xssfSheet = xssfWorkbook.getSheetAt(0);
-	            XSSFRow xssfRow = xssfSheet.getRow(0);
+	           // XSSFRow xssfRow = xssfSheet.getRow(0); 第一行是大标题，不使用
+	            XSSFRow xssfRow = xssfSheet.getRow(1);
 	            colCount = xssfRow.getPhysicalNumberOfCells();
 	            int rows = xssfSheet.getLastRowNum();
 	            
@@ -116,6 +122,7 @@ public class ExcelDataProvider extends TestBase implements Iterator<Object[]>  {
 	            }
 	            map.put(colNameArray[c], cellValue);
 	        }
+	        map.put("testCaseName", this.testCaseName);
 	        object[0] = map;
 	        this.currentRowNum++;
 	        return object; 
@@ -129,17 +136,47 @@ public class ExcelDataProvider extends TestBase implements Iterator<Object[]>  {
 	       
 	    }
 	 
-
 	    /**
 	     *<p>getFullFileName</p>
 	     *<p>获取测试数据文件的绝对路径</p>
 	     * @param filePrefix 文件名前缀：TestClass中的测试方法名。
 	     * @return
 	     */
-	    public String getFullFileName(String filePrefix) {
+	    public static String getFullFileName(String filePrefix) {
 	        String dir = System.getProperty("user.dir");
 	        String dataFolder=prop.getProperty("system.testdata.folder");
-	        String path = dir +"\\src\\main\\resources\\" + dataFolder +filePrefix+"_data.xlsx";
+	        String path = dir +File.pathSeparator + dataFolder +File.pathSeparator+filePrefix+"_data.xlsx";
 	        return path;
+	    }
+	    
+	    public static void  updateExcelCellValues(String testCaseName,String rowID, Map<String,String> valueMap ) {
+	    	try {
+		    	String filePath=getFullFileName(testCaseName);
+		    	FileInputStream intputStream = new FileInputStream(filePath);
+	            XSSFWorkbook xssfWorkbook = new XSSFWorkbook(intputStream);
+	            XSSFSheet xssfSheet = xssfWorkbook.getSheetAt(0);
+	            XSSFRow xssfRow = xssfSheet.getRow(1);
+	            int colCount = xssfRow.getPhysicalNumberOfCells();
+	           
+	            HashMap<String,Integer> colMap= new HashMap<String,Integer>();
+	            //获取所有的列名
+	            for (int i = 0; i < colCount; i++) {
+	            	String colName=String.valueOf(xssfSheet.getRow(1).getCell(i));
+	                  	colMap.put(colName, i);
+	            }
+	            XSSFRow row =xssfSheet.getRow(Integer.parseInt(rowID));
+	            for (Map.Entry<String, String> entry : valueMap.entrySet()) {
+	            		String colTitle= entry.getKey();
+	                 	XSSFCell cell = row.getCell(colMap.get(colTitle));
+	              		cell.setCellValue(entry.getValue());
+	            }
+	            FileOutputStream fileOut = new FileOutputStream(filePath);
+	            xssfWorkbook.write(fileOut);
+	            fileOut.flush();
+	            fileOut.close();
+	    	}catch(Exception e) {
+	    		e.printStackTrace();
+	    		
+	    	}
 	    }
 }
