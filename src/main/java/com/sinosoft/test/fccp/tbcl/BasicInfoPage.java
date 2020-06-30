@@ -1,6 +1,8 @@
 package com.sinosoft.test.fccp.tbcl;
 
 
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Map;
 
 import org.openqa.selenium.By;
@@ -9,6 +11,7 @@ import org.openqa.selenium.support.CacheLookup;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.How;
 import org.openqa.selenium.support.PageFactory;
+import org.testng.Assert;
 
 import com.crm.qa.util.TestUtil;
 import com.sinosoft.test.fccp.common.FccbBase;
@@ -204,6 +207,12 @@ public class BasicInfoPage extends TbclMainFramePage{
 	 */
 	@FindBy(how = How.NAME, using  ="AppliGuRelatedPartyBirthDate")
 	WebElement edt_TBR_CSRQ;
+	
+	/**
+	 * @Fields edt_TBR_SJ : 投保人手机号
+	 */
+	@FindBy(how = How.NAME, using  ="AppliGuRelatedPartyMobilePhone")
+	WebElement edt_TBR_SJ;
 	/**
 	 * @Fields edt_TBR_LXDZ : 联系地址
 	 */
@@ -266,7 +275,7 @@ public class BasicInfoPage extends TbclMainFramePage{
 	WebElement edt_LXR_BM;
 	
 	/**
-	 * @Fields slc_LXR_SJ : 联系人手机
+	 * @Fields slc_LXR_SJ : 联系人手机 - 单位客户
 	 */
 	@FindBy(how = How.NAME, using  ="AppliGuRelatedPartyContactMobile")
 	WebElement edt_LXR_SJ;
@@ -402,7 +411,7 @@ public class BasicInfoPage extends TbclMainFramePage{
 	 * @param lxr_sj 联系人手机
 	 * @param lxr_yx 联系人邮箱
 	 */
-	public void inputOwnerInfoAction(String tbr_lx,String tbr_mc,String tbr_vip,String tbr_dm,String tbr_zjlx,String tbr_zjhm,String tbr_csrq,String tbr_lxdz,String tbr_dwdh,String lxr_xm,String lxr_xb,String lxr_zw,String lxr_sj,String lxr_yx) {
+	public void inputOwnerInfoAction(String tbr_lx,String tbr_mc,String tbr_vip,String tbr_dm,String tbr_zjlx,String tbr_zjhm,String tbr_csrq,String tbr_sj,String tbr_lxdz,String tbr_dwdh,String lxr_xm,String lxr_xb,String lxr_zw,String lxr_sj,String lxr_yx) {
 		super.setSelectWithStartText(slc_TBR_LX, tbr_lx);
 		if(!"".equals(tbr_dm)) {   //如果投保人代码不为空则直接从系统中获取投保人信息
 			super.setEditboxTValue(edt_TBR_DM, tbr_dm);
@@ -412,9 +421,9 @@ public class BasicInfoPage extends TbclMainFramePage{
 			super.setSelectWithStartText(slc_TBR_ZJLX, tbr_zjlx);
 			super.setEditboxValue(edt_TBR_ZJHM, tbr_zjhm);
 			super.setEditboxValue(edt_TBR_LXDZ, tbr_lxdz);
-			this.btn_TBR_KHSB.click();//识别客户
 			if("1".equals(tbr_lx)) { //个人客户
 				super.setEditboxTValue(edt_TBR_CSRQ,tbr_csrq);
+				super.setEditboxTValue(edt_TBR_SJ,tbr_sj);
 			}else if("2".equals(tbr_lx)) {//团体客户
 				if(!"".equals(tbr_dwdh)) {
 					String[] telArr= {"","",""};
@@ -432,6 +441,9 @@ public class BasicInfoPage extends TbclMainFramePage{
 				super.setEditboxValue(edt_LXR_SJ, lxr_sj);
 				super.setEditboxValue(edt_LXR_YX, lxr_yx);
 			}
+			this.btn_TBR_KHSB.click();//识别客户
+			waitAndAcceptAlert("客户不存在，请创建客户.",3);
+			
 		}
 	}
 	/**
@@ -442,7 +454,7 @@ public class BasicInfoPage extends TbclMainFramePage{
 	public void inputOwnerInfoAction(Map<String, String> map) {
 		this.inputOwnerInfoAction(map.get("tbr_lx"),map.get("tbr_mc"),map.get("tbr_vip"),
 								  map.get("tbr_dm"),map.get("tbr_zjlx"),map.get("tbr_zjhm"),
-								  map.get("tbr_csrq"),map.get("tbr_lxdz"),map.get("tbr_dwdh"),
+								  map.get("tbr_csrq"),map.get("tbr_sj"),map.get("tbr_lxdz"),map.get("tbr_dwdh"),
 								  map.get("lxr_xm"),map.get("lxr_xb"),map.get("lxr_zw"),
 								  map.get("lxr_sj"),map.get("lxr_yx")
 								);
@@ -474,10 +486,23 @@ public class BasicInfoPage extends TbclMainFramePage{
 	 */
 	private String saveCustomerAction() {
 		btn_TBR_BCKH.click();
-		String msg1="客户信息被修改，是否同时保存客户";
+		List<String> ttlLst=new ArrayList<String>();
+		ttlLst.add("客户信息被修改，是否同时保存客户.");
+		ttlLst.add("客户已经保存，或不需要保存.");
+		ttlLst.add("保存客户成功.");
+		
+/*		String msg1="客户信息被修改，是否同时保存客户";
 		waitAndAcceptAlert(msg1,3);
-		String title ="客户已经保存，或不需要保存.";
-		waitAndAcceptAlert(title,3);
+		String title1 ="客户已经保存，或不需要保存.";
+		waitAndAcceptAlert(title1,2);
+		String title2 ="保存客户成功.";
+		waitAndAcceptAlert(title2,2);*/
+		String altTitle =catchUnexpectedAlert(5);
+		if(!"".equals(altTitle)) {
+			logger.info("在保存客户时捕获了一个弹窗："+altTitle);
+			waitAndAcceptAlert(altTitle,1);
+		}
+		Assert.assertTrue(ttlLst.contains(altTitle));
 		return edt_TBR_DM.getText();
 	}
 	/**

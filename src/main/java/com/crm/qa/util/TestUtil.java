@@ -87,8 +87,7 @@ public class TestUtil extends TestBase {
 		try {
 			logger.debug("截屏文件名字是："+fileName);
 			File scrFile = ((TakesScreenshot) driver).getScreenshotAs(OutputType.FILE);
-			String currentDir = System.getProperty("user.dir");
-			File file =new File(currentDir + "/screenshots/test/"+fileName+"_" +getFileDateStr()+".png");
+			File file =new File(getFileFullName(fileName)+".png");
 			FileUtils.copyFile(scrFile, file);
 			return file.getAbsolutePath();
 		}catch(Exception e) {
@@ -107,11 +106,8 @@ public class TestUtil extends TestBase {
 			Dimension d = Toolkit.getDefaultToolkit().getScreenSize();
 			BufferedImage screenshot = (new Robot())
 					.createScreenCapture(new Rectangle(0, 0, (int) d.getWidth(), (int) d.getHeight()));
-			File scrFile = new File(fileName);
-			ImageIO.write(screenshot, "png", scrFile);
-			String currentDir = System.getProperty("user.dir");
-			File file =new File(currentDir + "/screenshots/test/"+fileName+"_" +getFileDateStr()+".png");
-			FileUtils.copyFile(scrFile, file);
+			File file =new File(getFileFullName(fileName)+".png");
+			ImageIO.write(screenshot, "png", file);
 			return file.getAbsolutePath();
 		} catch (Exception e) {
 			logger.error("桌面截屏失败：", e);
@@ -128,6 +124,12 @@ public class TestUtil extends TestBase {
 	};
 	public static String getFileDateStr() {
 		return new SimpleDateFormat("yyyyMMddhhmmssSSS").format(new Date());
+	}
+	public static String getFileFullName(String fileName) {
+		String userDir = System.getProperty("user.dir");
+		String Folder=prop.getProperty("system.screenshot.folder", "screenshots");
+		return userDir+File.separator+Folder+File.separator+fileName+"_" +getFileDateStr();
+		
 	}
 	public static void runTimeInfo(String messageType, String message) throws InterruptedException {
 		js = (JavascriptExecutor) driver;

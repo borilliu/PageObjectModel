@@ -145,7 +145,7 @@ public class ExcelDataProvider extends TestBase implements Iterator<Object[]>  {
 	    public static String getFullFileName(String filePrefix) {
 	        String dir = System.getProperty("user.dir");
 	        String dataFolder=prop.getProperty("system.testdata.folder");
-	        String path = dir +File.pathSeparator + dataFolder +File.pathSeparator+filePrefix+"_data.xlsx";
+	        String path = dir +File.separator + dataFolder +File.separator+filePrefix+"_data.xlsx";
 	        return path;
 	    }
 	    

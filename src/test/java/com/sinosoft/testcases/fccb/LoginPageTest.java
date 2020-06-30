@@ -174,7 +174,7 @@ public class LoginPageTest extends TestBase {
 	@AfterMethod
 	public void tearDown() {
 		System.out.println("执行了退出事件：tearDown");
-		driver.quit();
+		//driver.quit();
 	}
 	@AfterClass 
 	public void Close() {
