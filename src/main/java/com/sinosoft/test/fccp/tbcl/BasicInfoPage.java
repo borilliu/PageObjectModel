@@ -13,8 +13,8 @@ import org.openqa.selenium.support.How;
 import org.openqa.selenium.support.PageFactory;
 import org.testng.Assert;
 
-import com.crm.qa.util.TestUtil;
 import com.sinosoft.test.fccp.common.FccbBase;
+import com.sinosoft.test.util.TestUtil;
 
 /**
  *com.sinosoft.test.fccp.tbcl.BasicInfoPage.java

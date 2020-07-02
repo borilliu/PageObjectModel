@@ -94,7 +94,7 @@ public class RiskDetailPage extends TbclMainFramePage {
 	}
 	public String saveProposalNumbes(Map<String, String> map) {
 		super.goToWorkArea();
-		
+		tbl_RiskItems =super.waitAndGetElement(By.id("RiskItem"), 10);
 		List<WebElement> numLst =tbl_RiskItems.findElements(By.name("summarySubBusinessNo"));
 		StringBuffer numSB=new StringBuffer();
 		for(int i=0;i<numLst.size();i++) {

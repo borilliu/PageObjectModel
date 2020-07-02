@@ -10,8 +10,8 @@ import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.How;
 import org.openqa.selenium.support.PageFactory;
 
-import com.crm.qa.util.TestUtil;
 import com.sinosoft.test.fccp.common.FccbBase;
+import com.sinosoft.test.util.TestUtil;
 
 public class TbclMainFramePage extends FccbBase {
 

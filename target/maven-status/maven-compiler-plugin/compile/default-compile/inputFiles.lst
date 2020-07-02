@@ -1,6 +1,7 @@
-C:\Users\liu-b\git\PageObjectModel\src\main\java\com\qa\ExtentReportListener\ExtentReporterNG.java
+C:\Users\liu-b\git\PageObjectModel\src\main\java\com\sinosoft\test\util\TestUtil.java
 C:\Users\liu-b\git\PageObjectModel\src\main\java\com\crm\qa\pages\ContactsPage.java
 C:\Users\liu-b\git\PageObjectModel\src\main\java\com\sinosoft\test\fccp\tbcl\RiskDetail_insuredObjPage.java
+C:\Users\liu-b\git\PageObjectModel\src\main\java\com\sinosoft\test\util\ExtentReporterNG.java
 C:\Users\liu-b\git\PageObjectModel\src\main\java\com\sinosoft\test\fccp\tbcl\BasicInfoPage.java
 C:\Users\liu-b\git\PageObjectModel\src\main\java\com\sinosoft\test\fccp\common\FccbBase.java
 C:\Users\liu-b\git\PageObjectModel\src\main\java\com\sinosoft\test\fccp\tbcl\RiskDetail_UnionPage.java
@@ -9,7 +10,6 @@ C:\Users\liu-b\git\PageObjectModel\src\main\java\com\sinosoft\test\fccp\common\H
 C:\Users\liu-b\git\PageObjectModel\src\main\java\com\sinosoft\test\fccp\tbcl\RiskDetailPage.java
 C:\Users\liu-b\git\PageObjectModel\src\main\java\com\crm\qa\pages\SignUpPage.java
 C:\Users\liu-b\git\PageObjectModel\src\main\java\com\sinosoft\test\fccp\tbcl\RiskSelectPage.java
-C:\Users\liu-b\git\PageObjectModel\src\main\java\com\crm\qa\util\TestUtil.java
 C:\Users\liu-b\git\PageObjectModel\src\main\java\com\sinosoft\test\fccp\tbcl\TbclMainFramePage.java
 C:\Users\liu-b\git\PageObjectModel\src\main\java\com\sinosoft\test\util\WebEventListener.java
 C:\Users\liu-b\git\PageObjectModel\src\main\java\com\sinosoft\test\util\Test.java

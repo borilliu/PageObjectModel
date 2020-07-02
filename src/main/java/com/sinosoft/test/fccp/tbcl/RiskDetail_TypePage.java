@@ -9,7 +9,7 @@ import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.How;
 import org.openqa.selenium.support.PageFactory;
 
-import com.crm.qa.util.TestUtil;
+import com.sinosoft.test.util.TestUtil;
 
 public class RiskDetail_TypePage extends RiskDetailPage {
 	/*****************************************
@@ -104,6 +104,7 @@ public class RiskDetail_TypePage extends RiskDetailPage {
 		goToWorkArea();
 		driver.manage().timeouts().pageLoadTimeout(TestUtil.PAGE_LOAD_TIMEOUT, TimeUnit.SECONDS);
 		driver.manage().timeouts().implicitlyWait(TestUtil.IMPLICIT_WAIT, TimeUnit.SECONDS);
+		slc_XZSYFW = super.waitAndGetElement(By.name("GuRiskRiskApplyType"), 10);
 		PageFactory.initElements(driver, this);
 	}
 	public void InputRiskTypeInfoAction(String xzsyfw,String tqmc,String qbrq,String zbrq,String lgbbz,String yyzdbz,String sfgxdm,String cbdq) {

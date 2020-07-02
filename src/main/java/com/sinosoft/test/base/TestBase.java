@@ -3,6 +3,7 @@ package com.sinosoft.test.base;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.IOException;
+import java.io.InputStream;
 import java.util.List;
 import java.util.Map;
 import java.util.Properties;
@@ -30,7 +31,7 @@ import org.openqa.selenium.support.ui.ExpectedCondition;
 import org.openqa.selenium.support.ui.Select;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
-import com.crm.qa.util.TestUtil;
+import com.sinosoft.test.util.TestUtil;
 import com.sinosoft.test.util.WebEventListener;
 
 
@@ -53,9 +54,11 @@ public class TestBase {
 		try {
 			prop = new Properties();
 			//FileInputStream ip = new FileInputStream(System.getProperty("user.dir")+ "/src/main/java/com/crm/qa/config/config.properties");
-			String path=System.getProperty("user.dir")+ "\\src\\main\\resources\\config.properties";
+			//String path=System.getProperty("user.dir")+ "\\src\\main\\resources\\config.properties";
+			String path="config.properties";
 			logger.info("配置文件路径："+path);
-			FileInputStream ip = new FileInputStream(path);
+			//FileInputStream ip = new FileInputStream(path);
+			InputStream ip = this.getClass().getClassLoader().getResourceAsStream(path);
 			prop.load(ip);
 			
 		} catch (FileNotFoundException e) {
@@ -78,14 +81,15 @@ public class TestBase {
 		}
 		prop.getProperty("system.browser");
 		String browserName = prop.getProperty("system.browser");
+		String projectPath=System.getProperty("user.dir");
 		if(browserName.equals("chrome")){
-			System.setProperty("webdriver.chrome.driver", "D:\\Development\\driver\\chromedriver.exe");	
+			System.setProperty("webdriver.chrome.driver", projectPath+"\\driver\\chromedriver.exe");	
 			driver = new ChromeDriver(); 
 		}
 		else if(browserName.equals("IE")){
 			logger.info("start InternetExplorerDriver");
 			try {
-				System.setProperty("webdriver.ie.driver", "D:\\Development\\driver\\IEDriverServer.exe");	
+				System.setProperty("webdriver.ie.driver",  projectPath+"\\driver\\IEDriverServer.exe");	
 				InternetExplorerOptions options = new InternetExplorerOptions();
 				options.setCapability(CapabilityType.ACCEPT_SSL_CERTS, true);
 				options.setCapability(InternetExplorerDriver.NATIVE_EVENTS, true);

@@ -22,8 +22,8 @@ import org.testng.log4testng.Logger;
 import com.crm.qa.pages.ContactsPage;
 import com.crm.qa.pages.HomePage;
 import com.crm.qa.pages.LoginPage;
-import com.crm.qa.util.TestUtil;
 import com.sinosoft.test.base.TestBase;
+import com.sinosoft.test.util.TestUtil;
 
 public class ContactsPageTest extends TestBase{
 
