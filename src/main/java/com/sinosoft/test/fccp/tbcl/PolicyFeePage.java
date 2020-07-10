@@ -29,7 +29,7 @@ public class PolicyFeePage extends TbclMainFramePage {
 	/**
 	 * @Fields btn_saveFeePage : 保存保单费用信息
 	 */
-	@FindBy(how = How.NAME,using = "saveButton")  
+	@FindBy(how = How.ID,using = "saveButton")  
 	WebElement btn_saveFeePage;
 	
 	public PolicyFeePage() {
@@ -45,17 +45,17 @@ public class PolicyFeePage extends TbclMainFramePage {
 	 *<p>录入保单费用信息</p>
 	 */
 	public void inputPolicyFeeAction(Map<String, String> map) {
-		edt_XSFDJ = super.waitAndGetElement(By.name("GuMainXsfInd"), 5);
-		this.CodeSelect(edt_XSFDJ, "A");
-		this.setEditboxTValue(edt_FSH, "5");
-		this.setEditboxTValue(edt_XSFXS, "2");
+		edt_XSFDJ = super.waitAndGetElement(By.name("GuMainXsfInd"), 10);
+		this.setEditboxTValue(edt_FSH, map.get("fsh"));
+		this.CodeSelect(edt_XSFDJ, map.get("xsfdj"));
+		this.setEditboxValue(edt_XSFXS, map.get("xsfxs"));
 	}
 	/**
 	 *<p>savePolicyFee</p>
 	 *<p>保存保单费用信息</p>
 	 */
 	public void savePolicyFee() {
-		pause(WAIT_SHORTER);
 		this.clickButton(btn_saveFeePage);
+		pause(WAIT_SHORTEST);
 	}
 }

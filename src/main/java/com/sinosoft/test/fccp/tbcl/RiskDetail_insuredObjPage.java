@@ -7,6 +7,7 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.How;
 import org.openqa.selenium.support.PageFactory;
+import org.openqa.selenium.support.pagefactory.AjaxElementLocatorFactory;
 
 public class RiskDetail_insuredObjPage extends RiskDetailPage {
 
@@ -83,6 +84,7 @@ public class RiskDetail_insuredObjPage extends RiskDetailPage {
 	 */
 	
 	@FindBy(how = How.ID,using = "ItemPropertyDetail")
+	//@FindBy(how = How.ID,using = "ItemPropertyDetailKind")
 	WebElement tbl_BDWMX;
 	
 	/**
@@ -117,7 +119,8 @@ public class RiskDetail_insuredObjPage extends RiskDetailPage {
 	/**
 	 * @Fields edt_BFFL : 保费费率
 	 */
-	@FindBy(how = How.NAME,using = "GuItemKindRate")
+	//@FindBy(how = How.NAME,using = "GuItemKindRate")
+	@FindBy(how = How.XPATH,using = "//table[@id='ItemPropertyDetailKind']/tbody/tr/td/input[@name='GuItemKindRate']")
 	WebElement edt_BFFL;
 	
 	
@@ -125,14 +128,16 @@ public class RiskDetail_insuredObjPage extends RiskDetailPage {
 	/**
 	 * @Fields edt_DQFLBZ : 短期费率标志
 	 */
-	@FindBy(how = How.NAME,using = "GuItemKindShortRateFlag")
+	//@FindBy(how = How.NAME,using = "GuItemKindShortRateFlag")
+	@FindBy(how = How.XPATH,using = "//table[@id='ItemPropertyDetailKind']/tbody/tr/td/input[@name='GuItemKindShortRateFlag']")
 	WebElement edt_DQFLBZ;
 	
 	
 	/**
 	 * @Fields edt_YSBF : 应收保费
 	 */
-	@FindBy(how = How.NAME,using = "GuItemKindGrossPremium")
+	//@FindBy(how = How.NAME,using = "GuItemKindGrossPremium")
+	@FindBy(how = How.XPATH,using = "//table[@id='ItemPropertyDetailKind']/tbody/tr/td/input[@name='GuItemKindGrossPremium']")
 	WebElement edt_YSBF;
 	
 	
@@ -141,12 +146,14 @@ public class RiskDetail_insuredObjPage extends RiskDetailPage {
 	/**
 	 * @Fields btn_savePage : 保存标的信息
 	 */
-	@FindBy(how = How.NAME,using = "saveButton")
+	@FindBy(how = How.ID,using = "saveButton")
 	WebElement btn_savePage;
 	
 	public RiskDetail_insuredObjPage() {
 		goToWorkArea();
+		edt_JQBM =super.waitAndGetElement(By.name("GuItemPropertyBlockCode"), 20);
 		PageFactory.initElements(driver, this);
+		logger.debug("进入保险标的信息页面对象！");
 	}
 	/**
 	 *<p>InputInsuredObjectAction</p>
@@ -194,12 +201,13 @@ public class RiskDetail_insuredObjPage extends RiskDetailPage {
 		slc_JZFS = tbl_BDWMX.findElement(By.name("GuItemKindValueType"));
 		this.setSelectWithStartText(slc_JZFS, jzfs);
 		edt_BXJE = tbl_BDWMX.findElement(By.name("GuItemKindSumInsured"));
-		this.setEditboxTValue(edt_BXJE, bxje);
-		edt_BFFL = tbl_BDWMX.findElement(By.name("GuItemKindRate"));
+		this.setEditboxValue(edt_BXJE, bxje);
+		
+		//edt_BFFL = tbl_BDWMX.findElement(By.name("GuItemKindRate"));
 		this.setEditboxTValue(edt_BFFL, bffl);
-		edt_DQFLBZ = tbl_BDWMX.findElement(By.name("GuItemKindShortRateFlag"));
+		//edt_DQFLBZ = tbl_BDWMX.findElement(By.name("GuItemKindShortRateFlag"));
 		this.CodeSelect(edt_DQFLBZ, dqflbz);
-		edt_YSBF = tbl_BDWMX.findElement(By.name("GuItemKindGrossPremium"));
+		//edt_YSBF = tbl_BDWMX.findElement(By.name("GuItemKindGrossPremium"));
 		this.setEditboxTValue(edt_YSBF, ysbf);
 	}
 	/**

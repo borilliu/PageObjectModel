@@ -7,6 +7,7 @@ import org.openqa.selenium.support.CacheLookup;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.How;
 import org.openqa.selenium.support.PageFactory;
+import org.openqa.selenium.support.pagefactory.AjaxElementLocatorFactory;
 
 import com.sinosoft.test.fccp.common.FccbBase;
 
@@ -83,12 +84,13 @@ public class RiskSelectPage extends FccbBase {
 	// Initializing the Page Objects:
 	public RiskSelectPage() {
 		goToMainArea();
-		PageFactory.initElements(driver, this);
-//		btn_nextStep = super.waitAndGetElement(By.name("buttonNextStep"), 2);
-//		if (btn_nextStep == null){
-//		    throw new IllegalStateException("The Page is not loaded correctly: "+ driver.getCurrentUrl());
-//		}
-//		PageFactory.initElements(new AjaxElementLocatorFactory(driver, 1) ,this);
+/*		PageFactory.initElements(driver, this);
+		btn_nextStep = super.waitAndGetElement(By.name("buttonNextStep"), 2);
+		if (btn_nextStep == null){
+		    throw new IllegalStateException("The Page is not loaded correctly: "+ driver.getCurrentUrl());
+		}*/
+		PageFactory.initElements(new AjaxElementLocatorFactory(driver, 5) ,this);
+		logger.debug("投保处理/险种选择");
 	}
 
 	// Actions:

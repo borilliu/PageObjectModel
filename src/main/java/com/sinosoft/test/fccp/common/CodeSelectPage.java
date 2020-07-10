@@ -4,6 +4,7 @@ import org.openqa.selenium.support.CacheLookup;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.How;
 import org.openqa.selenium.support.PageFactory;
+import org.openqa.selenium.support.pagefactory.AjaxElementLocatorFactory;
 
 
 public class CodeSelectPage extends FccbBase {
@@ -33,30 +34,18 @@ public class CodeSelectPage extends FccbBase {
 	
 	
 	public CodeSelectPage() {
-		PageFactory.initElements(driver, this);
+		//PageFactory.initElements(driver, this);
+		PageFactory.initElements(new AjaxElementLocatorFactory(driver, 10) ,this);
+		logger.debug("基础码表选择！");
 	}
 	
 	
 	//Actions
-	/**
-	 * 进入菜单 - 投保处理
-	 */
-	public void testWidgets(){
-		super.highlight(btn_confirm);
-		super.pause(2000);
-		super.highlight(slc_codeList);
-		super.pause(2000);
-		super.highlight(edt_findCode);
-		super.pause(2000);
-		super.highlight(edt_findName);
-		super.pause(2000);
-		super.highlight(btn_query);
-		super.pause(2000);
-	}
 	public void selectByCodes(String code) {
 		this.setEditboxValue(edt_findCode, code);
 		this.clickButton(btn_query);
-		this.setSelectWithStartText(slc_codeList, code);
+		//this.setSelectWithStartText(slc_codeList, code);
+		setFuzzySelect(slc_codeList, code);
 		this.jsClickButton(btn_confirm);
 	}
 	

@@ -12,6 +12,8 @@ import java.util.Map;
 import org.openqa.selenium.UnhandledAlertException;
 import org.testng.Assert;
 import org.testng.ITestContext;
+import org.testng.ITestResult;
+import org.testng.Reporter;
 import org.testng.annotations.AfterClass;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeClass;
@@ -20,6 +22,9 @@ import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
 
 import com.sinosoft.test.fccp.common.LoginPage;
+import com.sinosoft.test.fccp.hbrwcl.ApproveInfoPage;
+import com.sinosoft.test.fccp.hbrwcl.TaskProcessQueryPage;
+import com.sinosoft.test.fccp.hbrwcl.TaskProcessResultPage;
 import com.sinosoft.test.fccp.tbcl.BasicInfoPage;
 import com.sinosoft.test.fccp.tbcl.PolicyFeePage;
 import com.sinosoft.test.fccp.tbcl.RiskDetailPage;
@@ -56,7 +61,6 @@ public class TBGLTestCase extends TestBase {
 	public void setup() {
 		System.out.println("执行了BoforeMethod事件：Setup");
 		initialization();
-		loginPage = new LoginPage();
 	}
 
 	@DataProvider(name = "getTBCLTestData")
@@ -64,21 +68,33 @@ public class TBGLTestCase extends TestBase {
         return (Iterator<Object[]>) new ExcelDataProvider(method.getName());
 	}
 
-	@Test(priority = 1, dataProvider = "getTBCLTestData")
+	/**
+	 *<p>FCCB_TBCL</p>
+	 *<p>投保处理</p>
+	 * @param context
+	 * @param map
+	 */
+	@Test(priority = 1, dataProvider = "getTBCLTestData",enabled=false)
 	public void FCCB_TBCL(ITestContext context ,Map<String, String> map) {
 		logger.info("开始运行测试脚本，获取到的测试数据《getTBCLTestData》如下:");
 		logger.info(TestUtil.getMapString(map));
 		try {
+			if(null == map.get("ProcessFlag") || map.get("ProcessFlag").equalsIgnoreCase("N")){
+				return;
+			}
+			loginPage = new LoginPage();
+			pause(5000);
 			homePage = loginPage.login_normal();
-			homePage.enterMenuTBCL();
-			riskSelected = new RiskSelectPage();
+			
+			riskSelected = homePage.enterMenuTBCL();
 			riskSelected.InputRiskGeneralAction(map);
 			basicInfo = riskSelected.saveForNext();
 			basicInfo.inputSalesInfoAction(map);
 			basicInfo.inputPolicyInfoAction(map);
 			basicInfo.inputOwnerInfoAction(map);
 			riskDetail_type = basicInfo.saveBasicInfoAction(map); 
-			riskDetail_type.saveProposalNumbes(map);
+			String proposNO = riskDetail_type.saveProposalNumbes(map);
+		    Reporter.log("投保单号码："+proposNO,true);
 			riskDetail_type.InputRiskTypeInfoAction(map);
 			riskDetail_type.inputInusredInfoAction(map);
 			riskDetail_insrdObj = riskDetail_type.saveRiskDetailTypePage();
@@ -93,7 +109,8 @@ public class TBGLTestCase extends TestBase {
 			policyFee.savePolicyFee();
 			SubmitReviewResult srr= policyFee.submitForReview(map);
 			String fullText =srr.getFullResultText();
-			logger.info("提交结果:"+"_"+fullText);
+			 Reporter.log("提交复核结果："+fullText,true);
+			logger.debug("提交结果:"+"_"+fullText);
 			Assert.assertTrue(fullText.contains("待双核审核"));
 
 		}catch(UnhandledAlertException uae) {
@@ -122,11 +139,45 @@ public class TBGLTestCase extends TestBase {
 			ExcelDataProvider.updateExcelCellValues(map.get("testCaseName"), map.get("ROW_ID"), resMap);
 		}
 	}
-
+	/**
+	 *<p>FCCB_HBCL</p>
+	 *<p>核保处理</p>
+	 * @param context
+	 * @param map
+	 */
+	@Test(priority = 1, dataProvider = "getTBCLTestData" , enabled= true)
+	public void FCCB_HBCL(ITestContext context ,Map<String, String> map) {
+		try {
+			loginPage = new LoginPage();
+			pause(5000);
+			homePage = loginPage.login_normal();
+			TaskProcessQueryPage queryPage = homePage.enterMenuHBRWCL();
+			ApproveInfoPage apv= queryPage.queryProposalForApprove("06201890101202000000000208");
+			TaskProcessResultPage resPage=apv.approve("准予承保！", "同意");
+			String ApvMsg=resPage.getApproveResult();
+			Reporter.log("核保结果信息："+ApvMsg);		
+		}catch(UnhandledAlertException uae) {
+			String scrn=TestUtil.takeDesktopScreenShot(getTestCaseId(map)+"_未知弹窗");
+			map.put("message","未知弹窗_"+ uae.getAlertText());
+			map.put("screenshot",scrn);
+			waitAndAcceptAlert(uae.getAlertText(), 1);
+			Assert.assertTrue(false);
+		}catch(Exception e) {
+			logger.info("执行测试用例发生了异常，开始截屏",e);
+			String scrn=TestUtil.takeScreenshot(getTestCaseId(map)+"_异常截屏");
+			map.put("message","未知异常"+ e.getMessage());
+			map.put("screenshot",scrn);
+			logger.info("执行测试用例发生了异常，截屏结束！");
+			Assert.assertTrue(false);
+		}	
+	}
 	@AfterMethod
 	public void tearDown() {
 		System.out.println("执行了退出事件：tearDown");
-		driver.quit();
+		//driver.quit();
+//		driver.navigate().refresh();
+//		driver.get(driver.getCurrentUrl());
+//		driver.navigate().to(driver.getCurrentUrl());
 	}
 	@AfterClass 
 	public void Close() {

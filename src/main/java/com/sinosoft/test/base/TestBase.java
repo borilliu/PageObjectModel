@@ -1,6 +1,5 @@
 package com.sinosoft.test.base;
 
-import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.io.InputStream;
@@ -52,20 +51,22 @@ public class TestBase {
 	public static Logger logger = Logger.getLogger(TestBase.class);
 	public TestBase(){
 		try {
-			prop = new Properties();
-			//FileInputStream ip = new FileInputStream(System.getProperty("user.dir")+ "/src/main/java/com/crm/qa/config/config.properties");
-			//String path=System.getProperty("user.dir")+ "\\src\\main\\resources\\config.properties";
-			String path="config.properties";
-			logger.info("配置文件路径："+path);
-			//FileInputStream ip = new FileInputStream(path);
-			InputStream ip = this.getClass().getClassLoader().getResourceAsStream(path);
-			prop.load(ip);
-			
+			if(prop==null) {
+				prop = new Properties();
+				//FileInputStream ip = new FileInputStream(System.getProperty("user.dir")+ "/src/main/java/com/crm/qa/config/config.properties");
+				//String path=System.getProperty("user.dir")+ "\\src\\main\\resources\\config.properties";
+				String path="config.properties";
+				logger.info("配置文件路径："+path);
+				//FileInputStream ip = new FileInputStream(path);
+				InputStream ip = this.getClass().getClassLoader().getResourceAsStream(path);
+				prop.load(ip);
+			}	
 		} catch (FileNotFoundException e) {
 			e.printStackTrace();
 		} catch (IOException e) {
 			e.printStackTrace();
 		}
+		logger.debug("初始化"+this.getClass().toString());
 	}
 	
 	
@@ -194,7 +195,7 @@ public class TestBase {
 				}
 			});
 		} catch (Exception e) {
-			//logger.info("没有找到页面元素:"+loc.toString()+" - 错误信息"+e.getMessage());
+			logger.info("没有找到页面元素:"+loc.toString()+" - 错误信息"+e.getMessage());
 		}
 		return element;
 	}	
@@ -268,7 +269,7 @@ public class TestBase {
 						//logger.debug(windowHandle);
 						d.switchTo().window(windowHandle);
 						//logger.debug(d.getTitle());
-						logger.debug("切换到窗口【"+d.getTitle()+"】with handle -"+ windowHandle);
+						logger.debug("系统窗口【"+d.getTitle()+"】with handle -"+ windowHandle);
 						if (d.getTitle().contains(title))
 							// d.manage().window().maximize();
 							return d.getWindowHandle();
@@ -277,7 +278,7 @@ public class TestBase {
 				}
 			});
 		} catch (Exception e) {
-			// logger.error("Can not find element:", e);
+			 logger.debug("窗口切换异常:", e);
 		}
 	}
     /**
@@ -359,6 +360,22 @@ public class TestBase {
 		logger.info("setEditboxValue:"+ edtEle.toString()+"："+ text);
 		edtEle.clear();
 		edtEle.sendKeys(text);
+		logger.info("setEditboxValue—End:"+ edtEle.toString()+"："+ text);
+	}
+	
+	/**
+	 *<p>setEditboxApndValue</p>
+	 *<p>在原有值上面添加新的信息</p>
+	 * @param edtEle
+	 * @param text
+	 */
+	public void setEditboxApndValue(WebElement edtEle,String text) {
+		if("".equals(text)) {
+			return;
+		}		
+		logger.info("setEditboxApndValue:"+ edtEle.toString()+"："+ text);
+		String val= edtEle.getAttribute("value")+text;
+		edtEle.sendKeys(val);
 	}
 	/**
 	 * 

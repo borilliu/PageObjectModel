@@ -30,8 +30,8 @@ import com.sinosoft.test.base.TestBase;
 public class TestUtil extends TestBase {
 
 	public static long PAGE_LOAD_TIMEOUT = 10;
-	public static long SCRIPT_TIMEOUT =5;
-	public static long IMPLICIT_WAIT = 5;
+	public static long SCRIPT_TIMEOUT =3;
+	public static long IMPLICIT_WAIT = 1;
 
 	public static String TESTDATA_SHEET_PATH = "C:\\Users\\liu-b\\git\\PageObjectModel"
 			+ "\\src\\main\\java\\com\\crm\\qa\\testdata\\FreeCrmTestData.xlsx";

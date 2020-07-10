@@ -85,34 +85,33 @@ public class RiskDetail_TypePage extends RiskDetailPage {
 	/**
 	 * @Fields edt_CBDQ : 增值服务类型
 	 */
-	//@FindBy(how = How.NAME,using = "InsuredGuRelatedPartyStarLevel")
+	@FindBy(how = How.XPATH,using = "//table[@id='InsuredRelatedParty']/tbody/tr[@id='InsuredGuRelatedPartyCorInsuredType']/td/select[@name='InsuredGuRelatedPartyStarLevel']")
 	WebElement slc_ZZFWLX;
 	/**
 	 * @Fields edt_HYDL : 行业大类
 	 */
-	//@FindBy(how = How.NAME,using = "InsuredGuRelatedPartyIndustryMainCode")
+	@FindBy(how = How.XPATH,using = "//table[@id='InsuredRelatedParty']/tbody/tr[@id='InsuredGuRelatedPartyVocation']/td/input[@name='InsuredGuRelatedPartyIndustryMainCode']")
 	WebElement edt_HYDL;
 	
 	/**
 	 * @Fields edt_HYXL : 行业小类
 	 */
-	//@FindBy(how = How.NAME,using = "InsuredGuRelatedPartyIndustryKindCode")
+	@FindBy(how = How.XPATH,using = "//table[@id='InsuredRelatedParty']/tbody/tr[@id='InsuredGuRelatedPartyVocation']/td/input[@name='InsuredGuRelatedPartyIndustryKindCode']")
 	WebElement edt_HYXL;
 	
 	
 	public RiskDetail_TypePage() {
 		goToWorkArea();
-		driver.manage().timeouts().pageLoadTimeout(TestUtil.PAGE_LOAD_TIMEOUT, TimeUnit.SECONDS);
-		driver.manage().timeouts().implicitlyWait(TestUtil.IMPLICIT_WAIT, TimeUnit.SECONDS);
 		slc_XZSYFW = super.waitAndGetElement(By.name("GuRiskRiskApplyType"), 10);
 		PageFactory.initElements(driver, this);
+		logger.debug("投保处理/险种信息");
 	}
 	public void InputRiskTypeInfoAction(String xzsyfw,String tqmc,String qbrq,String zbrq,String lgbbz,String yyzdbz,String sfgxdm,String cbdq) {
 		super.setSelectWithStartText(slc_XZSYFW, xzsyfw);
-		super.SetDateEditBox(edt_QBRQ, qbrq);
-		super.clickElement(edt_BXQX);
-		super.SetDateEditBox(edt_ZBRQ, zbrq);
-		super.clickElement(edt_BXQX);
+		super.SetDateEditBox(edt_QBRQ, qbrq,edt_BXQX);
+		//super.clickElement(edt_BXQX);
+		super.SetDateEditBox(edt_ZBRQ, zbrq,edt_BXQX);
+		//super.clickElement(edt_BXQX);
 		super.setSelectWithStartText(slc_LGBBZ, lgbbz);
 		super.setSelectWithStartText(slc_YYZDBZ, yyzdbz);
 		super.setSelectWithStartText(slc_SFGXDM, sfgxdm);
@@ -133,9 +132,9 @@ public class RiskDetail_TypePage extends RiskDetailPage {
 	 * @param hyxl 行业小类
 	 */
 	private void inputInusredInfoAction(String zzfwlx,String hydl,String hyxl) {
-		slc_ZZFWLX = tbl_InsuredInfo.findElement(By.name("InsuredGuRelatedPartyStarLevel"));
-		edt_HYDL = tbl_InsuredInfo.findElement(By.name("InsuredGuRelatedPartyIndustryMainCode"));
-		edt_HYXL = tbl_InsuredInfo.findElement(By.name("InsuredGuRelatedPartyIndustryKindCode"));
+		//slc_ZZFWLX = tbl_InsuredInfo.findElement(By.name("InsuredGuRelatedPartyStarLevel"));
+		//edt_HYDL = tbl_InsuredInfo.findElement(By.name("InsuredGuRelatedPartyIndustryMainCode"));
+		//edt_HYXL = tbl_InsuredInfo.findElement(By.name("InsuredGuRelatedPartyIndustryKindCode"));
 		super.setSelectWithStartText(slc_ZZFWLX, zzfwlx);
 		super.CodeSelect(edt_HYDL, hydl);
 		super.SetCodeEditBox(edt_HYXL, hyxl);

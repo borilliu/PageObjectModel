@@ -39,7 +39,7 @@ public class TbclMainFramePage extends FccbBase {
 		tbl_mainframe = waitAndGetElement(By.xpath("//td[text()='"+TabName+"']"), 5);
 		//this.clickButton(tbl_mainframe);
 		this.jsClickButton(tbl_mainframe);
-		pause(WAIT_LONGGER);
+		pause(WAIT_SECOND);
 	}
 	/**
 	 *<p>submitForReview</p>

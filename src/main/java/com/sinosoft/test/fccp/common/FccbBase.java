@@ -40,8 +40,8 @@ public abstract class FccbBase extends TestBase {
 		if(null == code || "".equals(code)) return;
 		if(code.equals(codeEditBox.getAttribute("value"))) return;
 		logger.debug("CodeSelect:开始设置"+ codeEditBox.toString()+" & Code=" +code);
-		super.actionDoubleClick(codeEditBox);
-		super.navigateToWindowByTitle(WINDOW_CODESELECT_TITLE, 5);
+		actionDoubleClick(codeEditBox);
+		navigateToWindowByTitle(WINDOW_CODESELECT_TITLE, 5);
 		CodeSelectPage CSP =new CodeSelectPage();
 		CSP.selectByCodes(code);
 		super.navigateToWindowByTitle(WINDOW_MAIN_TITLE, 5);
@@ -61,7 +61,8 @@ public abstract class FccbBase extends TestBase {
 			return;
 		}
 		logger.debug("SetCodeEditBox:开始设置:"+ codeEditBox.toString()+" & Code=" +code);
-		setEditboxValue(codeEditBox,code);
+		codeEditBox.clear();
+		codeEditBox.sendKeys(code);
 		pause(WAIT_SHORTEST);
 		try {
 			WebElement folText;
@@ -77,7 +78,7 @@ public abstract class FccbBase extends TestBase {
 			}
 			if(folText!=null) {	
 				folText.click();
-				pause(WAIT_SHORTER);
+				pause(WAIT_SHORTEST);
 			}
 		}catch(Exception e) {
 			//logger.error("使用SetCodeEditBox必须要指定一个鼠标点击位置BlankWidget",nse);
@@ -97,14 +98,14 @@ public abstract class FccbBase extends TestBase {
 			return;
 		}
 		Select select = new Select(slcELe);
-		try {
+/*		try {
 			WebElement slctedOption = select.getFirstSelectedOption();
 			if(null != slctedOption && slctedOption.getText().startsWith(startText)) {
-				logger.info(slcELe.toString()+"使用了默认选中的选项："+slctedOption.getText());
+				logger.debug(slcELe.toString()+"使用了默认选中的选项："+slctedOption.getText());
 				return;
 			}
 		}catch(Exception e) {
-		}	
+		}	*/
 		List<WebElement> Options = select.getOptions();
 		boolean found = false;
 	    for (WebElement selectedOption : Options) {
@@ -119,6 +120,35 @@ public abstract class FccbBase extends TestBase {
 	    if(!found) {
 	    	logger.error("没有找到以【"+startText+"】为起始的选项！" );
 	    }
+	    logger.debug("setSelectWithStartText 结束！");
+	}	
+	/**
+	 *<p>setFuzzySelect</p>
+	 *<p>设置Select的值-不判断是否和原值一致</p>
+	 * @param slcELe
+	 * @param startText
+	 */
+	public void setFuzzySelect(WebElement slcELe,String startText) {
+		logger.info("setFuzzySelect:"+ slcELe.toString()+"->"+ startText);
+		if("".equals(startText)) {
+			return;
+		}
+		Select select = new Select(slcELe);
+		List<WebElement> Options = select.getOptions();
+		boolean found = false;
+	    for (WebElement selectedOption : Options) {
+	        String txt = selectedOption.getText();
+	        if (null !=txt && txt.startsWith(startText)){
+	        	logger.info("找到匹配【"+ startText+"】的选项："+ txt);
+	        	select.selectByVisibleText(txt);
+	        	found =true;
+	        	break;
+	        }
+	    }
+	    if(!found) {
+	    	logger.error("没有找到以【"+startText+"】为起始的选项！" );
+	    }
+	    logger.debug("setFuzzySelect 结束！");
 	}	
 	/**
 	 *<p>SetDateEditBox</p>
@@ -129,14 +159,37 @@ public abstract class FccbBase extends TestBase {
 	public void SetDateEditBox(WebElement dateEditBox,String date) {
 		if("".equals(date)) return;
 		String val = dateEditBox.getAttribute("value");
-		if(this.fmtDateString(date).equals(val)) {
-			logger.debug("设置的日期值"+date+"和系统值"+val+"一致,不再设置！");
+		String newVal=fmtDateString(date);
+		if(newVal.equals(val)) {
+			logger.debug("设置的日期值"+newVal+"和系统值"+val+"一致,不再设置！");
 			return;
 		}else {
-			logger.debug("设置日期值 由"+val+" 设置为"+ fmtDateString(date));
+			dateEditBox.clear();
+			dateEditBox.sendKeys(newVal);
+			logger.debug("设置日期值 由"+val+" 设置为"+ newVal);
 		}
-		logger.debug("SetDateEditBox:开始设置:"+ dateEditBox.toString()+" & date=" +date);
-		setEditboxValue(dateEditBox,date);
+	}
+	/**
+	 *<p>SetDateEditBox</p>
+	 *<p>设置日期值，并点击辅助组件来触发onChange动作</p>
+	 * @param dateEditBox
+	 * @param date
+	 * @param aidEle
+	 */
+	public void SetDateEditBox(WebElement dateEditBox,String date,WebElement aidEle) {
+		if("".equals(date)) return;
+		String val = dateEditBox.getAttribute("value");
+		String newVal=fmtDateString(date);
+		if(newVal.equals(val)) {
+			logger.debug("设置的日期值"+newVal+"和系统值"+val+"一致,不再设置！");
+			return;
+		}else {
+			dateEditBox.clear();
+			dateEditBox.sendKeys(newVal);
+			clickElement(aidEle);
+			logger.debug("设置日期值 由"+val+" 设置为"+ newVal);
+		}
+
 	}
 	/**
 	 *<p>goToWorkArea</p>
@@ -146,7 +199,6 @@ public abstract class FccbBase extends TestBase {
 		driver.switchTo().defaultContent();
 		driver.switchTo().frame("mainFrame");
 		driver.switchTo().frame("myFrame");
-		System.out.println("进入了MyFrame");
 	}
 	public void goToMainArea() {
 		driver.switchTo().defaultContent();

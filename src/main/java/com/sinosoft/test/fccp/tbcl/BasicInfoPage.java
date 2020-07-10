@@ -307,6 +307,7 @@ public class BasicInfoPage extends TbclMainFramePage{
 	public BasicInfoPage(){
 		goToWorkArea();
 		PageFactory.initElements(driver, this);
+		logger.debug("投保处理/基本信息");
 //		PageFactory.initElements(new AjaxElementLocatorFactory(driver, 10) ,this);
 
 	}

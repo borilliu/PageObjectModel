@@ -92,6 +92,12 @@ public class RiskDetailPage extends TbclMainFramePage {
 		this.clickButton(tab_SubRiskDetail);
 		goToWorkArea();
 	}
+	/**
+	 *<p>saveProposalNumbes</p>
+	 *<p>获取投保单号，并保存在map中</p>
+	 * @param map
+	 * @return
+	 */
 	public String saveProposalNumbes(Map<String, String> map) {
 		super.goToWorkArea();
 		tbl_RiskItems =super.waitAndGetElement(By.id("RiskItem"), 10);
@@ -99,7 +105,7 @@ public class RiskDetailPage extends TbclMainFramePage {
 		StringBuffer numSB=new StringBuffer();
 		for(int i=0;i<numLst.size();i++) {
 			String num=numLst.get(i).getAttribute("value");
-			logger.info("投保单号："+num);
+			logger.debug("投保单号："+num);
 			if(i==0) {
 				numSB.append(num);
 			}else {
@@ -107,7 +113,9 @@ public class RiskDetailPage extends TbclMainFramePage {
 			}
 		}
 		 map.put("proposalNumber", numSB.toString());
+	     logger.debug("保存投保单号完毕！");
 	     goToWorkArea();
+	     logger.debug("返回工作区，准备下一步操作！");
 		return numSB.toString();
 /*		List<WebElement> trs =tbl_RiskItems.findElements(By.tagName("tr"));
 		int table_rows = trs.size();
