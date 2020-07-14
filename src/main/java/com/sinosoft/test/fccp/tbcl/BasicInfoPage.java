@@ -76,6 +76,18 @@ public class BasicInfoPage extends TbclMainFramePage{
 	@FindBy(how = How.NAME,using = "GuMainSurveyInd")
 	WebElement slc_CXYWBS;	
 	
+	/**
+	 * @Fields edt_DLJG : 代理机构 
+	 */
+	@FindBy(how = How.XPATH,using = "//tr[@id='WDF_agreementInfo']/td/input[@name='GuMainIntermediaryCode']")
+	WebElement edt_DLJG;	
+	
+	/**
+	 * @Fields edt_XSXY :销售协议
+	 */
+	@FindBy(how = How.XPATH,using = "//tr[@id='WDF_agreementInfo']/td/input[@name='GuMainAgreementNo']")
+	WebElement edt_XSXY;	
+	
 	/************************************************
 	 * 保单信息
 	 ************************************************/	
@@ -324,9 +336,11 @@ public class BasicInfoPage extends TbclMainFramePage{
 	 * @param xstd 销售团队
 	 * @param ywy 业务员
 	 * @param ywly 业务来源 
+	 * @param dljg 代理机构 
+	 * @param xsxy 销售协议 
 	 * @param cxywbs 创新业务标识
 	 */
-	public void inputSalesInfoAction(String fbbs, String ywgs,String qdlx,String gdbs,String xstd,String ywy,String ywly,String cxywbs){
+	public void inputSalesInfoAction(String fbbs, String ywgs,String qdlx,String gdbs,String xstd,String ywy,String ywly,String dljg,String xsxy, String cxywbs){
 		slc_FBBS = this.waitAndGetElement(By.name("GuMainBusinessType"), 20);
 		super.setSelectWithStartText(slc_FBBS, fbbs);
 		super.SetCodeEditBox(edt_YWGS, ywgs);
@@ -336,6 +350,8 @@ public class BasicInfoPage extends TbclMainFramePage{
 		super.CodeSelect(edt_YWY, ywy);
 		super.CodeSelect(edt_YWLY, ywly);
 		super.setSelectWithStartText(slc_CXYWBS, cxywbs);
+		super.CodeSelect(edt_DLJG, dljg);
+		super.CodeSelect(edt_XSXY, xsxy);
 
 	}
 	/**
@@ -344,7 +360,7 @@ public class BasicInfoPage extends TbclMainFramePage{
 	 * @param map
 	 */
 	public void inputSalesInfoAction(Map<String, String> map) {
-		this.inputSalesInfoAction(map.get("fbbs"), map.get("ywgs"), map.get("qdlx"), map.get("gdbs"),map.get("xstd"), map.get("ywy"), map.get("ywly"), map.get("cxywbs"));
+		this.inputSalesInfoAction(map.get("fbbs"), map.get("ywgs"), map.get("qdlx"), map.get("gdbs"),map.get("xstd"), map.get("ywy"), map.get("ywly"),map.get("dljg"),map.get("xsxy"), map.get("cxywbs"));
 	}
 	
 	/**
@@ -377,7 +393,7 @@ public class BasicInfoPage extends TbclMainFramePage{
 		super.setSelectWithStartText(slc_sfDZBD, sfdzbd);
 		super.setSelectWithStartText(slc_sfXB, sfxb);
 		super.CodeSelect(edt_FXQKYJYTZ, fxqkyjytz);
-		super.setSelectWithStartText(slc_sfYDYW, sfxb);
+		super.setSelectWithStartText(slc_sfYDYW, sfydyw);
 		super.setSelectWithStartText(slc_sfSN, sfsn);
 		super.setEditboxValue(edt_XBBDH, xbbdh);		
 	}

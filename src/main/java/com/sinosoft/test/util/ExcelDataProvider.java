@@ -86,9 +86,15 @@ public class ExcelDataProvider extends TestBase implements Iterator<Object[]>  {
 	     */
 	    @Override
 	    public boolean hasNext() {
-	        //行数大于0 并且 第一列有数据 并且 当前的行数小于等于 最大行
-	        if (rowCount > 0 && currentRowNum <= rowCount+1){
-	            return true; 
+	        //行数大于0  并且 当前的行数小于等于 最大行
+	        if (rowCount > 0 && currentRowNum <= rowCount+1 ){
+	        	String ind= xssfSheet.getRow(this.currentRowNum).getCell(0).toString();
+	        	System.out.println("字段标识："+ind);
+	        	if("Y".equalsIgnoreCase(ind)) {
+	        		return true;
+	        	}else {
+	        		return false;
+	        	}
 	        }
 	        else {
 	            try {

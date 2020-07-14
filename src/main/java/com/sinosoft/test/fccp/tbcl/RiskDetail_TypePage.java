@@ -153,9 +153,10 @@ public class RiskDetail_TypePage extends RiskDetailPage {
 	 *<p>保存险种信息</p>
 	 * @return
 	 */
-	public RiskDetail_insuredObjPage saveRiskDetailTypePage() {
+	public RiskDetail_AbstractInsuredObjPage saveRiskDetailTypePage(Map<String, String> map) {
 		logger.info("保存险种基本信息");
 		super.jsClickButton(btn_saveButton);
-		return new RiskDetail_insuredObjPage();
+		pause(1000);
+		return RiskDetail_AbstractInsuredObjPage.getInstance(map.get("riskClass"));
 	}
 }

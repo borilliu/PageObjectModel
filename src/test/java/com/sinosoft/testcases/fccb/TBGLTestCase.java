@@ -28,6 +28,8 @@ import com.sinosoft.test.fccp.hbrwcl.TaskProcessResultPage;
 import com.sinosoft.test.fccp.tbcl.BasicInfoPage;
 import com.sinosoft.test.fccp.tbcl.PolicyFeePage;
 import com.sinosoft.test.fccp.tbcl.RiskDetailPage;
+import com.sinosoft.test.fccp.tbcl.RiskDetail_AbstractInsuredObjPage;
+import com.sinosoft.test.fccp.tbcl.RiskDetail_CoInsuredPage;
 import com.sinosoft.test.fccp.tbcl.RiskDetail_TermsPage;
 import com.sinosoft.test.fccp.tbcl.RiskDetail_TypePage;
 import com.sinosoft.test.fccp.tbcl.RiskDetail_insuredObjPage;
@@ -45,9 +47,11 @@ public class TBGLTestCase extends TestBase {
 	BasicInfoPage basicInfo;
 	RiskDetailPage riskDetail;
 	RiskDetail_TypePage riskDetail_type;
-	RiskDetail_insuredObjPage riskDetail_insrdObj;
+	RiskDetail_AbstractInsuredObjPage riskDetail_insrdObj;
 	RiskDetail_TermsPage riskDetail_terms;
+	RiskDetail_CoInsuredPage riskDetail_coInsured;
 	PolicyFeePage policyFee;
+	
 	public TBGLTestCase() {
 		super();
 	}
@@ -74,7 +78,7 @@ public class TBGLTestCase extends TestBase {
 	 * @param context
 	 * @param map
 	 */
-	@Test(priority = 1, dataProvider = "getTBCLTestData",enabled=false)
+	@Test(priority = 1, dataProvider = "getTBCLTestData",enabled=true)
 	public void FCCB_TBCL(ITestContext context ,Map<String, String> map) {
 		logger.info("开始运行测试脚本，获取到的测试数据《getTBCLTestData》如下:");
 		logger.info(TestUtil.getMapString(map));
@@ -97,13 +101,15 @@ public class TBGLTestCase extends TestBase {
 		    Reporter.log("投保单号码："+proposNO,true);
 			riskDetail_type.InputRiskTypeInfoAction(map);
 			riskDetail_type.inputInusredInfoAction(map);
-			riskDetail_insrdObj = riskDetail_type.saveRiskDetailTypePage();
+			riskDetail_insrdObj = riskDetail_type.saveRiskDetailTypePage(map);
+			//riskDetail_insrdObj = riskDetail_type.goToInsuredObjectPage(map);
 			riskDetail_insrdObj.inputInsuredObjectAction(map);
-			riskDetail_insrdObj.inputRiskCodeAction(map);
+			riskDetail_insrdObj.inputRiskCoverageAction(map);
 			riskDetail_insrdObj.saveInsredObjectPage();
 			riskDetail_terms = riskDetail_insrdObj.goToRiskTermsPage(map);
-			riskDetail_terms.saveTermsPage();
-			//riskDetail_terms.goToUnionPage(map);
+			riskDetail_terms.processTermsPage(map);
+			riskDetail_coInsured = riskDetail_terms.goToCoInsuredPage(map);
+			riskDetail_coInsured.processCoInsured(map);
 			policyFee = riskDetail_terms.goToMainFrame_policyfee();
 			policyFee.inputPolicyFeeAction(map);
 			policyFee.savePolicyFee();
@@ -145,7 +151,7 @@ public class TBGLTestCase extends TestBase {
 	 * @param context
 	 * @param map
 	 */
-	@Test(priority = 1, dataProvider = "getTBCLTestData" , enabled= true)
+	@Test(priority = 1, dataProvider = "getTBCLTestData" , enabled= false)
 	public void FCCB_HBCL(ITestContext context ,Map<String, String> map) {
 		try {
 			loginPage = new LoginPage();
@@ -167,6 +173,8 @@ public class TBGLTestCase extends TestBase {
 			String scrn=TestUtil.takeScreenshot(getTestCaseId(map)+"_异常截屏");
 			map.put("message","未知异常"+ e.getMessage());
 			map.put("screenshot",scrn);
+			Reporter.log("未知异常："+ e.getMessage());
+			Reporter.log("截屏文件："+ scrn);
 			logger.info("执行测试用例发生了异常，截屏结束！");
 			Assert.assertTrue(false);
 		}	

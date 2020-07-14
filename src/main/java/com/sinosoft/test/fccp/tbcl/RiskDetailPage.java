@@ -76,14 +76,19 @@ public class RiskDetailPage extends TbclMainFramePage {
 	 *<p>跳转到 投保处理/险种信息/标的信息标签页面</p>
 	 * @return
 	 */
-	public RiskDetail_insuredObjPage goToInsuredObjectPage(Map<String, String> map) {
+	public RiskDetail_AbstractInsuredObjPage goToInsuredObjectPage(Map<String, String> map) {
 		goToRiskDetailTable("标的信息"); 
-		return new RiskDetail_insuredObjPage();
-
+		return RiskDetail_AbstractInsuredObjPage.getInstance(map.get("riskClass"));
 	}
-	public RiskDetail_UnionPage goToUnionPage(Map<String, String> map) {
+	/**
+	 *<p>goToUnionPage</p>
+	 *<p>跳转到 投保处理/险种信息/联共保信息</p>
+	 * @param map
+	 * @return
+	 */
+	public RiskDetail_CoInsuredPage goToCoInsuredPage(Map<String, String> map) {
 		goToRiskDetailTable("联共保信息");
-		return new RiskDetail_UnionPage();
+		return new RiskDetail_CoInsuredPage();
 	}
 	private void goToRiskDetailTable(String TabName) {
 		System.out.println("准备进入标签页:"+TabName);

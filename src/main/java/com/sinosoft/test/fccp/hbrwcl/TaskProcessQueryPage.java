@@ -1,6 +1,8 @@
 package com.sinosoft.test.fccp.hbrwcl;
 
+
 import org.openqa.selenium.By;
+import org.openqa.selenium.NoSuchElementException;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.How;
@@ -42,6 +44,7 @@ public class TaskProcessQueryPage extends FccbBase {
 	 *<p>查找需要审批的保单</p>
 	 * @param proposalNo
 	 * @return
+	 * @throws Exception 
 	 */
 	public ApproveInfoPage queryProposalForApprove(String proposalNo) {
 		super.goToMainArea();
@@ -49,11 +52,15 @@ public class TaskProcessQueryPage extends FccbBase {
 		this.setSelectWithStartText(slc_XJRW, "1");//包含下级任务
 		this.clickButton(btn_query);
 		gotoQueryResult();
-		WebElement propNoCell= tbl_RESULT.findElement(By.tagName("a"));
-		Assert.assertTrue(proposalNo.equals(propNoCell.getText()));
-		propNoCell.click();
-		waitAndAcceptAlert("本保单倒签单", 2);
-		return new ApproveInfoPage();
+		try {
+			WebElement propNoCell= tbl_RESULT.findElement(By.tagName("a"));
+			Assert.assertTrue(proposalNo.equals(propNoCell.getText()));
+			propNoCell.click();
+			waitAndAcceptAlert("本保单倒签单", 2);
+			return new ApproveInfoPage();
+		}catch(NoSuchElementException noe) {
+			throw new NoSuchElementException("没有找到对应的投保单："+proposalNo);
+		}
 	}
 	private void gotoQueryResult() {
 		driver.switchTo().defaultContent();
