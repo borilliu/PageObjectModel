@@ -10,62 +10,6 @@ import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.pagefactory.AjaxElementLocatorFactory;
 
 public class RiskDetail_insuredObjPage extends RiskDetail_AbstractInsuredObjPage {
-
-	/**
-	 * @Fields edt_JQBM : 街区编码
-	 */
-	@FindBy(how = How.NAME,using = "GuItemPropertyBlockCode")
-	WebElement edt_JQBM;
-	
-	/**
-	 * @Fields edt_BBDM : 币别代码/名称
-	 */
-	@FindBy(how = How.NAME,using = "GuItemPropertyCurrency")
-	WebElement edt_BBDM;
-	
-	/**
-	 * @Fields edt_SF : 省份
-	 */
-	@FindBy(how = How.NAME,using = "GuItemPropertyItemProvinceCode")
-	WebElement edt_SF;
-
-	
-	/**
-	 * @Fields edt_CS : 城市
-	 */
-	@FindBy(how = How.NAME,using = "GuItemPropertyItemCityCode")
-	WebElement edt_CS;
-	
-	/**
-	 * @Fields edt_QX : 区县
-	 */
-	@FindBy(how = How.NAME,using = "GuItemPropertyItemDistrictCode")
-	WebElement edt_QX;
-	
-	/**
-	 * @Fields edt_YB : 邮编
-	 */
-	@FindBy(how = How.NAME,using = "GuItemPropertyItemPostalCode")
-	WebElement edt_YB;
-	
-	/**
-	 * @Fields edt_JZDJ : 建筑等级
-	 */
-	@FindBy(how = How.NAME,using = "GuItemPropertyConstruction")
-	WebElement edt_JZDJ;
-	
-	/**
-	 * @Fields edt_ZYXZ : 占用性质 
-	 */
-	@FindBy(how = How.NAME,using = "GuItemPropertyOccupation")
-	WebElement edt_ZYXZ;
-	
-	/**
-	 * @Fields edt_BXCS : 保险处所
-	 */
-	@FindBy(how = How.NAME,using = "GuItemPropertySituation")
-	WebElement edt_BXCS;
-		
 	/**
 	 * @Fields edt_BDW : 标的物
 	 */
@@ -90,7 +34,7 @@ public class RiskDetail_insuredObjPage extends RiskDetail_AbstractInsuredObjPage
 	/**
 	 * @Fields edt_XBDM : 险别代码/名称
 	 */
-	@FindBy(how = How.NAME,using = "GuItemKindKindCode")
+	//@FindBy(how = How.NAME,using = "GuItemKindKindCode")
 	WebElement edt_XBDM;
 	
 	
@@ -221,6 +165,7 @@ public class RiskDetail_insuredObjPage extends RiskDetail_AbstractInsuredObjPage
 	public void inputInsuredObjectAction(Map<String, String> map) {
 		logger.info("开始录入标的物信息！");
 		AbstractInsuredObjectInfoPage_01.getInstance( map.get("riskCode")).inputInsuredObjectAction(map);
+		super.takeSnapShot(super.getTestCaseId(map)+"_标的基础信息");
 		//this.inputInsuredObjectAction(map.get("jqbm"),map.get("bbdm"),map.get("sf"),map.get("cs"),map.get("qx"),map.get("yb"),map.get("jzdj"),map.get("bxcs"));
 	}
 	/**
@@ -230,9 +175,16 @@ public class RiskDetail_insuredObjPage extends RiskDetail_AbstractInsuredObjPage
 	 */
 	public void inputRiskCoverageAction(Map<String, String> map) {
 		logger.debug("开始录入险种明细信息");
-		this.inputRiskCodeAction(map.get("bdw"),map.get("bdwmx"),map.get("xbdm"),map.get("jrbe"),map.get("jzfs"),map.get("bxje"),map.get("bffl"),map.get("dqflbz"),map.get("ysbf"));
+		if("0123".equals(map.get("riskCode"))) {
+			inputRiskCode0123Action(map);
+		}else {
+			this.inputRiskCodeAction(map);
+		}
 		logger.debug("开始录入营业中断险！");
-		this.inputBizInterruptionAction(map);
+		if("1".equals(map.get("yyzdbz"))) {
+			this.inputBizInterruptionAction(map);
+		}
+		super.takeSnapShot(super.getTestCaseId(map)+"_标的投保详细信息");
 	}
 	/**
 	 *<p>inputBizInterruptionAction</p>
@@ -240,34 +192,32 @@ public class RiskDetail_insuredObjPage extends RiskDetail_AbstractInsuredObjPage
 	 * @param map
 	 */
 	public void inputBizInterruptionAction(Map<String, String> map) {
-		if("1".equals(map.get("yyzdbz"))) {
-			this.clickElement(tbl_YYZDX);
-			this.setEditboxValue(edt_ZDPCG, map.get("yyzd_zdpcg"));
-			this.SetCodeEditBox(edt_SNDMLRZE, map.get("yyzd_sndmlrze"));
-			this.SetCodeEditBox(edt_SNDYYE, map.get("yyzd_sndyye"));
-			
-			edt_YYZD_BDW = tbl_YYZDX_DETAIL.findElement(By.name("GuItemPropertyDetail0105ItemDetailCode"));
-			edt_YYZD_BDWMX = tbl_YYZDX_DETAIL.findElement(By.name("GuItemPropertyDetail0105ItemDetailList"));
-			this.CodeSelect(edt_YYZD_BDW, map.get("yyzd_bdw"));
-			this.setEditboxValue(edt_YYZD_BDWMX, map.get("yyzd_bdwmx"));
-			this.clickElement(tbl_YYZDX_DETAIL);
-			WebElement edt_YYZD_XBDM = tbl_YYZDX_DETAIL.findElement(By.name("GuItemKind0105KindCode"));
-			WebElement edt_YYZD_JRBE = tbl_YYZDX_DETAIL.findElement(By.name("GuItemKind0105CalculateInd"));
-			WebElement slc_YYZD_JZFS = tbl_YYZDX_DETAIL.findElement(By.name("GuItemKind0105ValueType"));
-			WebElement edt_YYZD_BXJE = tbl_YYZDX_DETAIL.findElement(By.name("GuItemKind0105SumInsured"));
-			WebElement edt_YYZD_BFFL = tbl_YYZDX_DETAIL.findElement(By.name("GuItemKind0105Rate"));
-			WebElement edt_YYZD_DQFLVZ = tbl_YYZDX_DETAIL.findElement(By.name("GuItemKind0105ShortRateFlag"));
-			WebElement edt_YYZD_YSBF = tbl_YYZDX_DETAIL.findElement(By.name("GuItemKind0105GrossPremium"));
-			
+		this.clickElement(tbl_YYZDX);
+		this.setEditboxValue(edt_ZDPCG, map.get("yyzd_zdpcg"));
+		this.SetCodeEditBox(edt_SNDMLRZE, map.get("yyzd_sndmlrze"));
+		this.SetCodeEditBox(edt_SNDYYE, map.get("yyzd_sndyye"));
+		
+		edt_YYZD_BDW = tbl_YYZDX_DETAIL.findElement(By.name("GuItemPropertyDetail0105ItemDetailCode"));
+		edt_YYZD_BDWMX = tbl_YYZDX_DETAIL.findElement(By.name("GuItemPropertyDetail0105ItemDetailList"));
+		this.CodeSelect(edt_YYZD_BDW, map.get("yyzd_bdw"));
+		this.setEditboxValue(edt_YYZD_BDWMX, map.get("yyzd_bdwmx"));
+		this.clickElement(tbl_YYZDX_DETAIL);
+		WebElement edt_YYZD_XBDM = tbl_YYZDX_DETAIL.findElement(By.name("GuItemKind0105KindCode"));
+		WebElement edt_YYZD_JRBE = tbl_YYZDX_DETAIL.findElement(By.name("GuItemKind0105CalculateInd"));
+		WebElement slc_YYZD_JZFS = tbl_YYZDX_DETAIL.findElement(By.name("GuItemKind0105ValueType"));
+		WebElement edt_YYZD_BXJE = tbl_YYZDX_DETAIL.findElement(By.name("GuItemKind0105SumInsured"));
+		WebElement edt_YYZD_BFFL = tbl_YYZDX_DETAIL.findElement(By.name("GuItemKind0105Rate"));
+		WebElement edt_YYZD_DQFLVZ = tbl_YYZDX_DETAIL.findElement(By.name("GuItemKind0105ShortRateFlag"));
+		WebElement edt_YYZD_YSBF = tbl_YYZDX_DETAIL.findElement(By.name("GuItemKind0105GrossPremium"));
+		
 
-			this.CodeSelect(edt_YYZD_XBDM,map.get("yyzd_xbdm"));
-			this.CodeSelect(edt_YYZD_JRBE,map.get("yyzd_jrbe"));
-			this.setSelectWithStartText(slc_YYZD_JZFS, map.get("yyzd_jzfs"));
-			this.setEditboxValue(edt_YYZD_BXJE, map.get("yyzd_bxje"));
-			this.setEditboxTValue(edt_YYZD_BFFL,  map.get("yyzd_bffl"));
-			this.CodeSelect(edt_YYZD_DQFLVZ, map.get("yyzd_dqflbz"));
-			this.setEditboxTValue(edt_YYZD_YSBF, map.get("yyzd_ysbf"));
-		}
+		this.CodeSelect(edt_YYZD_XBDM,map.get("yyzd_xbdm"));
+		this.CodeSelect(edt_YYZD_JRBE,map.get("yyzd_jrbe"));
+		this.setSelectWithStartText(slc_YYZD_JZFS, map.get("yyzd_jzfs"));
+		this.setEditboxValue(edt_YYZD_BXJE, map.get("yyzd_bxje"));
+		this.setEditboxTValue(edt_YYZD_BFFL,  map.get("yyzd_bffl"));
+		this.CodeSelect(edt_YYZD_DQFLVZ, map.get("yyzd_dqflbz"));
+		this.setEditboxTValue(edt_YYZD_YSBF, map.get("yyzd_ysbf"));
 	}
 	/**
 	 *<p>InputInsuredObjectAction</p>
@@ -291,14 +241,38 @@ public class RiskDetail_insuredObjPage extends RiskDetail_AbstractInsuredObjPage
 		this.SetCodeEditBox(edt_JZDJ, jzdj);
 		this.setEditboxValue(edt_BXCS, bxcs);
 	}*/
-	private void inputRiskCodeAction(String bdw,String bdwmx,String xbdm,String jrbe,String jzfs,String bxje,String bffl,String dqflbz,String ysbf) {
+	private void inputRiskCode0123Action(Map<String, String> map) {
 		this.clickElement(tbl_BDWMX);
-		edt_BDW = tbl_BDWMX.findElement(By.name("GuItemPropertyDetailItemDetailCode"));
-		edt_BDWMX = tbl_BDWMX.findElement(By.name("GuItemPropertyDetailItemDetailList"));
-		this.CodeSelect(edt_BDW, bdw);
-		this.setEditboxValue(edt_BDWMX, bdwmx);
-		
-		
+		edt_XBDM = tbl_BDWMX.findElement(By.name("GuItemKindItemDetailCode"));
+		this.CodeSelect(edt_XBDM, map.get("xbdm"));
+		edt_JRBE = tbl_BDWMX.findElement(By.name("GuItemKindCalculateInd"));
+		this.CodeSelect(edt_JRBE,map.get("jrbe"));
+		edt_BXJE = tbl_BDWMX.findElement(By.name("GuItemKindSumInsured"));
+		this.setEditboxValue(edt_BXJE, map.get("bxje"));
+		edt_BFFL = tbl_BDWMX.findElement(By.name("GuItemKindRate"));
+		this.setEditboxTValue(edt_BFFL, map.get("bffl"));
+		edt_DQFLBZ = tbl_BDWMX.findElement(By.name("GuItemKindShortRateFlag"));
+		this.CodeSelect(edt_DQFLBZ, map.get("dqflbz"));
+		edt_YSBF = tbl_BDWMX.findElement(By.name("GuItemKindGrossPremium"));
+		this.setEditboxTValue(edt_YSBF, map.get("ysbf"));
+	}
+	private void inputRiskCodeAction(Map<String, String> map) {
+		String bdw=map.get("bdw");
+		String bdwmx = map.get("bdwmx");
+		String xbdm = map.get("xbdm");
+		String jrbe = map.get("jrbe");
+		String jzfs= map.get("jzfs");
+		String bxje = map.get("bxje");
+		String bffl = map.get("bffl");
+		String dqflbz = map.get("dqflbz");
+		String ysbf =map.get("ysbf");
+		this.clickElement(tbl_BDWMX);
+		if(!"".equals(bdw)) {
+			edt_BDW = tbl_BDWMX.findElement(By.name("GuItemPropertyDetailItemDetailCode"));
+			edt_BDWMX = tbl_BDWMX.findElement(By.name("GuItemPropertyDetailItemDetailList"));
+			this.CodeSelect(edt_BDW, bdw);
+			this.setEditboxValue(edt_BDWMX, bdwmx);
+		}
 		edt_XBDM = tbl_BDWMX.findElement(By.name("GuItemKindKindCode"));
 		this.CodeSelect(edt_XBDM, xbdm);
 		edt_JRBE = tbl_BDWMX.findElement(By.name("GuItemKindCalculateInd"));
@@ -315,12 +289,14 @@ public class RiskDetail_insuredObjPage extends RiskDetail_AbstractInsuredObjPage
 		//edt_YSBF = tbl_BDWMX.findElement(By.name("GuItemKindGrossPremium"));
 		this.setEditboxTValue(edt_YSBF, ysbf);
 	}
+	
+
 	/**
 	 *<p>saveInsredObjectPage</p>
 	 *<p>保存标的物页面</p>
 	 */
 	public void saveInsredObjectPage(){
-		this.clickButton(btn_savePage);
+		this.jsClickButton(btn_savePage);
 		pause(1000);
 	}
 	

@@ -82,7 +82,7 @@ public class InsuredObjectInfoPage_0122 extends AbstractInsuredObjectInfoPage_01
 		this.setEditboxValue(edt_SBMC, map.get("bdw_sbmc"));
 		this.setEditboxValue(edt_CJH, map.get("bdw_cjh"));
 		this.setEditboxValue(edt_FDJH, map.get("bdw_fdjh"));
-		this.setEditboxValue(edt_CCDJRQ, map.get("bdw_cjdjrq"));
+		this.SetDateEditBox(edt_CCDJRQ, map.get("bdw_cjdjrq"), edt_CLLX);
 		this.setEditboxValue(edt_CLLX, map.get("bdw_cllx"));
 		this.setEditboxValue(edt_CPCX, map.get("bdw_cpcx"));
 		this.setEditboxValue(edt_SCCJ, map.get("bdw_sccj"));

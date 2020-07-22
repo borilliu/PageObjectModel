@@ -7,6 +7,8 @@ C:\Users\liu-b\git\PageObjectModel\src\main\java\com\sinosoft\test\fccp\tbcl\Ris
 C:\Users\liu-b\git\PageObjectModel\src\main\java\com\sinosoft\test\util\ExtentReporterNG.java
 C:\Users\liu-b\git\PageObjectModel\src\main\java\com\sinosoft\test\fccp\tbcl\InsuredObjectInfoPage_0105.java
 C:\Users\liu-b\git\PageObjectModel\src\main\java\com\sinosoft\test\fccp\tbcl\BasicInfoPage.java
+C:\Users\liu-b\git\PageObjectModel\src\main\java\com\sinosoft\test\fccp\tbcl\InsuredObjectInfoPage_0710.java
+C:\Users\liu-b\git\PageObjectModel\src\main\java\com\sinosoft\test\fccp\tbcl\AbstractInsuredObjectInfoPage_07.java
 C:\Users\liu-b\git\PageObjectModel\src\main\java\com\sinosoft\test\fccp\tbcl\AbstractInsuredObjectInfoPage_01.java
 C:\Users\liu-b\git\PageObjectModel\src\main\java\com\sinosoft\test\fccp\tbcl\InsuredObjectInfoPage_0107.java
 C:\Users\liu-b\git\PageObjectModel\src\main\java\com\sinosoft\test\fccp\common\FccbBase.java
@@ -14,6 +16,7 @@ C:\Users\liu-b\git\PageObjectModel\src\main\java\com\sinosoft\test\fccp\common\C
 C:\Users\liu-b\git\PageObjectModel\src\main\java\com\sinosoft\test\fccp\tbcl\InsuredObjectInfoPage_0101.java
 C:\Users\liu-b\git\PageObjectModel\src\main\java\com\sinosoft\test\fccp\common\HomePage.java
 C:\Users\liu-b\git\PageObjectModel\src\main\java\com\sinosoft\test\fccp\hbrwcl\ApproveInfoPage.java
+C:\Users\liu-b\git\PageObjectModel\src\main\java\com\sinosoft\test\fccp\tbcl\InsuredObjectInfoPage_0701.java
 C:\Users\liu-b\git\PageObjectModel\src\main\java\com\sinosoft\test\fccp\tbcl\RiskDetailPage.java
 C:\Users\liu-b\git\PageObjectModel\src\main\java\com\sinosoft\test\fccp\tbcl\RiskSelectPage.java
 C:\Users\liu-b\git\PageObjectModel\src\main\java\com\sinosoft\test\fccp\tbcl\TbclMainFramePage.java

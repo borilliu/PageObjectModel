@@ -24,6 +24,7 @@ import org.apache.poi.ss.usermodel.WorkbookFactory;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.OutputType;
 import org.openqa.selenium.TakesScreenshot;
+import org.testng.Reporter;
 
 import com.sinosoft.test.base.TestBase;
 
@@ -89,6 +90,7 @@ public class TestUtil extends TestBase {
 			File scrFile = ((TakesScreenshot) driver).getScreenshotAs(OutputType.FILE);
 			File file =new File(getFileFullName(fileName)+".png");
 			FileUtils.copyFile(scrFile, file);
+			Reporter.log("截屏："+file.getAbsolutePath(),false);
 			return file.getAbsolutePath();
 		}catch(Exception e) {
 			logger.error("浏览截屏失败：", e);
@@ -108,6 +110,7 @@ public class TestUtil extends TestBase {
 					.createScreenCapture(new Rectangle(0, 0, (int) d.getWidth(), (int) d.getHeight()));
 			File file =new File(getFileFullName(fileName)+".png");
 			ImageIO.write(screenshot, "png", file);
+			Reporter.log("截屏："+file.getAbsolutePath(),false);
 			return file.getAbsolutePath();
 		} catch (Exception e) {
 			logger.error("桌面截屏失败：", e);

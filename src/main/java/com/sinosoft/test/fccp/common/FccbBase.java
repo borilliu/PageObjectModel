@@ -7,6 +7,7 @@ import java.util.Map;
 import java.util.NoSuchElementException;
 
 import org.openqa.selenium.By;
+import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.ui.Select;
@@ -39,14 +40,15 @@ public abstract class FccbBase extends TestBase {
 	public void CodeSelect(WebElement codeEditBox,String code) {
 		if(null == code || "".equals(code)) return;
 		if(code.equals(codeEditBox.getAttribute("value"))) return;
-		logger.debug("CodeSelect:开始设置"+ codeEditBox.toString()+" & Code=" +code);
+		String widget =codeEditBox.toString();
+		logger.debug("CodeSelect:开始设置"+ widget+" & Code=" +code);
 		actionDoubleClick(codeEditBox);
 		navigateToWindowByTitle(WINDOW_CODESELECT_TITLE, 5);
 		CodeSelectPage CSP =new CodeSelectPage();
 		CSP.selectByCodes(code);
 		super.navigateToWindowByTitle(WINDOW_MAIN_TITLE, 5);
 		goToWorkArea();
-		logger.debug("CodeSelect:设置完毕"+ codeEditBox.toString()+" & Code=" +code);
+		logger.debug("CodeSelect:设置完毕"+ widget+" & Code=" +code);
 	}
 	
 	/**
@@ -56,6 +58,7 @@ public abstract class FccbBase extends TestBase {
 	 * @param code
 	 */
 	public void SetCodeEditBox(WebElement codeEditBox,String code) {
+		logger.debug("SetCodeEditBox:测试: CodeEditBox=" +code);
 		if(null == code || "".equals(code)) return;
 		if(code.equals(codeEditBox.getAttribute("value").trim())) {
 			return;
@@ -93,10 +96,10 @@ public abstract class FccbBase extends TestBase {
 	 * @param startText
 	 */
 	public void setSelectWithStartText(WebElement slcELe,String startText) {
-		logger.info("setSelectWithStartText:"+ slcELe.toString()+"->"+ startText);
 		if("".equals(startText)) {
 			return;
 		}
+		logger.info("setSelectWithStartText:"+ slcELe.toString()+"->"+ startText);
 		Select select = new Select(slcELe);
 /*		try {
 			WebElement slctedOption = select.getFirstSelectedOption();
@@ -191,6 +194,25 @@ public abstract class FccbBase extends TestBase {
 		}
 
 	}
+	
+	/**
+	 *<p>setNumberEditBoxValue</p>
+	 *<p>设置数值型的文本框</p>
+	 * @param edtEle
+	 * @param text
+	 */
+	public void setNumberEditBoxValue(WebElement edtEle,String text) {
+		if("".equals(text)) {
+			return;
+		}	
+		logger.info("setNumberEditBoxValue:"+ edtEle.toString()+"："+ text);
+		edtEle.sendKeys(Keys.chord(Keys.CONTROL, "a"));
+		edtEle.sendKeys(Keys.DELETE);
+		edtEle.sendKeys(text);
+		edtEle.sendKeys(Keys.TAB);
+		logger.info("setNumberEditBoxValue—End:"+ edtEle.toString()+"："+ text);
+	}
+
 	/**
 	 *<p>goToWorkArea</p>
 	 *<p>将浏览器工作区域切换到用户录入区域</p>

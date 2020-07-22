@@ -30,7 +30,7 @@ public class RiskDetail_TermsPage extends RiskDetailPage {
 	}
 	
 	public void processTermsPage(Map<String, String> map) {
-		this.saveTermsPage(map);
+		//this.saveTermsPage(map);  TODO：没有数据修改，不需执行保存操作
 		TestUtil.takeScreenshot(getTestCaseId(map)+"条款信息页面");
 	}
 	

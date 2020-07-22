@@ -8,7 +8,7 @@ import org.openqa.selenium.support.How;
 
 import com.sinosoft.test.fccp.common.FccbBase;
 
-public abstract class AbstractInsuredObjectInfoPage_01 extends FccbBase {
+public abstract class AbstractInsuredObjectInfoPage_01 extends RiskDetailPage {
 	/**
 	 * @Fields edt_JQBM : 街区编码
 	 */
@@ -47,11 +47,6 @@ public abstract class AbstractInsuredObjectInfoPage_01 extends FccbBase {
 	WebElement edt_YB;
 	
 	
-	/**
-	 * @Fields edt_BXCS : 保险处所
-	 */
-	@FindBy(how = How.NAME,using = "GuItemPropertySituation")
-	WebElement edt_BXCS;	
 	public static AbstractInsuredObjectInfoPage_01 getInstance(String riskCode) {
 		switch(riskCode) {
 			case "0105": return new InsuredObjectInfoPage_0105();

@@ -231,6 +231,12 @@ public class BasicInfoPage extends TbclMainFramePage{
 	@FindBy(how = How.NAME, using  ="AppliGuRelatedPartyInsuredAddress")
 	WebElement edt_TBR_LXDZ;
 	
+	
+	/**
+	 * @Fields edt_TBR_YX : 投保人邮箱-个人客户
+	 */
+	@FindBy(how = How.NAME, using  ="AppliGuRelatedPartyRemark")
+	WebElement edt_TBR_YX;
 	/**
 	 * @Fields edt_TBR_DWDH_QH : 单位电话-区号
 	 */
@@ -428,7 +434,7 @@ public class BasicInfoPage extends TbclMainFramePage{
 	 * @param lxr_sj 联系人手机
 	 * @param lxr_yx 联系人邮箱
 	 */
-	public void inputOwnerInfoAction(String tbr_lx,String tbr_mc,String tbr_vip,String tbr_dm,String tbr_zjlx,String tbr_zjhm,String tbr_csrq,String tbr_sj,String tbr_lxdz,String tbr_dwdh,String lxr_xm,String lxr_xb,String lxr_zw,String lxr_sj,String lxr_yx) {
+	public void inputOwnerInfoAction(String tbr_lx,String tbr_mc,String tbr_vip,String tbr_dm,String tbr_zjlx,String tbr_zjhm,String tbr_csrq,String tbr_sj,String tbr_lxdz,String tbr_dwdh,String tbr_yx,String lxr_xm,String lxr_xb,String lxr_zw,String lxr_sj,String lxr_yx) {
 		super.setSelectWithStartText(slc_TBR_LX, tbr_lx);
 		if(!"".equals(tbr_dm)) {   //如果投保人代码不为空则直接从系统中获取投保人信息
 			super.setEditboxTValue(edt_TBR_DM, tbr_dm);
@@ -462,6 +468,9 @@ public class BasicInfoPage extends TbclMainFramePage{
 			waitAndAcceptAlert("客户不存在，请创建客户.",3);
 			
 		}
+	if("1".equals(tbr_lx)) {
+		this.SetCodeEditBox(edt_TBR_YX,tbr_yx);
+	}
 	}
 	/**
 	 *<p>inputOwnerInfoAction</p>
@@ -471,7 +480,7 @@ public class BasicInfoPage extends TbclMainFramePage{
 	public void inputOwnerInfoAction(Map<String, String> map) {
 		this.inputOwnerInfoAction(map.get("tbr_lx"),map.get("tbr_mc"),map.get("tbr_vip"),
 								  map.get("tbr_dm"),map.get("tbr_zjlx"),map.get("tbr_zjhm"),
-								  map.get("tbr_csrq"),map.get("tbr_sj"),map.get("tbr_lxdz"),map.get("tbr_dwdh"),
+								  map.get("tbr_csrq"),map.get("tbr_sj"),map.get("tbr_lxdz"),map.get("tbr_dwdh"),map.get("tbr_yx"),
 								  map.get("lxr_xm"),map.get("lxr_xb"),map.get("lxr_zw"),
 								  map.get("lxr_sj"),map.get("lxr_yx")
 								);
@@ -527,9 +536,11 @@ public class BasicInfoPage extends TbclMainFramePage{
 	 *<p>保存投保处理保单基本信息</p>
 	 */
 	public RiskDetail_TypePage saveBasicInfoAction(Map<String, String> map) {
-		saveCustomerAction();
+		TestUtil.takeScreenshot(getTestCaseId(map)+"投保单基本信息页面");
+		if("".equals(map.get("tbr_dm"))) {
+			saveCustomerAction();
+		}
 		btn_SAVE_BASIC_PAGE.click();
-		TestUtil.takeScreenshot(getTestCaseId(map)+"保存基本信息");
 		return new RiskDetail_TypePage();
 	}
 }

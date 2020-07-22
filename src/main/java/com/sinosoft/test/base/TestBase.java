@@ -29,6 +29,7 @@ import org.openqa.selenium.support.events.EventFiringWebDriver;
 import org.openqa.selenium.support.ui.ExpectedCondition;
 import org.openqa.selenium.support.ui.Select;
 import org.openqa.selenium.support.ui.WebDriverWait;
+import org.testng.Reporter;
 
 import com.sinosoft.test.util.TestUtil;
 import com.sinosoft.test.util.WebEventListener;
@@ -40,6 +41,7 @@ import com.sinosoft.test.util.WebEventListener;
  */
 public class TestBase { 
 	public static WebDriver driver;
+	public static Reporter reporter;
 	public static Properties prop; 
 	public static EventFiringWebDriver e_driver;
 	public static WebEventListener eventListener;
@@ -95,8 +97,8 @@ public class TestBase {
 				options.setCapability(CapabilityType.ACCEPT_SSL_CERTS, true);
 				options.setCapability(InternetExplorerDriver.NATIVE_EVENTS, true);
 				options.setCapability(InternetExplorerDriver.INTRODUCE_FLAKINESS_BY_IGNORING_SECURITY_DOMAINS, true);
-				//options.setCapability(CapabilityType.UNEXPECTED_ALERT_BEHAVIOUR, "ignore");
-				options.setCapability(CapabilityType.UNEXPECTED_ALERT_BEHAVIOUR, UnexpectedAlertBehaviour.IGNORE);
+				options.setCapability(CapabilityType.UNEXPECTED_ALERT_BEHAVIOUR, UnexpectedAlertBehaviour.ACCEPT);
+				//options.setCapability(CapabilityType.UNEXPECTED_ALERT_BEHAVIOUR, UnexpectedAlertBehaviour.IGNORE);
 				options.setCapability(InternetExplorerDriver.LOG_LEVEL, "TRACE");
 				options.setCapability(InternetExplorerDriver.LOG_FILE, "IE_LOG.log");
 
@@ -132,7 +134,15 @@ public class TestBase {
 	public String getTestCaseId(Map<String, String> map) {
 		return map.get("TestCaseName")+"_"+map.get("TestCaseSeq");
 	}	
-
+	/**
+	 *<p>takeSnapShot</p>
+	 *<p>截屏</p>
+	 * @param fileName
+	 * @return
+	 */
+	public String takeSnapShot(String fileName) {
+		return TestUtil.takeScreenshot(fileName);
+	}
 	/**
 	 *<p>runJS</p>
 	 *<p>在当前元素上运行脚本</p>
@@ -362,7 +372,6 @@ public class TestBase {
 		edtEle.sendKeys(text);
 		logger.info("setEditboxValue—End:"+ edtEle.toString()+"："+ text);
 	}
-	
 	/**
 	 *<p>setEditboxApndValue</p>
 	 *<p>在原有值上面添加新的信息</p>

@@ -1,5 +1,6 @@
 package com.sinosoft.test.fccp.tbcl;
 
+import java.util.List;
 import java.util.Map;
 
 import org.openqa.selenium.By;
@@ -10,120 +11,23 @@ import org.openqa.selenium.support.PageFactory;
 
 public class RiskDetail_JGX_insuredObjPage extends RiskDetail_AbstractInsuredObjPage {
 
-	/**
-	 * @Fields edt_SF : 省份
-	 */
-	@FindBy(how = How.NAME,using = "GuItemEngineeringItemProvinceCode")
-	WebElement edt_SF;
-			
-	/**
-	 * @Fields edt_CS : 城市
-	 */
-	@FindBy(how = How.NAME,using = "GuItemEngineeringItemCityCode")
-	WebElement edt_CS;
-	
-	/**
-	 * @Fields edt_QX : 区县
-	 */
-	@FindBy(how = How.NAME,using = "GuItemEngineeringItemDistrictCode")
-	WebElement edt_QX;
-	
-	/**
-	 * @Fields edt_GCDD : 工程地点 
-	 */
-	@FindBy(how = How.NAME,using = "GuItemEngineeringContractAddress")
-	WebElement edt_GCDD;
-	
-	/**
-	 * @Fields edt_BB : 币别
-	 */
-	@FindBy(how = How.NAME,using = "GuItemEngineeringCurrency")
-	WebElement edt_BB;
-	
-	/**
-	 * @Fields edt_GCMC : 工程名称
-	 */
-	@FindBy(how = How.NAME,using = "GuItemEngineeringContractTitle")
-	WebElement edt_GCMC;
-	
-	/**
-	 * @Fields edt_GCLX : 工程类型_一级
-	 */
-	@FindBy(how = How.NAME,using = "GuItemEngineeringContractType1")
-	WebElement edt_GCLX_1;
-	
-	
-	/**
-	 * @Fields edt_GCLX_2 : 工程类型_二级
-	 */
-	@FindBy(how = How.NAME,using = "GuItemEngineeringContractType2")
-	WebElement edt_GCLX_2 ;
-	
+
 	/*********************************************************
 	 **********                险别信息                               *************
 	 *********************************************************
 	 */
 	
-	@FindBy(how = How.ID,using = "ItemPropertyDetail")
-	//@FindBy(how = How.ID,using = "ItemPropertyDetailKind")
-	WebElement tbl_BDWMX;
+	/**
+	 * @Fields tbl_PropertyLoss : 物质损失险
+	 */
+	@FindBy(how = How.ID,using = "ItemKind")
+	WebElement tbl_PropertyLoss;
 	
 	/**
-	 * @Fields edt_XBDM : 险别代码/名称
+	 * @Fields tbl_PropertyLoss : 物质损失险
 	 */
-	@FindBy(how = How.NAME,using = "GuItemKindKindCode")
-	WebElement edt_XBDM;
-	
-	
-	/**
-	 * @Fields edt_JRBE : 计入保额(标记)
-	 */
-	@FindBy(how = How.NAME,using = "GuItemKindCalculateInd")
-	WebElement edt_JRBE;
-	
-	
-	/**
-	 * @Fields slc_JZFS : 价值方式 
-	 */
-	@FindBy(how = How.NAME,using = "GuItemKindValueType")
-	WebElement slc_JZFS;
-	
-	
-	/**
-	 * @Fields edt_BXJE : 保险金额
-	 */
-	@FindBy(how = How.NAME,using = "GuItemKindSumInsured")
-	WebElement edt_BXJE;
-	
-	
-	
-	/**
-	 * @Fields edt_BFFL : 保费费率
-	 */
-	//@FindBy(how = How.NAME,using = "GuItemKindRate")
-	@FindBy(how = How.XPATH,using = "//table[@id='ItemPropertyDetailKind']/tbody/tr/td/input[@name='GuItemKindRate']")
-	WebElement edt_BFFL;
-	
-	
-	
-	/**
-	 * @Fields edt_DQFLBZ : 短期费率标志
-	 */
-	//@FindBy(how = How.NAME,using = "GuItemKindShortRateFlag")
-	@FindBy(how = How.XPATH,using = "//table[@id='ItemPropertyDetailKind']/tbody/tr/td/input[@name='GuItemKindShortRateFlag']")
-	WebElement edt_DQFLBZ;
-	
-	
-	/**
-	 * @Fields edt_YSBF : 应收保费
-	 */
-	//@FindBy(how = How.NAME,using = "GuItemKindGrossPremium")
-	@FindBy(how = How.XPATH,using = "//table[@id='ItemPropertyDetailKind']/tbody/tr/td/input[@name='GuItemKindGrossPremium']")
-	WebElement edt_YSBF;
-	
-	
-	
-	
+	@FindBy(how = How.ID,using = "ItemKindThird")
+	WebElement tbl_ThirdParty;
 	/**
 	 * @Fields btn_savePage : 保存标的信息
 	 */
@@ -132,7 +36,6 @@ public class RiskDetail_JGX_insuredObjPage extends RiskDetail_AbstractInsuredObj
 	
 	public RiskDetail_JGX_insuredObjPage() {
 		goToWorkArea();
-		edt_SF =super.waitAndGetElement(By.xpath("//input[@name='GuItemEngineeringItemProvinceCode']"), 20);
 		PageFactory.initElements(driver, this);
 		logger.debug("进入建工险-保险标的信息页面对象！");
 	}
@@ -144,10 +47,9 @@ public class RiskDetail_JGX_insuredObjPage extends RiskDetail_AbstractInsuredObj
 	 */
 	public void inputInsuredObjectAction(Map<String, String> map) {
 		logger.info("开始录入标的物信息！");
-	}
-	public void inputRiskCodeAction(String bdw,String bdwmx,String xbdm,String jrbe,String jzfs,String bxje,String bffl,String dqflbz,String ysbf) {
-		this.clickElement(tbl_BDWMX);
-
+		AbstractInsuredObjectInfoPage_07.getInstance( map.get("riskCode")).inputInsuredObjectAction(map);
+		super.takeSnapShot(super.getTestCaseId(map)+"_标的基础信息");
+		
 	}
 	/**
 	 *<p>inputRiskCodeAction</p>
@@ -155,7 +57,11 @@ public class RiskDetail_JGX_insuredObjPage extends RiskDetail_AbstractInsuredObj
 	 * @param map
 	 */
 	public void inputRiskCoverageAction(Map<String, String> map) {
-		this.inputRiskCodeAction(map.get("bdw"),map.get("bdwmx"),map.get("xbdm"),map.get("jrbe"),map.get("jzfs"),map.get("bxje"),map.get("bffl"),map.get("dqflbz"),map.get("ysbf"));
+		this.inputRiskCovr_WS(map);
+		if(!"0710".equalsIgnoreCase(map.get("riskCode"))) {
+			this.inputRiskCovr_SZ(map);
+		}	
+		super.takeSnapShot(super.getTestCaseId(map)+"_标的投保详细信息");
 	}
 	/**
 	 *<p>saveInsredObjectPage</p>
@@ -163,6 +69,59 @@ public class RiskDetail_JGX_insuredObjPage extends RiskDetail_AbstractInsuredObj
 	 */
 	public void saveInsredObjectPage(){
 		this.clickButton(btn_savePage);
+		pause(1000);
+	}
+	/**
+	 *<p>inputRiskCovr_WZSS</p>
+	 *<p>录入为物质损失险的信息</p>
+	 * @param map
+	 */
+	private void inputRiskCovr_WS(Map<String, String> map) {
+		this.clickElement(tbl_PropertyLoss);
+		WebElement edt_XBDM = tbl_PropertyLoss.findElement(By.name("GuItemKindItemDetailCode"));
+		WebElement edt_JRBE = tbl_PropertyLoss.findElement(By.name("GuItemKindCalculateInd"));
+		WebElement edt_BXJE = tbl_PropertyLoss.findElement(By.name("GuItemKindSumInsured"));
+		WebElement edt_BFFL = tbl_PropertyLoss.findElement(By.name("GuItemKindRate"));
+		WebElement edt_DQFLBZ = tbl_PropertyLoss.findElement(By.name("GuItemKindShortRateFlag"));
+		WebElement edt_YSBF = tbl_PropertyLoss.findElement(By.name("GuItemKindGrossPremium"));
+		this.CodeSelect(edt_XBDM, map.get("jgx_ws_xmlbdm"));
+		this.CodeSelect(edt_JRBE,map.get("jgx_ws_jrbe"));
+		this.setNumberEditBoxValue(edt_BXJE, map.get("jgx_ws_bxje"));
+		this.setNumberEditBoxValue(edt_BFFL, map.get("jgx_ws_fl"));
+		this.CodeSelect(edt_DQFLBZ, map.get("jgx_ws_dqflbz"));
+		this.setNumberEditBoxValue(edt_YSBF, map.get("jgx_ws_ysbf"));
+	}
+	/**
+	 *<p>inputRiskCovr_SZ</p>
+	 *<p>录入第三者责任险的投保信息</p>
+	 * @param map
+	 */
+	private void inputRiskCovr_SZ(Map<String, String> map) {
+		this.clickElement(tbl_ThirdParty);
+		WebElement edt_XBDM = tbl_ThirdParty.findElement(By.name("ThirdGuItemKindKindCode"));
+		WebElement edt_JRBE = tbl_ThirdParty.findElement(By.name("ThirdGuItemKindCalculateInd"));
+		WebElement edt_BXJE = tbl_ThirdParty.findElement(By.name("ThirdGuItemKindSumInsured"));
+		WebElement edt_BFFL = tbl_ThirdParty.findElement(By.name("ThirdGuItemKindRate"));
+		WebElement edt_DQFLBZ = tbl_ThirdParty.findElement(By.name("ThirdGuItemKindShortRateFlag"));
+		WebElement edt_YSBF = tbl_ThirdParty.findElement(By.name("ThirdGuItemKindGrossPremium"));
+		this.CodeSelect(edt_XBDM, map.get("jgx_sz_xbdm"));
+		this.CodeSelect(edt_JRBE,map.get("jgx_sz_jrbe"));
+		this.setNumberEditBoxValue(edt_BXJE, map.get("jgx_sz_ljpcxe"));
+		this.setNumberEditBoxValue(edt_BFFL, map.get("jgx_sz_fl"));
+		this.CodeSelect(edt_DQFLBZ, map.get("jgx_sz_dqflbz"));
+		this.setNumberEditBoxValue(edt_YSBF, map.get("jgx_sz_ysbf"));
+
+		WebElement btn_Edit = tbl_ThirdParty.findElement(By.name("button_ThirdKindLimitKind_Edit"));  //限额编辑窗口
+		this.jsClickButton(btn_Edit);
+		pause(3000);
+		List<WebElement> btn_delList = tbl_ThirdParty.findElements(By.name("button_ThridKindLimit_Delete")); //限额编辑-删除限额项目
+		logger.debug("限额个数："+btn_delList.size());
+		for(int i=0;i<btn_delList.size();i++) {
+			this.jsClickButton(btn_delList.get(i));
+		}
+		WebElement btn_ok = tbl_ThirdParty.findElement(By.name("button_ThirdKindLimit_Close")); //限额编辑确定按钮
+		this.clickButton(btn_ok);
+		
 	}
 	
 }

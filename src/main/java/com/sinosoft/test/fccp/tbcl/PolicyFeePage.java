@@ -8,6 +8,8 @@ import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.How;
 import org.openqa.selenium.support.PageFactory;
 
+import com.sinosoft.test.util.TestUtil;
+
 public class PolicyFeePage extends TbclMainFramePage {
 	/**
 	 * @Fields edt_XSFDJ : XSF等级 
@@ -26,6 +28,12 @@ public class PolicyFeePage extends TbclMainFramePage {
 	@FindBy(how = How.NAME, using  ="GuMainAdjustRate")
 	WebElement edt_XSFXS;
 	
+	
+	/**
+	 * @Fields edt_TIS : TIS(不含增值税)
+	 */
+	@FindBy(how = How.NAME, using  ="GuMainTIS")
+	WebElement edt_TIS;
 	/**
 	 * @Fields btn_saveFeePage : 保存保单费用信息
 	 */
@@ -46,9 +54,10 @@ public class PolicyFeePage extends TbclMainFramePage {
 	 */
 	public void inputPolicyFeeAction(Map<String, String> map) {
 		edt_XSFDJ = super.waitAndGetElement(By.name("GuMainXsfInd"), 10);
-		this.setEditboxTValue(edt_FSH, map.get("fsh"));
 		this.CodeSelect(edt_XSFDJ, map.get("xsfdj"));
+		this.setEditboxValue(edt_FSH, map.get("fsh"));
 		this.setEditboxValue(edt_XSFXS, map.get("xsfxs"));
+		this.setEditboxValue(edt_TIS, map.get("tis"));
 	}
 	/**
 	 *<p>savePolicyFee</p>
@@ -57,5 +66,10 @@ public class PolicyFeePage extends TbclMainFramePage {
 	public void savePolicyFee() {
 		this.clickButton(btn_saveFeePage);
 		pause(WAIT_SHORTEST);
+	}
+	public void processPolicyFeeAction(Map<String, String> map) {
+		this.inputPolicyFeeAction(map);
+		TestUtil.takeScreenshot(getTestCaseId(map)+"保单费用信息页面");
+		this.savePolicyFee();
 	}
 }

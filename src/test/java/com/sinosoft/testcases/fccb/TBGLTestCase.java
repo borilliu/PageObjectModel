@@ -82,14 +82,11 @@ public class TBGLTestCase extends TestBase {
 	public void FCCB_TBCL(ITestContext context ,Map<String, String> map) {
 		logger.info("开始运行测试脚本，获取到的测试数据《getTBCLTestData》如下:");
 		logger.info(TestUtil.getMapString(map));
+		Reporter.log("CaseNo："+getTestCaseId(map),true);
+		Reporter.log("测试数据："+TestUtil.getMapString(map),true);
 		try {
-			if(null == map.get("ProcessFlag") || map.get("ProcessFlag").equalsIgnoreCase("N")){
-				return;
-			}
 			loginPage = new LoginPage();
-			pause(5000);
 			homePage = loginPage.login_normal();
-			
 			riskSelected = homePage.enterMenuTBCL();
 			riskSelected.InputRiskGeneralAction(map);
 			basicInfo = riskSelected.saveForNext();
@@ -115,9 +112,11 @@ public class TBGLTestCase extends TestBase {
 			policyFee.savePolicyFee();
 			SubmitReviewResult srr= policyFee.submitForReview(map);
 			String fullText =srr.getFullResultText();
-			 Reporter.log("提交复核结果："+fullText,true);
+			Reporter.log("提交复核结果："+fullText,true);
 			logger.debug("提交结果:"+"_"+fullText);
-			Assert.assertTrue(fullText.contains("待双核审核"));
+			String ExpectResult=map.get("submit_status");
+			//Assert.assertTrue(fullText.contains("待双核审核"));
+			Assert.assertTrue(fullText.contains(ExpectResult));
 
 		}catch(UnhandledAlertException uae) {
 			String scrn=TestUtil.takeDesktopScreenShot(getTestCaseId(map)+"_未知弹窗");
@@ -133,6 +132,7 @@ public class TBGLTestCase extends TestBase {
 			logger.info("执行测试用例发生了异常，截屏结束！");
 			Assert.assertTrue(false);
 		}finally {
+			TestUtil.takeScreenshot(getTestCaseId(map)+"_退出前截屏");
 			logger.info("进入Finally事件:RowID:"+map.get("ROW_ID"));
 			logger.info("进入Finally事件:testCaseName:"+map.get("testCaseName"));
 			logger.info("进入Finally事件:proposalNumber:"+map.get("proposalNumber"));
@@ -153,9 +153,9 @@ public class TBGLTestCase extends TestBase {
 	 */
 	@Test(priority = 1, dataProvider = "getTBCLTestData" , enabled= false)
 	public void FCCB_HBCL(ITestContext context ,Map<String, String> map) {
+		context.setAttribute("case_id", getTestCaseId(map));
 		try {
 			loginPage = new LoginPage();
-			pause(5000);
 			homePage = loginPage.login_normal();
 			TaskProcessQueryPage queryPage = homePage.enterMenuHBRWCL();
 			ApproveInfoPage apv= queryPage.queryProposalForApprove("06201890101202000000000208");
@@ -178,11 +178,12 @@ public class TBGLTestCase extends TestBase {
 			logger.info("执行测试用例发生了异常，截屏结束！");
 			Assert.assertTrue(false);
 		}	
+		
 	}
 	@AfterMethod
-	public void tearDown() {
+	public void tearDown(ITestContext context) {
 		System.out.println("执行了退出事件：tearDown");
-		//driver.quit();
+		driver.quit();
 //		driver.navigate().refresh();
 //		driver.get(driver.getCurrentUrl());
 //		driver.navigate().to(driver.getCurrentUrl());

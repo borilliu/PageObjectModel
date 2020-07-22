@@ -155,6 +155,7 @@ public class RiskDetail_TypePage extends RiskDetailPage {
 	 */
 	public RiskDetail_AbstractInsuredObjPage saveRiskDetailTypePage(Map<String, String> map) {
 		logger.info("保存险种基本信息");
+		TestUtil.takeScreenshot(getTestCaseId(map)+"投保单险种信息页面");
 		super.jsClickButton(btn_saveButton);
 		pause(1000);
 		return RiskDetail_AbstractInsuredObjPage.getInstance(map.get("riskClass"));

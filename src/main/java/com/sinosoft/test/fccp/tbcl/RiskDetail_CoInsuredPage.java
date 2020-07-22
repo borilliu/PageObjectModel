@@ -54,34 +54,30 @@ public class RiskDetail_CoInsuredPage extends RiskDetailPage {
 		WebElement edt_mainPrmm= spn_lastSpan.findElement(By.name("GuCoinsuranceCoinsPremium"));
 		this.setEditboxValue(edt_mainPrct, map.get("lgb_main_pcrt"));
 		this.clickElement(edt_mainPrmm);
-		pause(2000);
 		WebElement btn_confirm =spn_lastSpan.findElement(By.name("button_CoinsuranceDetailInfo_Close"));
 		this.clickButton(btn_confirm);
 		logger.debug("处理完主保方信息");
 		//处理共保的信息,增加共保方信息
-		this.jsClickButton(btn_Add);
+		this.clickButton(btn_Add);
 		logger.debug("开始处理共保方信息");
 		//处理共保方详细信息
-		this.jsClickButton(btn_CoDetail);
-		pause(2000);
-		
+		this.clickButton(btn_CoDetail);
 		logger.debug("打开了共保方的页面");
 		WebElement edt_codeL1=spn_lastSpan.findElement(By.name("GuCoinsuranceCoinsCode"));
-		WebElement edt_codeL2=spn_lastSpan.findElement(By.name("GuCoinsuranceCoinsCodeTwo"));
-		WebElement edt_codeL3=spn_lastSpan.findElement(By.name("GuCoinsuranceCoinsCodeThree"));
-		WebElement edt_sharePct=spn_lastSpan.findElement(By.name("GuCoinsuranceCoinsRate"));
-		List <WebElement> rdo_prmSourceInd=spn_lastSpan.findElements(By.name("CoinsPremiumAcceptInd02"));
-		
 		this.SetCodeEditBox(edt_codeL1, map.get("lgb_co_level1"));
+		WebElement edt_codeL2=spn_lastSpan.findElement(By.name("GuCoinsuranceCoinsCodeTwo"));
 		this.SetCodeEditBox(edt_codeL2, map.get("lgb_co_level2"));
+		WebElement edt_codeL3=spn_lastSpan.findElement(By.name("GuCoinsuranceCoinsCodeThree"));
 		this.setEditboxValue(edt_codeL3,map.get("lgb_co_level3"));
+		WebElement edt_sharePct=spn_lastSpan.findElement(By.name("GuCoinsuranceCoinsRate"));
 		this.setEditboxValue(edt_sharePct,map.get("lgb_co_prct"));
+		List <WebElement> rdo_prmSourceInd=spn_lastSpan.findElements(By.name("CoinsPremiumAcceptInd02"));
 		this.SetRadioValue(rdo_prmSourceInd,map.get("lgb_co_gbbfsqxs"));
 		WebElement btn_confirm2 =spn_lastSpan.findElement(By.name("button_CoinsuranceDetailInfo_Close"));
 		this.jsClickButton(btn_confirm2);
 	}
 	public void processCoInsured(Map<String, String> map) {
-		if(!"".equals(map.get("lgb_main_pcrt"))) {
+		if(!"0".equals(map.get("lgbbz"))) { //联共保标志
 			inputCoInsuranceInfoAction(map);
 			saveCoInsuredPage();
 		}

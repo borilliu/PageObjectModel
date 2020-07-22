@@ -33,6 +33,11 @@ public class InsuredObjectInfoPage_0107 extends AbstractInsuredObjectInfoPage_01
 	@FindBy(how = How.XPATH,using = "//table[@id='itemDynamic']/tbody/tr/td/input[@name='GuItemDynamicFieldBX']")
 	WebElement edt_FXLX; 	
 	
+	/**
+	 * @Fields edt_BXCS : 保险处所
+	 */
+	@FindBy(how = How.NAME,using = "GuItemPropertySituation")
+	WebElement edt_BXCS;	
 	
 	public InsuredObjectInfoPage_0107() {
 		edt_JQBM =super.waitAndGetElement(By.name("GuItemPropertyBlockCode"), 20);
@@ -42,6 +47,8 @@ public class InsuredObjectInfoPage_0107 extends AbstractInsuredObjectInfoPage_01
 	public void inputInsuredObjectAction(Map<String, String> map) {
 		logger.info("开始录入标的物信息！");
 		super.inputInsuredObjectCommmon(map);
+		
+		this.setEditboxValue(edt_BXCS,map.get("bxcs"));
 		this.setEditboxValue(edt_JD,map.get("bdw_jd"));
 		this.SetCodeEditBox(edt_YYXZ, map.get("bdw_yyxz"));
 		this.SetCodeEditBox(edt_SFHYF, map.get("bdw_sfhyf"));
