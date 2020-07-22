@@ -58,7 +58,6 @@ public abstract class FccbBase extends TestBase {
 	 * @param code
 	 */
 	public void SetCodeEditBox(WebElement codeEditBox,String code) {
-		logger.debug("SetCodeEditBox:测试: CodeEditBox=" +code);
 		if(null == code || "".equals(code)) return;
 		if(code.equals(codeEditBox.getAttribute("value").trim())) {
 			return;
