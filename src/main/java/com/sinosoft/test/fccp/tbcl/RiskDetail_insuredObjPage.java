@@ -153,7 +153,7 @@ public class RiskDetail_insuredObjPage extends RiskDetail_AbstractInsuredObjPage
 	public RiskDetail_insuredObjPage() {
 		goToWorkArea();
 		tbl_BDWMX =super.waitAndGetElement(By.id("ItemPropertyDetail"), 20);
-		PageFactory.initElements(driver, this);
+		PageFactory.initElements(driver(), this);
 		logger.debug("进入保险标的信息页面对象！");
 	}
 	

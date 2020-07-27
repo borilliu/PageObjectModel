@@ -73,7 +73,7 @@ public class InsuredObjectInfoPage_0122 extends AbstractInsuredObjectInfoPage_01
 	
 	public InsuredObjectInfoPage_0122() {
 		edt_JQBM =super.waitAndGetElement(By.name("GuItemPropertyBlockCode"), 20);
-		PageFactory.initElements(driver, this);
+		PageFactory.initElements(driver(), this);
 	}
 
 	public void inputInsuredObjectAction(Map<String, String> map) {

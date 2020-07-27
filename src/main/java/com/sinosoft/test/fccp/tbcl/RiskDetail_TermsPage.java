@@ -19,7 +19,7 @@ public class RiskDetail_TermsPage extends RiskDetailPage {
 	WebElement btn_savePage;
 	public RiskDetail_TermsPage() {
 		goToWorkArea();
-		PageFactory.initElements(driver, this);
+		PageFactory.initElements(driver(), this);
 	}
 	/**
 	 *<p>saveTermsPage</p>

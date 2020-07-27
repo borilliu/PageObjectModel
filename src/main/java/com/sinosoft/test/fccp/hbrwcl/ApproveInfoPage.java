@@ -40,7 +40,7 @@ public class ApproveInfoPage extends RwclMainFramePage {
 	public ApproveInfoPage() {
 		super();
 		this.goToWorkArea();
-		PageFactory.initElements(driver, this);
+		PageFactory.initElements(driver(), this);
 	}
 	
 	/**
@@ -74,14 +74,14 @@ public class ApproveInfoPage extends RwclMainFramePage {
 	 * @param notion
 	 */
 	public TaskProcessResultPage approve(String msg,String notion) {
-		this.checkSpecialInfo();
+	/*	this.checkSpecialInfo();
 		this.checkApproveInfo();
 		this.checkTheReinsranceInfo();
 		InputApproveMsg(msg,notion);
-		this.jsClickButton(btn_History);
+		this.jsClickButton(btn_History);*/
 		pause(2000);
-		this.clickButton(btn_Approve);
-		waitAndAcceptAlert("确实要审核通过吗", 5);
+//		this.clickButton(btn_Approve);
+//		waitAndAcceptAlert("确实要审核通过吗", 5);
 		return new TaskProcessResultPage();
 	}
 

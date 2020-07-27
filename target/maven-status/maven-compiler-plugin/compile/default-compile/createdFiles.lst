@@ -6,15 +6,18 @@ com\sinosoft\test\util\TestUtil.class
 com\sinosoft\test\fccp\tbcl\InsuredObjectInfoPage_0105.class
 com\sinosoft\test\fccp\tbcl\RiskDetail_JGX_insuredObjPage.class
 com\sinosoft\test\base\TestBase$2.class
+com\sinosoft\test\fccp\tbcl\InsuredObjectInfoPage_0701.class
 com\sinosoft\test\fccp\common\LoginPage.class
 com\sinosoft\test\fccp\tbcl\AbstractInsuredObjectInfoPage_01.class
 com\sinosoft\test\fccp\tbcl\InsuredObjectInfoPage_0122.class
+com\sinosoft\test\fccp\tbcl\RiskDetail_CoInsuredPage.class
 com\sinosoft\test\fccp\common\HomePage.class
 com\sinosoft\test\fccp\tbcl\InsuredObjectInfoPage_0107.class
 com\sinosoft\test\util\WebEventListener.class
 com\sinosoft\test\fccp\tbcl\BasicInfoPage.class
 com\sinosoft\test\fccp\tbcl\RiskSelectPage.class
 com\sinosoft\test\fccp\common\FccbBase.class
+com\sinosoft\test\fccp\tbcl\InsuredObjectInfoPage_0710.class
 com\sinosoft\test\fccp\common\CodeSelectPage.class
 com\sinosoft\test\fccp\tbcl\InsuredObjectInfoPage_0101.class
 com\sinosoft\test\fccp\tbcl\SubmitReviewResult.class
@@ -31,5 +34,6 @@ com\sinosoft\test\fccp\tbcl\PolicyFeePage.class
 com\sinosoft\test\fccp\hbrwcl\TaskProcessQueryPage.class
 com\sinosoft\test\fccp\tbcl\RiskDetail_TypePage.class
 com\sinosoft\test\fccp\tbcl\TbclMainFramePage.class
+com\sinosoft\test\fccp\tbcl\AbstractInsuredObjectInfoPage_07.class
 com\sinosoft\test\fccp\tbcl\RiskDetail_TermsPage.class
 com\sinosoft\test\util\ExtentReporterNG$1.class

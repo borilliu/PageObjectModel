@@ -45,7 +45,7 @@ public class RiskDetail_CoInsuredPage extends RiskDetailPage {
 	
 	public RiskDetail_CoInsuredPage() {
 		goToWorkArea();
-		PageFactory.initElements(driver, this);
+		PageFactory.initElements(driver(), this);
 	}
 	
 	public void inputCoInsuranceInfoAction(Map<String, String> map) {

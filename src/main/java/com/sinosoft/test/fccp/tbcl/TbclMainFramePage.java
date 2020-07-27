@@ -20,7 +20,7 @@ public class TbclMainFramePage extends FccbBase {
 	@FindBy(how = How.NAME,using = "Save")
 	WebElement btn_submitForReview;
 	public TbclMainFramePage() {
-		PageFactory.initElements(driver, this);
+		PageFactory.initElements(driver(), this);
 	}
 	public PolicyFeePage goToMainFrame_policyfee() {
 		goToMainFramePage("保单费用信息");

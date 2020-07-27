@@ -89,7 +89,7 @@ public class RiskSelectPage extends FccbBase {
 		if (btn_nextStep == null){
 		    throw new IllegalStateException("The Page is not loaded correctly: "+ driver.getCurrentUrl());
 		}*/
-		PageFactory.initElements(new AjaxElementLocatorFactory(driver, 5) ,this);
+		PageFactory.initElements(new AjaxElementLocatorFactory(driver(), 5) ,this);
 		logger.debug("投保处理/险种选择");
 	}
 

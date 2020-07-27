@@ -12,7 +12,7 @@ public class SubmitReviewResult extends TbclMainFramePage {
 	WebElement edt_proposalNo;
 	public SubmitReviewResult() {
 		this.goToMainArea();
-		PageFactory.initElements(driver, this);
+		PageFactory.initElements(driver(), this);
 	}
 	/**
 	 *<p>getProposalNumber</p>

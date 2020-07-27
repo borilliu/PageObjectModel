@@ -47,7 +47,7 @@ public class LoginPage extends FccbBase{
 	
 	
 	public LoginPage(){
-		PageFactory.initElements(driver, this);
+		PageFactory.initElements(driver(), this);
 //		txt_login = super.waitAndGetElement(By.xpath("//p[text()='会员登录']"), 5);
 //		if (txt_login== null){
 //		    throw new IllegalStateException("The Page is not loaded correctly: "+ driver.getCurrentUrl());
@@ -57,7 +57,7 @@ public class LoginPage extends FccbBase{
 	}
 	//Actions:
 	public String validateLoginPageTitle(){
-		return driver.getTitle();
+		return driver().getTitle();
 	}
 
 	public HomePage login(String un, String pwd){

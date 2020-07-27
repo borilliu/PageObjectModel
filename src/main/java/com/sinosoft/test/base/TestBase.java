@@ -1,5 +1,6 @@
 package com.sinosoft.test.base;
 
+import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.io.InputStream;
@@ -8,12 +9,15 @@ import java.util.Map;
 import java.util.Properties;
 import java.util.concurrent.TimeUnit;
 
+import org.apache.commons.io.FileUtils;
 import org.apache.log4j.Logger;
 import org.openqa.selenium.Alert;
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.NoAlertPresentException;
+import org.openqa.selenium.OutputType;
+import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.UnexpectedAlertBehaviour;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -21,7 +25,6 @@ import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.ie.InternetExplorerDriver;
-import org.openqa.selenium.ie.InternetExplorerOptions;
 import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.remote.CapabilityType;
 import org.openqa.selenium.remote.DesiredCapabilities;
@@ -40,7 +43,8 @@ import com.sinosoft.test.util.WebEventListener;
  *
  */
 public class TestBase { 
-	public static WebDriver driver;
+	//public static WebDriver driver;
+    public static ThreadLocal<WebDriver> ThreadDriver=new ThreadLocal<WebDriver>() ;
 	public static Reporter reporter;
 	public static Properties prop; 
 	public static EventFiringWebDriver e_driver;
@@ -72,7 +76,7 @@ public class TestBase {
 	}
 	
 	
-	public static void initialization(){
+	public  void initialization(){
 		try {
 			WAIT_SHORTEST =  Integer.valueOf(prop.getProperty("system.wait.shorttest"));
 			WAIT_SHORTER =  Integer.valueOf(prop.getProperty("system.wait.shorter"));
@@ -85,6 +89,7 @@ public class TestBase {
 		prop.getProperty("system.browser");
 		String browserName = prop.getProperty("system.browser");
 		String projectPath=System.getProperty("user.dir");
+		WebDriver driver;
 		if(browserName.equals("chrome")){
 			System.setProperty("webdriver.chrome.driver", projectPath+"\\driver\\chromedriver.exe");	
 			driver = new ChromeDriver(); 
@@ -93,7 +98,7 @@ public class TestBase {
 			logger.info("start InternetExplorerDriver");
 			try {
 				System.setProperty("webdriver.ie.driver",  projectPath+"\\driver\\IEDriverServer.exe");	
-				InternetExplorerOptions options = new InternetExplorerOptions();
+		/*		InternetExplorerOptions options = new InternetExplorerOptions();
 				options.setCapability(CapabilityType.ACCEPT_SSL_CERTS, true);
 				options.setCapability(InternetExplorerDriver.NATIVE_EVENTS, true);
 				options.setCapability(InternetExplorerDriver.INTRODUCE_FLAKINESS_BY_IGNORING_SECURITY_DOMAINS, true);
@@ -101,29 +106,43 @@ public class TestBase {
 				//options.setCapability(CapabilityType.UNEXPECTED_ALERT_BEHAVIOUR, UnexpectedAlertBehaviour.IGNORE);
 				options.setCapability(InternetExplorerDriver.LOG_LEVEL, "TRACE");
 				options.setCapability(InternetExplorerDriver.LOG_FILE, "IE_LOG.log");
-
 				
-				driver = new InternetExplorerDriver(options);
+//				options.setCapability("allow-blocked-content", true);
+//				options.setCapability("allowBlockedContent", true);
+				driver = new InternetExplorerDriver(options);*/
+				
+				DesiredCapabilities caps = DesiredCapabilities.internetExplorer();
+				caps.setCapability(InternetExplorerDriver.NATIVE_EVENTS, false);
+				caps.setCapability(InternetExplorerDriver.INTRODUCE_FLAKINESS_BY_IGNORING_SECURITY_DOMAINS, true);
+				caps.setCapability(CapabilityType.UNEXPECTED_ALERT_BEHAVIOUR, UnexpectedAlertBehaviour.ACCEPT);
+				//options.setCapability(CapabilityType.UNEXPECTED_ALERT_BEHAVIOUR, UnexpectedAlertBehaviour.IGNORE);
+				caps.setCapability(InternetExplorerDriver.LOG_LEVEL, "TRACE");
+				caps.setCapability(InternetExplorerDriver.LOG_FILE, "IE_LOG.log");
+				driver = new InternetExplorerDriver(caps);
+				
+				
 				driver.manage().deleteAllCookies();
 				driver.manage().timeouts().setScriptTimeout(TestUtil.SCRIPT_TIMEOUT, TimeUnit.SECONDS);
 				driver.manage().timeouts().pageLoadTimeout(TestUtil.PAGE_LOAD_TIMEOUT, TimeUnit.SECONDS);
 				driver.manage().timeouts().implicitlyWait(TestUtil.IMPLICIT_WAIT, TimeUnit.SECONDS);
 				//driver.manage().window().maximize();	
+				e_driver = new EventFiringWebDriver(driver);
+				// Now create object of EventListerHandler to register it with EventFiringWebDriver
+				eventListener = new WebEventListener();
+				e_driver.register(eventListener);
+				driver = e_driver;
+				driver.manage().window().maximize();
+				ThreadDriver.set(driver);
 			}catch(Exception e) {
 				e.printStackTrace();
 				logger.debug("加载IE驱动错误！",e);
 			}
 		}
 		
-		e_driver = new EventFiringWebDriver(driver);
-		// Now create object of EventListerHandler to register it with EventFiringWebDriver
-		eventListener = new WebEventListener();
-		e_driver.register(eventListener);
-		driver = e_driver;
-		
-		driver.manage().window().maximize();
-		//driver.get(prop.getProperty("url"));
-		
+
+	}
+	public static WebDriver driver() {
+		return ThreadDriver.get();
 	}
 	/**
 	 *<p>getTestCaseId</p>
@@ -153,7 +172,7 @@ public class TestBase {
 	public void runJS(String js, WebElement element) {
 		logger.info("RunJavaScript:"+ element.toString()+"\t"+ js);
 		try {
-			((JavascriptExecutor) driver).executeScript(js, element);
+			((JavascriptExecutor) driver()).executeScript(js, element);
 		} catch (Exception e) {
 			logger.error(e);
 		}
@@ -167,7 +186,7 @@ public class TestBase {
 	public void jsInputValue(String value, WebElement element) {
 		logger.info("RunJavaScript:"+ element.toString()+"："+ value);
           try{
-                  ((JavascriptExecutor) driver).executeScript("arguments[0].value=arguments[1]", element, value);
+                  ((JavascriptExecutor) driver()).executeScript("arguments[0].value=arguments[1]", element, value);
           } catch(Exception e) {
               logger.error(e);
           }
@@ -197,7 +216,7 @@ public class TestBase {
 	public WebElement waitAndGetElement(final By loc, long timeout) {
 		WebElement element = null;
 		try {
-			WebDriverWait wait = new WebDriverWait(driver, timeout);
+			WebDriverWait wait = new WebDriverWait(driver(), timeout);
 			element = wait.until(new ExpectedCondition<WebElement>() {
 				@Override
 				public WebElement apply(WebDriver d) {
@@ -219,7 +238,7 @@ public class TestBase {
 	 */
 	public boolean waitAndAcceptAlert(String title, long timeout) {
 		boolean found = false;
-		WebDriverWait wait = new WebDriverWait(driver, timeout);
+		WebDriverWait wait = new WebDriverWait(driver(), timeout);
 		try {
 			found = wait.until(new ExpectedCondition<Boolean>() {
 				@Override
@@ -247,7 +266,7 @@ public class TestBase {
 	 * @return
 	 */
 	public String catchUnexpectedAlert(long timeout) {
-		WebDriverWait wait = new WebDriverWait(driver, timeout);
+		WebDriverWait wait = new WebDriverWait(driver(), timeout);
 		String title="";
 		try {
 			title = wait.until(new ExpectedCondition<String>() {
@@ -264,13 +283,13 @@ public class TestBase {
 		return title;
 	}	
 	public void actionDoubleClick(WebElement element) {
-		 new Actions(driver).doubleClick(element).perform();
+		 new Actions(driver()).doubleClick(element).perform();
 	}
 	public void actionClick(WebElement element) {
-		 new Actions(driver).click().perform();
+		 new Actions(driver()).click().perform();
 	}
 	public void navigateToWindowByTitle(final String title, long timeout) {
-		WebDriverWait wait = new WebDriverWait(driver, timeout);
+		WebDriverWait wait = new WebDriverWait(driver(), timeout);
 		try {
 			wait.until(new ExpectedCondition<String>() {
 				@Override
@@ -297,7 +316,7 @@ public class TestBase {
      * @param element
      */
     public void highlight(WebElement element){
-        JavascriptExecutor js = (JavascriptExecutor) driver;
+        JavascriptExecutor js = (JavascriptExecutor) driver();
         js.executeScript("arguments[0].setAttribute('style', arguments[1]);", 
                 element,"background: yellow; border: 2px solid red;");
     }	
@@ -307,7 +326,7 @@ public class TestBase {
      * @param element
      */
     public void resetHighlight(WebElement element){
-        JavascriptExecutor js = (JavascriptExecutor) driver;
+        JavascriptExecutor js = (JavascriptExecutor) driver();
         js.executeScript("arguments[0].setAttribute('style', arguments[1]);", 
                 element,"background: ''; border:'';");
     }
@@ -318,7 +337,7 @@ public class TestBase {
 	 * @param url 链接地址
 	 */
 	public void goToURL(String url) {
-		driver.get(url);	
+		driver().get(url);	
 	}
 	/**
 	 *<p>SetRadioValue</p>
@@ -435,6 +454,10 @@ public class TestBase {
 		logger.info("dblclickButton:"+ btnEle.toString());
 		this.actionDoubleClick(btnEle);
 	}
-
-
+	public void quitDriver() {
+		if(driver()!=null) {
+			driver().quit();
+			ThreadDriver.remove();
+		}
+	}
 }

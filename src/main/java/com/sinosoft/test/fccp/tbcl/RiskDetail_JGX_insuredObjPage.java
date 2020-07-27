@@ -36,7 +36,7 @@ public class RiskDetail_JGX_insuredObjPage extends RiskDetail_AbstractInsuredObj
 	
 	public RiskDetail_JGX_insuredObjPage() {
 		goToWorkArea();
-		PageFactory.initElements(driver, this);
+		PageFactory.initElements(driver(), this);
 		logger.debug("进入建工险-保险标的信息页面对象！");
 	}
 

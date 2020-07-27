@@ -34,8 +34,8 @@ import com.aventstack.extentreports.ExtentTest;
  * @author liubenchao@sinsoft.com.cn
  */
 public class ExtentReporterNG implements IReporter {
-	private static final String OUTPUT_FOLDER = "test-output/";
-	private static final String FILE_NAME = "index.html";
+	private static final String OUTPUT_FOLDER = "report/";
+	private static final String FILE_NAME = "testReport.html";
 	private ExtentReports extent;
 
 	public void generateReport(List<XmlSuite> xmlSuites, List<ISuite> suites, String outputDirectory) {

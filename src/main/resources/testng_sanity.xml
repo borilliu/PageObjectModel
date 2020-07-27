@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<!-- <suite name="YPIC Automation Test Suite" parallel="methods" thread-count= "1" >-->
 <suite name="YPIC Automation Test Suite">
 	<listeners>
 		<listener class-name="com.sinosoft.test.util.ExtentReporterNG" />
@@ -7,7 +8,10 @@
 	<test name="YPIC FCCB Test Cases">
 		<classes>
 			<class name="com.sinosoft.testcases.fccb.TBGLTestCase"/>
+			
 		<!-- 
+			
+			<class name="com.sinosoft.testcases.fccb.PGGLTestCase"/>
 			<class name="com.crm.qa.testcases.LoginPageTest"></class>
 			<class name="com.crm.qa.testcases.HomePageTest"></class>
 		 -->	

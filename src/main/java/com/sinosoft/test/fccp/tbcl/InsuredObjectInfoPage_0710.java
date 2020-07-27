@@ -102,7 +102,7 @@ public class InsuredObjectInfoPage_0710 extends AbstractInsuredObjectInfoPage_07
 	
 	public InsuredObjectInfoPage_0710() {
 		edt_SF =super.waitAndGetElement(By.xpath("//input[@name='GuItemEngineeringItemProvinceCode']"), 20);
-		PageFactory.initElements(driver, this);
+		PageFactory.initElements(driver(), this);
 	}
 
 	public void inputInsuredObjectAction(Map<String, String> map) {

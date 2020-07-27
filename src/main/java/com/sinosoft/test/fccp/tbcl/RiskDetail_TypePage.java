@@ -103,7 +103,7 @@ public class RiskDetail_TypePage extends RiskDetailPage {
 	public RiskDetail_TypePage() {
 		goToWorkArea();
 		slc_XZSYFW = super.waitAndGetElement(By.name("GuRiskRiskApplyType"), 10);
-		PageFactory.initElements(driver, this);
+		PageFactory.initElements(driver(), this);
 		logger.debug("投保处理/险种信息");
 	}
 	public void InputRiskTypeInfoAction(String xzsyfw,String tqmc,String qbrq,String zbrq,String lgbbz,String yyzdbz,String sfgxdm,String cbdq) {

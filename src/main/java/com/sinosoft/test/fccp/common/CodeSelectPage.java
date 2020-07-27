@@ -34,8 +34,8 @@ public class CodeSelectPage extends FccbBase {
 	
 	
 	public CodeSelectPage() {
-		//PageFactory.initElements(driver, this);
-		PageFactory.initElements(new AjaxElementLocatorFactory(driver, 10) ,this);
+		//PageFactory.initElements(driver(), this);
+		PageFactory.initElements(new AjaxElementLocatorFactory(driver(), 10) ,this);
 		logger.debug("基础码表选择！");
 	}
 	

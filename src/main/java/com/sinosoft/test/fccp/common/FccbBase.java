@@ -29,7 +29,7 @@ public abstract class FccbBase extends TestBase {
 	static String WINDOW_CODESELECT_TITLE ="Code Select";
 	
 	public FccbBase() {
-		PageFactory.initElements(driver, this);
+		PageFactory.initElements(driver(), this);
 	}
 	/**
 	 *<p>CodeSelect</p>
@@ -217,36 +217,14 @@ public abstract class FccbBase extends TestBase {
 	 *<p>将浏览器工作区域切换到用户录入区域</p>
 	 */
 	public void goToWorkArea() {
-		driver.switchTo().defaultContent();
-		driver.switchTo().frame("mainFrame");
-		driver.switchTo().frame("myFrame");
+		driver().switchTo().defaultContent();
+		driver().switchTo().frame("mainFrame");
+		driver().switchTo().frame("myFrame");
 	}
 	public void goToMainArea() {
-		driver.switchTo().defaultContent();
-		driver.switchTo().frame("mainFrame"); 
+		driver().switchTo().defaultContent();
+		driver().switchTo().frame("mainFrame"); 
 	}
-	/**
-	 *<p>goToMenuArea</p>
-	 *<p>将浏览器工作区域切换到带单工作区域</p>
-	 */
-	public void goToMenuArea() {
-		driver.switchTo().defaultContent();
-		driver.switchTo().frame("leftFrame");
-	}
-	/**
-	 *<p>openMenu</p>
-	 *<p>打开菜单</p>
-	 * @param menuString 使用“#”分割的菜单项目，如 传入"承保子系统#投保管理#投保处理" 将依次打开"承保子系统"->"投保管理" ->"投保处理"
-	 */
-	public void openMenu(String menuString) {
-		this.goToMenuArea();
-		String[] menus = menuString.split("#");
-		for(int i=0;i<menus.length;i++) {
-			WebElement menu = waitAndGetElement(By.linkText(menus[i]), 1);
-			runJS("arguments[0].click();", menu);
-			pause(200);
-		}
-	}		
 	public String fmtDateString(String dateString) {
 		String dateStringFmt= dateString.replaceAll("\\/|-", "");
 		try {

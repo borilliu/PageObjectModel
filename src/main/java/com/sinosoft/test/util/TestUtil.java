@@ -41,7 +41,7 @@ public class TestUtil extends TestBase {
 	static JavascriptExecutor js;
 
 	public void switchToFrame() {
-		driver.switchTo().frame("mainpanel");
+		driver().switchTo().frame("mainpanel");
 	}
 
 	public static Object[][] getTestData(String sheetName) {
@@ -74,7 +74,7 @@ public class TestUtil extends TestBase {
 	}
 
 	public static void takeScreenshotAtEndOfTest() throws IOException {
-		File scrFile = ((TakesScreenshot) driver).getScreenshotAs(OutputType.FILE);
+		File scrFile = ((TakesScreenshot) driver()).getScreenshotAs(OutputType.FILE);
 		String currentDir = System.getProperty("user.dir");
 		FileUtils.copyFile(scrFile, new File(currentDir + "/screenshots/test/" + System.currentTimeMillis() + ".png"));
 	}
@@ -87,7 +87,7 @@ public class TestUtil extends TestBase {
 	public static String takeScreenshot(String fileName)  {
 		try {
 			logger.debug("截屏文件名字是："+fileName);
-			File scrFile = ((TakesScreenshot) driver).getScreenshotAs(OutputType.FILE);
+			File scrFile = ((TakesScreenshot) driver()).getScreenshotAs(OutputType.FILE);
 			File file =new File(getFileFullName(fileName)+".png");
 			FileUtils.copyFile(scrFile, file);
 			Reporter.log("截屏："+file.getAbsolutePath(),false);
@@ -135,7 +135,7 @@ public class TestUtil extends TestBase {
 		
 	}
 	public static void runTimeInfo(String messageType, String message) throws InterruptedException {
-		js = (JavascriptExecutor) driver;
+		js = (JavascriptExecutor) driver();
 		// Check for jQuery on the page, add it if need be
 		js.executeScript("if (!window.jQuery) {"
 				+ "var jquery = document.createElement('script'); jquery.type = 'text/javascript';"

@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite thread-count="2" guice-stage="DEVELOPMENT" name="Failed suite [YPIC Automation Test Suite]" parallel="methods">
+  <listeners>
+    <listener class-name="com.sinosoft.test.util.ExtentReporterNG"/>
+  </listeners>
+  <test name="YPIC FCCB Test Cases(failed)" parallel="methods">
+    <classes>
+      <class name="com.sinosoft.testcases.fccb.PGGLTestCase">
+        <methods>
+          <include name="tearDown"/>
+          <include name="tearDown"/>
+          <include name="FCCB_TBCL1"/>
+          <include name="Init"/>
+          <include name="setup"/>
+          <include name="FCCB_TBCL4"/>
+          <include name="FCCB_TBCL3"/>
+          <include name="FCCB_TBCL2"/>
+        </methods>
+      </class> <!-- com.sinosoft.testcases.fccb.PGGLTestCase -->
+    </classes>
+  </test> <!-- YPIC FCCB Test Cases(failed) -->
+</suite> <!-- Failed suite [YPIC Automation Test Suite] -->

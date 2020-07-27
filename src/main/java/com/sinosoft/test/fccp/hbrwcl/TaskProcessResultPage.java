@@ -12,7 +12,7 @@ public class TaskProcessResultPage extends FccbBase {
 	WebElement text_result;
 	public TaskProcessResultPage() {
 		this.goToMainArea();
-		PageFactory.initElements(driver, this);
+		PageFactory.initElements(driver(), this);
 	}
 	
 	/**

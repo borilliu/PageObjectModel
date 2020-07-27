@@ -78,7 +78,7 @@ public class TBGLTestCase extends TestBase {
 	 * @param context
 	 * @param map
 	 */
-	@Test(priority = 1, dataProvider = "getTBCLTestData",enabled=true)
+	@Test(priority = 1, dataProvider = "getTBCLTestData",enabled= false)
 	public void FCCB_TBCL(ITestContext context ,Map<String, String> map) {
 		logger.info("开始运行测试脚本，获取到的测试数据《getTBCLTestData》如下:");
 		logger.info(TestUtil.getMapString(map));
@@ -108,8 +108,9 @@ public class TBGLTestCase extends TestBase {
 			riskDetail_coInsured = riskDetail_terms.goToCoInsuredPage(map);
 			riskDetail_coInsured.processCoInsured(map);
 			policyFee = riskDetail_terms.goToMainFrame_policyfee();
-			policyFee.inputPolicyFeeAction(map);
-			policyFee.savePolicyFee();
+			policyFee.processPolicyFeeAction(map);
+//			policyFee.inputPolicyFeeAction(map);
+//			policyFee.savePolicyFee();
 			SubmitReviewResult srr= policyFee.submitForReview(map);
 			String fullText =srr.getFullResultText();
 			Reporter.log("提交复核结果："+fullText,true);
@@ -151,14 +152,16 @@ public class TBGLTestCase extends TestBase {
 	 * @param context
 	 * @param map
 	 */
-	@Test(priority = 1, dataProvider = "getTBCLTestData" , enabled= false)
+	@Test(priority = 2, dataProvider = "getTBCLTestData",enabled= true)
 	public void FCCB_HBCL(ITestContext context ,Map<String, String> map) {
-		context.setAttribute("case_id", getTestCaseId(map));
+		System.out.println("开始核保处理1！");
 		try {
+			System.out.println("开始核保处理2！");
 			loginPage = new LoginPage();
+			System.out.println("开始核保处理3！");
 			homePage = loginPage.login_normal();
 			TaskProcessQueryPage queryPage = homePage.enterMenuHBRWCL();
-			ApproveInfoPage apv= queryPage.queryProposalForApprove("06201890101202000000000208");
+			ApproveInfoPage apv= queryPage.queryProposalForApprove("06201900702202000000000053");
 			TaskProcessResultPage resPage=apv.approve("准予承保！", "同意");
 			String ApvMsg=resPage.getApproveResult();
 			Reporter.log("核保结果信息："+ApvMsg);		
@@ -183,7 +186,7 @@ public class TBGLTestCase extends TestBase {
 	@AfterMethod
 	public void tearDown(ITestContext context) {
 		System.out.println("执行了退出事件：tearDown");
-		driver.quit();
+//		super.quitDriver();
 //		driver.navigate().refresh();
 //		driver.get(driver.getCurrentUrl());
 //		driver.navigate().to(driver.getCurrentUrl());
@@ -191,7 +194,6 @@ public class TBGLTestCase extends TestBase {
 	@AfterClass 
 	public void Close() {
 		System.out.println("执行了AfterClass事件：Close");
-		
 	}
 
 }

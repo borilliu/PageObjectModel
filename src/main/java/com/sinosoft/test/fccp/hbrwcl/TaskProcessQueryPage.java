@@ -37,7 +37,7 @@ public class TaskProcessQueryPage extends FccbBase {
 	@FindBy(how = How.NAME,using = "buttonQuery")
 	WebElement btn_query;
 	public TaskProcessQueryPage() {
-		PageFactory.initElements(driver, this);
+		PageFactory.initElements(driver(), this);
 	}
 	/**
 	 *<p>queryProposalForApprove</p>
@@ -63,8 +63,16 @@ public class TaskProcessQueryPage extends FccbBase {
 		}
 	}
 	private void gotoQueryResult() {
-		driver.switchTo().defaultContent();
-		driver.switchTo().frame("mainFrame"); 
-		driver.switchTo().frame("QueryResultFrame"); 
+		driver().switchTo().defaultContent();
+		driver().switchTo().frame("mainFrame"); 
+		driver().switchTo().frame("QueryResultFrame"); 
+	}
+	/**
+	 *<p>getTitle</p>
+	 *<p>获取网页标题</p>
+	 * @return
+	 */
+	public String getTitle() {
+		return driver().getTitle();
 	}
 }

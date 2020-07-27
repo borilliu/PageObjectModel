@@ -324,7 +324,7 @@ public class BasicInfoPage extends TbclMainFramePage{
 	//Initializing the Page Objects:
 	public BasicInfoPage(){
 		goToWorkArea();
-		PageFactory.initElements(driver, this);
+		PageFactory.initElements(driver(), this);
 		logger.debug("投保处理/基本信息");
 //		PageFactory.initElements(new AjaxElementLocatorFactory(driver, 10) ,this);
 
@@ -516,13 +516,6 @@ public class BasicInfoPage extends TbclMainFramePage{
 		ttlLst.add("客户信息被修改，是否同时保存客户.");
 		ttlLst.add("客户已经保存，或不需要保存.");
 		ttlLst.add("保存客户成功.");
-		
-/*		String msg1="客户信息被修改，是否同时保存客户";
-		waitAndAcceptAlert(msg1,3);
-		String title1 ="客户已经保存，或不需要保存.";
-		waitAndAcceptAlert(title1,2);
-		String title2 ="保存客户成功.";
-		waitAndAcceptAlert(title2,2);*/
 		String altTitle =catchUnexpectedAlert(5);
 		if(!"".equals(altTitle)) {
 			logger.info("在保存客户时捕获了一个弹窗："+altTitle);

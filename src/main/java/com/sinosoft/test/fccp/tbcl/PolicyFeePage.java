@@ -34,6 +34,14 @@ public class PolicyFeePage extends TbclMainFramePage {
 	 */
 	@FindBy(how = How.NAME, using  ="GuMainTIS")
 	WebElement edt_TIS;
+	
+	
+	
+	/**
+	 * @Fields tbl_XSFY : 销售费用
+	 */
+	@FindBy(how = How.ID, using  ="SalesFee")
+	WebElement tbl_XSFY;
 	/**
 	 * @Fields btn_saveFeePage : 保存保单费用信息
 	 */
@@ -42,10 +50,10 @@ public class PolicyFeePage extends TbclMainFramePage {
 	
 	public PolicyFeePage() {
 		logger.debug("初始化PolicyFeePage：");
-		driver.switchTo().defaultContent();
-		driver.switchTo().frame("mainFrame");
-		driver.switchTo().frame("myFrame");
-		PageFactory.initElements(driver, this);
+		driver().switchTo().defaultContent();
+		driver().switchTo().frame("mainFrame");
+		driver().switchTo().frame("myFrame");
+		PageFactory.initElements(driver(), this);
 	}
 	
 	/**
@@ -54,18 +62,24 @@ public class PolicyFeePage extends TbclMainFramePage {
 	 */
 	public void inputPolicyFeeAction(Map<String, String> map) {
 		edt_XSFDJ = super.waitAndGetElement(By.name("GuMainXsfInd"), 10);
-		this.CodeSelect(edt_XSFDJ, map.get("xsfdj"));
+		//this.CodeSelect(edt_XSFDJ, map.get("xsfdj"));
 		this.setEditboxValue(edt_FSH, map.get("fsh"));
 		this.setEditboxValue(edt_XSFXS, map.get("xsfxs"));
 		this.setEditboxValue(edt_TIS, map.get("tis"));
+		this.CodeSelect(edt_XSFDJ, map.get("xsfdj"));
+		if(!"".equals(map.get("xsfy_bl"))) {
+			WebElement edt_fybl = tbl_XSFY.findElement(By.name("GuSalesFeeFeePercent"));
+			this.setNumberEditBoxValue(edt_fybl, map.get("xsfy_bl"));
+		}	
+	
 	}
 	/**
 	 *<p>savePolicyFee</p>
 	 *<p>保存保单费用信息</p>
 	 */
 	public void savePolicyFee() {
-		this.clickButton(btn_saveFeePage);
-		pause(WAIT_SHORTEST);
+		this.jsClickButton(btn_saveFeePage);
+		pause(WAIT_SECOND);
 	}
 	public void processPolicyFeeAction(Map<String, String> map) {
 		this.inputPolicyFeeAction(map);

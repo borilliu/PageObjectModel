@@ -38,17 +38,17 @@ public class RiskDetailPage extends TbclMainFramePage {
 	}
 	
 	public void goToWorkArea() {
-		driver.switchTo().defaultContent();
-		driver.switchTo().frame("mainFrame");
-		driver.switchTo().frame("myFrame");
-		driver.switchTo().frame("RiskFrame");
-		driver.switchTo().frame("myFrame");
+		driver().switchTo().defaultContent();
+		driver().switchTo().frame("mainFrame");
+		driver().switchTo().frame("myFrame");
+		driver().switchTo().frame("RiskFrame");
+		driver().switchTo().frame("myFrame");
 	}
 	public void goToRiskFrame() {
-		driver.switchTo().defaultContent();
-		driver.switchTo().frame("mainFrame");
-		driver.switchTo().frame("myFrame");
-		driver.switchTo().frame("RiskFrame");
+		driver().switchTo().defaultContent();
+		driver().switchTo().frame("mainFrame");
+		driver().switchTo().frame("myFrame");
+		driver().switchTo().frame("RiskFrame");
 	}
 	/**
 	 *<p>goToRiskTypePage</p>

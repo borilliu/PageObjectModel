@@ -44,7 +44,7 @@ public class RwclMainFramePage extends FccbBase {
 	@FindBy(how = How.XPATH,using = "//td/input[@value='特约/免赔/限额信息查看']")
 	WebElement  btn_ViewSpecialInfo;
 	public RwclMainFramePage() {
-		PageFactory.initElements(driver, this);
+		PageFactory.initElements(driver(), this);
 	}
 	public BasicInfoPage goToMainFrame_basicInfo() {
 		goToMainFramePage("审核信息");
