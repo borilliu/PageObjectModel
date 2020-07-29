@@ -155,9 +155,10 @@ public class RiskDetail_JCX_insuredObjPage extends RiskDetail_AbstractInsuredObj
 	 *<p>saveInsredObjectPage</p>
 	 *<p>保存标的物页面</p>
 	 */
-	public void saveInsredObjectPage(){
+	public void saveInsredObjectPage(Map<String, String> map){
 		this.jsClickButton(btn_savePage);
-		pause(1000);
+		pause(10000);
+		AbstractInsuredObjectInfoPage_17.getInstance( map.get("riskCode")).inputInsuredDetailAction(map);
 	}
 	
 }

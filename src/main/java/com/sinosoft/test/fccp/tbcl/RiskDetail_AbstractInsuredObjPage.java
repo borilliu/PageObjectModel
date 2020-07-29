@@ -51,7 +51,7 @@ public abstract class RiskDetail_AbstractInsuredObjPage extends RiskDetailPage {
 	 *<p>saveInsredObjectPage</p>
 	 *<p>保存标的物页面</p>
 	 */
-	public void saveInsredObjectPage(){
+	public void saveInsredObjectPage(Map<String, String> map){
 		this.clickButton(btn_savePage);
 	}
 	

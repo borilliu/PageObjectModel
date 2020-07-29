@@ -62,7 +62,6 @@ public class PolicyFeePage extends TbclMainFramePage {
 	 */
 	public void inputPolicyFeeAction(Map<String, String> map) {
 		edt_XSFDJ = super.waitAndGetElement(By.name("GuMainXsfInd"), 10);
-		//this.CodeSelect(edt_XSFDJ, map.get("xsfdj"));
 		this.setEditboxValue(edt_FSH, map.get("fsh"));
 		this.setEditboxValue(edt_XSFXS, map.get("xsfxs"));
 		this.setEditboxValue(edt_TIS, map.get("tis"));

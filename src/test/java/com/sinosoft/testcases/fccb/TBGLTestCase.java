@@ -78,7 +78,7 @@ public class TBGLTestCase extends TestBase {
 	 * @param context
 	 * @param map
 	 */
-	@Test(priority = 1, dataProvider = "getTBCLTestData",enabled= true)
+	@Test(priority = 1, dataProvider = "getTBCLTestData",enabled= false)
 	public void FCCB_TBCL_YWX(ITestContext context ,Map<String, String> map) {
 		tbcl(context,map);
 	}
@@ -88,7 +88,7 @@ public class TBGLTestCase extends TestBase {
 	 * @param context
 	 * @param map
 	 */
-	@Test(priority = 1, dataProvider = "getTBCLTestData",enabled= false)
+	@Test(priority = 1, dataProvider = "getTBCLTestData",enabled= true)
 	public void FCCB_TBCL_JCX(ITestContext context ,Map<String, String> map) {
 		tbcl(context,map);
 	}
@@ -124,7 +124,7 @@ public class TBGLTestCase extends TestBase {
 			riskDetail_insrdObj = riskDetail_type.saveRiskDetailTypePage(map);
 			riskDetail_insrdObj.inputInsuredObjectAction(map);
 			riskDetail_insrdObj.inputRiskCoverageAction(map);
-			riskDetail_insrdObj.saveInsredObjectPage();
+			riskDetail_insrdObj.saveInsredObjectPage(map);
 			riskDetail_terms = riskDetail_insrdObj.goToRiskTermsPage(map);
 			riskDetail_terms.processTermsPage(map);
 			riskDetail_coInsured = riskDetail_terms.goToCoInsuredPage(map);
@@ -195,7 +195,7 @@ public class TBGLTestCase extends TestBase {
 			riskDetail_insrdObj = riskDetail_type.saveRiskDetailTypePage(map);
 			riskDetail_insrdObj.inputInsuredObjectAction(map);
 			riskDetail_insrdObj.inputRiskCoverageAction(map);
-			riskDetail_insrdObj.saveInsredObjectPage();
+			riskDetail_insrdObj.saveInsredObjectPage(map);
 			riskDetail_terms = riskDetail_insrdObj.goToRiskTermsPage(map);
 			riskDetail_terms.processTermsPage(map);
 			riskDetail_coInsured = riskDetail_terms.goToCoInsuredPage(map);

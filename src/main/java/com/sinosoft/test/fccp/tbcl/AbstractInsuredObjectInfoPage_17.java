@@ -54,8 +54,19 @@ public abstract class AbstractInsuredObjectInfoPage_17 extends RiskDetailPage {
 		}
 		
 	}
+	/**
+	 *<p>inputInsuredObjectAction</p>
+	 *<p>录入标的物基本信息</p>
+	 * @param map
+	 */
 	public abstract void inputInsuredObjectAction(Map<String, String> map);
 
+	/**
+	 *<p>inputInsuredDetailAction</p>
+	 *<p>录入清单信息</p>
+	 * @param map
+	 */
+	public abstract void inputInsuredDetailAction(Map<String, String> map);
 	
 	/**
 	 *<p>inputInsuredObjectCommmon</p>
