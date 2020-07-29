@@ -54,11 +54,15 @@ public class RwclMainFramePage extends FccbBase {
 	 *<p>checkTheReinsranceInfo</p>
 	 *<p>检查再保信息</p>
 	 */
-	public void checkTheReinsranceInfo() {
+	public void ProcessReinsranceInfo() {
 		goToMainArea();
 		this.jsClickButton(btn_ReInsuranceInfo);
-		pause(2000);
+		navigateToWindowByUrl("queryDangerUnit", 10);
+		super.takeSnapShot("检查再保信息");
+		driver().close();
+		navigateToWindowByTitle(WINDOW_MAIN_TITLE, 5);
 		logger.info("点击了：检查再保信息");
+		
 	}
 	
 	/**
@@ -68,7 +72,10 @@ public class RwclMainFramePage extends FccbBase {
 	public void checkSpecialInfo() {
 		goToMainArea();
 		this.jsClickButton(btn_ViewSpecialInfo);
-		pause(2000);
+		navigateToWindowByUrl("querySpecialDeductibleLimit", 10);
+		super.takeSnapShot("特约免赔限额信息查看");
+		driver().close();
+		navigateToWindowByTitle(WINDOW_MAIN_TITLE, 5);
 		logger.info("点击了：特约/免赔/限额信息查看");
 	}
 	
@@ -79,7 +86,10 @@ public class RwclMainFramePage extends FccbBase {
 	public void checkApproveInfo(){
 		goToMainArea();
 		this.jsClickButton(btn_ApproveInfo);
-		pause(2000);
+		navigateToWindowByUrl("showPassInfo", 10);
+		super.takeSnapShot("审核信息");
+		driver().close();
+		navigateToWindowByTitle(WINDOW_MAIN_TITLE, 5);
 		logger.info("点击了：审核信息");
 	}
 	private void goToMainFramePage(String TabName) {

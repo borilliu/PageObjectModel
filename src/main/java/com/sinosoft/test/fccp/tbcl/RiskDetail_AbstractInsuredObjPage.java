@@ -25,6 +25,10 @@ public abstract class RiskDetail_AbstractInsuredObjPage extends RiskDetailPage {
 		switch (riskClass){
 			case "07": 
 				return new RiskDetail_JGX_insuredObjPage();
+			case "11": 
+				return new RiskDetail_YWX_insuredObjPage();
+			case "17": 
+				return new RiskDetail_JCX_insuredObjPage();
 			default:
 				return new RiskDetail_insuredObjPage();
 		}

@@ -74,12 +74,12 @@ public class ApproveInfoPage extends RwclMainFramePage {
 	 * @param notion
 	 */
 	public TaskProcessResultPage approve(String msg,String notion) {
-	/*	this.checkSpecialInfo();
+		this.checkSpecialInfo();
 		this.checkApproveInfo();
-		this.checkTheReinsranceInfo();
-		InputApproveMsg(msg,notion);
-		this.jsClickButton(btn_History);*/
-		pause(2000);
+		this.ProcessReinsranceInfo();
+//		InputApproveMsg(msg,notion);
+//		this.jsClickButton(btn_History);
+//		pause(2000);
 //		this.clickButton(btn_Approve);
 //		waitAndAcceptAlert("确实要审核通过吗", 5);
 		return new TaskProcessResultPage();

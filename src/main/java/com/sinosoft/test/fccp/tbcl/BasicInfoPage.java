@@ -534,6 +534,7 @@ public class BasicInfoPage extends TbclMainFramePage{
 			saveCustomerAction();
 		}
 		btn_SAVE_BASIC_PAGE.click();
-		return new RiskDetail_TypePage();
+		//return new RiskDetail_TypePage();
+		return RiskDetail_TypePage.getInstance(map.get("riskCode"));
 	}
 }

@@ -4,6 +4,7 @@ import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.io.InputStream;
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
 import java.util.Properties;
@@ -224,7 +225,7 @@ public class TestBase {
 				}
 			});
 		} catch (Exception e) {
-			logger.info("没有找到页面元素:"+loc.toString()+" - 错误信息"+e.getMessage());
+			logger.info("没有找到页面元素:"+loc.toString()+" - 错误信息",e);
 		}
 		return element;
 	}	
@@ -310,6 +311,75 @@ public class TestBase {
 			 logger.debug("窗口切换异常:", e);
 		}
 	}
+	/**
+	 * navigate to the new open window
+	 */
+	public void navigateToNewWindow() {
+		ArrayList<String> tabs = new ArrayList<String>(driver().getWindowHandles());
+		try {
+			driver().switchTo().window(tabs.get(1));
+		} catch (Exception e) {
+			logger.error(e);
+		}
+	}
+
+	public void navigateToLastWindow() {
+		String[] tabs = new String[driver().getWindowHandles().size()];
+		int indTabs = tabs.length;
+		driver().getWindowHandles().toArray(tabs);
+		try {
+			driver().switchTo().window(tabs[indTabs - 1]);
+			driver().manage().window().maximize();
+			System.out.println(driver().getTitle() + indTabs);
+		} catch (Exception e) {
+			logger.error(e);
+		}
+
+	}
+	public void navigateToWindowByUrl(final String url, long timeout) {
+		WebDriverWait wait = new WebDriverWait(driver(), timeout);
+		try {
+			wait.until(new ExpectedCondition<String>() {
+				@Override
+				public String apply(WebDriver d) {
+					for (String windowHandle : d.getWindowHandles()) {
+						d.switchTo().window(windowHandle);
+						System.out.println("URl=【"+d.getCurrentUrl()+"】");
+						if (d.getCurrentUrl().contains(url)){
+							 d.manage().window().maximize();
+							System.out.println("【"+url+"】");
+							return d.getWindowHandle();
+						}
+
+					}
+					return null;
+				}
+			});
+		} catch (Exception e) {
+			logger.error("Can not find element:", e);
+		}
+	}
+	
+	public boolean waitPageIsReady() {
+		JavascriptExecutor js = (JavascriptExecutor) driver();
+		if (js.executeScript("return document.readyState").toString().equals("complete")) {
+			return true;
+		}
+		for (int i = 0; i < 20; i++) {
+			try {
+				Thread.sleep(1000);
+			} catch (InterruptedException e) {
+				logger.error(e);
+			}
+			String Status = js.executeScript("return document.readyState").toString();
+			System.out.println("第【"+i+"】次侦测状态:"+Status);
+			if (Status.equals("complete")) {
+				return true;
+			}
+		}
+		return false; 
+	}
+
     /**
      *<p>highlight</p>
      *<p>高亮显示页面元素:黄色背景，红色边框</p>

@@ -22,11 +22,11 @@ public abstract class FccbBase extends TestBase {
 	/**
 	 * @Fields WINDOW_MAIN_TITLE : 业务系统窗口标题
 	 */
-	static String WINDOW_MAIN_TITLE = "黄河财险业务系统";
+	protected static String WINDOW_MAIN_TITLE = "黄河财险业务系统";
 	/**
 	 * @Fields WINDOW_CODESELECT_TITLE : Code选择窗口标题
 	 */
-	static String WINDOW_CODESELECT_TITLE ="Code Select";
+	protected static String WINDOW_CODESELECT_TITLE ="Code Select";
 	
 	public FccbBase() {
 		PageFactory.initElements(driver(), this);
@@ -95,7 +95,7 @@ public abstract class FccbBase extends TestBase {
 	 * @param startText
 	 */
 	public void setSelectWithStartText(WebElement slcELe,String startText) {
-		if("".equals(startText)) {
+		if("null" == startText || "".equals(startText)) {
 			return;
 		}
 		logger.info("setSelectWithStartText:"+ slcELe.toString()+"->"+ startText);
@@ -205,6 +205,8 @@ public abstract class FccbBase extends TestBase {
 			return;
 		}	
 		logger.info("setNumberEditBoxValue:"+ edtEle.toString()+"："+ text);
+		this.clickElement(edtEle);
+		pause(WAIT_SHORTEST);
 		edtEle.sendKeys(Keys.chord(Keys.CONTROL, "a"));
 		edtEle.sendKeys(Keys.DELETE);
 		edtEle.sendKeys(text);

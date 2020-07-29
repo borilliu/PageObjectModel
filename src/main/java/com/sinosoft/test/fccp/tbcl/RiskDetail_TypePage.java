@@ -60,6 +60,12 @@ public class RiskDetail_TypePage extends RiskDetailPage {
 	@FindBy(how = How.NAME,using = "GuRiskBusinessFlag")
 	WebElement slc_YYZDBZ;
 	
+	
+	/**
+	 * @Fields slc_SFHBLD : 是否合并录单
+	 */
+	@FindBy(how = How.NAME,using = "GuRiskCombineInd")
+	WebElement slc_SFHBLD;
 	/**
 	 * @Fields edt_SFGXDM : 司法管辖代码
 	 */
@@ -73,6 +79,22 @@ public class RiskDetail_TypePage extends RiskDetailPage {
 	WebElement edt_CBDQ;
 	
 	
+	/**
+	 * @Fields slc_DRBZ : 导入标志
+	 */
+	@FindBy(how = How.NAME, using  ="GuRiskDynamicUploadInd")
+	WebElement slc_DRBZ;             
+	
+	
+	/**
+	 * @Fields slc_JMBZ : 记名标志
+	 */
+	@FindBy(how = How.NAME, using  ="GuRiskDynamicNominativeInd")
+	WebElement slc_JMBZ;			
+	
+	/********************************
+	 ************被保险人信息********
+	 ********************************/
 	
 	
 	/**
@@ -99,6 +121,14 @@ public class RiskDetail_TypePage extends RiskDetailPage {
 	@FindBy(how = How.XPATH,using = "//table[@id='InsuredRelatedParty']/tbody/tr[@id='InsuredGuRelatedPartyVocation']/td/input[@name='InsuredGuRelatedPartyIndustryKindCode']")
 	WebElement edt_HYXL;
 	
+	public static RiskDetail_TypePage getInstance(String riskCode) {
+		logger.debug("风险类型代码："+riskCode);
+		switch(riskCode) {
+			case "1134": return new RiskDetail_TypePage_1134();
+			case "1137": return new RiskDetail_TypePage_1137();
+			default: return new RiskDetail_TypePage();
+		}
+	}
 	
 	public RiskDetail_TypePage() {
 		goToWorkArea();
@@ -106,24 +136,26 @@ public class RiskDetail_TypePage extends RiskDetailPage {
 		PageFactory.initElements(driver(), this);
 		logger.debug("投保处理/险种信息");
 	}
-	public void InputRiskTypeInfoAction(String xzsyfw,String tqmc,String qbrq,String zbrq,String lgbbz,String yyzdbz,String sfgxdm,String cbdq) {
-		super.setSelectWithStartText(slc_XZSYFW, xzsyfw);
-		super.SetDateEditBox(edt_QBRQ, qbrq,edt_BXQX);
-		//super.clickElement(edt_BXQX);
-		super.SetDateEditBox(edt_ZBRQ, zbrq,edt_BXQX);
-		//super.clickElement(edt_BXQX);
-		super.setSelectWithStartText(slc_LGBBZ, lgbbz);
-		super.setSelectWithStartText(slc_YYZDBZ, yyzdbz);
-		super.setSelectWithStartText(slc_SFGXDM, sfgxdm);
-		super.CodeSelect(edt_CBDQ, cbdq);
-	}
 	/**
 	 *<p>InputRiskClassInfoAction</p>
 	 *<p>录入险种信息</p>
 	 */
 	public void InputRiskTypeInfoAction(Map<String, String> map) {
 		logger.info("开始处理风险类别信息");
-		this.InputRiskTypeInfoAction(map.get("xzsyfw"),map.get("tqmc"),map.get("qbrq"),map.get("zbrq"),map.get("lgbbz"),map.get("yyzdbz"),map.get("sfgxdm"),map.get("cbdq"));
+		setSelectWithStartText(slc_XZSYFW, map.get("xzsyfw"));
+		SetDateEditBox(edt_QBRQ, map.get("qbrq"),edt_BXQX);
+		//super.clickElement(edt_BXQX);
+		SetDateEditBox(edt_ZBRQ, map.get("zbrq"),edt_BXQX);
+		//super.clickElement(edt_BXQX);
+		setSelectWithStartText(slc_LGBBZ, map.get("lgbbz"));
+		if(map.get("yyzdbz")!=null) {
+			setSelectWithStartText(slc_YYZDBZ, map.get("yyzdbz"));
+		}
+		setSelectWithStartText(slc_SFHBLD, map.get("sfhbld"));
+		setSelectWithStartText(slc_SFGXDM, map.get("sfgxdm"));
+		CodeSelect(edt_CBDQ, map.get("cbdq"));
+		setSelectWithStartText(slc_DRBZ, map.get("drbz"));
+		setSelectWithStartText(slc_JMBZ, map.get("jmbz"));
 	}	
 	/**
 	 *<p>inputInusredInfoAction</p>
@@ -132,9 +164,6 @@ public class RiskDetail_TypePage extends RiskDetailPage {
 	 * @param hyxl 行业小类
 	 */
 	private void inputInusredInfoAction(String zzfwlx,String hydl,String hyxl) {
-		//slc_ZZFWLX = tbl_InsuredInfo.findElement(By.name("InsuredGuRelatedPartyStarLevel"));
-		//edt_HYDL = tbl_InsuredInfo.findElement(By.name("InsuredGuRelatedPartyIndustryMainCode"));
-		//edt_HYXL = tbl_InsuredInfo.findElement(By.name("InsuredGuRelatedPartyIndustryKindCode"));
 		super.setSelectWithStartText(slc_ZZFWLX, zzfwlx);
 		super.CodeSelect(edt_HYDL, hydl);
 		super.SetCodeEditBox(edt_HYXL, hyxl);
@@ -157,7 +186,12 @@ public class RiskDetail_TypePage extends RiskDetailPage {
 		logger.info("保存险种基本信息");
 		TestUtil.takeScreenshot(getTestCaseId(map)+"投保单险种信息页面");
 		super.jsClickButton(btn_saveButton);
-		pause(1000);
+		pause(WAIT_LONGGEST);
+		if(waitPageIsReady()) {
+			logger.info("页面加载完毕");
+		}else {
+			logger.info("页面未加载超时！");
+		}
 		return RiskDetail_AbstractInsuredObjPage.getInstance(map.get("riskClass"));
 	}
 }
