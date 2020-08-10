@@ -21,6 +21,9 @@ public class InsuredListAdd_Page extends FccbBase {
 	@FindBy(how = How.XPATH,using = "//tr[@id='saveBackTr']/td/input[@type='button']")
 	WebElement btn_saveInusred;
 	
+	/**
+	 * @Fields edt_QDXH : 清单序号
+	 */
 	@FindBy(how = How.NAME,using = "GuItemAcciListDisplayNo")
 	WebElement edt_QDXH;
 	/**
@@ -89,9 +92,7 @@ public class InsuredListAdd_Page extends FccbBase {
 		this.setEditboxValue(edt_QDXH, map.get("qd_xh"));
 		this.setEditboxValue(edt_BBRMC, map.get("qd_bbrmc"));
 		this.setSelectWithStartText(slc_ZJLX, map.get("qd_zjlx"));
-		this.setEditboxValue(edt_ZJHM, map.get("qd_zjhm"));
-		this.setEditboxValue(edt_BXBDDZ, map.get("qd_bddz"));
-		this.setEditboxValue(edt_ZJHM, map.get("qd_zjhm"));
+		this.setEditboxTValue(edt_ZJHM, map.get("qd_zjhm"));
 		this.setEditboxValue(edt_BXBDDZ, map.get("qd_bddz"));
 		this.setEditboxValue(edt_LXFS, map.get("qd_lxfs"));
 		this.setEditboxValue(edt_KHYH, map.get("qd_khyh"));

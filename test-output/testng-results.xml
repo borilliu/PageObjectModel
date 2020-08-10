@@ -1,17 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results skipped="0" failed="1" ignored="2" total="3" passed="0">
+<testng-results skipped="0" failed="2" ignored="4" total="6" passed="0">
   <reporter-output>
     <line>
-      <![CDATA[CaseNo：FCCB_TB_YWX_1134_1]]>
+      <![CDATA[CaseNo：FCCB_TB_ZRX_1268_1]]>
     </line>
     <line>
       <![CDATA[测试数据：ROW_ID=2
 ProcessFlag=Y
-TestCaseName=FCCB_TB_YWX_1134
+TestCaseName=FCCB_TB_ZRX_1268
 TestCaseSeq=1
-TestDescription=非车承保-意外险-驾乘人员意外伤害保险-出单
-riskClass=11
-riskCode=1134
+TestDescription=非车承保-意外险-道路客运承运人责任险-出单
+riskClass=12
+riskCode=1268
 renewalInd=0
 renewalPolicy=
 prePay=
@@ -64,56 +64,53 @@ qbrq=
 zbrq=
 lgbbz=0
 yyzdbz=
-sfhbld=0
+sfhbld=
 sfgxdm=1
 cbdq=0014
+zrxbdjc=0
+fxzzrq=
 zzfwlx=1
-hydl=03
-hyxl=03006
-jqbm=121121123123
+hydl=
+hyxl=
 bbdm=CNY
-sf=140000
-cs=140100
-qx=140108
-yb=000000
-jzdj=01
-zyxz=
-bxcs=山西
-bdw_jd=
-bdw_yyxz=
-bdw_sfhyf=
-bdw_fxlx=
-bdw_sbmc=
-bdw_cjh=
-bdw_fdjh=
-bdw_cjdjrq=
-bdw_cllx=
-bdw_cpcx=
-bdw_sccj=
-bdw_gzjz=
-bdw_sgzyqy=
-bdw_zylx=
-bdw=010071
-bdwmx=
-xbdm=0108001
-jrbe=1
-jzfs=13
-bxje=200000
-bffl=0.6
-dqflbz=
-ysbf=
-yyzd_zdpcg=
-yyzd_sndmlrze=
-yyzd_sndyye=
-yyzd_bdw=
-yyzd_bdwmx=
-yyzd_xbdm=
-yyzd_jrbe=
-yyzd_jzfs=
-yyzd_bxje=
-yyzd_bffl=
-yyzd_dqflbz=
-yyzd_ysbf=
+wh_tblx=
+wh_wpmc=
+wh_ysfw=1
+wh_yscs=
+wh_qdys=
+wh_cphm=
+wh_cpxh=
+wh_fdjh=
+wh_cjhm=
+wh_ccdjrq=
+wh_qtxx=
+wh_yycs=
+wh_yyxz=
+wh_zrfw=
+wh_nysl=
+wh_yfsr=
+wh_yscx=
+cyr_yyLine=运营路线
+cyr_yyType=城市公共汽车
+cyr_jyxkz=道路运输经营许可证
+cyr_ssqk=前三年损失情况
+cyr_cpxh=梅赛德斯-奔驰
+cyr_cphm=京RTS818
+cyr_ckzws=29
+cyr_yyzbm=222333444
+cyr_tbzws=29
+cyr_xszcz=行驶证车主
+cyr_cllx=车辆类型 
+cyr_cjh=V1234567890876543
+cyr_zcrq=20080801
+zr_xbdm=1268001
+zr_jrbe=1
+zr_bxje=500000
+zr_bffl=0.15
+zr_dqflbz=3
+zr_ysbf=
+xe_xbdm=0122
+xe_pcxe=1000000
 lgb_main_pcrt=
 lgb_co_level1=
 lgb_co_level2=
@@ -125,94 +122,177 @@ xsfdj=A
 tis=
 xsfxs=3
 xsfy_bl=
-jgx_sf=
-jgx_cs=
-jgx_qx=
-jgx_gcdd=
-jgx_bb=
-jgx_gcmc=
-jgx_gclx_1=
-jgx_gclx_2=
-jgx_gclx_3=
-jgx_gclx_4=
-jgx_gclx_5=
-jgx_gclx_6=
-jgx_yzssjt=
-jgx_yz=
-jgx_cbs_ssjt=
-jgx_cbs=
-jgx_gchth=
-jgx_gcjz=
-jgx_gcqsrq=
-jgx_gczzrq=
-jgx_gcfw=
-jgx_scqqsrq=
-jgx_scqzzrq=
-jgx_bzqqsrq=
-jgx_bzqzzrq=
-jgx_idi_qsrq=
-jgx_idi_zzrq=
-jgx_gcsjdw=
-jgx_gcsjdwzz=
-jgx_tis_ssjgmc=
-jgx_tis_ssjgzz=
-jgx_tbsjszt=
-jgx_ws_xmlbdm=
-jgx_ws_jrbe=
-jgx_ws_bxje=
-jgx_ws_fl=
-jgx_ws_dqflbz=
-jgx_ws_ysbf=
-jgx_sz_xbdm=
-jgx_sz_jrbe=
-jgx_sz_ljpcxe=
-jgx_sz_fl=
-jgx_sz_dqflbz=
-jgx_sz_ysbf=
 submit_status=待双核审核
-proposalNumber=06201901134202000000000375
-message=未知异常Unable to find element with xpath == //table[@id='InsuredRelatedParty']/tbody/tr[@id='InsuredGuRelatedPartyCorInsuredType']/td/select[@name='InsuredGuRelatedPartyStarLevel']
-For documentation on this error, please visit: http://seleniumhq.org/exceptions/no_such_element.html
-Build info: version: '3.9.0', revision: '698b3178f0', time: '2018-02-05T14:26:55.441Z'
-System info: host: 'DESKTOP-I9S3ABE', ip: '100.100.96.231', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '1.8.0_101'
-Driver info: org.openqa.selenium.ie.InternetExplorerDriver
-Capabilities {acceptInsecureCerts: false, browserName: internet explorer, browserVersion: 11, javascriptEnabled: true, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), se:ieOptions: {browserAttachTimeout: 0, elementScrollBehavior: 0, enablePersistentHover: true, ie.browserCommandLineSwitches: , ie.ensureCleanSession: false, ie.fileUploadDialogTimeout: 3000, ie.forceCreateProcessApi: false, ignoreProtectedModeSettings: true, ignoreZoomSetting: false, initialBrowserUrl: http://localhost:32656/, nativeEvents: true, requireWindowFocus: false}, setWindowRect: true, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: accept}
-Session ID: 4f63f841-fe4d-499c-9fb3-13da16ac653a
-*** Element info: {Using=xpath, value=//table[@id='InsuredRelatedParty']/tbody/tr[@id='InsuredGuRelatedPartyCorInsuredType']/td/select[@name='InsuredGuRelatedPartyStarLevel']}
-screenshot=C:\Users\liu-b\git\PageObjectModel\screenshots\FCCB_TB_YWX_1134_1_异常截屏_20200728034903424.png
-testCaseName=FCCB_TBCL_YWX
+proposalNumber=
+message=
+screenshot=
+testCaseName=FCCB_TBCL_ZRX
 ]]>
     </line>
+    <line>
+      <![CDATA[未知异常:null]]>
+    </line>
+    <line>
+      <![CDATA[异常截屏：]]>
+    </line>
+    <line>
+      <![CDATA[CaseNo：FCCB_TB_ZRX_1254_1]]>
+    </line>
+    <line>
+      <![CDATA[测试数据：ROW_ID=3
+ProcessFlag=Y
+TestCaseName=FCCB_TB_ZRX_1254
+TestCaseSeq=1
+TestDescription=非车承保-意外险-道路危险货物承运人责任险-出单
+riskClass=12
+riskCode=1254
+renewalInd=0
+renewalPolicy=
+prePay=
+carrayOver=
+carrayOverPolicy=
+relatedInd=
+relatedPolicy=
+fbbs=
+ywgs=01620190
+qdlx=01
+gdbs=1
+xstd=T6201900101
+ywy=S000000006
+ywly=01010101
+dljg=
+xsxy=
+cxywbs=HXXT
+cdjg=
+htzyjjfs=
+jnwbz=
+jw_country=
+jw_Addr=
+snbz=
+sftkbd=0
+sfdzbd=0
+sfxb=0
+fxqkyjytz=
+sfydyw=
+sfsn=
+xbbdh=
+tbr_lx=2
+tbr_mc=
+tbr_vip=
+tbr_dm=G6200019928
+tbr_zjlx=
+tbr_zjhm=
+tbr_sj=
+tbr_csrq=
+tbr_lxdz=
+tbr_dwdh=
+tbr_yx=
+lxr_xm=
+lxr_xb=
+lxr_zw=
+lxr_sj=
+lxr_yx=
+xzsyfw=
+tqmc=
+qbrq=
+zbrq=
+lgbbz=0
+yyzdbz=
+sfhbld=
+sfgxdm=1
+cbdq=0014
+zrxbdjc=1
+fxzzrq=2022-01-01
+zzfwlx=0
+hydl=
+hyxl=
+bbdm=CNY
+wh_tblx=定期航运
+wh_wpmc=危险货物物品名称
+wh_ysfw=危险货物运输地区范围 
+wh_yscs=2
+wh_qdys=10
+wh_cphm=京NR8666
+wh_cpxh=大众
+wh_fdjh=V123456679
+wh_cjhm=v12345687898765647
+wh_ccdjrq=2020-02-02
+wh_qtxx=其他信息
+wh_yycs=营业场所  
+wh_yyxz=营业性质
+wh_zrfw=在途临时仓储保险责任范围
+wh_nysl=2000
+wh_yfsr=10000000
+wh_yscx=油罐车
+cyr_yyLine=
+cyr_yyType=
+cyr_jyxkz=
+cyr_ssqk=
+cyr_cpxh=
+cyr_cphm=
+cyr_ckzws=
+cyr_yyzbm=
+cyr_tbzws=
+cyr_xszcz=
+cyr_cllx=
+cyr_cjh=
+cyr_zcrq=
+zr_xbdm=1254001
+zr_jrbe=1
+zr_bxje=500000
+zr_bffl=0.25
+zr_dqflbz=3
+zr_ysbf=
+xe_xbdm=1212
+xe_pcxe=2000000
+lgb_main_pcrt=
+lgb_co_level1=
+lgb_co_level2=
+lgb_co_level3=
+lgb_co_prct=
+lgb_co_gbbfsqxs=
+fsh=1
+xsfdj=A
+tis=
+xsfxs=3
+xsfy_bl=
+submit_status=待双核审核
+proposalNumber=
+message=
+screenshot=
+testCaseName=FCCB_TBCL_ZRX
+]]>
+    </line>
+    <line>
+      <![CDATA[未知异常:null]]>
+    </line>
+    <line>
+      <![CDATA[异常截屏：]]>
+    </line>
   </reporter-output>
-  <suite name="Default suite" duration-ms="39543" started-at="2020-07-28T07:57:56Z" finished-at="2020-07-28T07:58:35Z">
+  <suite name="Default suite" duration-ms="23431" started-at="2020-08-03T01:12:21Z" finished-at="2020-08-03T01:12:44Z">
     <groups>
     </groups>
-    <test name="Default test" duration-ms="39543" started-at="2020-07-28T07:57:56Z" finished-at="2020-07-28T07:58:35Z">
+    <test name="Default test" duration-ms="23431" started-at="2020-08-03T01:12:21Z" finished-at="2020-08-03T01:12:44Z">
       <class name="com.sinosoft.testcases.fccb.TBGLTestCase">
-        <test-method status="PASS" signature="Init()[pri:0, instance:com.sinosoft.testcases.fccb.TBGLTestCase@4f970963]" name="Init" is-config="true" duration-ms="5" started-at="2020-07-28T15:57:56Z" finished-at="2020-07-28T15:57:56Z">
+        <test-method status="PASS" signature="Init()[pri:0, instance:com.sinosoft.testcases.fccb.TBGLTestCase@2b9627bc]" name="Init" is-config="true" duration-ms="12" started-at="2020-08-03T09:12:21Z" finished-at="2020-08-03T09:12:21Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- Init -->
-        <test-method status="PASS" signature="setup()[pri:0, instance:com.sinosoft.testcases.fccb.TBGLTestCase@4f970963]" name="setup" is-config="true" duration-ms="1507" started-at="2020-07-28T15:57:56Z" finished-at="2020-07-28T15:57:58Z">
+        <test-method status="PASS" signature="setup()[pri:0, instance:com.sinosoft.testcases.fccb.TBGLTestCase@2b9627bc]" name="setup" is-config="true" duration-ms="11313" started-at="2020-08-03T09:12:22Z" finished-at="2020-08-03T09:12:33Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setup -->
-        <test-method status="FAIL" signature="FCCB_TBCL_YWX(org.testng.ITestContext, java.util.Map)[pri:1, instance:com.sinosoft.testcases.fccb.TBGLTestCase@4f970963]" name="FCCB_TBCL_YWX" duration-ms="37515" started-at="2020-07-28T15:57:58Z" data-provider="getTBCLTestData" finished-at="2020-07-28T15:58:35Z">
+        <test-method status="FAIL" signature="FCCB_TBCL_ZRX(org.testng.ITestContext, java.util.Map)[pri:1, instance:com.sinosoft.testcases.fccb.TBGLTestCase@2b9627bc]" name="FCCB_TBCL_ZRX" duration-ms="375" started-at="2020-08-03T09:12:33Z" data-provider="getTBCLTestData" finished-at="2020-08-03T09:12:33Z">
           <params>
             <param index="0">
               <value>
-                <![CDATA[org.testng.TestRunner@5d12a356]]>
+                <![CDATA[org.testng.TestRunner@53f6fd09]]>
               </value>
             </param>
             <param index="1">
               <value>
-                <![CDATA[{ROW_ID=2, ProcessFlag=Y, TestCaseName=FCCB_TB_YWX_1134, TestCaseSeq=1, TestDescription=非车承保-意外险-驾乘人员意外伤害保险-出单, riskClass=11, riskCode=1134, renewalInd=0, renewalPolicy=, prePay=, carrayOver=, carrayOverPolicy=, relatedInd=, relatedPolicy=, fbbs=, ywgs=01620190, qdlx=01, gdbs=1, xstd=T6201900101, ywy=S000000006, ywly=01010101, dljg=, xsxy=, cxywbs=HXXT, cdjg=, htzyjjfs=, jnwbz=, jw_country=, jw_Addr=, snbz=, sftkbd=0, sfdzbd=0, sfxb=0, fxqkyjytz=, sfydyw=, sfsn=, xbbdh=, tbr_lx=2, tbr_mc=, tbr_vip=, tbr_dm=G6200019928, tbr_zjlx=, tbr_zjhm=, tbr_sj=, tbr_csrq=, tbr_lxdz=, tbr_dwdh=, tbr_yx=, lxr_xm=, lxr_xb=, lxr_zw=, lxr_sj=, lxr_yx=, xzsyfw=, tqmc=, qbrq=, zbrq=, lgbbz=0, yyzdbz=, sfhbld=0, sfgxdm=1, cbdq=0014, zzfwlx=1, hydl=03, hyxl=03006, jqbm=121121123123, bbdm=CNY, sf=140000, cs=140100, qx=140108, yb=000000, jzdj=01, zyxz=, bxcs=山西, bdw_jd=, bdw_yyxz=, bdw_sfhyf=, bdw_fxlx=, bdw_sbmc=, bdw_cjh=, bdw_fdjh=, bdw_cjdjrq=, bdw_cllx=, bdw_cpcx=, bdw_sccj=, bdw_gzjz=, bdw_sgzyqy=, bdw_zylx=, bdw=010071, bdwmx=, xbdm=0108001, jrbe=1, jzfs=13, bxje=200000, bffl=0.6, dqflbz=, ysbf=, yyzd_zdpcg=, yyzd_sndmlrze=, yyzd_sndyye=, yyzd_bdw=, yyzd_bdwmx=, yyzd_xbdm=, yyzd_jrbe=, yyzd_jzfs=, yyzd_bxje=, yyzd_bffl=, yyzd_dqflbz=, yyzd_ysbf=, lgb_main_pcrt=, lgb_co_level1=, lgb_co_level2=, lgb_co_level3=, lgb_co_prct=, lgb_co_gbbfsqxs=, fsh=1, xsfdj=A, tis=, xsfxs=3, xsfy_bl=, jgx_sf=, jgx_cs=, jgx_qx=, jgx_gcdd=, jgx_bb=, jgx_gcmc=, jgx_gclx_1=, jgx_gclx_2=, jgx_gclx_3=, jgx_gclx_4=, jgx_gclx_5=, jgx_gclx_6=, jgx_yzssjt=, jgx_yz=, jgx_cbs_ssjt=, jgx_cbs=, jgx_gchth=, jgx_gcjz=, jgx_gcqsrq=, jgx_gczzrq=, jgx_gcfw=, jgx_scqqsrq=, jgx_scqzzrq=, jgx_bzqqsrq=, jgx_bzqzzrq=, jgx_idi_qsrq=, jgx_idi_zzrq=, jgx_gcsjdw=, jgx_gcsjdwzz=, jgx_tis_ssjgmc=, jgx_tis_ssjgzz=, jgx_tbsjszt=, jgx_ws_xmlbdm=, jgx_ws_jrbe=, jgx_ws_bxje=, jgx_ws_fl=, jgx_ws_dqflbz=, jgx_ws_ysbf=, jgx_sz_xbdm=, jgx_sz_jrbe=, jgx_sz_ljpcxe=, jgx_sz_fl=, jgx_sz_dqflbz=, jgx_sz_ysbf=, submit_status=待双核审核, proposalNumber=06201901134202000000000375, message=未知异常Currently focused window has been closed.
-Build info: version: '3.9.0', revision: '698b3178f0', time: '2018-02-05T14:26:55.441Z'
-System info: host: 'DESKTOP-I9S3ABE', ip: '100.100.96.231', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '1.8.0_101'
-Driver info: org.openqa.selenium.ie.InternetExplorerDriver
-Capabilities {acceptInsecureCerts: false, browserName: internet explorer, browserVersion: 11, javascriptEnabled: true, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), se:ieOptions: {browserAttachTimeout: 0, elementScrollBehavior: 0, enablePersistentHover: true, ie.browserCommandLineSwitches: , ie.ensureCleanSession: false, ie.fileUploadDialogTimeout: 3000, ie.forceCreateProcessApi: false, ignoreProtectedModeSettings: true, ignoreZoomSetting: false, initialBrowserUrl: http://localhost:20597/, nativeEvents: true, requireWindowFocus: false}, setWindowRect: true, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: accept}
-Session ID: 78b68e81-11d0-4a4c-b72d-5685c3890b4b
-*** Element info: {Using=name, value=fieldValue}, screenshot=, testCaseName=FCCB_TBCL_YWX}]]>
+                <![CDATA[{ROW_ID=2, ProcessFlag=Y, TestCaseName=FCCB_TB_ZRX_1268, TestCaseSeq=1, TestDescription=非车承保-意外险-道路客运承运人责任险-出单, riskClass=12, riskCode=1268, renewalInd=0, renewalPolicy=, prePay=, carrayOver=, carrayOverPolicy=, relatedInd=, relatedPolicy=, fbbs=, ywgs=01620190, qdlx=01, gdbs=1, xstd=T6201900101, ywy=S000000006, ywly=01010101, dljg=, xsxy=, cxywbs=HXXT, cdjg=, htzyjjfs=, jnwbz=, jw_country=, jw_Addr=, snbz=, sftkbd=0, sfdzbd=0, sfxb=0, fxqkyjytz=, sfydyw=, sfsn=, xbbdh=, tbr_lx=2, tbr_mc=, tbr_vip=, tbr_dm=G6200019928, tbr_zjlx=, tbr_zjhm=, tbr_sj=, tbr_csrq=, tbr_lxdz=, tbr_dwdh=, tbr_yx=, lxr_xm=, lxr_xb=, lxr_zw=, lxr_sj=, lxr_yx=, xzsyfw=, tqmc=, qbrq=, zbrq=, lgbbz=0, yyzdbz=, sfhbld=, sfgxdm=1, cbdq=0014, zrxbdjc=0, fxzzrq=, zzfwlx=1, hydl=, hyxl=, bbdm=CNY, wh_tblx=, wh_wpmc=, wh_ysfw=1, wh_yscs=, wh_qdys=, wh_cphm=, wh_cpxh=, wh_fdjh=, wh_cjhm=, wh_ccdjrq=, wh_qtxx=, wh_yycs=, wh_yyxz=, wh_zrfw=, wh_nysl=, wh_yfsr=, wh_yscx=, cyr_yyLine=运营路线, cyr_yyType=城市公共汽车, cyr_jyxkz=道路运输经营许可证, cyr_ssqk=前三年损失情况, cyr_cpxh=梅赛德斯-奔驰, cyr_cphm=京RTS818, cyr_ckzws=29, cyr_yyzbm=222333444, cyr_tbzws=29, cyr_xszcz=行驶证车主, cyr_cllx=车辆类型 , cyr_cjh=V1234567890876543, cyr_zcrq=20080801, zr_xbdm=1268001, zr_jrbe=1, zr_bxje=500000, zr_bffl=0.15, zr_dqflbz=3, zr_ysbf=, xe_xbdm=0122, xe_pcxe=1000000, lgb_main_pcrt=, lgb_co_level1=, lgb_co_level2=, lgb_co_level3=, lgb_co_prct=, lgb_co_gbbfsqxs=, fsh=1, xsfdj=A, tis=, xsfxs=3, xsfy_bl=, submit_status=待双核审核, proposalNumber=, message=, screenshot=, testCaseName=FCCB_TBCL_ZRX}]]>
               </value>
             </param>
           </params>
@@ -226,8 +306,8 @@ Session ID: 78b68e81-11d0-4a4c-b72d-5685c3890b4b
 	at org.testng.Assert.failNotEquals(Assert.java:512)
 	at org.testng.Assert.assertTrue(Assert.java:41)
 	at org.testng.Assert.assertTrue(Assert.java:51)
-	at com.sinosoft.testcases.fccb.TBGLTestCase.tbcl(TBGLTestCase.java:137)
-	at com.sinosoft.testcases.fccb.TBGLTestCase.FCCB_TBCL_YWX(TBGLTestCase.java:77)
+	at com.sinosoft.testcases.fccb.TBGLTestCase.tbcl(TBGLTestCase.java:239)
+	at com.sinosoft.testcases.fccb.TBGLTestCase.FCCB_TBCL_ZRX(TBGLTestCase.java:104)
 	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
 	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
@@ -258,16 +338,16 @@ Session ID: 78b68e81-11d0-4a4c-b72d-5685c3890b4b
           </exception> <!-- java.lang.AssertionError -->
           <reporter-output>
             <line>
-              <![CDATA[CaseNo：FCCB_TB_YWX_1134_1]]>
+              <![CDATA[CaseNo：FCCB_TB_ZRX_1268_1]]>
             </line>
             <line>
               <![CDATA[测试数据：ROW_ID=2
 ProcessFlag=Y
-TestCaseName=FCCB_TB_YWX_1134
+TestCaseName=FCCB_TB_ZRX_1268
 TestCaseSeq=1
-TestDescription=非车承保-意外险-驾乘人员意外伤害保险-出单
-riskClass=11
-riskCode=1134
+TestDescription=非车承保-意外险-道路客运承运人责任险-出单
+riskClass=12
+riskCode=1268
 renewalInd=0
 renewalPolicy=
 prePay=
@@ -320,56 +400,53 @@ qbrq=
 zbrq=
 lgbbz=0
 yyzdbz=
-sfhbld=0
+sfhbld=
 sfgxdm=1
 cbdq=0014
+zrxbdjc=0
+fxzzrq=
 zzfwlx=1
-hydl=03
-hyxl=03006
-jqbm=121121123123
+hydl=
+hyxl=
 bbdm=CNY
-sf=140000
-cs=140100
-qx=140108
-yb=000000
-jzdj=01
-zyxz=
-bxcs=山西
-bdw_jd=
-bdw_yyxz=
-bdw_sfhyf=
-bdw_fxlx=
-bdw_sbmc=
-bdw_cjh=
-bdw_fdjh=
-bdw_cjdjrq=
-bdw_cllx=
-bdw_cpcx=
-bdw_sccj=
-bdw_gzjz=
-bdw_sgzyqy=
-bdw_zylx=
-bdw=010071
-bdwmx=
-xbdm=0108001
-jrbe=1
-jzfs=13
-bxje=200000
-bffl=0.6
-dqflbz=
-ysbf=
-yyzd_zdpcg=
-yyzd_sndmlrze=
-yyzd_sndyye=
-yyzd_bdw=
-yyzd_bdwmx=
-yyzd_xbdm=
-yyzd_jrbe=
-yyzd_jzfs=
-yyzd_bxje=
-yyzd_bffl=
-yyzd_dqflbz=
-yyzd_ysbf=
+wh_tblx=
+wh_wpmc=
+wh_ysfw=1
+wh_yscs=
+wh_qdys=
+wh_cphm=
+wh_cpxh=
+wh_fdjh=
+wh_cjhm=
+wh_ccdjrq=
+wh_qtxx=
+wh_yycs=
+wh_yyxz=
+wh_zrfw=
+wh_nysl=
+wh_yfsr=
+wh_yscx=
+cyr_yyLine=运营路线
+cyr_yyType=城市公共汽车
+cyr_jyxkz=道路运输经营许可证
+cyr_ssqk=前三年损失情况
+cyr_cpxh=梅赛德斯-奔驰
+cyr_cphm=京RTS818
+cyr_ckzws=29
+cyr_yyzbm=222333444
+cyr_tbzws=29
+cyr_xszcz=行驶证车主
+cyr_cllx=车辆类型 
+cyr_cjh=V1234567890876543
+cyr_zcrq=20080801
+zr_xbdm=1268001
+zr_jrbe=1
+zr_bxje=500000
+zr_bffl=0.15
+zr_dqflbz=3
+zr_ysbf=
+xe_xbdm=0122
+xe_pcxe=1000000
 lgb_main_pcrt=
 lgb_co_level1=
 lgb_co_level2=
@@ -381,78 +458,238 @@ xsfdj=A
 tis=
 xsfxs=3
 xsfy_bl=
-jgx_sf=
-jgx_cs=
-jgx_qx=
-jgx_gcdd=
-jgx_bb=
-jgx_gcmc=
-jgx_gclx_1=
-jgx_gclx_2=
-jgx_gclx_3=
-jgx_gclx_4=
-jgx_gclx_5=
-jgx_gclx_6=
-jgx_yzssjt=
-jgx_yz=
-jgx_cbs_ssjt=
-jgx_cbs=
-jgx_gchth=
-jgx_gcjz=
-jgx_gcqsrq=
-jgx_gczzrq=
-jgx_gcfw=
-jgx_scqqsrq=
-jgx_scqzzrq=
-jgx_bzqqsrq=
-jgx_bzqzzrq=
-jgx_idi_qsrq=
-jgx_idi_zzrq=
-jgx_gcsjdw=
-jgx_gcsjdwzz=
-jgx_tis_ssjgmc=
-jgx_tis_ssjgzz=
-jgx_tbsjszt=
-jgx_ws_xmlbdm=
-jgx_ws_jrbe=
-jgx_ws_bxje=
-jgx_ws_fl=
-jgx_ws_dqflbz=
-jgx_ws_ysbf=
-jgx_sz_xbdm=
-jgx_sz_jrbe=
-jgx_sz_ljpcxe=
-jgx_sz_fl=
-jgx_sz_dqflbz=
-jgx_sz_ysbf=
 submit_status=待双核审核
-proposalNumber=06201901134202000000000375
-message=未知异常Unable to find element with xpath == //table[@id='InsuredRelatedParty']/tbody/tr[@id='InsuredGuRelatedPartyCorInsuredType']/td/select[@name='InsuredGuRelatedPartyStarLevel']
-For documentation on this error, please visit: http://seleniumhq.org/exceptions/no_such_element.html
-Build info: version: '3.9.0', revision: '698b3178f0', time: '2018-02-05T14:26:55.441Z'
-System info: host: 'DESKTOP-I9S3ABE', ip: '100.100.96.231', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '1.8.0_101'
-Driver info: org.openqa.selenium.ie.InternetExplorerDriver
-Capabilities {acceptInsecureCerts: false, browserName: internet explorer, browserVersion: 11, javascriptEnabled: true, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), se:ieOptions: {browserAttachTimeout: 0, elementScrollBehavior: 0, enablePersistentHover: true, ie.browserCommandLineSwitches: , ie.ensureCleanSession: false, ie.fileUploadDialogTimeout: 3000, ie.forceCreateProcessApi: false, ignoreProtectedModeSettings: true, ignoreZoomSetting: false, initialBrowserUrl: http://localhost:32656/, nativeEvents: true, requireWindowFocus: false}, setWindowRect: true, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: accept}
-Session ID: 4f63f841-fe4d-499c-9fb3-13da16ac653a
-*** Element info: {Using=xpath, value=//table[@id='InsuredRelatedParty']/tbody/tr[@id='InsuredGuRelatedPartyCorInsuredType']/td/select[@name='InsuredGuRelatedPartyStarLevel']}
-screenshot=C:\Users\liu-b\git\PageObjectModel\screenshots\FCCB_TB_YWX_1134_1_异常截屏_20200728034903424.png
-testCaseName=FCCB_TBCL_YWX
+proposalNumber=
+message=
+screenshot=
+testCaseName=FCCB_TBCL_ZRX
 ]]>
             </line>
+            <line>
+              <![CDATA[未知异常:null]]>
+            </line>
+            <line>
+              <![CDATA[异常截屏：]]>
+            </line>
           </reporter-output>
-        </test-method> <!-- FCCB_TBCL_YWX -->
-        <test-method status="PASS" signature="tearDown(org.testng.ITestContext)[pri:0, instance:com.sinosoft.testcases.fccb.TBGLTestCase@4f970963]" name="tearDown" is-config="true" duration-ms="0" started-at="2020-07-28T15:58:35Z" finished-at="2020-07-28T15:58:35Z">
+        </test-method> <!-- FCCB_TBCL_ZRX -->
+        <test-method status="PASS" signature="tearDown(org.testng.ITestContext)[pri:0, instance:com.sinosoft.testcases.fccb.TBGLTestCase@2b9627bc]" name="tearDown" is-config="true" duration-ms="3" started-at="2020-08-03T09:12:33Z" finished-at="2020-08-03T09:12:33Z">
           <params>
             <param index="0">
               <value>
-                <![CDATA[org.testng.TestRunner@5d12a356]]>
+                <![CDATA[org.testng.TestRunner@53f6fd09]]>
               </value>
             </param>
           </params>
           <reporter-output>
           </reporter-output>
         </test-method> <!-- tearDown -->
-        <test-method status="PASS" signature="Close()[pri:0, instance:com.sinosoft.testcases.fccb.TBGLTestCase@4f970963]" name="Close" is-config="true" duration-ms="0" started-at="2020-07-28T15:58:35Z" finished-at="2020-07-28T15:58:35Z">
+        <test-method status="PASS" signature="setup()[pri:0, instance:com.sinosoft.testcases.fccb.TBGLTestCase@2b9627bc]" name="setup" is-config="true" duration-ms="10549" started-at="2020-08-03T09:12:33Z" finished-at="2020-08-03T09:12:44Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setup -->
+        <test-method status="FAIL" signature="FCCB_TBCL_ZRX(org.testng.ITestContext, java.util.Map)[pri:1, instance:com.sinosoft.testcases.fccb.TBGLTestCase@2b9627bc]" name="FCCB_TBCL_ZRX" duration-ms="191" started-at="2020-08-03T09:12:44Z" data-provider="getTBCLTestData" finished-at="2020-08-03T09:12:44Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[org.testng.TestRunner@53f6fd09]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[{ROW_ID=3, ProcessFlag=Y, TestCaseName=FCCB_TB_ZRX_1254, TestCaseSeq=1, TestDescription=非车承保-意外险-道路危险货物承运人责任险-出单, riskClass=12, riskCode=1254, renewalInd=0, renewalPolicy=, prePay=, carrayOver=, carrayOverPolicy=, relatedInd=, relatedPolicy=, fbbs=, ywgs=01620190, qdlx=01, gdbs=1, xstd=T6201900101, ywy=S000000006, ywly=01010101, dljg=, xsxy=, cxywbs=HXXT, cdjg=, htzyjjfs=, jnwbz=, jw_country=, jw_Addr=, snbz=, sftkbd=0, sfdzbd=0, sfxb=0, fxqkyjytz=, sfydyw=, sfsn=, xbbdh=, tbr_lx=2, tbr_mc=, tbr_vip=, tbr_dm=G6200019928, tbr_zjlx=, tbr_zjhm=, tbr_sj=, tbr_csrq=, tbr_lxdz=, tbr_dwdh=, tbr_yx=, lxr_xm=, lxr_xb=, lxr_zw=, lxr_sj=, lxr_yx=, xzsyfw=, tqmc=, qbrq=, zbrq=, lgbbz=0, yyzdbz=, sfhbld=, sfgxdm=1, cbdq=0014, zrxbdjc=1, fxzzrq=2022-01-01, zzfwlx=0, hydl=, hyxl=, bbdm=CNY, wh_tblx=定期航运, wh_wpmc=危险货物物品名称, wh_ysfw=危险货物运输地区范围 , wh_yscs=2, wh_qdys=10, wh_cphm=京NR8666, wh_cpxh=大众, wh_fdjh=V123456679, wh_cjhm=v12345687898765647, wh_ccdjrq=2020-02-02, wh_qtxx=其他信息, wh_yycs=营业场所  , wh_yyxz=营业性质, wh_zrfw=在途临时仓储保险责任范围, wh_nysl=2000, wh_yfsr=10000000, wh_yscx=油罐车, cyr_yyLine=, cyr_yyType=, cyr_jyxkz=, cyr_ssqk=, cyr_cpxh=, cyr_cphm=, cyr_ckzws=, cyr_yyzbm=, cyr_tbzws=, cyr_xszcz=, cyr_cllx=, cyr_cjh=, cyr_zcrq=, zr_xbdm=1254001, zr_jrbe=1, zr_bxje=500000, zr_bffl=0.25, zr_dqflbz=3, zr_ysbf=, xe_xbdm=1212, xe_pcxe=2000000, lgb_main_pcrt=, lgb_co_level1=, lgb_co_level2=, lgb_co_level3=, lgb_co_prct=, lgb_co_gbbfsqxs=, fsh=1, xsfdj=A, tis=, xsfxs=3, xsfy_bl=, submit_status=待双核审核, proposalNumber=, message=, screenshot=, testCaseName=FCCB_TBCL_ZRX}]]>
+              </value>
+            </param>
+          </params>
+          <exception class="java.lang.AssertionError">
+            <message>
+              <![CDATA[expected [true] but found [false]]]>
+            </message>
+            <full-stacktrace>
+              <![CDATA[java.lang.AssertionError: expected [true] but found [false]
+	at org.testng.Assert.fail(Assert.java:93)
+	at org.testng.Assert.failNotEquals(Assert.java:512)
+	at org.testng.Assert.assertTrue(Assert.java:41)
+	at org.testng.Assert.assertTrue(Assert.java:51)
+	at com.sinosoft.testcases.fccb.TBGLTestCase.tbcl(TBGLTestCase.java:239)
+	at com.sinosoft.testcases.fccb.TBGLTestCase.FCCB_TBCL_ZRX(TBGLTestCase.java:104)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:108)
+	at org.testng.internal.Invoker.invokeMethod(Invoker.java:661)
+	at org.testng.internal.Invoker.invokeTestMethod(Invoker.java:869)
+	at org.testng.internal.Invoker.invokeTestMethods(Invoker.java:1193)
+	at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:126)
+	at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:109)
+	at org.testng.TestRunner.privateRun(TestRunner.java:744)
+	at org.testng.TestRunner.run(TestRunner.java:602)
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:380)
+	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:375)
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:340)
+	at org.testng.SuiteRunner.run(SuiteRunner.java:289)
+	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:86)
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1301)
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1226)
+	at org.testng.TestNG.runSuites(TestNG.java:1144)
+	at org.testng.TestNG.run(TestNG.java:1115)
+	at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
+	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
+	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
+]]>
+            </full-stacktrace>
+          </exception> <!-- java.lang.AssertionError -->
+          <reporter-output>
+            <line>
+              <![CDATA[CaseNo：FCCB_TB_ZRX_1254_1]]>
+            </line>
+            <line>
+              <![CDATA[测试数据：ROW_ID=3
+ProcessFlag=Y
+TestCaseName=FCCB_TB_ZRX_1254
+TestCaseSeq=1
+TestDescription=非车承保-意外险-道路危险货物承运人责任险-出单
+riskClass=12
+riskCode=1254
+renewalInd=0
+renewalPolicy=
+prePay=
+carrayOver=
+carrayOverPolicy=
+relatedInd=
+relatedPolicy=
+fbbs=
+ywgs=01620190
+qdlx=01
+gdbs=1
+xstd=T6201900101
+ywy=S000000006
+ywly=01010101
+dljg=
+xsxy=
+cxywbs=HXXT
+cdjg=
+htzyjjfs=
+jnwbz=
+jw_country=
+jw_Addr=
+snbz=
+sftkbd=0
+sfdzbd=0
+sfxb=0
+fxqkyjytz=
+sfydyw=
+sfsn=
+xbbdh=
+tbr_lx=2
+tbr_mc=
+tbr_vip=
+tbr_dm=G6200019928
+tbr_zjlx=
+tbr_zjhm=
+tbr_sj=
+tbr_csrq=
+tbr_lxdz=
+tbr_dwdh=
+tbr_yx=
+lxr_xm=
+lxr_xb=
+lxr_zw=
+lxr_sj=
+lxr_yx=
+xzsyfw=
+tqmc=
+qbrq=
+zbrq=
+lgbbz=0
+yyzdbz=
+sfhbld=
+sfgxdm=1
+cbdq=0014
+zrxbdjc=1
+fxzzrq=2022-01-01
+zzfwlx=0
+hydl=
+hyxl=
+bbdm=CNY
+wh_tblx=定期航运
+wh_wpmc=危险货物物品名称
+wh_ysfw=危险货物运输地区范围 
+wh_yscs=2
+wh_qdys=10
+wh_cphm=京NR8666
+wh_cpxh=大众
+wh_fdjh=V123456679
+wh_cjhm=v12345687898765647
+wh_ccdjrq=2020-02-02
+wh_qtxx=其他信息
+wh_yycs=营业场所  
+wh_yyxz=营业性质
+wh_zrfw=在途临时仓储保险责任范围
+wh_nysl=2000
+wh_yfsr=10000000
+wh_yscx=油罐车
+cyr_yyLine=
+cyr_yyType=
+cyr_jyxkz=
+cyr_ssqk=
+cyr_cpxh=
+cyr_cphm=
+cyr_ckzws=
+cyr_yyzbm=
+cyr_tbzws=
+cyr_xszcz=
+cyr_cllx=
+cyr_cjh=
+cyr_zcrq=
+zr_xbdm=1254001
+zr_jrbe=1
+zr_bxje=500000
+zr_bffl=0.25
+zr_dqflbz=3
+zr_ysbf=
+xe_xbdm=1212
+xe_pcxe=2000000
+lgb_main_pcrt=
+lgb_co_level1=
+lgb_co_level2=
+lgb_co_level3=
+lgb_co_prct=
+lgb_co_gbbfsqxs=
+fsh=1
+xsfdj=A
+tis=
+xsfxs=3
+xsfy_bl=
+submit_status=待双核审核
+proposalNumber=
+message=
+screenshot=
+testCaseName=FCCB_TBCL_ZRX
+]]>
+            </line>
+            <line>
+              <![CDATA[未知异常:null]]>
+            </line>
+            <line>
+              <![CDATA[异常截屏：]]>
+            </line>
+          </reporter-output>
+        </test-method> <!-- FCCB_TBCL_ZRX -->
+        <test-method status="PASS" signature="tearDown(org.testng.ITestContext)[pri:0, instance:com.sinosoft.testcases.fccb.TBGLTestCase@2b9627bc]" name="tearDown" is-config="true" duration-ms="0" started-at="2020-08-03T09:12:44Z" finished-at="2020-08-03T09:12:44Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[org.testng.TestRunner@53f6fd09]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDown -->
+        <test-method status="PASS" signature="Close()[pri:0, instance:com.sinosoft.testcases.fccb.TBGLTestCase@2b9627bc]" name="Close" is-config="true" duration-ms="0" started-at="2020-08-03T09:12:44Z" finished-at="2020-08-03T09:12:44Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- Close -->

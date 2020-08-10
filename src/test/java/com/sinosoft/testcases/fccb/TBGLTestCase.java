@@ -41,7 +41,7 @@ import com.sinosoft.test.base.TestBase;
 import com.sinosoft.test.fccp.common.HomePage;
 
 public class TBGLTestCase extends TestBase {
-	LoginPage loginPage;
+/*	LoginPage loginPage;
 	HomePage homePage;
 	RiskSelectPage riskSelected;
 	BasicInfoPage basicInfo;
@@ -50,7 +50,7 @@ public class TBGLTestCase extends TestBase {
 	RiskDetail_AbstractInsuredObjPage riskDetail_insrdObj;
 	RiskDetail_TermsPage riskDetail_terms;
 	RiskDetail_CoInsuredPage riskDetail_coInsured;
-	PolicyFeePage policyFee;
+	PolicyFeePage policyFee;*/
 	
 	public TBGLTestCase() {
 		super();
@@ -71,7 +71,16 @@ public class TBGLTestCase extends TestBase {
 	public Iterator<Object[]> getTBCLTestData(Method method) throws FileNotFoundException {
         return (Iterator<Object[]>) new ExcelDataProvider(method.getName());
 	}
-
+	/**
+	 *<p>FCCB_TBCL_JGX</p>
+	 *<p>录入建工险流程</p>
+	 * @param context
+	 * @param map
+	 */
+	@Test(priority = 1, dataProvider = "getTBCLTestData",enabled= false)
+	public void FCCB_TBCL_JGX(ITestContext context ,Map<String, String> map) {
+		tbcl(context,map);
+	}
 	/**
 	 *<p>FCCB_TBCL_YWX</p>
 	 *<p>意外险处理流程</p>
@@ -91,6 +100,88 @@ public class TBGLTestCase extends TestBase {
 	@Test(priority = 1, dataProvider = "getTBCLTestData",enabled= true)
 	public void FCCB_TBCL_JCX(ITestContext context ,Map<String, String> map) {
 		tbcl(context,map);
+	}
+	
+	/**
+	 *<p>FCCB_TBCL_ZRX</p>
+	 *<p>责任险处理流程</p>
+	 * @param context
+	 * @param map
+	 */
+	@Test(priority = 1, dataProvider = "getTBCLTestData",enabled= false)
+	public void FCCB_TBCL_ZRX(ITestContext context ,Map<String, String> map) {
+		tbcl(context,map);
+	}
+	/**
+	 *<p>FCCB_TBCL</p>
+	 *<p>投保处理-企财险</p>
+	 * @param context
+	 * @param map
+	 */
+	@Test(priority = 1, dataProvider = "getTBCLTestData",enabled= false)
+	public void FCCB_TBCL_QCX(ITestContext context ,Map<String, String> map) {
+		tbcl(context,map);
+	/*	logger.info("开始运行测试脚本，获取到的测试数据《getTBCLTestData》如下:");
+		logger.info(TestUtil.getMapString(map));
+		Reporter.log("CaseNo："+getTestCaseId(map),true);
+		Reporter.log("测试数据："+TestUtil.getMapString(map),true);
+		try {
+			loginPage = new LoginPage();
+			homePage = loginPage.login_normal();
+			riskSelected = homePage.enterMenuTBCL();
+			riskSelected.InputRiskGeneralAction(map);
+			basicInfo = riskSelected.saveForNext();
+			basicInfo.inputSalesInfoAction(map);
+			basicInfo.inputPolicyInfoAction(map);
+			basicInfo.inputOwnerInfoAction(map);
+			riskDetail_type = basicInfo.saveBasicInfoAction(map); 
+			String proposNO = riskDetail_type.saveProposalNumbes(map);
+		    Reporter.log("投保单号码："+proposNO,true);
+			riskDetail_type.InputRiskTypeInfoAction(map);
+			riskDetail_type.inputInusredInfoAction(map);
+			riskDetail_insrdObj = riskDetail_type.saveRiskDetailTypePage(map);
+			riskDetail_insrdObj.inputInsuredObjectAction(map);
+			riskDetail_insrdObj.inputRiskCoverageAction(map);
+			riskDetail_insrdObj.saveInsredObjectPage(map);
+			riskDetail_terms = riskDetail_insrdObj.goToRiskTermsPage(map);
+			riskDetail_terms.processTermsPage(map);
+			riskDetail_coInsured = riskDetail_terms.goToCoInsuredPage(map);
+			riskDetail_coInsured.processCoInsured(map);
+			policyFee = riskDetail_terms.goToMainFrame_policyfee();
+			policyFee.processPolicyFeeAction(map);
+			SubmitReviewResult srr= policyFee.submitForReview(map);
+			String fullText =srr.getFullResultText();
+			Reporter.log("提交复核结果："+fullText,true);
+			logger.debug("提交结果:"+"_"+fullText);
+			String ExpectResult=map.get("submit_status");
+			Assert.assertTrue(fullText.contains(ExpectResult));
+
+		}catch(UnhandledAlertException uae) {
+			String scrn=TestUtil.takeDesktopScreenShot(getTestCaseId(map)+"_未知弹窗");
+			map.put("message","未知弹窗_"+ uae.getAlertText());
+			map.put("screenshot",scrn);
+			waitAndAcceptAlert(uae.getAlertText(), 1);
+			Assert.assertTrue(false);
+		}catch(Exception e) {
+			logger.info("执行测试用例发生了异常，开始截屏",e);
+			String scrn=TestUtil.takeScreenshot(getTestCaseId(map)+"_异常截屏");
+			map.put("message","未知异常"+ e.getMessage());
+			map.put("screenshot",scrn);
+			logger.info("执行测试用例发生了异常，截屏结束！");
+			Assert.assertTrue(false);
+		}finally {
+			TestUtil.takeScreenshot(getTestCaseId(map)+"_退出前截屏");
+			logger.info("进入Finally事件:RowID:"+map.get("ROW_ID"));
+			logger.info("进入Finally事件:testCaseName:"+map.get("testCaseName"));
+			logger.info("进入Finally事件:proposalNumber:"+map.get("proposalNumber"));
+			logger.info("进入Finally事件:message:"+map.get("message"));
+			logger.info("进入Finally事件:screenshot:"+map.get("screenshot"));
+			Map<String,String> resMap= new HashMap<String,String>();
+			resMap.put("proposalNumber", map.get("proposalNumber"));
+			resMap.put("message", map.get("message"));
+			resMap.put("screenshot", map.get("screenshot"));
+			ExcelDataProvider.updateExcelCellValues(map.get("testCaseName"), map.get("ROW_ID"), resMap);
+		}*/
 	}
 	private void tbcl(ITestContext context ,Map<String, String> map) {
 		logger.info("开始运行测试脚本，获取到的测试数据《getTBCLTestData》如下:");
@@ -137,104 +228,30 @@ public class TBGLTestCase extends TestBase {
 			logger.debug("提交结果:"+"_"+fullText);
 			String ExpectResult=map.get("submit_status");
 			Assert.assertTrue(fullText.contains(ExpectResult));
-
 		}catch(UnhandledAlertException uae) {
 			String scrn=TestUtil.takeDesktopScreenShot(getTestCaseId(map)+"_未知弹窗");
-			map.put("message","未知弹窗_"+ uae.getAlertText());
-			map.put("screenshot",scrn);
+			//map.put("message","未知弹窗_"+ uae.getAlertText());
+			//map.put("screenshot",scrn);
+			Reporter.log("未知弹窗:"+ uae.getAlertText());
+			Reporter.log("异常截屏："+ scrn);
 			waitAndAcceptAlert(uae.getAlertText(), 1);
 			Assert.assertTrue(false);
 		}catch(Exception e) {
 			logger.info("执行测试用例发生了异常，开始截屏",e);
 			String scrn=TestUtil.takeScreenshot(getTestCaseId(map)+"_异常截屏");
-			map.put("message","未知异常"+ e.getMessage());
-			map.put("screenshot",scrn);
+			//map.put("message","未知异常"+ e.getMessage());
+			//map.put("screenshot",scrn);
+			Reporter.log("未知异常:"+ e.getMessage());
+			Reporter.log("异常截屏："+ scrn);
 			logger.info("执行测试用例发生了异常，截屏结束！");
 			Assert.assertTrue(false);
 		}finally {
 			TestUtil.takeScreenshot(getTestCaseId(map)+"_退出前截屏");
-			logger.info("进入Finally事件:RowID:"+map.get("ROW_ID"));
-			logger.info("进入Finally事件:testCaseName:"+map.get("testCaseName"));
-			logger.info("进入Finally事件:proposalNumber:"+map.get("proposalNumber"));
-			logger.info("进入Finally事件:message:"+map.get("message"));
-			logger.info("进入Finally事件:screenshot:"+map.get("screenshot"));
 			Map<String,String> resMap= new HashMap<String,String>();
 			resMap.put("proposalNumber", map.get("proposalNumber"));
-			resMap.put("message", map.get("message"));
-			resMap.put("screenshot", map.get("screenshot"));
 			ExcelDataProvider.updateExcelCellValues(map.get("testCaseName"), map.get("ROW_ID"), resMap);
 		}
 		
-	}
-	/**
-	 *<p>FCCB_TBCL</p>
-	 *<p>投保处理</p>
-	 * @param context
-	 * @param map
-	 */
-	@Test(priority = 1, dataProvider = "getTBCLTestData",enabled= false)
-	public void FCCB_TBCL(ITestContext context ,Map<String, String> map) {
-		logger.info("开始运行测试脚本，获取到的测试数据《getTBCLTestData》如下:");
-		logger.info(TestUtil.getMapString(map));
-		Reporter.log("CaseNo："+getTestCaseId(map),true);
-		Reporter.log("测试数据："+TestUtil.getMapString(map),true);
-		try {
-			loginPage = new LoginPage();
-			homePage = loginPage.login_normal();
-			riskSelected = homePage.enterMenuTBCL();
-			riskSelected.InputRiskGeneralAction(map);
-			basicInfo = riskSelected.saveForNext();
-			basicInfo.inputSalesInfoAction(map);
-			basicInfo.inputPolicyInfoAction(map);
-			basicInfo.inputOwnerInfoAction(map);
-			riskDetail_type = basicInfo.saveBasicInfoAction(map); 
-			String proposNO = riskDetail_type.saveProposalNumbes(map);
-		    Reporter.log("投保单号码："+proposNO,true);
-			riskDetail_type.InputRiskTypeInfoAction(map);
-			riskDetail_type.inputInusredInfoAction(map);
-			riskDetail_insrdObj = riskDetail_type.saveRiskDetailTypePage(map);
-			riskDetail_insrdObj.inputInsuredObjectAction(map);
-			riskDetail_insrdObj.inputRiskCoverageAction(map);
-			riskDetail_insrdObj.saveInsredObjectPage(map);
-			riskDetail_terms = riskDetail_insrdObj.goToRiskTermsPage(map);
-			riskDetail_terms.processTermsPage(map);
-			riskDetail_coInsured = riskDetail_terms.goToCoInsuredPage(map);
-			riskDetail_coInsured.processCoInsured(map);
-			policyFee = riskDetail_terms.goToMainFrame_policyfee();
-			policyFee.processPolicyFeeAction(map);
-			SubmitReviewResult srr= policyFee.submitForReview(map);
-			String fullText =srr.getFullResultText();
-			Reporter.log("提交复核结果："+fullText,true);
-			logger.debug("提交结果:"+"_"+fullText);
-			String ExpectResult=map.get("submit_status");
-			Assert.assertTrue(fullText.contains(ExpectResult));
-
-		}catch(UnhandledAlertException uae) {
-			String scrn=TestUtil.takeDesktopScreenShot(getTestCaseId(map)+"_未知弹窗");
-			map.put("message","未知弹窗_"+ uae.getAlertText());
-			map.put("screenshot",scrn);
-			waitAndAcceptAlert(uae.getAlertText(), 1);
-			Assert.assertTrue(false);
-		}catch(Exception e) {
-			logger.info("执行测试用例发生了异常，开始截屏",e);
-			String scrn=TestUtil.takeScreenshot(getTestCaseId(map)+"_异常截屏");
-			map.put("message","未知异常"+ e.getMessage());
-			map.put("screenshot",scrn);
-			logger.info("执行测试用例发生了异常，截屏结束！");
-			Assert.assertTrue(false);
-		}finally {
-			TestUtil.takeScreenshot(getTestCaseId(map)+"_退出前截屏");
-			logger.info("进入Finally事件:RowID:"+map.get("ROW_ID"));
-			logger.info("进入Finally事件:testCaseName:"+map.get("testCaseName"));
-			logger.info("进入Finally事件:proposalNumber:"+map.get("proposalNumber"));
-			logger.info("进入Finally事件:message:"+map.get("message"));
-			logger.info("进入Finally事件:screenshot:"+map.get("screenshot"));
-			Map<String,String> resMap= new HashMap<String,String>();
-			resMap.put("proposalNumber", map.get("proposalNumber"));
-			resMap.put("message", map.get("message"));
-			resMap.put("screenshot", map.get("screenshot"));
-			ExcelDataProvider.updateExcelCellValues(map.get("testCaseName"), map.get("ROW_ID"), resMap);
-		}
 	}
 	/**
 	 *<p>FCCB_HBCL</p>
@@ -245,6 +262,8 @@ public class TBGLTestCase extends TestBase {
 	@Test(priority = 2, dataProvider = "getTBCLTestData",enabled= false)
 	public void FCCB_HBCL(ITestContext context ,Map<String, String> map) {
 		System.out.println("开始核保处理1！");
+		LoginPage loginPage;
+		HomePage homePage;
 		try {
 			System.out.println("开始核保处理2！");
 			loginPage = new LoginPage();
@@ -276,10 +295,7 @@ public class TBGLTestCase extends TestBase {
 	@AfterMethod
 	public void tearDown(ITestContext context) {
 		System.out.println("执行了退出事件：tearDown");
-		//super.quitDriver();
-//		driver.navigate().refresh();
-//		driver.get(driver.getCurrentUrl());
-//		driver.navigate().to(driver.getCurrentUrl());
+		//quitDriver();
 	}
 	@AfterClass 
 	public void Close() {

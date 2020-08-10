@@ -30,12 +30,11 @@ import com.sinosoft.test.base.TestBase;
 
 public class TestUtil extends TestBase {
 
-	public static long PAGE_LOAD_TIMEOUT = 10;
+	public static long PAGE_LOAD_TIMEOUT = 20;
 	public static long SCRIPT_TIMEOUT =3;
 	public static long IMPLICIT_WAIT = 2;
 
-	public static String TESTDATA_SHEET_PATH = "C:\\Users\\liu-b\\git\\PageObjectModel"
-			+ "\\src\\main\\java\\com\\crm\\qa\\testdata\\FreeCrmTestData.xlsx";
+	public static String TESTDATA_SHEET_PATH = "C:\\Users\\liu-b\\git\\PageObjectModel";
 	static Workbook book;
 	static Sheet sheet;
 	static JavascriptExecutor js;
@@ -120,8 +119,20 @@ public class TestUtil extends TestBase {
 	public static String getMapString(Map<String, String> map) {
 		StringBuffer sb= new StringBuffer();
 		for (Map.Entry<String, String> entry : map.entrySet()) {
-			sb.append(entry.getKey().toString() + "=" + entry.getValue().toString());
-			sb.append("\r\n");
+			if(entry!=null && entry.getValue()!=null) {
+				sb.append(entry.getKey().toString() + "=" + entry.getValue().toString());
+				sb.append("\r\n");
+			}
+		}
+		return sb.toString();
+	};
+	public static String getMapObjString(Map<String, Object> map) {
+		StringBuffer sb= new StringBuffer();
+		for (Map.Entry<String, Object> entry : map.entrySet()) {
+			if(entry!=null && entry.getValue()!=null) {
+				sb.append(entry.getKey().toString() + "=" + entry.getValue().toString());
+				sb.append("\r\n");
+			}
 		}
 		return sb.toString();
 	};

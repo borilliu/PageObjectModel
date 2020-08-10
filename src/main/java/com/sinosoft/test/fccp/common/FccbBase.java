@@ -38,7 +38,7 @@ public abstract class FccbBase extends TestBase {
 	 * @param code
 	 */
 	public void CodeSelect(WebElement codeEditBox,String code) {
-		if(null == code || "".equals(code)) return;
+		if(null == code || "".equals(code.trim())) return;
 		if(code.equals(codeEditBox.getAttribute("value"))) return;
 		String widget =codeEditBox.toString();
 		logger.debug("CodeSelect:开始设置"+ widget+" & Code=" +code);
@@ -58,7 +58,7 @@ public abstract class FccbBase extends TestBase {
 	 * @param code
 	 */
 	public void SetCodeEditBox(WebElement codeEditBox,String code) {
-		if(null == code || "".equals(code)) return;
+		if(null == code || "".equals(code.trim())) return;
 		if(code.equals(codeEditBox.getAttribute("value").trim())) {
 			return;
 		}
@@ -95,8 +95,10 @@ public abstract class FccbBase extends TestBase {
 	 * @param startText
 	 */
 	public void setSelectWithStartText(WebElement slcELe,String startText) {
-		if("null" == startText || "".equals(startText)) {
+		if(null ==startText || "".equals(startText.trim())  || "null".equals(startText)) {
 			return;
+		}else {
+			System.out.println("选择项："+startText);
 		}
 		logger.info("setSelectWithStartText:"+ slcELe.toString()+"->"+ startText);
 		Select select = new Select(slcELe);
@@ -132,7 +134,7 @@ public abstract class FccbBase extends TestBase {
 	 */
 	public void setFuzzySelect(WebElement slcELe,String startText) {
 		logger.info("setFuzzySelect:"+ slcELe.toString()+"->"+ startText);
-		if("".equals(startText)) {
+		if(startText ==null || "".equals(startText.trim())) {
 			return;
 		}
 		Select select = new Select(slcELe);
@@ -159,7 +161,7 @@ public abstract class FccbBase extends TestBase {
 	 * @param date
 	 */
 	public void SetDateEditBox(WebElement dateEditBox,String date) {
-		if("".equals(date)) return;
+		if(date == null ||"".equals(date.trim())) return;
 		String val = dateEditBox.getAttribute("value");
 		String newVal=fmtDateString(date);
 		if(newVal.equals(val)) {
@@ -179,7 +181,7 @@ public abstract class FccbBase extends TestBase {
 	 * @param aidEle
 	 */
 	public void SetDateEditBox(WebElement dateEditBox,String date,WebElement aidEle) {
-		if("".equals(date)) return;
+		if(null==date || "".equals(date.trim())) return;
 		String val = dateEditBox.getAttribute("value");
 		String newVal=fmtDateString(date);
 		if(newVal.equals(val)) {
@@ -201,7 +203,7 @@ public abstract class FccbBase extends TestBase {
 	 * @param text
 	 */
 	public void setNumberEditBoxValue(WebElement edtEle,String text) {
-		if("".equals(text)) {
+		if(null==text || "".equals(text.trim())) {
 			return;
 		}	
 		logger.info("setNumberEditBoxValue:"+ edtEle.toString()+"："+ text);

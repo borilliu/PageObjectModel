@@ -25,6 +25,10 @@ public class RiskDetail_TypePage extends RiskDetailPage {
 	 */
 	@FindBy(how = How.ID, using  ="saveButton")
 	WebElement btn_saveButton;	
+	
+	@FindBy(how = How.NAME,using = "GuRiskProductEdition")
+	WebElement edt_TKMC;
+	
 	/**
 	 * @Fields edt_XZSYFW : 险种适用范围
 	 */
@@ -126,6 +130,7 @@ public class RiskDetail_TypePage extends RiskDetailPage {
 		switch(riskCode) {
 			case "1134": return new RiskDetail_TypePage_1134();
 			case "1137": return new RiskDetail_TypePage_1137();
+			case "1254": return new RiskDetail_TypePage_1200();
 			default: return new RiskDetail_TypePage();
 		}
 	}

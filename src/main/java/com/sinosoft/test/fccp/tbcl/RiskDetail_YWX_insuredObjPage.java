@@ -1,16 +1,16 @@
 package com.sinosoft.test.fccp.tbcl;
 
-import static org.testng.Assert.assertTrue;
 
+import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
-
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.How;
 import org.openqa.selenium.support.PageFactory;
-import org.testng.Assert;
+
+import com.sinosoft.test.util.TestUtil;
 
 public class RiskDetail_YWX_insuredObjPage extends RiskDetail_AbstractInsuredObjPage {
 	/**
@@ -38,7 +38,7 @@ public class RiskDetail_YWX_insuredObjPage extends RiskDetail_AbstractInsuredObj
 	 */
 	public void inputInsuredObjectAction(Map<String, String> map) {
 		logger.info("开始意外险基础信息！");
-		System.out.println(driver().getPageSource());
+		//System.out.println(driver().getPageSource());
 		AbstractInsuredObjectInfoPage_11.getInstance( map.get("riskCode")).inputInsuredObjectAction(map);
 		super.takeSnapShot(super.getTestCaseId(map)+"_标的基础信息");
 	}
@@ -48,7 +48,10 @@ public class RiskDetail_YWX_insuredObjPage extends RiskDetail_AbstractInsuredObj
 	 * @param map
 	 */
 	public void inputRiskCoverageAction(Map<String, String> map) {
+		logger.debug("开始录入保障明细信息");
 		this.inputRiskCovr(map);
+		logger.debug("开始录入特殊条款信息");
+		super.inputSpecialClauseAction(map);
 		super.takeSnapShot(super.getTestCaseId(map)+"_标的投保详细信息");
 	}
 	/**
@@ -59,26 +62,37 @@ public class RiskDetail_YWX_insuredObjPage extends RiskDetail_AbstractInsuredObj
 		this.clickButton(btn_savePage);
 		pause(1000);
 	}
+
 	/**
-	 *<p>inputRiskCovr_WZSS</p>
-	 *<p>录入为物质损失险的信息</p>
+	 *<p>inputRiskCovr</p>
+	 *<p>录入主险信息</p>
 	 * @param map
 	 */
 	private void inputRiskCovr(Map<String, String> map) {
-		this.clickElement(tbl_AcciKind);	
-		WebElement btn_addItem = tbl_AcciKind.findElement(By.name("button_ItemKind_Insert"));
-		this.jsClickButton(btn_addItem);
-		WebElement edt_XBDM = tbl_AcciKind.findElement(By.name("GuItemKindKindName"));
-		WebElement edt_JRBE = tbl_AcciKind.findElement(By.name("GuItemKindCalculateInd"));
-		WebElement edt_BXJE = tbl_AcciKind.findElement(By.name("GuItemKindUnitInsured"));
-		WebElement edt_BFFL = tbl_AcciKind.findElement(By.name("GuItemKindRate"));
-		WebElement edt_DQFLBZ = tbl_AcciKind.findElement(By.name("GuItemKindShortRateFlag"));
-		WebElement edt_YSBF = tbl_AcciKind.findElement(By.name("GuItemKindGrossPremium"));
-		this.CodeSelect(edt_XBDM, map.get("ywx_xbdm"));
-		this.CodeSelect(edt_JRBE,map.get("ywx_jrbe"));
-		this.setEditboxValue(edt_BXJE, map.get("ywx_bxje"));
-		this.setNumberEditBoxValue(edt_BFFL, map.get("ywx_bffl"));
-		this.CodeSelect(edt_DQFLBZ,map.get("ywx_dqflbz"));
-		this.setNumberEditBoxValue(edt_YSBF,map.get("ywx_ysbf"));
+		this.scrollToElement(tbl_AcciKind);	
+		List<Map<String,Object>> riskList= getRiskMapList(map,"ywx_");
+		 for (Map<String,Object> riskMap:riskList) {
+		    	pause(WAIT_SHORTEST);
+		    	System.out.println(TestUtil.getMapObjString(riskMap));
+				WebElement btn_addItem = tbl_AcciKind.findElement(By.name("button_ItemKind_Insert"));
+				this.jsClickButton(btn_addItem);
+				WebElement edt_XBDM = tbl_AcciKind.findElement(By.xpath("(//input[@name='GuItemKindKindName'])[last()]"));
+				WebElement edt_JRBE = tbl_AcciKind.findElement(By.xpath("(//input[@name='GuItemKindCalculateInd'])[last()]"));
+				WebElement edt_BXJE = tbl_AcciKind.findElement(By.xpath("(//input[@name='GuItemKindUnitInsured'])[last()]"));
+				WebElement edt_BFFL = tbl_AcciKind.findElement(By.xpath("(//input[@name='GuItemKindRate'])[last()]"));
+				WebElement edt_DQFLBZ = tbl_AcciKind.findElement(By.xpath("(//input[@name='GuItemKindShortRateFlag'])[last()]"));
+				WebElement edt_YSBF = tbl_AcciKind.findElement(By.xpath("(//input[@name='GuItemKindGrossPremium'])[last()]"));
+				this.CodeSelect(edt_XBDM, (String)riskMap.get("xbdm"));
+				this.CodeSelect(edt_JRBE,(String)riskMap.get("jrbe"));
+				this.setEditboxValue(edt_BXJE, (String)riskMap.get("bxje"));
+				this.setNumberEditBoxValue(edt_BFFL, (String)riskMap.get("bffl"));
+				this.CodeSelect(edt_DQFLBZ,(String)riskMap.get("dqflbz"));
+				this.setNumberEditBoxValue(edt_YSBF,(String)riskMap.get("ysbf"));
+				//限额调整
+				super.inputLimtAmountAction(tbl_AcciKind,riskMap);
+				//险种免赔信息
+				super.inputDeductionAction(tbl_AcciKind,riskMap);
+		 }		
 	}
+	
 }

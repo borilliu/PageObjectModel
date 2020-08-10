@@ -93,7 +93,7 @@ public abstract class AbstractInsuredObjectInfoPage_17 extends RiskDetailPage {
 		this.CodeSelect(edt_BBDM, bbdm);
 		this.SetCodeEditBox(edt_SF, sf);
 		this.SetCodeEditBox(edt_CS, cs);
-		//this.CodeSelect(edt_QX, qx);
+		this.CodeSelect(edt_QX, qx);
 		this.setEditboxValue(edt_YB, yb);
 	}
 

@@ -1,0 +1,711 @@
+
+<!DOCTYPE html>
+<html>
+
+
+<head>
+	<meta charset='GBK' /> 
+	<meta name='description' content='' />
+	<meta name='robots' content='noodp, noydir' />
+	<meta name='viewport' content='width=device-width, initial-scale=1' />
+	<meta id="timeStampFormat" name="timeStampFormat" content='MMM d, yyyy hh:mm:ss a'/>
+	
+	<link href='https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,600' rel='stylesheet' type='text/css'>
+	<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+		<link href='http://extentreports.com/resx/dist/css/extent.css' type='text/css' rel='stylesheet' />
+	
+	<title>YPIC自动化测试报告</title>
+
+	<style type='text/css'>
+			.node.level-1  ul{ display:none;} .node.level-1.active ul{display:block;}
+	</style>
+</head>
+
+	<body class='extent standard default hide-overflow '>
+		<div id='theme-selector' alt='Click to toggle theme. To enable by default, use theme configuration.' title='Click to toggle theme. To enable by default, use theme configuration.'>
+			<span><i class='material-icons'>desktop_windows</i></span>
+		</div>
+
+<nav>
+	<div class="nav-wrapper">
+		<a href="#!" class="brand-logo blue darken-3">Extent</a>
+
+		<!-- slideout menu -->
+		<ul id='slide-out' class='side-nav fixed hide-on-med-and-down'>
+			<li class='waves-effect active'><a href='#!' view='test-view' onclick="configureView(0);chartsView('test');"><i class='material-icons'>dashboard</i></a></li>
+						<li class='waves-effect'><a href='#!' onclick="configureView(-1);chartsView('dashboard');" view='dashboard-view'><i class='material-icons'>track_changes</i></i></a></li>
+		</ul>
+
+		<!-- report name -->
+		<span class='report-name'>YPIC自动化测试报告</span>
+		
+		<!-- report headline -->
+		<span class='report-headline'></span>
+
+		<!-- nav-right -->
+		<ul id='nav-mobile' class='right hide-on-med-and-down nav-right'>
+			<li>
+                <a href='#!'>
+                    <span class='label suite-start-time blue darken-3'>Jul 31, 2020 04:32:58 PM</span>
+				</a>
+			</li>
+			<li>
+                <a href='#!'>
+                    <span class='label blue darken-3'>3.1.3</span>
+				</a>
+			</li>
+		</ul>
+	</div>
+</nav>
+
+		<!-- container -->
+		<div class='container'>
+
+<div id='test-view' class='view'>
+				
+	<section id='controls'>
+		<div class='controls grey lighten-4'>
+			<!-- test toggle -->
+			<div class='chip transparent'>
+				<a class='dropdown-button tests-toggle' data-activates='tests-toggle' data-constrainwidth='true' data-beloworigin='true' data-hover='true' href='#'>
+					<i class='material-icons'>warning</i> Status
+				</a>
+				<ul id='tests-toggle' class='dropdown-content'>
+											<li status='pass'><a href='#!'>Pass <i class='material-icons green-text'>check_circle</i></a></li>
+					<li class='divider'></li>
+					<li status='clear' clear='true'><a href='#!'>Clear Filters <i class='material-icons'>clear</i></a></li>
+				</ul>
+			</div>
+			<!-- test toggle -->
+
+			<!-- category toggle -->
+			<!-- category toggle -->
+
+			<!-- clear filters -->
+			<div class='chip transparent hide'>
+				<a class='' id='clear-filters' alt='Clear Filters' title='Clear Filters'>
+					<i class='material-icons'>close</i> Clear
+				</a>
+			</div>
+			<!-- clear filters -->
+
+			<!-- enable dashboard -->
+			<div id='toggle-test-view-charts' class='chip transparent'>
+				<a class='pink-text' id='enable-dashboard' alt='Enable Dashboard' title='Enable Dashboard'>
+					<i class='material-icons'>track_changes</i> Dashboard
+				</a>
+			</div>
+			<!-- enable dashboard -->
+
+			<!-- search -->
+			<div class='chip transparent' alt='Search Tests' title='Search Tests'>
+				<a href="#" class='search-div'>
+					<i class='material-icons'>search</i> Search
+				</a>
+
+				<div class='input-field left hide'>
+					<input id='search-tests' type='text' class='validate browser-default' placeholder='Search Tests...'>
+				</div>
+				
+			</div>
+			<!-- search -->
+		</div>
+	</section>
+
+
+<div id='test-view-charts' class='subview-full'>
+	<div id='charts-row' class='row nm-v nm-h'>
+		<div class='col s12 m6 l6 np-h'>
+			<div class='card-panel nm-v'>
+				<div class='left panel-name'>Tests</div>
+				<div class='chart-box'>
+					<canvas id='parent-analysis' width='100' height='80'></canvas>
+				</div>
+				<div class='block text-small'>
+					<span class='tooltipped' data-position='top' data-tooltip='100%'><span class='strong'>2</span> test(s) passed</span>
+				</div>
+				<div class='block text-small'>
+					<span class='strong tooltipped' data-position='top' data-tooltip='0%'>0</span> test(s) failed, <span class='strong tooltipped' data-position='top' data-tooltip='0%'>0</span> others
+				</div>
+			</div>
+		</div>
+		
+		<div class='col s12 m6 l6 np-h'>
+			<div class='card-panel nm-v'>
+				<div class='left panel-name'>Steps</div>
+				<div class='chart-box'>
+					<canvas id='child-analysis' width='100' height='80'></canvas>
+				</div>
+				<div class='block text-small'>
+					<span class='tooltipped' data-position='top' data-tooltip='100%'><span class='strong'>2</span> step(s) passed</span>
+				</div>
+				<div class='block text-small'>
+					<span class='strong tooltipped' data-position='top' data-tooltip='0%'>0</span> step(s) failed, <span class='strong tooltipped' data-position='top' data-tooltip='0%'>0</span> others
+				</div>
+			</div>
+		</div>
+		
+	</div>
+</div>
+
+	<div class='subview-left left'>
+		
+		<div class='view-summary'>
+			<h5>Tests</h5>
+			<ul id='test-collection' class='test-collection'>
+				
+				
+				<li class='test displayed active  pass' status='pass' bdd='false' test-id='1'>
+					<div class='test-heading'>
+						<span class='test-name'>org.testng.TestRunner@75699e35{ROW_ID=2, ProcessF...</span>
+						<span class='test-time'>Jul 31, 2020 04:32:58 PM</span>
+						<span class='test-status right pass'>pass</span>
+					</div>
+					<div class='test-content hide'>
+<div class='test-time-info'>
+	<span class='label start-time'>Jul 31, 2020 04:32:58 PM</span>
+	<span class='label end-time'>Jul 31, 2020 04:37:39 PM</span>
+	<span class='label time-taken grey lighten-1 white-text'>0h 4m 41s+105ms</span>
+</div>
+	<div class='test-steps'>
+		<table class='bordered table-results'>
+			<thead>
+				<tr>
+					<th>Status</th>
+					<th>Timestamp</th>
+					<th>Details</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr class='log' status='debug'>
+					<td class='status debug' title='debug' alt='debug'><i class='material-icons'>low_priority</i></td>
+					<td class='timestamp'>4:41:34 PM</td>
+					<td class='step-details'>CaseNo：FCCB_TB_YWX_1134_1</td>
+				</tr>
+				<tr class='log' status='debug'>
+					<td class='status debug' title='debug' alt='debug'><i class='material-icons'>low_priority</i></td>
+					<td class='timestamp'>4:41:34 PM</td>
+					<td class='step-details'>测试数据：ROW_ID=2
+ProcessFlag=Y
+TestCaseName=FCCB_TB_YWX_1134
+TestCaseSeq=1
+TestDescription=非车承保-意外险-驾乘人员意外伤害保险-出单
+riskClass=11
+riskCode=1134
+renewalInd=0
+renewalPolicy=
+prePay=
+carrayOver=
+carrayOverPolicy=
+relatedInd=
+relatedPolicy=
+fbbs=
+ywgs=01620190
+qdlx=01
+gdbs=1
+xstd=T6201900101
+ywy=S000000006
+ywly=01010101
+dljg=
+xsxy=
+cxywbs=HXXT
+cdjg=
+htzyjjfs=
+jnwbz=
+jw_country=
+jw_Addr=
+snbz=
+sftkbd=0
+sfdzbd=0
+sfxb=0
+fxqkyjytz=
+sfydyw=
+sfsn=
+xbbdh=
+tbr_lx=2
+tbr_mc=
+tbr_vip=
+tbr_dm=G6200019928
+tbr_zjlx=
+tbr_zjhm=
+tbr_sj=
+tbr_csrq=
+tbr_lxdz=
+tbr_dwdh=
+tbr_yx=
+lxr_xm=
+lxr_xb=
+lxr_zw=
+lxr_sj=
+lxr_yx=
+xzsyfw=
+tqmc=
+qbrq=
+zbrq=
+lgbbz=0
+yyzdbz=
+sfhbld=0
+sfgxdm=1
+cbdq=0014
+drbz=0
+jmbz=0
+ywx_zdjsclcph=京RRK876
+ywx_xszcz=车主
+ywx_cph=京RRK876
+ywx_cjh=V1234567890098765
+ywx_hpds=黑
+ywx_fdjh=E12345663
+ywx_syxz=9B
+ywx_syxz_2=校车
+ywx_cpxh=宇通客车
+ywx_hdzzl=3T
+ywx_hdzkrs=30
+ywx_qtsm=学校自用车辆
+ywx_zdjscllx=A
+ywx_zdjscllx2=A1
+ywx_bbxzrs=
+ywx_xsqy=
+ywx_xsfs=
+ywx_aqx=
+ywx_glsp=
+ywx_xbns=
+ywx_szfhjwtyxm=
+ywx_ddq=
+ywx_xx=
+ywx_bj=
+ywx_bz=CNY
+ywx_zydldm=3301
+ywx_zygzdm=3301020033
+ywx_mrtbfs=1
+ywx_tbzrs=
+bbr_mc=
+bbr_xb=
+bbr_zjlx=
+bbr_zjhm=
+bbr_csrq=
+bbr_zygz=
+bbr_jtdz=
+tk_tkdm=9969
+tk_tkxx=1、经投保人与保险公司充分协商，本保单所承保车辆使用性质为非营运。若车辆从事营运活动，保险公司不负赔偿责任。2、本保单附加意外伤害医疗费用保险，每人每次免赔100元后按90%比例赔付。
+ywx_xbdm=1134001
+ywx_jrbe=1
+ywx_bxje=2000000
+ywx_bffl=0.35
+ywx_dqflbz=1
+ywx_ysbf=12000
+lgb_main_pcrt=
+lgb_co_level1=
+lgb_co_level2=
+lgb_co_level3=
+lgb_co_prct=
+lgb_co_gbbfsqxs=
+fsh=1
+xsfdj=A
+tis=
+xsfxs=3
+xsfy_bl=
+submit_status=待双核审核
+proposalNumber=06201901134202000000000397
+message=
+screenshot=
+testCaseName=FCCB_TBCL_YWX</td>
+				</tr>
+				<tr class='log' status='debug'>
+					<td class='status debug' title='debug' alt='debug'><i class='material-icons'>low_priority</i></td>
+					<td class='timestamp'>4:41:34 PM</td>
+					<td class='step-details'>截屏：C:\Users\liu-b\git\PageObjectModel\report\screenshots\FCCB_TB_YWX_1134_1投保单基本信息页面_20200731043419837.png</td>
+				</tr>
+				<tr class='log' status='debug'>
+					<td class='status debug' title='debug' alt='debug'><i class='material-icons'>low_priority</i></td>
+					<td class='timestamp'>4:41:34 PM</td>
+					<td class='step-details'>投保单号码：06201901134202000000000398</td>
+				</tr>
+				<tr class='log' status='debug'>
+					<td class='status debug' title='debug' alt='debug'><i class='material-icons'>low_priority</i></td>
+					<td class='timestamp'>4:41:34 PM</td>
+					<td class='step-details'>截屏：C:\Users\liu-b\git\PageObjectModel\report\screenshots\FCCB_TB_YWX_1134_1投保单险种信息页面_20200731043537569.png</td>
+				</tr>
+				<tr class='log' status='debug'>
+					<td class='status debug' title='debug' alt='debug'><i class='material-icons'>low_priority</i></td>
+					<td class='timestamp'>4:41:34 PM</td>
+					<td class='step-details'>截屏：C:\Users\liu-b\git\PageObjectModel\report\screenshots\FCCB_TB_YWX_1134_1_标的基础信息_20200731043604927.png</td>
+				</tr>
+				<tr class='log' status='debug'>
+					<td class='status debug' title='debug' alt='debug'><i class='material-icons'>low_priority</i></td>
+					<td class='timestamp'>4:41:34 PM</td>
+					<td class='step-details'>截屏：C:\Users\liu-b\git\PageObjectModel\report\screenshots\FCCB_TB_YWX_1134_1_标的投保详细信息_20200731043645452.png</td>
+				</tr>
+				<tr class='log' status='debug'>
+					<td class='status debug' title='debug' alt='debug'><i class='material-icons'>low_priority</i></td>
+					<td class='timestamp'>4:41:34 PM</td>
+					<td class='step-details'>截屏：C:\Users\liu-b\git\PageObjectModel\report\screenshots\FCCB_TB_YWX_1134_1条款信息页面_20200731043700258.png</td>
+				</tr>
+				<tr class='log' status='debug'>
+					<td class='status debug' title='debug' alt='debug'><i class='material-icons'>low_priority</i></td>
+					<td class='timestamp'>4:41:34 PM</td>
+					<td class='step-details'>截屏：C:\Users\liu-b\git\PageObjectModel\report\screenshots\FCCB_TB_YWX_1134_1联共保信息页面_20200731043714370.png</td>
+				</tr>
+				<tr class='log' status='debug'>
+					<td class='status debug' title='debug' alt='debug'><i class='material-icons'>low_priority</i></td>
+					<td class='timestamp'>4:41:34 PM</td>
+					<td class='step-details'>截屏：C:\Users\liu-b\git\PageObjectModel\report\screenshots\FCCB_TB_YWX_1134_1保单费用信息页面_20200731043730640.png</td>
+				</tr>
+				<tr class='log' status='debug'>
+					<td class='status debug' title='debug' alt='debug'><i class='material-icons'>low_priority</i></td>
+					<td class='timestamp'>4:41:34 PM</td>
+					<td class='step-details'>截屏：C:\Users\liu-b\git\PageObjectModel\report\screenshots\FCCB_TB_YWX_1134_1_提交复核结果_20200731043738404.png</td>
+				</tr>
+				<tr class='log' status='debug'>
+					<td class='status debug' title='debug' alt='debug'><i class='material-icons'>low_priority</i></td>
+					<td class='timestamp'>4:41:34 PM</td>
+					<td class='step-details'>提交复核结果：投保单号码 06201901134202000000000398  状态为: 待双核审核</td>
+				</tr>
+				<tr class='log' status='debug'>
+					<td class='status debug' title='debug' alt='debug'><i class='material-icons'>low_priority</i></td>
+					<td class='timestamp'>4:41:34 PM</td>
+					<td class='step-details'>截屏：C:\Users\liu-b\git\PageObjectModel\report\screenshots\FCCB_TB_YWX_1134_1_退出前截屏_20200731043738925.png</td>
+				</tr>
+				<tr class='log' status='pass'>
+					<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+					<td class='timestamp'>4:41:34 PM</td>
+					<td class='step-details'>Test passed</td>
+				</tr>
+			</tbody>
+		</table>
+	</div>
+					</div>
+				</li>
+				
+				
+				<li class='test displayed active  pass' status='pass' bdd='false' test-id='2'>
+					<div class='test-heading'>
+						<span class='test-name'>org.testng.TestRunner@75699e35{ROW_ID=3, ProcessF...</span>
+						<span class='test-time'>Jul 31, 2020 04:37:41 PM</span>
+						<span class='test-status right pass'>pass</span>
+					</div>
+					<div class='test-content hide'>
+<div class='test-time-info'>
+	<span class='label start-time'>Jul 31, 2020 04:37:41 PM</span>
+	<span class='label end-time'>Jul 31, 2020 04:41:33 PM</span>
+	<span class='label time-taken grey lighten-1 white-text'>0h 3m 51s+803ms</span>
+</div>
+	<div class='test-steps'>
+		<table class='bordered table-results'>
+			<thead>
+				<tr>
+					<th>Status</th>
+					<th>Timestamp</th>
+					<th>Details</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr class='log' status='debug'>
+					<td class='status debug' title='debug' alt='debug'><i class='material-icons'>low_priority</i></td>
+					<td class='timestamp'>4:41:34 PM</td>
+					<td class='step-details'>CaseNo：FCCB_TB_YWX_1137_1</td>
+				</tr>
+				<tr class='log' status='debug'>
+					<td class='status debug' title='debug' alt='debug'><i class='material-icons'>low_priority</i></td>
+					<td class='timestamp'>4:41:34 PM</td>
+					<td class='step-details'>测试数据：ROW_ID=3
+ProcessFlag=Y
+TestCaseName=FCCB_TB_YWX_1137
+TestCaseSeq=1
+TestDescription=非车承保-意外险-学生幼儿意外伤害保险-出单
+riskClass=11
+riskCode=1137
+renewalInd=0
+renewalPolicy=
+prePay=
+carrayOver=
+carrayOverPolicy=
+relatedInd=
+relatedPolicy=
+fbbs=
+ywgs=01620190
+qdlx=01
+gdbs=1
+xstd=T6201900101
+ywy=S000000006
+ywly=01010101
+dljg=
+xsxy=
+cxywbs=HXXT
+cdjg=
+htzyjjfs=
+jnwbz=
+jw_country=
+jw_Addr=
+snbz=
+sftkbd=0
+sfdzbd=0
+sfxb=0
+fxqkyjytz=
+sfydyw=
+sfsn=
+xbbdh=
+tbr_lx=2
+tbr_mc=
+tbr_vip=
+tbr_dm=G6200019928
+tbr_zjlx=
+tbr_zjhm=
+tbr_sj=
+tbr_csrq=
+tbr_lxdz=
+tbr_dwdh=
+tbr_yx=
+lxr_xm=
+lxr_xb=
+lxr_zw=
+lxr_sj=
+lxr_yx=
+xzsyfw=
+tqmc=
+qbrq=
+zbrq=
+lgbbz=0
+yyzdbz=
+sfhbld=0
+sfgxdm=1
+cbdq=0014
+drbz=0
+jmbz=1
+ywx_zdjsclcph=
+ywx_xszcz=
+ywx_cph=
+ywx_cjh=
+ywx_hpds=
+ywx_fdjh=
+ywx_syxz=
+ywx_syxz_2=
+ywx_cpxh=
+ywx_hdzzl=
+ywx_hdzkrs=
+ywx_qtsm=
+ywx_zdjscllx=
+ywx_zdjscllx2=
+ywx_bbxzrs=1
+ywx_xsqy=北京市小学
+ywx_xsfs=统一安排
+ywx_aqx=高
+ywx_glsp=高
+ywx_xbns=1
+ywx_szfhjwtyxm=教委统一项目
+ywx_ddq=30
+ywx_xx=北京是朝阳区花家地小学
+ywx_bj=一年级三班
+ywx_bz=CNY
+ywx_zydldm=
+ywx_zygzdm=
+ywx_mrtbfs=1
+ywx_tbzrs=1
+bbr_mc=测试人员
+bbr_xb=1
+bbr_zjlx=01
+bbr_zjhm=110101199003148077
+bbr_csrq=
+bbr_zygz=教师
+bbr_jtdz=被保人地址
+tk_tkdm=9970
+tk_tkxx=1、经投保人与保险公司充分协商，本保单所承保车辆使用性质为非营运。若车辆从事营运活动，保险公司不负赔偿责任。2、本保单附加意外伤害医疗费用保险，每人每次免赔100元后按90%比例赔付。3、本保单附加意外伤害住院津贴保险，每人每次事故免赔3天，给付标准为50元/人/天，单次给付天数最高不超过90天，累计给付天数最高不超过180天。
+ywx_xbdm=1137001
+ywx_jrbe=1
+ywx_bxje=500000
+ywx_bffl=0.25
+ywx_dqflbz=1
+ywx_ysbf=
+lgb_main_pcrt=
+lgb_co_level1=
+lgb_co_level2=
+lgb_co_level3=
+lgb_co_prct=
+lgb_co_gbbfsqxs=
+fsh=1
+xsfdj=A
+tis=
+xsfxs=3
+xsfy_bl=
+submit_status=待双核审核
+proposalNumber=06201901137202000000000661
+message=未知异常java.net.SocketTimeoutException: Read timed out
+Build info: version: '3.9.0', revision: '698b3178f0', time: '2018-02-05T14:26:55.441Z'
+System info: host: 'DESKTOP-I9S3ABE', ip: '100.100.100.88', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '1.8.0_101'
+Driver info: driver.version: RemoteWebDriver
+screenshot=C:\Users\liu-b\git\PageObjectModel\report\screenshots\FCCB_TB_YWX_1137_1_异常截屏_20200730045102944.png
+testCaseName=FCCB_TBCL_YWX</td>
+				</tr>
+				<tr class='log' status='debug'>
+					<td class='status debug' title='debug' alt='debug'><i class='material-icons'>low_priority</i></td>
+					<td class='timestamp'>4:41:34 PM</td>
+					<td class='step-details'>截屏：C:\Users\liu-b\git\PageObjectModel\report\screenshots\FCCB_TB_YWX_1137_1投保单基本信息页面_20200731043858031.png</td>
+				</tr>
+				<tr class='log' status='debug'>
+					<td class='status debug' title='debug' alt='debug'><i class='material-icons'>low_priority</i></td>
+					<td class='timestamp'>4:41:34 PM</td>
+					<td class='step-details'>投保单号码：06201901137202000000000662</td>
+				</tr>
+				<tr class='log' status='debug'>
+					<td class='status debug' title='debug' alt='debug'><i class='material-icons'>low_priority</i></td>
+					<td class='timestamp'>4:41:34 PM</td>
+					<td class='step-details'>截屏：C:\Users\liu-b\git\PageObjectModel\report\screenshots\FCCB_TB_YWX_1137_1投保单险种信息页面_20200731043942583.png</td>
+				</tr>
+				<tr class='log' status='debug'>
+					<td class='status debug' title='debug' alt='debug'><i class='material-icons'>low_priority</i></td>
+					<td class='timestamp'>4:41:34 PM</td>
+					<td class='step-details'>截屏：C:\Users\liu-b\git\PageObjectModel\report\screenshots\FCCB_TB_YWX_1137_1_标的基础信息_20200731044002009.png</td>
+				</tr>
+				<tr class='log' status='debug'>
+					<td class='status debug' title='debug' alt='debug'><i class='material-icons'>low_priority</i></td>
+					<td class='timestamp'>4:41:34 PM</td>
+					<td class='step-details'>截屏：C:\Users\liu-b\git\PageObjectModel\report\screenshots\FCCB_TB_YWX_1137_1_标的投保详细信息_20200731044039237.png</td>
+				</tr>
+				<tr class='log' status='debug'>
+					<td class='status debug' title='debug' alt='debug'><i class='material-icons'>low_priority</i></td>
+					<td class='timestamp'>4:41:34 PM</td>
+					<td class='step-details'>截屏：C:\Users\liu-b\git\PageObjectModel\report\screenshots\FCCB_TB_YWX_1137_1条款信息页面_20200731044054099.png</td>
+				</tr>
+				<tr class='log' status='debug'>
+					<td class='status debug' title='debug' alt='debug'><i class='material-icons'>low_priority</i></td>
+					<td class='timestamp'>4:41:34 PM</td>
+					<td class='step-details'>截屏：C:\Users\liu-b\git\PageObjectModel\report\screenshots\FCCB_TB_YWX_1137_1联共保信息页面_20200731044108445.png</td>
+				</tr>
+				<tr class='log' status='debug'>
+					<td class='status debug' title='debug' alt='debug'><i class='material-icons'>low_priority</i></td>
+					<td class='timestamp'>4:41:34 PM</td>
+					<td class='step-details'>截屏：C:\Users\liu-b\git\PageObjectModel\report\screenshots\FCCB_TB_YWX_1137_1保单费用信息页面_20200731044124924.png</td>
+				</tr>
+				<tr class='log' status='debug'>
+					<td class='status debug' title='debug' alt='debug'><i class='material-icons'>low_priority</i></td>
+					<td class='timestamp'>4:41:34 PM</td>
+					<td class='step-details'>截屏：C:\Users\liu-b\git\PageObjectModel\report\screenshots\FCCB_TB_YWX_1137_1_提交复核结果_20200731044132830.png</td>
+				</tr>
+				<tr class='log' status='debug'>
+					<td class='status debug' title='debug' alt='debug'><i class='material-icons'>low_priority</i></td>
+					<td class='timestamp'>4:41:34 PM</td>
+					<td class='step-details'>提交复核结果：投保单号码 06201901137202000000000662  状态为: 待双核审核</td>
+				</tr>
+				<tr class='log' status='debug'>
+					<td class='status debug' title='debug' alt='debug'><i class='material-icons'>low_priority</i></td>
+					<td class='timestamp'>4:41:34 PM</td>
+					<td class='step-details'>截屏：C:\Users\liu-b\git\PageObjectModel\report\screenshots\FCCB_TB_YWX_1137_1_退出前截屏_20200731044133308.png</td>
+				</tr>
+				<tr class='log' status='pass'>
+					<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+					<td class='timestamp'>4:41:34 PM</td>
+					<td class='step-details'>Test passed</td>
+				</tr>
+			</tbody>
+		</table>
+	</div>
+					</div>
+				</li>
+			</ul>
+		</div>
+	</div>
+	<!-- subview left -->
+
+	<div class='subview-right left'>
+		<div class='view-summary'>
+			<h5 class='test-name'></h5>
+
+			<div id='step-filters' class="right">
+				<span class="blue-text" status="info" alt="info" title="info"><i class="material-icons">info_outline</i></span>
+				<span class="green-text" status="pass" alt="pass" title="pass"><i class="material-icons">check_circle</i></span>
+				<span class="red-text" status="fail" alt="fail" title="fail"><i class="material-icons">cancel</i></span>
+				<span class="red-text text-darken-4" status="fatal" alt="fatal" title="fatal"><i class="material-icons">cancel</i></span>
+				<span class="pink-text text-lighten-1" status="error" alt="error" title="error"><i class="material-icons">error</i></span>
+				<span class="orange-text" alt="warning" status="warning" title="warning"><i class="material-icons">warning</i></span>
+				<span class="teal-text" status="skip" alt="skip" title="skip"><i class="material-icons">redo</i></span>
+				<span status="clear" alt="Clear filters" title="Clear filters"><i class="material-icons">clear</i></span>
+			</div>
+		</div>
+	</div>
+	<!-- subview right -->
+
+</div>
+<!-- test view -->
+<!-- category view -->
+<!-- exception view -->
+<div id='dashboard-view' class='view hide'>
+	<div class='card-panel transparent np-v'>
+		<h5>Dashboard</h5>
+
+		<div class='row'>
+			<div class='col s2'>
+				<div class='card-panel r'>
+					Tests
+					<div class='panel-lead'>2</div>
+				</div>
+			</div>
+			<div class='col s2'>
+				<div class='card-panel r'>
+					Steps
+					<div class='panel-lead'>2</div>
+				</div>
+			</div>
+			<div class='col s2'>
+				<div class='card-panel r'>
+					Start
+					<div class='panel-lead'>Jul 31, 2020 04:32:58 PM</div>
+				</div>
+			</div>
+			<div class='col s2'>
+				<div class='card-panel r'>
+			 		End
+			 		<div class='panel-lead'>Jul 31, 2020 04:41:34 PM</div>
+				</div>
+			</div>
+			<div class='col s2'>
+				<div class='card-panel r'>
+					Time Taken
+					<div class='panel-lead'>0h 8m 36s+10ms</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+<!-- dashboard view -->
+<!-- testrunner-logs view -->
+		</div>
+		<!-- container -->
+
+		<script>
+			var statusGroup = {
+				passParent: 2,
+				failParent: 0,
+				fatalParent: 0,
+				errorParent: 0,
+				warningParent: 0,
+				skipParent: 0,
+				exceptionsParent: 0,
+				
+				passChild: 2,
+				failChild: 0,
+				fatalChild: 0,
+				errorChild: 0,
+				warningChild: 0,
+				skipChild: 0,
+				infoChild: 0,
+				exceptionsChild: 26,
+				
+				passGrandChild: 0,
+				failGrandChild: 0,
+				fatalGrandChild: 0,
+				errorGrandChild: 0,
+				warningGrandChild: 0,
+				skipGrandChild: 0,
+				infoGrandChild: 0,
+				exceptionsGrandChild: 0,
+			};
+		</script>
+		
+			<script src='http://extentreports.com/resx/dist/js/extent.js' type='text/javascript'></script>
+		
+		
+ 		<script type='text/javascript'>
+ 		</script>
+	</body>
+	
+</html>

@@ -23,6 +23,11 @@ public class InsuredObjectInfoPage_1798 extends AbstractInsuredObjectInfoPage_17
 	WebElement edt_JZDJ;
 
 	/**
+	 * @Fields edt_ZYXZ : 占用性质 
+	 */
+	@FindBy(how = How.NAME,using = "GuItemPropertyOccupation")
+	WebElement edt_ZYXZ;
+	/**
 	 * @Fields edt_BXCS : 保险处所
 	 */
 	@FindBy(how = How.NAME,using = "GuItemPropertySituation")
@@ -44,6 +49,7 @@ public class InsuredObjectInfoPage_1798 extends AbstractInsuredObjectInfoPage_17
 		logger.info("开始录入标的物信息！");
 		super.inputInsuredObjectCommmon(map);
 		this.SetCodeEditBox(edt_JZDJ, map.get("jzdj"));
+		this.SetCodeEditBox(edt_ZYXZ, map.get("zyxz"));
 		this.SetCodeEditBox(edt_TBRS, map.get("tbrs"));
 		this.setEditboxValue(edt_BXCS, map.get("bxcs"));
 	}

@@ -1,5 +1,6 @@
 package com.sinosoft.test.fccp.tbcl;
 
+import java.util.List;
 import java.util.Map;
 
 import org.openqa.selenium.By;
@@ -7,7 +8,6 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.How;
 import org.openqa.selenium.support.PageFactory;
-import org.openqa.selenium.support.pagefactory.AjaxElementLocatorFactory;
 
 public class RiskDetail_JCX_insuredObjPage extends RiskDetail_AbstractInsuredObjPage {
 	/**
@@ -22,8 +22,11 @@ public class RiskDetail_JCX_insuredObjPage extends RiskDetail_AbstractInsuredObj
 	@FindBy(how = How.NAME,using = "GuItemPropertyDetailItemDetailList")
 	WebElement edt_BDWMX;
 
+
+	
+
 	/*********************************************************
-	 **********                险别信息                               *************
+	 **********                险别信息        	 *************
 	 *********************************************************
 	 */
 	
@@ -31,58 +34,58 @@ public class RiskDetail_JCX_insuredObjPage extends RiskDetail_AbstractInsuredObj
 	//@FindBy(how = How.ID,using = "ItemPropertyDetailKind")
 	WebElement tbl_BDWMX;
 	
-	/**
+/*	*//**
 	 * @Fields edt_XBDM : 险别代码/名称
-	 */
+	 *//*
 	//@FindBy(how = How.NAME,using = "GuItemKindKindCode")
 	WebElement edt_XBDM;
 	
 	
-	/**
+	*//**
 	 * @Fields edt_JRBE : 计入保额(标记)
-	 */
+	 *//*
 	@FindBy(how = How.NAME,using = "GuItemKindCalculateInd")
 	WebElement edt_JRBE;
 	
 	
-	/**
+	*//**
 	 * @Fields slc_JZFS : 价值方式 
-	 */
+	 *//*
 	@FindBy(how = How.NAME,using = "GuItemKindValueType")
 	WebElement slc_JZFS;
 	
 	
-	/**
+	*//**
 	 * @Fields edt_BXJE : 保险金额
-	 */
+	 *//*
 	@FindBy(how = How.NAME,using = "GuItemKindSumInsured")
 	WebElement edt_BXJE;
 	
 	
 	
-	/**
+	*//**
 	 * @Fields edt_BFFL : 保费费率
-	 */
+	 *//*
 	//@FindBy(how = How.NAME,using = "GuItemKindRate")
 	@FindBy(how = How.XPATH,using = "//table[@id='ItemPropertyDetailKind']/tbody/tr/td/input[@name='GuItemKindRate']")
 	WebElement edt_BFFL;
 	
 	
 	
-	/**
+	*//**
 	 * @Fields edt_DQFLBZ : 短期费率标志
-	 */
+	 *//*
 	//@FindBy(how = How.NAME,using = "GuItemKindShortRateFlag")
 	@FindBy(how = How.XPATH,using = "//table[@id='ItemPropertyDetailKind']/tbody/tr/td/input[@name='GuItemKindShortRateFlag']")
 	WebElement edt_DQFLBZ;
 	
 	
-	/**
+	*//**
 	 * @Fields edt_YSBF : 应收保费
-	 */
+	 *//*
 	//@FindBy(how = How.NAME,using = "GuItemKindGrossPremium")
 	@FindBy(how = How.XPATH,using = "//table[@id='ItemPropertyDetailKind']/tbody/tr/td/input[@name='GuItemKindGrossPremium']")
-	WebElement edt_YSBF;
+	WebElement edt_YSBF;*/
 	
 
 	/**
@@ -114,43 +117,43 @@ public class RiskDetail_JCX_insuredObjPage extends RiskDetail_AbstractInsuredObj
 	 * @param map
 	 */
 	public void inputRiskCoverageAction(Map<String, String> map) {
+		logger.debug("开始录入免赔信息");
+		inputDeductionAction(map);
+		logger.debug("开始录入条款信息");
+		inputSpecialClauseAction(map);
 		logger.debug("开始录入险种明细信息");
-		this.inputRiskCodeAction(map);
-		super.takeSnapShot(super.getTestCaseId(map)+"_标的投保详细信息");
+		inputRiskCodeAction(map);
+		super.takeSnapShot(getTestCaseId(map)+"_标的投保详细信息");
 	}
 	
 	private void inputRiskCodeAction(Map<String, String> map) {
-		String bdw=map.get("bdw");
-		String bdwmx = map.get("bdwmx");
-		String xbdm = map.get("xbdm");
-		String jrbe = map.get("jrbe");
-		String bxje = map.get("bxje");
-		String bffl = map.get("bffl");
-		String dqflbz = map.get("dqflbz");
-		String ysbf =map.get("ysbf");
-		this.clickElement(tbl_BDWMX);
-		if(!"".equals(bdw)) {
-			edt_BDW = tbl_BDWMX.findElement(By.name("GuItemPropertyDetailItemDetailCode"));
-			edt_BDWMX = tbl_BDWMX.findElement(By.name("GuItemPropertyDetailItemDetailList"));
-			this.CodeSelect(edt_BDW, bdw);
-			this.setEditboxValue(edt_BDWMX, bdwmx);
+		scrollToElement(tbl_BDWMX);
+		WebElement btn_addBDW = tbl_BDWMX.findElement(By.name("button_ItemDetail_Insert"));
+		List<Map<String,Object>> riskList= getRiskMapList(map,"jcx_");
+		 for(int i=0;i<riskList.size();i++) {
+			 if(i>0) {
+				 this.jsClickButton(btn_addBDW);
+			 }
+			Map<String,Object> riskMap=riskList.get(i);
+			WebElement edt_BDW = tbl_BDWMX.findElement(By.xpath("(//input[@name='GuItemPropertyDetailItemDetailCode'])[last()]"));
+			CodeSelect(edt_BDW, (String)riskMap.get("bdw"));
+			WebElement edt_BDWMX = tbl_BDWMX.findElement(By.xpath("(//textarea[@name='GuItemPropertyDetailItemDetailList'])[last()]"));
+			setEditboxValue(edt_BDWMX, (String)riskMap.get("bdmx"));
+			WebElement edt_XBDM = tbl_BDWMX.findElement(By.xpath("(//input[@name='GuItemKindKindCode'])[last()]"));
+			this.CodeSelect(edt_XBDM, (String)riskMap.get("xbdm"));
+			WebElement edt_JRBE = tbl_BDWMX.findElement(By.xpath("(//input[@name='GuItemKindCalculateInd'])[last()]"));
+			this.CodeSelect(edt_JRBE,(String)riskMap.get("jrbe"));
+			WebElement edt_BXJE = tbl_BDWMX.findElement(By.xpath("(//input[@name='GuItemKindUnitInsured'])[last()]"));
+			this.setEditboxValue(edt_BXJE, (String)riskMap.get("bxje"));
+			
+			WebElement edt_BFFL = tbl_BDWMX.findElement(By.xpath("(//input[@name='GuItemKindRate'])[last()]"));
+			this.setEditboxTValue(edt_BFFL, (String)riskMap.get("bffl"));
+			WebElement edt_DQFLBZ = tbl_BDWMX.findElement(By.xpath("(//input[@name='GuItemKindShortRateFlag'])[last()]"));
+			this.CodeSelect(edt_DQFLBZ, (String)riskMap.get("dqflbz"));
+			WebElement edt_YSBF = tbl_BDWMX.findElement(By.xpath("(//input[@name='GuItemKindGrossPremium'])[last()]"));
+			this.setEditboxTValue(edt_YSBF, (String)riskMap.get("ysbf"));
 		}
-		edt_XBDM = tbl_BDWMX.findElement(By.name("GuItemKindKindCode"));
-		this.CodeSelect(edt_XBDM, xbdm);
-		edt_JRBE = tbl_BDWMX.findElement(By.name("GuItemKindCalculateInd"));
-		this.CodeSelect(edt_JRBE,jrbe);
-		edt_BXJE = tbl_BDWMX.findElement(By.name("GuItemKindUnitInsured"));
-		this.setEditboxValue(edt_BXJE, bxje);
-		
-		edt_BFFL = tbl_BDWMX.findElement(By.name("GuItemKindRate"));
-		this.setEditboxTValue(edt_BFFL, bffl);
-		edt_DQFLBZ = tbl_BDWMX.findElement(By.name("GuItemKindShortRateFlag"));
-		this.CodeSelect(edt_DQFLBZ, dqflbz);
-		edt_YSBF = tbl_BDWMX.findElement(By.name("GuItemKindGrossPremium"));
-		this.setEditboxTValue(edt_YSBF, ysbf);
 	}
-	
-
 	/**
 	 *<p>saveInsredObjectPage</p>
 	 *<p>保存标的物页面</p>

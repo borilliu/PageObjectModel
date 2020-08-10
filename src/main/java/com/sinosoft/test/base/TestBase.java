@@ -26,6 +26,7 @@ import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.ie.InternetExplorerDriver;
+import org.openqa.selenium.ie.InternetExplorerOptions;
 import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.remote.CapabilityType;
 import org.openqa.selenium.remote.DesiredCapabilities;
@@ -99,20 +100,17 @@ public class TestBase {
 			logger.info("start InternetExplorerDriver");
 			try {
 				System.setProperty("webdriver.ie.driver",  projectPath+"\\driver\\IEDriverServer.exe");	
-		/*		InternetExplorerOptions options = new InternetExplorerOptions();
+				InternetExplorerOptions options = new InternetExplorerOptions();
 				options.setCapability(CapabilityType.ACCEPT_SSL_CERTS, true);
 				options.setCapability(InternetExplorerDriver.NATIVE_EVENTS, true);
 				options.setCapability(InternetExplorerDriver.INTRODUCE_FLAKINESS_BY_IGNORING_SECURITY_DOMAINS, true);
-				options.setCapability(CapabilityType.UNEXPECTED_ALERT_BEHAVIOUR, UnexpectedAlertBehaviour.ACCEPT);
-				//options.setCapability(CapabilityType.UNEXPECTED_ALERT_BEHAVIOUR, UnexpectedAlertBehaviour.IGNORE);
+				//options.setCapability(CapabilityType.UNEXPECTED_ALERT_BEHAVIOUR, UnexpectedAlertBehaviour.ACCEPT);
+				options.setCapability(CapabilityType.UNEXPECTED_ALERT_BEHAVIOUR, UnexpectedAlertBehaviour.IGNORE);
 				options.setCapability(InternetExplorerDriver.LOG_LEVEL, "TRACE");
 				options.setCapability(InternetExplorerDriver.LOG_FILE, "IE_LOG.log");
+				driver = new InternetExplorerDriver(options);
 				
-//				options.setCapability("allow-blocked-content", true);
-//				options.setCapability("allowBlockedContent", true);
-				driver = new InternetExplorerDriver(options);*/
-				
-				DesiredCapabilities caps = DesiredCapabilities.internetExplorer();
+		/*		DesiredCapabilities caps = DesiredCapabilities.internetExplorer();
 				caps.setCapability(InternetExplorerDriver.NATIVE_EVENTS, false);
 				caps.setCapability(InternetExplorerDriver.INTRODUCE_FLAKINESS_BY_IGNORING_SECURITY_DOMAINS, true);
 				caps.setCapability(CapabilityType.UNEXPECTED_ALERT_BEHAVIOUR, UnexpectedAlertBehaviour.ACCEPT);
@@ -120,7 +118,7 @@ public class TestBase {
 				caps.setCapability(InternetExplorerDriver.LOG_LEVEL, "TRACE");
 				caps.setCapability(InternetExplorerDriver.LOG_FILE, "IE_LOG.log");
 				driver = new InternetExplorerDriver(caps);
-				
+				*/
 				
 				driver.manage().deleteAllCookies();
 				driver.manage().timeouts().setScriptTimeout(TestUtil.SCRIPT_TIMEOUT, TimeUnit.SECONDS);
@@ -192,6 +190,14 @@ public class TestBase {
               logger.error(e);
           }
   }
+	/**
+	 *<p>scrollToElement</p>
+	 *<p>滚屏到指定元素</p>
+	 * @param element
+	 */
+	public void scrollToElement(WebElement element) {
+		  runJS("arguments[0].scrollIntoView();",element);
+	}
 
 	/**
 	 *<p>pause</p>

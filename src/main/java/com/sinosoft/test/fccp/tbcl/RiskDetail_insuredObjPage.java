@@ -175,6 +175,8 @@ public class RiskDetail_insuredObjPage extends RiskDetail_AbstractInsuredObjPage
 	 */
 	public void inputRiskCoverageAction(Map<String, String> map) {
 		logger.debug("开始录入险种明细信息");
+		inputDeductionAction(map);
+		inputSpecialClauseAction(map);
 		if("0123".equals(map.get("riskCode"))) {
 			inputRiskCode0123Action(map);
 		}else {

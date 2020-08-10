@@ -8,7 +8,7 @@
           <include name="Close"/>
           <include name="tearDown"/>
           <include name="Init"/>
-          <include name="FCCB_TBCL_YWX" invocation-numbers="0"/>
+          <include name="FCCB_TBCL_ZRX" invocation-numbers="0 1"/>
           <include name="setup"/>
         </methods>
       </class> <!-- com.sinosoft.testcases.fccb.TBGLTestCase -->
